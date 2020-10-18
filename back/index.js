@@ -1,3 +1,4 @@
+require('dotenv').config();
 // Express
 const express = require('express');
 const app = express();
@@ -11,4 +12,4 @@ app.use(router);
 // launch server
 app.listen( PORT,  () => {
     console.log(`Listening on ${PORT}`);
-  });
+});
