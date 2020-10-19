@@ -18,7 +18,15 @@
     margin: 5px;
   }
   
- .bloc-right { // bloc à droite, comprend searchbar + login
+  .navigation--desktop {
+    display: block;
+  }
+
+  .navigation--mobile {
+    display: none;
+  }
+  
+  .bloc-right { // bloc à droite, comprend searchbar + login
     float: right;
     display: flex;
     flex-direction: row;
@@ -49,8 +57,12 @@
 
 @media (max-width:900px){ // mobile
 
-  .navigation {
+  .navigation--desktop {
     display: none;
+  }
+
+  .navigation--mobile {
+    display: block;
   }
   
   .header {
