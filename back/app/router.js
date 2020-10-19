@@ -4,38 +4,46 @@ const router = express.Router();
 
 // controllers import
 
+// route primordiale
+
+// routes articles :
+router.get('/articles/:label', articlesController.articlesAction);
+router.get('/article/:id', articlesController.articlesAction);
+
+// routes users : 
+router.get('/login', userController.renderLogin);
+router.post('/login', userController.loginAction);
+router.get('/signup', userController.renderSignup);
+router.post('/signup', userController.renderSignup);
+
+// profil d'un utilisateur
+router.get('/profile/:id', userController.getProfile);
+// modification profil d'un utilisateur
+router.patch('/profile/:id', userController.updateProfile);
+// suppression du profil d'un utilisateur
+router.delete('/profile/:id', userController.deleteProfile);
+
+// route dashboard
+router.get('/dashboard/:id', dashboardController.getAllInfos);
+router.get('/dashboard/:id', dashboardController.getAllInfos);
+
+
 // route d'accueil
 router.get('/', mainController.homeAction);
 
-// Page de listing des users
-router.get('/users', userController.listingAction);
-// Page de connexion des utilisateurs
-router.get('/login', userController.renderLogin);
-// Connexion d'un utilisateur
-router.post('/login', userController.loginAction);
-// Deconnexion d'un utilisateur
-router.get('/logout', userController.logoutAction);
-// Deconnexion d'un utilisateur
-router.get('/signup', userController.renderSignup);
-// profil d'un utilisateur
-router.get('/profile', userController.profilAction);
-// modification profil d'un utilisateur
-router.patch('/profile', userController.profilAction);
-// suppression du profil d'un utilisateur
-router.delete('/profile', userController.profilAction);
 
 
 // Page de listing des articles
-router.get('/articles', articleController.detailArticles);
+router.get('/articles', articlesController.detailArticles);
 // Page de detail d'un article
-router.get('/articles/:id', articleController.detailArticle);
+router.get('/articles/:id', articlesController.detailArticle);
 
 // liste article mis en favoris  ???????????????
-router.get('/articles/:id', articleController.favouriteArticle);
+router.get('/articles/:id', articlesController.favouriteArticle);
 // liste article mis en favoris  ???????????????
-router.post('/articles/:id', articleController.favouriteArticle);
+router.post('/articles/:id', articlesController.favouriteArticle);
 // supression d'un article mis en favoris  ???????????????
-router.delete('/articles/:id', articleController.favouriteArticle);
+router.delete('/articles/:id', articlesController.favouriteArticle);
 
 
 // tracker sport (on recup tte les infos pour les statistiques ?)
