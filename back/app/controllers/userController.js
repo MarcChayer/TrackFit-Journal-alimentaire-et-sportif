@@ -4,7 +4,7 @@ const User = require('../models/user');
 const userController = {
     signupAction: async (req, res) => {
         try {
-            console.log(req.body);
+            console.log('user', req.body);
             const { lastName, firstName, email, password } = req.body;
             const bodyError=[];
             // On verifie que l'user n'est pas en BDD
@@ -22,7 +22,7 @@ const userController = {
                     password
                 });
                 await newUser.save();
-                res.redirect('/');
+                res.status(200).json(newUser);
             }
         } catch (error) {
             console.log(error);
