@@ -105,7 +105,9 @@ CREATE TABLE "favorite_article" (
 --
 
 INSERT INTO "favorite_article" ("user_id", "article_id") VALUES
-(1,1);
+(1,1),
+(1,4),
+(1,5);
 
 -- --------------------------------------------------------
 
