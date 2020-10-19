@@ -9,13 +9,13 @@ CREATE TABLE "user" (
     "lastName" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "birthdate" DATE NOT NULL,
-    "gender" TEXT NOT NULL,
-    "weight" INTEGER NOT NULL,
-    "imc" INTEGER NOT NULL,
-    "height" INTEGER NOT NULL,
+    "birthdate" DATE,
+    "gender" TEXT,
+    "weight" INTEGER,
+    "imc" INTEGER,
+    "height" INTEGER,
     "password" TEXT NOT NULL,
-    "is_admin" BOOLEAN NOT NULL
+    "is_admin" BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 --
@@ -120,18 +120,20 @@ CREATE TABLE "food" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
-    "meal" TEXT NOT NULL,
-    "water" INTEGER NOT NULL,
-    "emotion" TEXT NOT NULL
+    "meal" TEXT,
+    "type" TEXT,
+    "quantity" INTEGER NOT NULL,
+    "calory" INTEGER,
+    "water" BOOLEAN,
+    "emotion" TEXT
 );
 
 --
 -- Contenu de la table 'food'
 --
 
-INSERT INTO "food" ("id", "user_id", "date", "meal", "water", "emotion") VALUES
-(1, 1, '15-10-20','burger', '2', 'happy'),
-(2, 2, '15-10-20','pates', '1', 'happy');
+INSERT INTO "food" ("id", "user_id", "date", "meal", "type", "quantity", "calory", "water", "emotion") VALUES
+(1, 1, '15-10-20','burger', 'proteine', '300', '1200', FALSE, 'happy');
 
 -- --------------------------------------------------------
 
@@ -168,7 +170,7 @@ CREATE TABLE "sport" (
     "workout" TEXT NOT NULL,
     "duration" INTEGER NOT NULL,
     "intensity" TEXT NOT NULL,
-    "emotion" TEXT NOT NULL
+    "emotion" TEXT
 );
 
 --
