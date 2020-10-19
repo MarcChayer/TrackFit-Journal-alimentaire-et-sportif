@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
 -- on commence par détruire toutes les tables si elles existent
-DROP TABLE IF EXISTS "user", "article", "favorite_article", "food", "sleep", "sport", "task";
+DROP TABLE IF EXISTS "user", "weight", "article", "favorite_article", "food", "sleep", "sport", "task";
 
 -- création des tables
 CREATE TABLE "user" (
@@ -11,8 +11,6 @@ CREATE TABLE "user" (
     "email" TEXT NOT NULL,
     "birthdate" DATE,
     "gender" TEXT,
-    "weight" INTEGER,
-    "imc" INTEGER,
     "height" INTEGER,
     "password" TEXT NOT NULL,
     "is_admin" BOOLEAN NOT NULL DEFAULT FALSE
@@ -22,9 +20,26 @@ CREATE TABLE "user" (
 -- Contenu de la table 'user'
 --
 
-INSERT INTO "user" ("id", "lastName", "firstName", "email", "birthdate", "gender", "weight", "imc", "height", "password", "is_admin") VALUES
-(1, 'MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '70', '23', '174', 'coucou123', 'true'),
-(2, 'jon', 'doe', 'blabla@test.com', '25-05-90', 'male', '68', '22', '173', 'salut123', 'false');
+INSERT INTO "user" ("id", "lastName", "firstName", "email", "birthdate", "gender", "height", "password", "is_admin") VALUES
+(1, 'MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '174', 'coucou123', 'true'),
+(2, 'jon', 'doe', 'blabla@test.com', '25-05-90', 'male', '173', 'salut123', 'false');
+-- --------------------------------------------------------
+
+-- la table 'user'
+CREATE TABLE "weight" (
+    "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
+    "weight" INTEGER,
+    "imc" INTEGER
+);
+
+--
+-- Contenu de la table 'weight'
+--
+
+INSERT INTO "weight" ("id", "user_id", "weight", "imc") VALUES
+(1, 1, '70', '23'),
+(2, 2, '68', '22');
 -- --------------------------------------------------------
 
 --
@@ -120,11 +135,10 @@ CREATE TABLE "food" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
-    "meal" TEXT,
-    "type" TEXT,
+    "meal" TEXT NOT NULL,
+    "type" TEXT NOT NULL,
     "quantity" INTEGER NOT NULL,
     "calory" INTEGER,
-    "water" BOOLEAN,
     "emotion" TEXT
 );
 
@@ -132,9 +146,25 @@ CREATE TABLE "food" (
 -- Contenu de la table 'food'
 --
 
-INSERT INTO "food" ("id", "user_id", "date", "meal", "type", "quantity", "calory", "water", "emotion") VALUES
-(1, 1, '15-10-20','burger', 'proteine', '300', '1200', FALSE, 'happy');
+INSERT INTO "food" ("id", "user_id", "date", "meal", "type", "quantity", "calory", "emotion") VALUES
+(1, 1, '15-10-20','burger', 'proteine', '300', '1200', 'happy');
 
+-- --------------------------------------------------------
+
+-- la table 'water'
+CREATE TABLE "water" (
+    "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
+    "water" INTEGER
+);
+
+--
+-- Contenu de la table 'user'
+--
+
+INSERT INTO "water" ("id", "user_id", "water") VALUES
+(1, 1, '2'),
+(2, 2, '150');
 -- --------------------------------------------------------
 
 --
@@ -154,8 +184,8 @@ CREATE TABLE "sleep" (
 --
 
 INSERT INTO "sleep" ("id", "user_id", "date", "bedTime", "wakeUpTime") VALUES
-(1, 1, '15-10-20','12:00', '07:00'),
-(2, 2, '30-12-19','11:00', '06:00');
+(1, 1, '15-10-20', '12:00', '07:00'),
+(2, 2, '30-12-19', '11:00', '06:00');
 
 -- --------------------------------------------------------
 
