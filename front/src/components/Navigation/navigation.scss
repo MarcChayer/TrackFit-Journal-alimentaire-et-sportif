@@ -1,0 +1,26 @@
+@use 'src/styles/vars';
+
+.navigation {
+  &-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-link {
+    margin: 0 15px;
+  }
+
+  &img {
+    margin-left:15px;
+    width: 180px;
+  }
+}
+
+
+@media (max-width:900px){ // mobile
+  .navigation--desktop {
+    display: none;
+  }
+}
