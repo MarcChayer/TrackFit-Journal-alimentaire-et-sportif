@@ -1,11 +1,11 @@
 BEGIN TRANSACTION;
 
 -- on commence par détruire toutes les tables si elles existent
-DROP TABLE IF EXISTS "user", "weight", "article", "favorite_article", "food", "sleep", "sport", "task";
+DROP TABLE "user", "weight", "article", "favorite_article", "food", "water", "sleep", "sport", "task" CASCADE;
 
 -- création des tables
 CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "lastName" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "email" TEXT NOT NULL,
@@ -20,9 +20,10 @@ CREATE TABLE "user" (
 -- Contenu de la table 'user'
 --
 
-INSERT INTO "user" ("id", "lastName", "firstName", "email", "birthdate", "gender", "height", "password", "is_admin") VALUES
-(1, 'MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '174', 'coucou123', 'true'),
-(2, 'jon', 'doe', 'blabla@test.com', '25-05-90', 'male', '173', 'salut123', 'false');
+INSERT INTO "user" ("lastName", "firstName", "email", "birthdate", "gender", "height", "password", "is_admin") VALUES
+('MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '174', 'coucou123', 'true'),
+('jon', 'doe', 'blabla@test.com', '25-05-90', 'male', '173', 'salut123', 'false');
+
 -- --------------------------------------------------------
 
 -- la table 'user'
