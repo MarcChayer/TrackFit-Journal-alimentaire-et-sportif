@@ -115,6 +115,7 @@ INSERT INTO "favorite_article" ("user_id", "article_id") VALUES
 
 CREATE TABLE "food" (
     "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
     "meal" TEXT NOT NULL,
     "water" INTEGER NOT NULL,
@@ -125,8 +126,8 @@ CREATE TABLE "food" (
 -- Contenu de la table 'food'
 --
 
-INSERT INTO "food" ("id", "date", "meal", "water", "emotion") VALUES
-(1,'15-10-20','burger', '2', 'happy');
+INSERT INTO "food" ("id", "user_id", "date", "meal", "water", "emotion") VALUES
+(1, 1, '15-10-20','burger', '2', 'happy');
 
 -- --------------------------------------------------------
 
@@ -136,6 +137,7 @@ INSERT INTO "food" ("id", "date", "meal", "water", "emotion") VALUES
 
 CREATE TABLE "sleep" (
     "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
     "bedTime" TIME NOT NULL,
     "wakeUpTime" TIME NOT NULL
@@ -145,8 +147,8 @@ CREATE TABLE "sleep" (
 -- Contenu de la table 'sleep'
 --
 
-INSERT INTO "sleep" ("id", "date", "bedTime", "wakeUpTime") VALUES
-(1,'15-10-20','12:00', '07:00');
+INSERT INTO "sleep" ("id", "user_id", "date", "bedTime", "wakeUpTime") VALUES
+(1, 1, '15-10-20','12:00', '07:00');
 
 -- --------------------------------------------------------
 
@@ -156,6 +158,7 @@ INSERT INTO "sleep" ("id", "date", "bedTime", "wakeUpTime") VALUES
 
 CREATE TABLE "sport" (
     "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
     "workout" TEXT NOT NULL,
     "duration" INTEGER NOT NULL,
@@ -167,8 +170,8 @@ CREATE TABLE "sport" (
 -- Contenu de la table 'sport'
 --
 
-INSERT INTO "sport" ("id", "date", "workout", "duration", "intensity", "emotion") VALUES
-(1,'15-10-20','escalade','60', '4', 'happy');
+INSERT INTO "sport" ("id", "user_id", "date", "workout", "duration", "intensity", "emotion") VALUES
+(1, 1, '15-10-20','escalade','60', '4', 'happy');
 
 -- --------------------------------------------------------
 
@@ -178,6 +181,7 @@ INSERT INTO "sport" ("id", "date", "workout", "duration", "intensity", "emotion"
 
 CREATE TABLE "task" (
     "id" SERIAL PRIMARY KEY,
+    "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "title" TEXT NOT NULL
 );
 
@@ -186,8 +190,8 @@ CREATE TABLE "task" (
 -- Contenu de la table 'task'
 --
 
-INSERT INTO "task" ("id", "title") VALUES
-(1,'reussir ce putain de projet');
+INSERT INTO "task" ("id", "user_id", "title") VALUES
+(1, 1, 'reussir ce putain de projet');
 
 
 COMMIT;
