@@ -8,4 +8,10 @@ const {Article, Food, Sleep, Sport, Task, User} = require('./app/models');
  */
 
 
-User.findAll
+User.findAll({
+    include:['articles']
+}).then((users) => {
+    for (let user of users) {
+        console.log(user.firstName, user.articles.length);
+    }
+});

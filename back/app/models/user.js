@@ -4,8 +4,8 @@ const sequelize = require('../database');
 class User extends Sequelize.Model {};
 
 User.init({
-    lastname: Sequelize.STRING,
-    firstname: Sequelize.STRING,
+    lastName: Sequelize.STRING,
+    firstName: Sequelize.STRING,
     email: Sequelize.STRING,
     birthdate: Sequelize.DATE,
     gender: Sequelize.STRING,
