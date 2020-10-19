@@ -4,6 +4,8 @@ const Sleep = require('./sleep');
 const Sport = require('./sport');
 const Task = require('./task');
 const User = require('./user');
+const Weight = require('./weight');
+const Water = require('./water');
 
 // Relations
 
@@ -42,6 +44,30 @@ Sport.belongsTo(User, {
 User.hasMany(Sleep, {
     foreignKey: "user_id",
     as: "sleeps"
+});
+
+// Un user à plusieurs données de weight
+User.hasMany(Weight, {
+    foreignKey: "user_id",
+    as: "weights"
+});
+
+// Un user à plusieurs données de water
+User.hasMany(Water, {
+    foreignKey: "user_id",
+    as: "waters"
+});
+
+// Un tracker weight à un seul user
+Weight.belongsTo(User, {
+    foreignKey: "user_id",
+    as: "user"
+});
+
+// Un tracker water à un seul user
+Water.belongsTo(User, {
+    foreignKey: "user_id",
+    as: "user"
 });
 
 // Un tracker sleep à un seul user

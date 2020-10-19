@@ -9,8 +9,6 @@ User.init({
     email: Sequelize.STRING,
     birthdate: Sequelize.DATE,
     gender: Sequelize.STRING,
-    weight: Sequelize.INTEGER,
-    imc: Sequelize.INTEGER,
     height: Sequelize.INTEGER,
     password: Sequelize.STRING,
     is_admin: Sequelize.BOOLEAN
