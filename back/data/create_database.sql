@@ -23,8 +23,8 @@ CREATE TABLE "user" (
 --
 
 INSERT INTO "user" ("id", "lastName", "firstName", "email", "birthdate", "gender", "weight", "imc", "height", "password", "is_admin") VALUES
-(1, 'MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '70', '23', '174', 'coucou123', 'true');
-
+(1, 'MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '70', '23', '174', 'coucou123', 'true'),
+(2, 'jon', 'doe', 'blabla@test.com', '25-05-90', 'male', '68', '22', '173', 'salut123', 'false');
 -- --------------------------------------------------------
 
 --
@@ -129,7 +129,8 @@ CREATE TABLE "food" (
 --
 
 INSERT INTO "food" ("id", "user_id", "date", "meal", "water", "emotion") VALUES
-(1, 1, '15-10-20','burger', '2', 'happy');
+(1, 1, '15-10-20','burger', '2', 'happy'),
+(2, 2, '15-10-20','pates', '1', 'happy');
 
 -- --------------------------------------------------------
 
@@ -150,7 +151,8 @@ CREATE TABLE "sleep" (
 --
 
 INSERT INTO "sleep" ("id", "user_id", "date", "bedTime", "wakeUpTime") VALUES
-(1, 1, '15-10-20','12:00', '07:00');
+(1, 1, '15-10-20','12:00', '07:00'),
+(2, 2, '30-12-19','11:00', '06:00');
 
 -- --------------------------------------------------------
 
@@ -173,7 +175,8 @@ CREATE TABLE "sport" (
 --
 
 INSERT INTO "sport" ("id", "user_id", "date", "workout", "duration", "intensity", "emotion") VALUES
-(1, 1, '15-10-20','escalade','60', '4', 'happy');
+(1, 1, '15-10-20','escalade','60', '4', 'happy'),
+(2, 2, '14-09-20','foot','120', '5', 'happy');
 
 -- --------------------------------------------------------
 
@@ -193,7 +196,8 @@ CREATE TABLE "task" (
 --
 
 INSERT INTO "task" ("id", "user_id", "title") VALUES
-(1, 1, 'reussir ce putain de projet');
+(1, 1, 'reussir ce putain de projet'),
+(2, 1, 'obtenir son titre rncp');
 
 
 COMMIT;
