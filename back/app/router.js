@@ -14,7 +14,7 @@ const userController = require('./controllers/userController');
 
 // // routes users : 
 // router.get('/login', userController.renderLogin);
-// router.post('/login', userController.loginAction);
+router.post('/login', userController.loginAction);
 router.get('/signup', userController.renderSignup);
 router.post('/signup', userController.signupAction);
 

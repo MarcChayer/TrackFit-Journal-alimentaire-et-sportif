@@ -55,7 +55,38 @@ const userController = {
 
 	renderSignup: (req, res) => {
 		res.render('signup');
-	},
+    },
+    
+    loginAction: async (req, res) => {
+        const { email, password } = req.body;
+        // on créé une const contenant un array d'erreur
+        const bodyError=[];
+		try {
+			// On vérifie que l'utilisateur est présent en BDD
+		const user = await User.findOne({ where: { email: email } });
+			if (!user) {
+				bodyError.push(`Cet utilisateur n'existe pas`);
+			}
+			// L'utilisateur existe bien en BDD, on vient de récupérer ses informations dans la variable user, on va donc tester son mot de passe
+			if (!bcrypt.compareSync(password, user.password)) {
+				// Si le mot de passe n'est pas le bon alors on va envoyer une erreur
+				bodyError.push(`Le mot de passe est incorrect`);
+			}
+			// L'utilisateur existe en BDD, et le mot de passe est correct
+			// Il faut donc connecter cet utilisateur
+			// On le stocke dans la session
+            req.session.user = user.toJSON();
+            // On oublie pas de supprimer le mot de passe
+			delete req.session.user.password;
+            res.status(200).json(user);
+			// Puis on redirige vers la page d'accueil
+			// res.redirect('/');
+		// On capture les eventuelles exceptions ( erreurs )
+		} catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+		}
+    }
 }
 
 module.exports = userController;
