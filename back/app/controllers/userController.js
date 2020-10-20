@@ -86,7 +86,11 @@ const userController = {
             console.log(error);
             res.status(500).json(error.toString());
 		}
-    }
+    },
+
+    renderLogin: (req, res) => {
+        res.render('login');
+	},
 }
 
 module.exports = userController;

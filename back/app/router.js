@@ -12,8 +12,8 @@ const userController = require('./controllers/userController');
 // router.get('/article/:id', articlesController.getOneArticle);
 // router.delete('/article/:id', articlesController.deleteArticle);
 
-// // routes users : 
-// router.get('/login', userController.renderLogin);
+// routes users : 
+router.get('/login', userController.renderLogin);
 router.post('/login', userController.loginAction);
 router.get('/signup', userController.renderSignup);
 router.post('/signup', userController.signupAction);
