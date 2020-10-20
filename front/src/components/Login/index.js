@@ -2,21 +2,28 @@ import React from 'react';
 import logo from 'src/assets/Logo_TrackFit_icone.svg';
 import './style.scss';
 
-const Login= () => (
-  <login>
-    <img src={logo} alt="trackFit" />
+const Login = () => (
+  <div className="login">
+    <img className="logotrackfit" src={logo} alt="trackFit" />
+    
     <h1>S'identifier</h1>
-    <form>
+
+    <form className="formlog">
+      <label>E-mail:</label>
+     <input className="log" type="text" placeholder="E-mail" />
+      
+      <label>Mot de passe:</label>
+      <input className="log" type="text" placeholder="Mot de passe" />
+      
       <label>
-       E-mail:
-     <input type="text" mail="E-mail" />
+        <input type="checkbox"/>
+        Rester connecté
       </label>
-      <label>
-      Mot de passe:
-      <input type="text" mdp="Mot de passe" />
-      </label>
-      <input type="submit" value="S'indentifier" />
+
+      <button>S'identifier</button>
     </form>
-  </login>
+    
+  </div>
 );
+
 export default Login;

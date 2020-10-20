@@ -6,3 +6,11 @@ module.exports = {
     cssnano: {},
   },
 }
+module.exports = {
+  plugins: [
+    // ...
+    require('tailwindcss'),
+    require('autoprefixer'),
+    // ...
+  ]
+}
