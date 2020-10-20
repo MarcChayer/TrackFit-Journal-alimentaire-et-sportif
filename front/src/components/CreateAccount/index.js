@@ -4,29 +4,36 @@ import './style.scss';
 
 
 const CreateAccount = () => (
-<createAccount>
-  <img src={logo} alt="trackFit" />
+<div className="createaccount">
+
+  <img className="logotrackfit" src={logo} alt="trackFit" />
   <h1>Créer votre compte</h1>
-  <form>
-  <label>
-    Votre nom :
-    <input type="text" name="name" />
-  </label>
-  <label>
-    E-mail:
-    <input type="text" mail="E-mail" />
-  </label>
-  <label>
-    Mot de passe:
-    <input type="text" mdp="Mot de passe" />
-  </label>
-  <label>
-    Mot de passe à nouveau :
-    <input type="text" mdpn="Mot de passe à nouveau" />
-  </label>
-  <input type="submit" value="Créer votre compte" />
+
+  <form className="createform">
+  
+  <label>Votre nom :</label>
+    <input className="create" type="text" placeholder="Nom" />
+  
+  <label>Votre prénom :</label>
+    <input className="create" type="text" placeholder="prénom" />
+
+
+  <label>E-mail:</label>
+    <input className="create" type="text" placeholder="E-mail" />
+  
+  <label>Mot de passe:</label>
+    <input className="create"type="text" placeholder="Mot de passe" />
+  
+  <label>Mot de passe à nouveau</label>
+    <input className="create" type="text" placeholder="Mot de passe à nouveau" />
+
+  <button>Créer votre compte</button>
   </form>
-  <p>Vous possèdez déjà un compte? <li><a href="#">Identifiez-vous</a></li></p>
-</createAccount>
+
+  <label>
+    Vous avez déjà un compte? <a href = "#" > Identifiez-vous </a>
+  </label>
+  
+</div>
 );
 export default CreateAccount;
