@@ -30,6 +30,7 @@ INSERT INTO "user" ("lastName", "firstName", "email", "birthdate", "gender", "he
 CREATE TABLE "weight" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
+    "date" TIMESTAMP NOT NULL,
     "weight" INTEGER,
     "imc" INTEGER
 );
@@ -38,9 +39,9 @@ CREATE TABLE "weight" (
 -- Contenu de la table 'weight'
 --
 
-INSERT INTO "weight" ("id", "user_id", "weight", "imc") VALUES
-(1, 1, '70', '23'),
-(2, 2, '68', '22');
+INSERT INTO "weight" ("id", "user_id", "date", "weight", "imc") VALUES
+(1, 1, "10-10-20", '70', '23'),
+(2, 2, "09-10-20", '68', '22');
 -- --------------------------------------------------------
 
 --
@@ -156,6 +157,7 @@ INSERT INTO "food" ("id", "user_id", "date", "meal", "type", "quantity", "calory
 CREATE TABLE "water" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
+    "date" TIMESTAMP NOT NULL,
     "water" INTEGER
 );
 
@@ -163,9 +165,9 @@ CREATE TABLE "water" (
 -- Contenu de la table 'user'
 --
 
-INSERT INTO "water" ("id", "user_id", "water") VALUES
-(1, 1, '2'),
-(2, 2, '150');
+INSERT INTO "water" ("id", "user_id", "date", "water") VALUES
+(1, 1, '15-10-20', '2'),
+(2, 2, '13-10-20', '150');
 -- --------------------------------------------------------
 
 --
