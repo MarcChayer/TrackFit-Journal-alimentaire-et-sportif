@@ -4,6 +4,7 @@ const sequelize = require('../database');
 class Weight extends Sequelize.Model {};
 
 Weight.init({
+    date: Sequelize.DATE,
     weight: Sequelize.INTEGER,
     imc: Sequelize.INTEGER
 }, {
