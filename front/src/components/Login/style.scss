@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  width: 50%;
+  width: 40%;
   margin:auto ;
   
 }
@@ -41,8 +41,20 @@ button {
   margin-top: 1em;
   height: 4em;
   font-size: 1em;
+  font-weight: bold;
+  color: white;
+  
 }
 
 .log {
   height: 3em;
 }
+
+
+.id {
+  font-weight: bold;
+  color: #3d5499;
+  
+}
+
+

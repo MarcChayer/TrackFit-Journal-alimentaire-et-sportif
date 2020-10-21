@@ -22,6 +22,8 @@ const Login = () => (
 
       <button>S'identifier</button>
     </form>
+
+    <p>Vous ne possèdez pas de compte?<a className="id" href = "#" > Identifiez-vous</a></p>
     
   </div>
 );
