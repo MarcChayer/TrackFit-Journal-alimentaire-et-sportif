@@ -21,8 +21,8 @@ CREATE TABLE "user" (
 --
 
 INSERT INTO "user" ("lastName", "firstName", "email", "birthdate", "gender", "height", "password", "is_admin") VALUES
-('MAMP', 'PMAM', 'test@test.com', '1990-20-04', 'male', '174', 'coucou123', 'true'),
-('jon', 'doe', 'blabla@test.com', '1990-25-05', 'male', '173', 'salut123', 'false');
+('MAMP', 'PMAM', 'test@test.com', '1990-04-20', 'male', '174', 'coucou123', 'true'),
+('jon', 'doe', 'blabla@test.com', '1990-05-25', 'male', '173', 'salut123', 'false');
 
 -- --------------------------------------------------------
 
@@ -40,8 +40,8 @@ CREATE TABLE "weight" (
 --
 
 INSERT INTO "weight" ("id", "user_id", "date", "weight", "imc") VALUES
-(1, 1, '20200928070000', '70', '23'),
-(2, 2, '20200910010000', '68', '22');
+(1, 1, '2020-09-28 07:00:00', '70', '23'),
+(2, 2, '2020-09-10 01:00:00', '68', '22');
 -- --------------------------------------------------------
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE "food" (
 --
 
 INSERT INTO "food" ("id", "user_id", "date", "meal", "type", "quantity", "calory", "emotion") VALUES
-(1, 1, '20201510140000','burger', 'proteine', '300', '1200', 'happy');
+(1, 1, '2020-12-10 14:00:00','burger', 'proteine', '300', '1200', 'happy');
 
 -- --------------------------------------------------------
 
@@ -166,8 +166,8 @@ CREATE TABLE "water" (
 --
 
 INSERT INTO "water" ("id", "user_id", "date", "water") VALUES
-(1, 1, '20201510110000', '2'),
-(2, 2, '20201310150000', '150');
+(1, 1, '2020-11-10 11:00:00', '2'),
+(2, 2, '2020-10-10 15:00:00', '150');
 -- --------------------------------------------------------
 
 --
@@ -187,8 +187,8 @@ CREATE TABLE "sleep" (
 --
 
 INSERT INTO "sleep" ("id", "user_id", "date", "bedTime", "wakeUpTime") VALUES
-(1, 1, '2020-15-10', '12:00:00', '07:00:00'),
-(2, 2, '2020-30-12', '11:00:00', '06:00:00');
+(1, 1, '2020-12-10', '12:00:00', '07:00:00'),
+(2, 2, '2020-04-12', '11:00:00', '06:00:00');
 
 -- --------------------------------------------------------
 
@@ -211,8 +211,8 @@ CREATE TABLE "sport" (
 --
 
 INSERT INTO "sport" ("id", "user_id", "date", "workout", "duration", "intensity", "emotion") VALUES
-(1, 1, '20201510180000','escalade','60', '4', 'happy'),
-(2, 2, '20201409170000','foot','120', '5', 'happy');
+(1, 1, '2020-04-10 18:00:00','escalade','60', '4', 'happy'),
+(2, 2, '2020-01-09 17:00:00','foot','120', '5', 'happy');
 
 -- --------------------------------------------------------
 
