@@ -2,13 +2,15 @@
 const express = require('express');
 const router = express.Router();
 
-const userController = require('./controllers/userController');
 // controllers import
+const userController = require('./controllers/userController');
+const articlesController = require('./controllers/articlesController');
+
 
 // route primordiale
 
 // routes articles :
-// router.get('/articles/:label', articlesController.getArticlesByLabel);
+router.get('/articles/:label', articlesController.getArticlesByLabel);
 // router.get('/article/:id', articlesController.getOneArticle);
 // router.delete('/article/:id', articlesController.deleteArticle);
 
@@ -18,8 +20,10 @@ router.post('/login', userController.loginAction);
 router.get('/signup', userController.renderSignup);
 router.post('/signup', userController.signupAction);
 
-// // profil d'un utilisateur
-// router.get('/profile/:id', userController.getProfile);
+// profil d'un utilisateur
+router.get('/profile/:id', userController.getProfile);
+// // complément d'information d'un utilisateur
+// router.post('/profile/:id', userController.otherInformationProfile);
 // // modification profil d'un utilisateur
 // router.patch('/profile/:id', userController.updateProfile);
 // // suppression du profil d'un utilisateur
