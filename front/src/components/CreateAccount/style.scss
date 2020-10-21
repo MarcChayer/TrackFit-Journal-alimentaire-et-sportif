@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  width: 50%;
+  width: 40%;
   margin:auto ;
 
 }
@@ -39,8 +39,18 @@ button {
   height: 4em;
   font-size: 1em;
   background-color: #3d5499;
+  font-weight: bold;
+  color: white;
 }
+
 
 .create {
   height: 3em;
+
+}
+
+.id {
+  font-weight: bold;
+  color: #3d5499;
+
 }

@@ -7,7 +7,7 @@ const CreateAccount = () => (
 <div className="createaccount">
 
   <img className="logotrackfit" src={logo} alt="trackFit" />
-  <h1>Créer votre compte</h1>
+  <h1>Créer un compte</h1>
 
   <form className="createform">
   
@@ -30,9 +30,9 @@ const CreateAccount = () => (
   <button>Créer votre compte</button>
   </form>
 
-  <label>
-    Vous avez déjà un compte? <a href = "#" > Identifiez-vous </a>
-  </label>
+  
+  <p>Vous avez déjà compte?<a className="id" href = "#" > Identifiez-vous</a></p>
+  
   
 </div>
 );
