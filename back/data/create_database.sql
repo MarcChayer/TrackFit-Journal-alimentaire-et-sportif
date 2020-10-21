@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
 -- on commence par détruire toutes les tables si elles existent
-DROP TABLE "user", "weight", "article", "favorite_article", "food", "water", "sleep", "sport", "task" CASCADE;
+DROP TABLE IF EXISTS "user", "weight", "article", "favorite_article", "food", "water", "sleep", "sport", "task" CASCADE;
 
 -- création des tables
 CREATE TABLE "user" (
@@ -21,8 +21,8 @@ CREATE TABLE "user" (
 --
 
 INSERT INTO "user" ("lastName", "firstName", "email", "birthdate", "gender", "height", "password", "is_admin") VALUES
-('MAMP', 'PMAM', 'test@test.com', '20-04-90', 'male', '174', 'coucou123', 'true'),
-('jon', 'doe', 'blabla@test.com', '25-05-90', 'male', '173', 'salut123', 'false');
+('MAMP', 'PMAM', 'test@test.com', '1990-20-04', 'male', '174', 'coucou123', 'true'),
+('jon', 'doe', 'blabla@test.com', '1990-25-05', 'male', '173', 'salut123', 'false');
 
 -- --------------------------------------------------------
 
@@ -40,8 +40,8 @@ CREATE TABLE "weight" (
 --
 
 INSERT INTO "weight" ("id", "user_id", "date", "weight", "imc") VALUES
-(1, 1, "10-10-20", '70', '23'),
-(2, 2, "09-10-20", '68', '22');
+(1, 1, '20200928070000', '70', '23'),
+(2, 2, '20200910010000', '68', '22');
 -- --------------------------------------------------------
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE "food" (
 --
 
 INSERT INTO "food" ("id", "user_id", "date", "meal", "type", "quantity", "calory", "emotion") VALUES
-(1, 1, '15-10-20','burger', 'proteine', '300', '1200', 'happy');
+(1, 1, '20201510140000','burger', 'proteine', '300', '1200', 'happy');
 
 -- --------------------------------------------------------
 
@@ -166,8 +166,8 @@ CREATE TABLE "water" (
 --
 
 INSERT INTO "water" ("id", "user_id", "date", "water") VALUES
-(1, 1, '15-10-20', '2'),
-(2, 2, '13-10-20', '150');
+(1, 1, '20201510110000', '2'),
+(2, 2, '20201310150000', '150');
 -- --------------------------------------------------------
 
 --
@@ -177,7 +177,7 @@ INSERT INTO "water" ("id", "user_id", "date", "water") VALUES
 CREATE TABLE "sleep" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
-    "date" TIMESTAMP NOT NULL,
+    "date" DATE NOT NULL,
     "bedTime" TIME NOT NULL,
     "wakeUpTime" TIME NOT NULL
 );
@@ -187,8 +187,8 @@ CREATE TABLE "sleep" (
 --
 
 INSERT INTO "sleep" ("id", "user_id", "date", "bedTime", "wakeUpTime") VALUES
-(1, 1, '15-10-20', '12:00', '07:00'),
-(2, 2, '30-12-19', '11:00', '06:00');
+(1, 1, '2020-15-10', '12:00:00', '07:00:00'),
+(2, 2, '2020-30-12', '11:00:00', '06:00:00');
 
 -- --------------------------------------------------------
 
@@ -211,8 +211,8 @@ CREATE TABLE "sport" (
 --
 
 INSERT INTO "sport" ("id", "user_id", "date", "workout", "duration", "intensity", "emotion") VALUES
-(1, 1, '15-10-20','escalade','60', '4', 'happy'),
-(2, 2, '14-09-20','foot','120', '5', 'happy');
+(1, 1, '20201510180000','escalade','60', '4', 'happy'),
+(2, 2, '20201409170000','foot','120', '5', 'happy');
 
 -- --------------------------------------------------------
 
