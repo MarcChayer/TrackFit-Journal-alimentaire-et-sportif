@@ -15,19 +15,15 @@ router.get('/articles/:label', articlesController.getArticlesByLabel);
 // router.delete('/article/:id', articlesController.deleteArticle);
 
 // routes users : 
-router.get('/login', userController.renderLogin);
 router.post('/login', userController.loginAction);
-router.get('/signup', userController.renderSignup);
 router.post('/signup', userController.signupAction);
 
 // profil d'un utilisateur
 router.get('/profile/:id', userController.getProfile);
-// // complément d'information d'un utilisateur
-// router.post('/profile/:id', userController.otherInformationProfile);
-// // modification profil d'un utilisateur
-// router.patch('/profile/:id', userController.updateProfile);
+// modification profil d'un utilisateur
+router.patch('/profile/:id', userController.updateProfile);
 // // suppression du profil d'un utilisateur
-// router.delete('/profile/:id', userController.deleteProfile);
+router.delete('/profile/:id', userController.deleteProfile);
 
 // // route dashboard
 // router.get('/dashboard/:id', dashboardController.getAllInfos);

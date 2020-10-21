@@ -34,11 +34,10 @@ const userController = {
             } else {
                 // on stock le password crypté
                 const passwordEncrypted = bcrypt.hashSync(password, 10);
-
                 let newUser = User.build({
-                    lastName: req.body.lastName,
-                    firstName: req.body.firstName,
-                    email: req.body.email,
+                    lastName,
+                    firstName,
+                    email,
                     password: passwordEncrypted,
                 });
                 await newUser.save();
@@ -50,10 +49,6 @@ const userController = {
             console.log(error);
             res.status(500).json(error.toString());
         }
-    },
-
-	renderSignup: (req, res) => {
-		res.render('signup');
     },
     
     loginAction: async (req, res) => {
@@ -85,38 +80,54 @@ const userController = {
             res.status(500).json(error.toString());
 		}
     },
-
-    renderLogin: (req, res) => {
-        res.render('login');
-    },
     // ça ne fonctionne pas, je n'arrive pas me co a la bdd je crois
     getProfile: async (req, res) => {
         try {
-            // Fournir les informations recupéré lors de l'inscription(nom, prénom, mail, date de naissance)
-            const { lastName, firstName, email, birthdate, password } = req.body;
-            console.log('info',lastName);
+            const id = parseInt(req.params.id);
             // d'un autre coté je veux pas recup les info via la session mais en recuperant les infos de ma BDD non ? 
-            const user = await User.findOne({ 
-                where : {
-                    lastName: lastName,
-                    firstName: firstName,
-                    email : email,
-                    birthdate:birthdate,
-                    password: password
-                }
-            });
+            const user = await User.findByPk(id);
+            // On oublie pas de supprimer le mot de passe et is_admin
+            user.password = undefined;
+            user.is_admin = undefined;
             // on renvoie les informations au front
             res.status(200).json(user);
-
         } catch (error) {
             console.log(error);
             res.status(500).json(error.toString());
         }
     },
     
-    // otherInformationProfile: async (req, res) => {
+    updateProfile: async (req, res) => {
+        try {
+            // const { lastName, firstName, birthdate, gender, height, estimatedSleepTime, password } = req.body;
+            const id = parseInt(req.params.id);
+            const user = await User.findByPk(id);
+            console.log(user);
+            if (!user) {
+                res.status(404).json({error: 'Cet utilisateur n\'existe pas'});
+            } else {
+                await user.update(req.body);
+                res.status(200).json(user);
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
 
-    // }
+    deleteProfile: async (req, res) => {
+        try {
+            const id = parseInt(req.params.id);
+            const user = await User.findByPk(id);
+            await user.destroy()
+            res.status(200).json(user);
+            res.redirect('/');
+            // Puis on redirige vers la page d'accueil
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
 };
 
 module.exports = userController;
