@@ -1,0 +1,60 @@
+@use 'src/styles/vars';
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: 40%;
+  margin:auto ;
+  
+}
+.logotrackfit { // logo Trackfit
+  width: 150px;
+  margin: auto;
+}
+
+button {
+  background-color: #3d5499;
+}
+
+.formlog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+label {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  
+}
+
+h1 {
+  margin: auto;
+  margin-top: 1em;
+  font-size: 2em;
+}
+
+button {
+  margin-top: 1em;
+  height: 4em;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  
+}
+
+.log {
+  height: 3em;
+}
+
+
+.id {
+  font-weight: bold;
+  color: #3d5499;
+  
+}
+
+
