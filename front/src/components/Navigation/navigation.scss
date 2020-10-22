@@ -1,0 +1,46 @@
+@use 'src/styles/vars';
+
+.navigation--desktop {
+  
+}
+
+.navigation {
+  &-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-link {
+    margin: 0 15px;
+  }
+
+  &-img {
+    margin-left:15px;
+    width: 180px;
+  }
+}
+
+
+@media (max-width:900px){ // mobile
+
+  .navigation--desktop {
+    display: none;
+  }
+
+  .navigation--mobile {
+    display: flex;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background-color: vars.$secondary-color;
+    border-radius: 10px;
+
+    &-img {
+      width: 56px;
+      padding: 10px;
+    }
+  }
+}
