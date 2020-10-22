@@ -21,6 +21,7 @@ CREATE TABLE "user" (
 -- Contenu de la table 'user'
 --
 
+
 INSERT INTO "user" ("lastName", "firstName", "email", "birthdate", "gender", "height", "estimatedSleepTime", "password", "is_admin") VALUES
 ('MAMP', 'PMAM', 'test@test.com', '1990-04-20', 'male', '174', '7', 'coucou123', 'true'),
 ('jon', 'doe', 'blabla@test.com', '1990-05-25', 'male', '173', '5', 'salut123', 'false');
