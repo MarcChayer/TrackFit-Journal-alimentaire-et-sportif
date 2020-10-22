@@ -80,11 +80,11 @@ const userController = {
             res.status(500).json(error.toString());
 		}
     },
-    // ça ne fonctionne pas, je n'arrive pas me co a la bdd je crois
+
     getProfile: async (req, res) => {
         try {
             const id = parseInt(req.params.id);
-            // d'un autre coté je veux pas recup les info via la session mais en recuperant les infos de ma BDD non ? 
+
             const user = await User.findByPk(id);
             // On oublie pas de supprimer le mot de passe et is_admin
             user.password = undefined;
@@ -121,8 +121,8 @@ const userController = {
             const user = await User.findByPk(id);
             await user.destroy()
             res.status(200).json(user);
-            res.redirect('/');
             // Puis on redirige vers la page d'accueil
+            res.redirect('/');
         } catch (error) {
             console.log(error);
             res.status(500).json(error.toString());
