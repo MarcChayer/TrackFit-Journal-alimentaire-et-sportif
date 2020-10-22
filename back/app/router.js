@@ -11,8 +11,8 @@ const articlesController = require('./controllers/articlesController');
 
 // routes articles :
 router.get('/articles/:label', articlesController.getArticlesByLabel);
-// router.get('/article/:id', articlesController.getOneArticle);
-// router.delete('/article/:id', articlesController.deleteArticle);
+router.get('/article/:label/:id', articlesController.getOneArticle);
+router.delete('/article/:label/:id', articlesController.deleteArticle);
 
 // routes users : 
 router.post('/login', userController.loginAction);

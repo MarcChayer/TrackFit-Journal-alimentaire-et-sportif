@@ -54,7 +54,7 @@ CREATE TABLE "article" (
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "media" TEXT NOT NULL,
-    "label"TEXT NOT NULL
+    "label" TEXT NOT NULL
 );
 
 --
