@@ -7,6 +7,7 @@ Article.init({
     title: Sequelize.STRING,
     content: Sequelize.STRING,
     media: Sequelize.STRING,
+    label: Sequelize.STRING
 }, {
     sequelize,
     tableName: "article"

@@ -4,7 +4,7 @@ const sequelize = require('../database');
 class Food extends Sequelize.Model {};
 
 Food.init({
-    date: Sequelize.DATEONLY,
+    date: Sequelize.DATE,
     bedtime: Sequelize.TIME,
     wakeUpTime: Sequelize.TIME
 }, {

@@ -10,6 +10,7 @@ User.init({
     birthdate: Sequelize.DATE,
     gender: Sequelize.STRING,
     height: Sequelize.INTEGER,
+    estimatedSleepTime: Sequelize.INTEGER,
     password: Sequelize.STRING,
     is_admin: Sequelize.BOOLEAN
 }, {
