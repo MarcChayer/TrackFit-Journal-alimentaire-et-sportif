@@ -32,11 +32,11 @@
   .navigation--mobile {
     display: flex;
     position: fixed;
-    bottom: 5px;
-    left: 5px;
-    right: 5px;
-    background-color: vars.$secondary-color;
-    border-radius: 10px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: white;
+    z-index: 2;
 
     &-img {
       width: 56px;

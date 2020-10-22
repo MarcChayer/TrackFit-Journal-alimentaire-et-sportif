@@ -1,30 +1,34 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import logo from 'src/assets/images/logo.svg';
+
 import './style.scss';
 
 const CreateAccount = () => (
   <div className="createaccount">
 
-    <img className="logotrackfit" src={logo} alt="trackFit" />
     <h1>Créer un compte</h1>
 
     <form className="createform">
-      <label>Votre nom :</label>
-      <input className="create" type="text" placeholder="Nom" />
-      <label>Votre prénom :</label>
-      <input className="create" type="text" placeholder="prénom" />
-      <label>E-mail:</label>
-      <input className="create" type="text" placeholder="E-mail" />
-      <label>Mot de passe:</label>
-      <input className="create" type="text" placeholder="Mot de passe" />
-      <label>Mot de passe à nouveau</label>
-      <input className="create" type="text" placeholder="Mot de passe à nouveau" />
+      <label>Votre nom :
+        <input className="create" type="text" placeholder="Nom" />
+      </label>
+      <label>Votre prénom :
+        <input className="create" type="text" placeholder="Prénom" />
+      </label>
+      <label>E-mail :
+        <input className="create" type="text" placeholder="E-mail" />
+      </label>
+      <label>Mot de passe :
+        <input className="create" type="text" placeholder="Mot de passe" />
+      </label>
+      <label>Mot de passe à nouveau :
+        <input className="create" type="text" placeholder="Mot de passe à nouveau" />
+      </label>
       <button type="submit">Créer votre compte</button>
     </form>
 
-    <p>Vous avez déjà compte?<a className="id" href="#"> Identifiez-vous</a></p>
+    <p>Vous avez déjà un compte ?<a className="id" href="/connexion"> Identifiez-vous</a></p>
 
   </div>
 );

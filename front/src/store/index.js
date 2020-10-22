@@ -2,7 +2,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 
 // == Import : local
-import rootReducer from 'src/reducers';
+// import rootReducer from 'src/reducers';
 import logMiddleware from '../middleware/logMiddleware';
 
 // == Enhancers
@@ -17,7 +17,7 @@ const enhancers = composeEnhancers(
 
 // == Store
 const store = createStore(
-  rootReducer,
+  // rootReducer,
   // preloadedState,
   enhancers,
 );

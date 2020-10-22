@@ -6,12 +6,9 @@ import './style.scss';
 // == Composant
 const SearchBar = () => (
   <div className="searchbar">
-    {/* <div className="shadow flex">
-      <input className="w-full rounded p-2" type="text" placeholder="Rechercher..." />
-      <button type="button" className="searchBar">
-        <p>🔍</p>
-      </button>
-    </div> */}
+    <div className="searchbar">
+      <input type="text" placeholder="🔍 Rechercher..." />
+    </div>
   </div>
 );
 
