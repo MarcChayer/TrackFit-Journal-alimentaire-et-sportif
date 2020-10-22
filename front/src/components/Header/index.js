@@ -1,17 +1,22 @@
+/* eslint-disable import/no-unresolved */
 // == Import npm
 import React from 'react';
 
+// component
 import Navigation from 'src/components/Navigation';
 import SearchBar from 'src/components/SearchBar';
 
+// image
+import logo from 'src/assets/images/logo.svg';
+
 // == Import
-import './header.scss';
+import './style.scss';
 
 // == Composant
 const Header = () => (
   <header className="header">
 
-    <img src="http://paurtfolio.fr/apo/logo.svg" alt="logo" className="logo" />
+    <img src={logo} alt="logoTrackFit" className="logo" />
 
     <div className="navigation">
       <Navigation />

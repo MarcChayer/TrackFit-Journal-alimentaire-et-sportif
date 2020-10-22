@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import logo from 'src/assets/Logo_TrackFit_icone.svg';
+import logo from 'src/assets/images/logo.svg';
 import './style.scss';
 
 const CreateAccount = () => (
