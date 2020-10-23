@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Field from 'src/components/CreateAccount/Field';
+import Field from 'src/containers/Field';
 
 import './createAccount.scss';
 
@@ -43,7 +43,7 @@ const CreateAccount = (
         <label>E-mail :</label>
         <Field
           value={email}
-          name="e-mail"
+          name="email"
           placeholder="E-mail"
         />
         <label>Mot de passe :</label>
@@ -74,4 +74,5 @@ CreateAccount.propTypes = {
   confirmedPassword: PropTypes.string.isRequired,
   handleRegisterUser: PropTypes.func.isRequired,
 };
+
 export default CreateAccount;
