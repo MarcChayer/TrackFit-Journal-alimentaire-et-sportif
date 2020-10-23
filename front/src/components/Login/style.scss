@@ -14,10 +14,6 @@
   margin: auto;
 }
 
-button {
-  background-color: #3d5499;
-}
-
 .formlog {
   display: flex;
   flex-direction: column;
@@ -35,19 +31,20 @@ label {
   margin-top: 0.25em;
 }
 
-h1 {
+.title {
   margin: auto;
   margin-top: 1em;
   font-size: 2em;
 }
 
-button {
+.button {
   margin-top: 1em;
   height: 4em;
   font-size: 1em;
   font-weight: bold;
   color: white;
   border: none;
+  background-color: #3d5499;
 }
 
 .log {

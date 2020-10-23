@@ -27,17 +27,13 @@ label {
   margin-top: 0.5em;
 }
 
-.create {
-  margin-top: 0.25em;
-}
-
-h1 {
+.title {
   margin: auto;
   margin-top: 1em;
   font-size: 2em;
 }
 
-button {
+.button {
   margin-top: 1em;
   height: 4em;
   font-size: 1em;
@@ -47,17 +43,12 @@ button {
   border: none;
 }
 
-
-.create {
-  height: 3em;
-
-}
-
 .id {
   font-weight: bold;
   color: #3d5499;
 
 }
+
 @media (max-width:900px) { // mobile
   .createaccount {
     width:90%;
