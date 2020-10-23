@@ -13,7 +13,7 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 
 // == Import
-import './style.scss';
+import './dashboard.scss';
 import food from 'src/assets/images/food.svg';
 import water from 'src/assets/images/water.svg';
 import sleep from 'src/assets/images/sleep.svg';

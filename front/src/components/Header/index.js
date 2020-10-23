@@ -10,7 +10,7 @@ import SearchBar from 'src/components/SearchBar';
 import logo from 'src/assets/images/logo.svg';
 
 // == Import
-import './style.scss';
+import './header.scss';
 
 // == Composant
 const Header = () => (

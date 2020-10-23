@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 
-import './style.scss';
+import './navigation.scss';
 
 // == Composant
 const Navigation = () => (

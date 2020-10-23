@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Field from 'src/components/CreateAccount/Field';
 
-import './style.scss';
+import './createAccount.scss';
 
 const CreateAccount = (
   {

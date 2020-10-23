@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 // == Import
-import './style.scss';
+import './searchBar.scss';
 
 // == Composant
 const SearchBar = () => (

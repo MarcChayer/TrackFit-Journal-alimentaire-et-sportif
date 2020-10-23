@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import './style.scss';
+import './login.scss';
 
 const Login = () => (
   <div className="login">
