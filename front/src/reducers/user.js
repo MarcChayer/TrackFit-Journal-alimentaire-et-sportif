@@ -1,11 +1,14 @@
-import { REGISTER_INPUT_SUBMIT } from '../actions/user';
+import {
+  REGISTER_INPUT_SUBMIT,
+  REGISTER_INPUT_CHANGE,
+} from '../actions/user';
 
 const initialState = {
-  lastName: 'toto',
-  firstName: 'tata',
-  email: 'toto@test.com',
-  password: '123123',
-  confirmedPassword: '123123',
+  lastName: '',
+  firstName: '',
+  email: '',
+  password: '',
+  confirmedPassword: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -13,6 +16,11 @@ const reducer = (state = initialState, action = {}) => {
     case REGISTER_INPUT_SUBMIT:
       return {
         ...state,
+      };
+    case REGISTER_INPUT_CHANGE:
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;

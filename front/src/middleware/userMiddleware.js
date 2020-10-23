@@ -5,7 +5,7 @@ import { REGISTER_INPUT_SUBMIT } from '../actions/user';
 export default (store) => (next) => (action) => {
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
-      console.log('ici');
+      console.log('ici', store.getState().user);
       const user = {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
