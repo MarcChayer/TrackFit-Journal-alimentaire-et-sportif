@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
 
 -- on commence par détruire toutes les tables si elles existent
-DROP TABLE IF EXISTS "user", "weight", "article", "favorite_article", "food", "aliment_type", "water", "sleep", "sport", "sport_type", "task" CASCADE;
+DROP TABLE IF EXISTS "user", "weight", "article", "favorite_article", "food", "food_type", "water", "sleep", "sport", "sport_type", "task" CASCADE;
 
 -- création des tables
 CREATE TABLE "user" (
@@ -53,7 +53,7 @@ CREATE TABLE "favorite_article" (
 -- Structure de la table 'aliment_type'
 --
 
-CREATE TABLE "aliment_type" (
+CREATE TABLE "food_type" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "name" TEXT NOT NULL,
     "value" TEXT NOT NULL
@@ -66,7 +66,7 @@ CREATE TABLE "aliment_type" (
 CREATE TABLE "food" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
-    "aliment_type_id" INTEGER REFERENCES "aliment_type"("id") NOT NULL,
+    "food_type_id" INTEGER REFERENCES "food_type"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
     "meal" TEXT NOT NULL,
     "type" TEXT NOT NULL,
