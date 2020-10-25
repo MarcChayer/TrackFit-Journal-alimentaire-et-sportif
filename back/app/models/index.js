@@ -6,6 +6,8 @@ const Task = require('./task');
 const User = require('./user');
 const Weight = require('./weight');
 const Water = require('./water');
+const Food_type = require('./food_type');
+const Sport_type = require('./sport_type');
 
 // Relations
 
@@ -38,6 +40,30 @@ User.hasMany(Sport, {
 Sport.belongsTo(User, {
     foreignKey: "user_id",
     as: "user"
+});
+
+// une donnée type peut avoir plusieurs enregistrements sports
+Sport_type.hasMany(Sport, {
+    foreignKey: "sport_type_id",
+    as: "sports_type"
+});
+
+// Un enregistrement sport ne peut avoir qu'un seul type
+Sport.belongsTo(Sport_type, {
+    foreignKey: "sport_type_id",
+    as: "sport"
+});
+
+// une donnée type peut avoir plusieurs enregistrements foods
+Food_type.hasMany(Food, {
+    foreignKey: "food_type_id",
+    as: "foods_type"
+});
+
+// Un enregistrement food ne peut avoir qu'un seul type
+Food.belongsTo(Food_type, {
+    foreignKey: "food_type_id",
+    as: "food"
 });
 
 // Un user à plusieurs données de sleep
@@ -100,4 +126,4 @@ Task.belongsTo(User, {
     as: "user"
 });
 
-module.exports = { Article, Food, Sleep, Sport, Task, User };
+module.exports = { Article, Food, Sleep, Sport, Task, User, Food_type, Sport_type };
