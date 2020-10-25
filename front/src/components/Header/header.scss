@@ -1,16 +1,18 @@
 @use 'src/styles/vars';
  
-  .header { // header englobe logo + compo navigation (en desktop uniquement) + compo searchbar + logo login
-    position: relative;
-    right: 0;
+  .header { // header englobe logo + compo navigation (en desktop uniquement) + compo searchbar + logo signin
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    border-bottom: vars.$primary-color 2px solid;
     box-shadow: 1px 1px 12px #555;
+    z-index: 1;
   }
 
   .logo { // logo Trackfit
@@ -26,7 +28,7 @@
     display: none;
   }
   
-  .bloc-right { // bloc à droite, comprend searchbar + login
+  .bloc-right { // bloc à droite, comprend searchbar + signin
     float: right;
     display: flex;
     flex-direction: row;
@@ -41,13 +43,11 @@
     width: 150px;
   }
   
-  .login {
-    margin: 0 20px 0 0px;
+  .signin {
+    margin: 0 10px 0 0;
 
     &-link { // lien pour se loguer
       text-align: right;
-      padding: 5px;
-      margin-right: 15px;
     }
 
     &-img { // logo pour se loguer
@@ -68,6 +68,9 @@
   .header {
     background-color: white;
     box-shadow: 1px 1px 6px #555;
+    position:fixed;
+    top: 0;
+    left: 0;
 
     &-link {
       text-align: right;

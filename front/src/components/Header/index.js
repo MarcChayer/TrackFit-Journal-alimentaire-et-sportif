@@ -10,7 +10,7 @@ import SearchBar from 'src/components/SearchBar';
 import logo from 'src/assets/images/logo.svg';
 
 // == Import
-import './style.scss';
+import './header.scss';
 
 // == Composant
 const Header = () => (
@@ -27,9 +27,9 @@ const Header = () => (
         <SearchBar />
       </div>
 
-      <div className="login">
-        <a href="/login" className="login-link">
-          <img src="http://paurtfolio.fr/apo/login.svg" alt="se connecter" className="login-img" />
+      <div className="signin">
+        <a href="/connexion" className="signin-link">
+          <img src="http://paurtfolio.fr/apo/login.svg" alt="se connecter" className="signin-img" />
         </a>
       </div>
     </div>

@@ -39,11 +39,11 @@ router.delete('/profile/:id', userController.deleteProfile);
 // router.post('/dashboard/:id/sleep', dashboardController.postDataSleep);
 
 // // on envoie les nouvelles données du tracker task en bdd
-// router.post('/task', taskController.createTask);
+// router.post('/dashboard/:id/task', taskController.createTask);
 // // tracker task : supression d'une tâche
-// router.delete('/task/:id', taskController.deleteTask);
+// router.delete('/dashboard/:id/task/:id', taskController.deleteTask);
 // // on modifie les données d'une task
-// router.patch('/task/:id', taskController.patchTask);
+// router.patch('/dashboard/:id/task/:id', taskController.patchTask);
 
 // Export
 module.exports = router;
