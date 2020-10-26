@@ -39,7 +39,7 @@ User.hasMany(Sport, {
 // Un tracker sport à un seul user
 Sport.belongsTo(User, {
     foreignKey: "user_id",
-    as: "user"
+    as: "user_sport"
 });
 
 // une donnée type peut avoir plusieurs enregistrements sports
@@ -87,19 +87,19 @@ User.hasMany(Water, {
 // Un tracker weight à un seul user
 Weight.belongsTo(User, {
     foreignKey: "user_id",
-    as: "user"
+    as: "user_weight"
 });
 
 // Un tracker water à un seul user
 Water.belongsTo(User, {
     foreignKey: "user_id",
-    as: "user"
+    as: "user_water"
 });
 
 // Un tracker sleep à un seul user
 Sleep.belongsTo(User, {
     foreignKey: "user_id",
-    as: "user"
+    as: "user_sleep"
 });
 
 // Un user à plusieurs données de food
@@ -111,7 +111,7 @@ User.hasMany(Food, {
 // Un tracker food à un seul user
 Food.belongsTo(User, {
     foreignKey: "user_id",
-    as: "user"
+    as: "user_food"
 });
 
 // Un user à plusieurs données de task
@@ -123,7 +123,7 @@ User.hasMany(Task, {
 // Un task à un seul user
 Task.belongsTo(User, {
     foreignKey: "user_id",
-    as: "user"
+    as: "user_task"
 });
 
 module.exports = { Article, Food, Sleep, Sport, Task, User, Food_type, Sport_type };
