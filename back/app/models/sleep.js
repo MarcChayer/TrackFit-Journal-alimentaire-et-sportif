@@ -1,16 +1,16 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
-class Food extends Sequelize.Model {};
+class Sleep extends Sequelize.Model {};
 
-Food.init({
+Sleep.init({
     date: Sequelize.DATE,
     bedtime: Sequelize.TIME,
     wakeUpTime: Sequelize.TIME
 }, {
     sequelize,
-    tableName: "food"
+    tableName: "sleep"
 });
 
 
-module.exports = Food;
+module.exports = Sleep;
