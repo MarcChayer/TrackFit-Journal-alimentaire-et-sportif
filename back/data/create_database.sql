@@ -34,6 +34,7 @@ CREATE TABLE "article" (
     "id" SERIAL PRIMARY KEY,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
+    "source" TEXT NOT NULL,
     "media" TEXT NOT NULL,
     "label" TEXT NOT NULL
 );
