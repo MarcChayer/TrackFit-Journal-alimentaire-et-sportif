@@ -1,4 +1,33 @@
+@use "sass:color";
+
+// Utilisation de 2 fonctions
+$background: rgba(#2e5849, 1);
+$backgroundDark: color.scale($background, $lightness: -30%);
+
+$inputBackground:#1c382f;
+$inputBorder: #183129;
+$insetShadowInput: inset 25px 25px 25px 25px rgba(0, 0, 0, 0.1);
+$insetShadowInputFocused: inset 0 0 10px 15px rgba(0, 0, 0, 0.1);
+$textInput: #fff;
+$inputPlaceholder: rgba(255, 255, 255, .5);
+$taskBackground: #eee;
+$taskBorder: #ccc;
+
+
+
+
+
 $primary-color: #3d5499;
 $secondary-color: #6abfbd;
 $background-color: #f3f6ff;
 
+$food-color: #d5e4ba;
+$water-color: #c2e4f0;
+$sport-color: #f3aaa2;
+$sleep-color: #9ea2cb;
+$weight-color: #fcdcac;
+
+$box-shadow:1px 1px 12px #555;
+$full-radius:5em;
+
+$trackers-icons-width:5em;

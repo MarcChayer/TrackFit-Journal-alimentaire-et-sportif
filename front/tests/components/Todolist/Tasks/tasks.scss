@@ -1,0 +1,22 @@
+.listContainer {
+  padding: 20px 0;
+}
+
+.listContainer {
+  &_task {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 5px 0;
+  }
+
+  &_taskCheckbox {
+    margin-right: 20px;
+  }
+}
+
+.listContainer_task.listContainer_task--done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

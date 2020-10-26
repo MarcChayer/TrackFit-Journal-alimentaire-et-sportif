@@ -7,7 +7,7 @@ import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
 import Dashboard from 'src/components/Dashboard';
-import Statistics from 'src/components/Statistics';
+// import Statistics from 'src/components/Statistics';
 
 // == Composant
 const App = () => (
@@ -26,7 +26,6 @@ const App = () => (
     <Route path="/tableaudebord">
       <Header />
       <Dashboard />
-      <Statistics />
     </Route>
   </div>
 );

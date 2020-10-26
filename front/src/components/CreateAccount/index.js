@@ -32,13 +32,13 @@ const CreateAccount = (
         <Field
           value={firstName}
           name="firstName"
-          placeholder="nom"
+          placeholder="Nom"
         />
         <label>Votre prénom :</label>
         <Field
           value={lastName}
           name="lastName"
-          placeholder="PréNom"
+          placeholder="Prénom"
         />
         <label>E-mail :</label>
         <Field

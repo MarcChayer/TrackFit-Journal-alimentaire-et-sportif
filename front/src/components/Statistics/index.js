@@ -9,11 +9,11 @@ import {
 
 // == Import
 import './statistics.scss';
-import food from 'src/assets/images/food.svg';
-import water from 'src/assets/images/water.svg';
-import sleep from 'src/assets/images/sleep.svg';
-import sport from 'src/assets/images/sport.svg';
-import weight from 'src/assets/images/weight.svg';
+import food from 'src/assets/images/icones/icone-alimentation.svg';
+import water from 'src/assets/images/icones/icone-water.svg';
+import sleep from 'src/assets/images/icones/icone-sommeil.svg';
+import sport from 'src/assets/images/icones/icone-sport.svg';
+import weight from 'src/assets/images/icones/icone-poids.svg';
 
 // == Composant
 const Statistics = () => (
