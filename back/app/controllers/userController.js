@@ -5,7 +5,7 @@ const User = require('../models/user');
 const userController = {
     signupAction: async (req, res) => {
         try {
-            const { lastName, firstName, email, password } = req.body.user;
+            const { lastName, firstName, email, password, confirmedPassword } = req.body;
             // on créé une const contenant un array d'erreur
             const bodyError=[];
             // si l'utilisateur ne rempli les input, il reçoit une alert
@@ -21,7 +21,7 @@ const userController = {
 			if (password.trim() === '') {
 				bodyError.push('Merci de saisir un mot de passe');
             }
-			if (password !== password) {
+			if (password !== confirmedPassword) {
 				bodyError.push('Les 2 mots de passe sont différents');
 			}
 			// On vérifie que l'utilisateur est présent en BDD
@@ -53,8 +53,6 @@ const userController = {
     
     loginAction: async (req, res) => {
         const { email, password } = req.body;
-        console.log(req.body);
-
         // on créé une const contenant un array d'erreur
         const bodyError=[];
 		try {
@@ -104,7 +102,6 @@ const userController = {
             // const { lastName, firstName, birthdate, gender, height, estimatedSleepTime, password } = req.body;
             const id = parseInt(req.params.id);
             const user = await User.findByPk(id);
-            console.log(user);
             if (!user) {
                 res.status(404).json({error: 'Cet utilisateur n\'existe pas'});
             } else {
@@ -121,7 +118,7 @@ const userController = {
         try {
             const id = parseInt(req.params.id);
             const user = await User.findByPk(id);
-            await user.destroy()
+            await user.destroy();
             res.status(200).json(user);
             // Puis on redirige vers la page d'accueil
             res.redirect('/');

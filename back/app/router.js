@@ -30,21 +30,21 @@ router.delete('/profile/:id', userController.deleteProfile);
 router.get('/dashboard/:id', dashboardController.getAllInfos);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/sport', dashboardController.postDataSport);
-// // Envoyer les données du tracker 
+// Envoyer les données du tracker 
 router.post('/dashboard/:id/food', dashboardController.postDataFood);
-// // Envoyer les données du tracker 
-// router.post('/dashboard/:id/weight', dashboardController.postDataWeight);
-// // Envoyer les données du tracker 
-// router.post('/dashboard/:id/water', dashboardController.postDataWater);
-// // Envoyer les données du tracker 
-// router.post('/dashboard/:id/sleep', dashboardController.postDataSleep);
+// Envoyer les données du tracker 
+router.post('/dashboard/:id/weight', dashboardController.postDataWeight);
+// Envoyer les données du tracker 
+router.post('/dashboard/:id/water', dashboardController.postDataWater);
+// Envoyer les données du tracker 
+router.post('/dashboard/:id/sleep', dashboardController.postDataSleep);
 
-// // on envoie les nouvelles données du tracker task en bdd
-// router.post('/dashboard/:id/task', dashboardController.createTask);
-// // tracker task : supression d'une tâche
-// router.delete('/dashboard/:id/task/:id', dashboardController.deleteTask);
-// // on modifie les données d'une task
-// router.patch('/dashboard/:id/task/:id', dashboardController.patchTask);
+// on envoie les nouvelles données du tracker task en bdd
+router.post('/dashboard/:id/task', dashboardController.createTask);
+// tracker task : supression d'une tâche
+router.delete('/dashboard/:id/task/:id', dashboardController.deleteTask);
+// on modifie les données d'une task
+router.patch('/dashboard/:id/task/:id', dashboardController.updateTask);
 
 // Export
 module.exports = router;
