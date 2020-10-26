@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 
-import './style.scss';
+import './navigation.scss';
 
 // == Composant
 const Navigation = () => (
@@ -9,9 +9,9 @@ const Navigation = () => (
     <nav className="navigation--desktop">
       <ul className="navigation-list">
         <li><a href="/" className="navigation-link">Accueil</a></li>
-        <li><a href="/:slug" className="navigation-link">Alimentation</a></li>
-        <li><a href="/:slug" className="navigation-link">Sport</a></li>
-        <li><a href="/:slug" className="navigation-link">Bien-être</a></li>
+        <li><a href="/articles/alimentation" className="navigation-link">Alimentation</a></li>
+        <li><a href="/articles/sport" className="navigation-link">Sport</a></li>
+        <li><a href="/articles/bien-etre" className="navigation-link">Bien-être</a></li>
         <li><a href="/tableaudebord" className="navigation-link">Tableau de bord</a></li>
       </ul>
     </nav>

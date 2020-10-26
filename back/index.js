@@ -8,11 +8,16 @@ const app = express();
 
 // router
 const router = require('./app/router');
+const bodyParser = require('body-parser');
 
-const PORT = process.env.PORT || 5050;
+const app = express();
 
 // Initialisation de la lecture de paramètre post ( création de req.body )
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+// router
+app.use(bodyParser.json());
+
+const PORT = process.env.PORT || 5050;
 
 // Initialisation des sessions
 app.use(
@@ -31,6 +36,19 @@ app.use(
 
 // Ici on utilise notre custom user middleware afin de remplir la variable locals.connected_user
 app.use(userMiddleware);
+
+// middleware CORS pour autoriser l'accées à l'API d'un autre domaine
+
+app.use((req, res, next) => {
+    // on autorise l'accés au front
+    res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+    // partage des cookies
+    res.header('Access-Control-Allow-Credentials', true);
+    // partage des données entres origins
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
 
 app.use(router);
 

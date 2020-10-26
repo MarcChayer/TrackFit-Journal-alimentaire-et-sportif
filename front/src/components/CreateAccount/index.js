@@ -1,31 +1,78 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import logo from 'src/assets/images/logo.svg';
-import './style.scss';
+import PropTypes from 'prop-types';
+import Field from 'src/containers/Field';
 
-const CreateAccount = () => (
-  <div className="createaccount">
+import './createAccount.scss';
 
-    <img className="logotrackfit" src={logo} alt="trackFit" />
-    <h1>Créer un compte</h1>
+const CreateAccount = (
+  {
+    lastName,
+    firstName,
+    email,
+    password,
+    confirmedPassword,
+    handleRegisterUser,
+  },
+) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('soumission du formulaire d\'inscription');
+    handleRegisterUser();
+  };
+  console.log('firstName', firstName);
+  return (
+    <div className="createaccount">
 
-    <form className="createform">
-      <label>Votre nom :</label>
-      <input className="create" type="text" placeholder="Nom" />
-      <label>Votre prénom :</label>
-      <input className="create" type="text" placeholder="prénom" />
-      <label>E-mail:</label>
-      <input className="create" type="text" placeholder="E-mail" />
-      <label>Mot de passe:</label>
-      <input className="create" type="text" placeholder="Mot de passe" />
-      <label>Mot de passe à nouveau</label>
-      <input className="create" type="text" placeholder="Mot de passe à nouveau" />
-      <button type="submit">Créer votre compte</button>
-    </form>
+      <h1 className="title">Créer un compte</h1>
 
-    <p>Vous avez déjà compte?<a className="id" href="#"> Identifiez-vous</a></p>
+      <form className="createform" onSubmit={handleSubmit}>
+        <label>Votre nom :</label>
+        <Field
+          value={firstName}
+          name="firstName"
+          placeholder="nom"
+        />
+        <label>Votre prénom :</label>
+        <Field
+          value={lastName}
+          name="lastName"
+          placeholder="PréNom"
+        />
+        <label>E-mail :</label>
+        <Field
+          value={email}
+          name="email"
+          placeholder="E-mail"
+        />
+        <label>Mot de passe :</label>
+        <Field
+          value={password}
+          name="password"
+          placeholder="Mot de passe"
+        />
+        <label>Confirmez votre mot de passe :</label>
+        <Field
+          value={confirmedPassword}
+          name="confirmedPassword"
+          placeholder="Confirmez votre mot de passe"
+        />
+        <button className="button" type="submit">Créer votre compte</button>
+      </form>
 
-  </div>
-);
+      <p>Vous avez déjà un compte ?<a className="id" href="/connexion"> Identifiez-vous</a></p>
+    </div>
+  );
+};
+
+CreateAccount.propTypes = {
+  lastName: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  confirmedPassword: PropTypes.string.isRequired,
+  handleRegisterUser: PropTypes.func.isRequired,
+};
+
 export default CreateAccount;

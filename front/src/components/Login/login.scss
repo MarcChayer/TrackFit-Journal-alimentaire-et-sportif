@@ -1,56 +1,66 @@
 @use 'src/styles/vars';
-.createaccount {
+.login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: white;
   width: 40%;
   margin:auto ;
-
+  margin-top: 80px;  
 }
 
-.logotrackfit { // logo Trackfit
+.logotrackfit { 
   width: 150px;
   margin: auto;
 }
 
-.createform {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 1em;
-    margin-top: 1em;
+.formlog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 label {
-  margin-bottom: 1em;
-  margin-top: 1em;
-
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 
-h1 {
+.log {
+  margin-top: 0.25em;
+}
+
+.title {
   margin: auto;
   margin-top: 1em;
   font-size: 2em;
 }
 
-button {
+.button {
   margin-top: 1em;
   height: 4em;
   font-size: 1em;
-  background-color: #3d5499;
   font-weight: bold;
   color: white;
+  border: none;
+  background-color: #3d5499;
 }
 
-
-.create {
+.log {
   height: 3em;
-
 }
+
 
 .id {
   font-weight: bold;
   color: #3d5499;
+}
 
+
+
+@media (max-width:900px) { // mobile
+  .login {
+    width:90%;
+  }
 }

@@ -1,0 +1,27 @@
+@use 'src/styles/vars';
+
+input[type=text] {
+  float: right;
+  padding: 6px;
+  font-size: 17px;
+  border: 1px solid vars.$secondary-color;
+  border-radius: 5px;
+  width: 100%;
+}
+
+@media (max-width:1100px){
+
+  .navigation-link {
+    margin: 0 9px;
+}
+  input[type=text] {
+    width: 100%;
+  }
+}
+
+
+@media (max-width:900px){ // mobile
+  input[type=text] {
+    width: 100%;
+  }
+}
