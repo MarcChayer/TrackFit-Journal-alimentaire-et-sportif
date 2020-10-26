@@ -45,25 +45,25 @@ Sport.belongsTo(User, {
 // une donnée type peut avoir plusieurs enregistrements sports
 Sport_type.hasMany(Sport, {
     foreignKey: "sport_type_id",
-    as: "sports_type"
+    as: "sport"
 });
 
 // Un enregistrement sport ne peut avoir qu'un seul type
 Sport.belongsTo(Sport_type, {
     foreignKey: "sport_type_id",
-    as: "sport"
+    as: "sports_type"
 });
 
 // une donnée type peut avoir plusieurs enregistrements foods
 Food_type.hasMany(Food, {
     foreignKey: "food_type_id",
-    as: "foods_type"
+    as: "food"
 });
 
 // Un enregistrement food ne peut avoir qu'un seul type
 Food.belongsTo(Food_type, {
     foreignKey: "food_type_id",
-    as: "food"
+    as: "foods_type"
 });
 
 // Un user à plusieurs données de sleep

@@ -6,7 +6,6 @@ class Sport extends Sequelize.Model {};
 Sport.init({
     // pas sûr pour la ligne ci-dessous : 
     date: Sequelize.DATEONLY,
-    workout: Sequelize.STRING,
     duration: Sequelize.INTEGER,
     intensity: Sequelize.STRING,
     emotion: Sequelize.STRING

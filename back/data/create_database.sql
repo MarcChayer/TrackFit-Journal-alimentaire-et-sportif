@@ -69,10 +69,7 @@ CREATE TABLE "food" (
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "food_type_id" INTEGER REFERENCES "food_type"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
-    "meal" TEXT NOT NULL,
-    "type" TEXT NOT NULL,
     "quantity" INTEGER NOT NULL,
-    "calory" INTEGER,
     "emotion" TEXT
 );
 
@@ -106,7 +103,6 @@ CREATE TABLE "sport_type" (
     "value" TEXT NOT NULL
 );
 
-
 --
 -- Structure de la table 'sport'
 --
@@ -116,7 +112,6 @@ CREATE TABLE "sport" (
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "sport_type_id" INTEGER REFERENCES "sport_type"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
-    "workout" TEXT NOT NULL,
     "duration" INTEGER NOT NULL,
     "intensity" TEXT NOT NULL,
     "emotion" TEXT
