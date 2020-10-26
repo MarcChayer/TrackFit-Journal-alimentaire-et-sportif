@@ -3,6 +3,10 @@ const userMiddleware = require('./app/middlewares/userMiddleware');
 // Express
 const express = require('express');
 const session = require('express-session');
+const app = express();
+
+
+// router
 const router = require('./app/router');
 const bodyParser = require('body-parser');
 
