@@ -5,7 +5,7 @@ const User = require('../models/user');
 const userController = {
     signupAction: async (req, res) => {
         try {
-            const { lastName, firstName, email, password, confirmedPassword } = req.body;
+            const { lastName, firstName, email, password, confirmedPassword } = req.body.user;
             // on créé une const contenant un array d'erreur
             const bodyError=[];
             // si l'utilisateur ne rempli les input, il reçoit une alert
