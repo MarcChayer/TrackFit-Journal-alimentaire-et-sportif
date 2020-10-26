@@ -1,24 +1,22 @@
 @use 'src/styles/vars';
 
+body {
+  overflow-y: hidden;
+}
+
 .dashboard {
   width: 100vw;
-  margin: calc(100px + 2.5vw) auto 0;
+  margin-top: 65px;
   padding: 0;
   color: #4B5C6B;
-  background-color: white;
-  box-shadow: 1px 1px 5px #D7DBE6;
-}
-@media (min-width: 321px) {
-  .dashboard {
-    width: 95vw;
-  }
+  background-color:vars.$background-color;
 }
 
 .dashboard h2 {
   font-weight: bold;
   line-height: 30px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 1em;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -31,7 +29,7 @@
 }
 
 .dashboard__menu {
-  font-size: 15px;
+  font-size: 1em;
   width: 100%;
   padding: 30px;
 }
@@ -54,7 +52,7 @@
   background-color: white;
 }
 .dashboard__menu-item:not(:last-of-type) {
-  margin-right: 15px;
+  margin-right: 1em;
 }
 .dashboard__menu-item:hover {
   cursor: pointer;
@@ -87,10 +85,13 @@
 
 .trackers {
   display: flex;
-  height: 30vh;
-  min-height: 300px;
-  margin-bottom: 15px;
+  height: 15em;
+  margin-bottom: 2em;
+  @media (max-width: 900px) {
+      flex-direction: column;
+    }
 }
+
 
 .trackers__item {
   display: flex;
@@ -99,16 +100,71 @@
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  background-color: #C3CFD9;
+  background-color: white;
+  position: relative;
+  border-radius: 2em;
+  box-shadow: vars.$box-shadow;
+  @media (max-width: 900px) {
+    margin-bottom: 1em;
+  }
+}
+
+.trackers__header {
+  width: 100%;
+  border-radius: 2em 2em 0 0;
+  z-index: 0;
+}
+
+.trackers__header__food {
+  border-top: 20px solid vars.$food-color;
+}
+
+.trackers__header__water {
+  border-top: 20px solid vars.$water-color;
+}
+
+.trackers__header__sport {
+  border-top: 20px solid vars.$sport-color;
+}
+
+.trackers__header__sleep {
+  border-top: 20px solid vars.$sleep-color;
+}
+
+.trackers__header__weight {
+  border-top: 20px solid vars.$weight-color;
 }
 
 .trackers__img {
-  width: 5em;
-  padding: 1em;
+  width: vars.$trackers-icons-width;
+  box-shadow: vars.$box-shadow;
+  border-radius: vars.$full-radius;
+  margin-bottom: 1em;
+}
+
+.trackers__mini-img {
+  width: 3em;
+}
+
+.modal__img {
+  position: relative;
+  width: 2.5em;
+  left: 5em;
+  top: 1em;
+
+  @media (min-width: 900px) and (max-width: 1100px) {
+    width: 2em;
+    left: 3.5em;
+  }
+  
+  @media (min-width: 500px) and (max-width: 900px) {
+    width: 1em;
+    left: 3em;
+  }
 }
 
 .trackers__item:not(:last-of-type) {
-  margin-right: 15px;
+  margin-right: 2em;
 }
 .trackers__item .fa-layers {
   margin: 30px auto;
@@ -121,7 +177,7 @@
   display: flex;
   align-items: center;
   height: 35px;
-  margin: auto auto 15px;
+  margin: auto auto 1em;
   padding: 0 20px;
   transition: 0.5s ease all;
   color: #3D5499;
@@ -137,28 +193,42 @@
 }
 
 .favs-todo {
+  height: 21em;
   display: flex;
+  border-radius: 20px 20px 0 0;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 }
 
 .favs,
 .todolist {
   flex: 1;
-  padding: 15px;
-  background-color: #C3CFD9;
+  padding: 1em;
+  border-radius: 2em;
+  box-shadow: vars.$box-shadow;
+  background-color: white;
+
 }
 
 .favs {
   overflow-y: scroll;
-  max-height: 365px;
-  margin-right: 15px;
+  margin-right: 2em;
+  -webkit-scrollbar {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color:vars.$background-color;
+  }
 }
 
 .favs__item {
   display: flex;
   align-items: stretch;
   height: 110px;
-  margin-bottom: 15px;
+  margin-bottom: 1em;
   background-color: white;
+  border: 1px solid vars.$background-color;
+  border-radius: 20px;
 }
 
 .favs__overview {
@@ -178,12 +248,22 @@
 .favs__thumbnail {
   max-width: none;
   height: 100%;
+  border-radius: 20px 0 0 20px;
+}
+
+.svg-inline--fa.fa-w-16 {
+  width: 1em;
+  color: #c9cdd8;
+  margin: 0.3em;
 }
 
 .favs__excerpt {
   flex: 3;
-  padding: 15px;
+  padding: 1em;
+  background-color: vars.$background-color;
+  border-radius: 0 20px 20px 0;
 }
+
 .favs__excerpt p {
   font-size: 14px;
   line-height: 1.6;
@@ -216,8 +296,7 @@
 }
 
 .todolist__items {
-  padding: 15px 5px;
-  background-color: white;
+  padding: 1em 5px;
 }
 
 .todolist__item {
@@ -226,10 +305,16 @@
   align-items: center;
   justify-content: flex-start;
   height: 20px;
+  background-color: vars.$background-color;
+  border-radius: 1em;
 }
 .todolist__item:not(:last-of-type) {
   margin-bottom: 10px;
 }
+.todolist__item {
+  font-size: 20px;
+}
+
 .todolist__item svg {
   flex: 1;
   cursor: pointer;
@@ -248,21 +333,24 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin: 0 0 0 15px;
-  padding: 15px;
-  background-color: vars.$background-color;
+  margin: 0 0 0 2em;
+  padding: 1em;
+  background-color: white;
+  border-radius: 2em;
+  box-shadow: vars.$box-shadow;
 }
 @media (min-width: 900px) and (max-width: 1100px) {
   .dashboard__right {
     flex-direction: row;
-    margin: 0 0 15px 0;
+    margin: 0 0 1em 0;
+    align-items: center;
   }
 }
 
 @media (min-width: 500px) and (max-width: 900px) {
   .dashboard__right {
     flex-direction: column;
-    margin: 0 0 15px 0;
+    margin: 0 0 1em 0;
   }
 
   .dashboard__content {
@@ -272,51 +360,54 @@
 }
 
 .user-details__picture {
-  max-width: 75px;
-  margin: 15px auto 30px;
-  border-radius: 50%;
-}
-@media (min-width: 321px) {
-  .user-details__picture {
-    max-width: none;
-  }
+  width: 8em;
+  border-radius: vars.$full-radius;
+  box-shadow: vars.$box-shadow;
+  margin-bottom: 1em;
 }
 
 .user-details {
   text-align: center;
-  flex: 1;
+  flex: 0;
+  @media (max-width: 1100px) {
+  flex:1;    
+  }
+}
+
+.user-details__infos {
+  align-items: center;
 }
 
 .user-details__tags {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1em;
 }
 
 .user-details__tag {
   font-size: 12px;
-  margin: 0 5px 5px 0;
-  padding: 5px 10px;
+  margin: 0.3em;
+  padding: 0.5em 0.7em;
   color: white;
   border-radius: 5px;
   background-color: #4B5C6B;
 }
 
 .user-stats {
-  margin-top: 30px;
   text-align: center;
   flex: 1;
+  margin: 2em;
 }
-
+ 
 .user-stats__item {
   display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  margin-bottom: 10px;
+  flex-direction: column;
   text-align: left;
 }
 .user-stats__item:first-of-type {
-  margin-top: 15px;
+  margin-top: 1em;
 }
 .user-stats__item label {
   font-size: 12px;
@@ -327,21 +418,52 @@
   margin-right: 5px;
 }
 .user-stats__item progress {
-  flex: 8;
+  flex: 3;
 }
 .user-stats__item span {
-  font-size: 10px;
-  flex: 2;
+  font-size: 1em;
+  margin-top: 0.4em;
+  -webkit-box-flex: 2;
+  flex: 5;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.8em;
 }
 
 progress[value]::-webkit-progress-bar {
   align-self: stretch;
-  border-radius: 2px;
-  background-color: #B4C1CC;
+  border: 1px solid vars.$background-color;
+  border-radius: 1em;
+  background-color: vars.$background-color;
 }
 
 progress[value]::-webkit-progress-value {
   position: relative;
-  border-radius: 2px;
-  background-color: #31AE9F;
+  border-radius: 1em;
 }
+
+.progress-food[value]::-webkit-progress-value {
+  background-color: vars.$food-color;
+}
+.progress-sport[value]::-webkit-progress-value {
+  background-color: vars.$sport-color;
+}
+.progress-sleep[value]::-webkit-progress-value {
+  background-color: vars.$sleep-color;
+}
+.progress-water[value]::-webkit-progress-value {
+  background-color: vars.$water-color;
+}
+.progress-weight[value]::-webkit-progress-value {
+  background-color: vars.$weight-color;
+}
+
+.advices {
+  font-size: 0.9em;
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+
