@@ -17,7 +17,7 @@ CREATE TABLE "user" (
     "is_admin" BOOLEAN NOT NULL DEFAULT FALSE
 );
 
--- la table 'user'
+-- la table 'weight'
 CREATE TABLE "weight" (
     "id" SERIAL PRIMARY KEY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,

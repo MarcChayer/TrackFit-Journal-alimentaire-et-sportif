@@ -1,4 +1,6 @@
-const { User, Food, Food_type, Sport, Sport_type, Sleep, Weight, Water, Task} = require('../models');
+const { Article, Food, Sleep, Sport, Task, User } = require('../models');
+const Weight = require('../models/weight');
+const Water = require('../models/water');
 
 const dashboardController = {
     getAllInfos: async (req, res) => {
@@ -14,7 +16,7 @@ const dashboardController = {
                     {association: 'weights'},
                     {association: 'waters'},
                     {association: 'tasks'},
-                    {association: 'articles'}
+                    {association: 'articles'},
                 ]
             });
             if (user) {
@@ -36,7 +38,7 @@ const dashboardController = {
                 intensity: req.body.intensity,
                 emotion: req.body.emotion,
                 user_id: req.params.id,
-                sport_type_id: req.body.sport_type_id
+                sport_type_id: req.body.sport_type_id,
             });
             if (dataSport) {
                 await dataSport.save();
@@ -57,8 +59,9 @@ const dashboardController = {
                 quantity: req.body.quantity,
                 emotion: req.body.emotion,
                 user_id: req.params.id,
-                food_type_id: req.body.food_type_id
+                food_type_id: req.body.food_type_id,
             });
+            console.log('dataFood', dataFood);
             if (dataFood) {
                 await dataFood.save();
                 res.status(200).json(dataFood);
@@ -70,6 +73,116 @@ const dashboardController = {
             res.status(500).json(error.toString());
         }
     },
+
+    postDataWeight: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const dataWeight = new Weight({
+                user_id: idUser,
+                date: req.body.date,
+                weight: req.body.weight,
+                imc: req.body.imc,
+            });
+            if (dataWeight) {
+                await dataWeight.save();
+                res.status(200).json(dataWeight);
+            } else {
+                res.status(404).json('Cet utilisateur n\'existe pas');
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
+
+    postDataWater: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const dataWater = new Water({
+                user_id: idUser,
+                date: req.body.date,
+                water: req.body.water,
+            });
+            if (dataWater) {
+                await dataWater.save();
+                res.status(200).json(dataWater);
+            } else {
+                res.status(404).json('Cet utilisateur n\'existe pas');
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
+
+    postDataSleep: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const dataSleep = new Sleep({
+                user_id: idUser,
+                date: req.body.date,
+                bedTime: req.body.bedTime,
+                wakeUpTime: req.body.wakeUpTime,
+            });
+            if (dataSleep) {
+                await dataSleep.save();
+                res.status(200).json(dataSleep);
+            } else {
+                res.status(404).json('Cet utilisateur n\'existe pas');
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
+
+    createTask: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const dataTask = new Task({
+                user_id: idUser,
+                title: req.body.title,
+            });
+            if (dataTask) {
+                await dataTask.save();
+                res.status(200).json(dataTask);
+            } else {
+                res.status(404).json('Cet utilisateur n\'existe pas');
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
+
+    deleteTask: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const dataTask = await Task.findByPk(idUser);
+            await dataTask.destroy();
+            res.status(200).json(dataTask);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
+
+    updateTask: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const dataTask = await Task.findByPk(idUser);
+            if (!dataTask) {
+                res.status(404).json({error: 'Cette tâche n\'existe pas'});
+            } else {
+                await dataTask.update(req.body);
+                res.status(200).json(dataTask);
+            }
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
+    
 };
 
 module.exports = dashboardController;
