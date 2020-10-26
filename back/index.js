@@ -5,12 +5,9 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 
-
 // router
 const router = require('./app/router');
 const bodyParser = require('body-parser');
-
-const app = express();
 
 // Initialisation de la lecture de paramètre post ( création de req.body )
 app.use(bodyParser.urlencoded({ extended: true }));

@@ -1,15 +1,15 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
-class Food_type extends Sequelize.Model {};
+class Sport_type extends Sequelize.Model {};
 
-Food.init({
+Sport_type.init({
     name: Sequelize.STRING,
     value: Sequelize.STRING,
 }, {
     sequelize,
-    tableName: "food_type"
+    tableName: "sport_type"
 });
 
 
-module.exports = Food_type;
+module.exports = Sport_type;

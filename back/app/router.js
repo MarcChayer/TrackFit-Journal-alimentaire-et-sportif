@@ -5,6 +5,7 @@ const router = express.Router();
 // controllers import
 const userController = require('./controllers/userController');
 const articlesController = require('./controllers/articlesController');
+const dashboardController = require('./controllers/dashboardController');
 
 
 // route primordiale
@@ -22,11 +23,11 @@ router.post('/signup', userController.signupAction);
 router.get('/profile/:id', userController.getProfile);
 // modification profil d'un utilisateur
 router.patch('/profile/:id', userController.updateProfile);
-// // suppression du profil d'un utilisateur
+// suppression du profil d'un utilisateur
 router.delete('/profile/:id', userController.deleteProfile);
 
-// // route dashboard
-// router.get('/dashboard/:id', dashboardController.getAllInfos);
+// route dashboard
+router.get('/dashboard/:id', dashboardController.getAllInfos);
 // // Envoyer les données du tracker 
 // router.post('/dashboard/:id/sport', dashboardController.postDataSport);
 // // Envoyer les données du tracker 
