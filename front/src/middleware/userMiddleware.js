@@ -1,6 +1,11 @@
 /* eslint-disable no-case-declarations */
 import axios from 'axios';
-import { REGISTER_INPUT_SUBMIT, LOGIN_INPUT_SUBMIT, userIsConnected } from '../actions/user';
+import {
+  REGISTER_INPUT_SUBMIT,
+  LOGIN_INPUT_SUBMIT,
+  userIsConnected,
+  userIsSubscribed,
+} from '../actions/user';
 
 export default (store) => (next) => (action) => {
   switch (action.type) {
@@ -15,6 +20,9 @@ export default (store) => (next) => (action) => {
       })
         .then((res) => {
           console.log(res.data);
+          // A faire : envoyer les variables de la session utilisateur
+          // Attention ! mettre à jour l'action creator
+          store.dispatch(userIsSubscribed());
         })
         .catch((error) => {
           console.log(error);

@@ -3,6 +3,7 @@ import {
   INPUT_CHANGE,
   LOGIN_INPUT_SUBMIT,
   USER_IS_CONNECTED,
+  USER_IS_SUBSCRIBED,
 } from '../actions/user';
 
 const initialState = {
@@ -32,6 +33,13 @@ const reducer = (state = initialState, action = {}) => {
     case USER_IS_CONNECTED:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de LOGIN_INPUT_SUBMIT)
+      return {
+        ...state,
+        isLogged: true,
+      };
+    case USER_IS_SUBSCRIBED:
+      // Ne pas oublier de récupérer le payload de l'action creator
+      // (envoyé à partir de REGISTER_INPUT_SUBMIT)
       return {
         ...state,
         isLogged: true,
