@@ -1,9 +1,9 @@
 @use 'src/styles/vars';
 
 .logo-category {
-  width: 25em;
+  width: 24em;
   border: 1px solid #ccc;
-  box-shadow: whitesmoke;
+  box-shadow: vars.$box-shadow;
   padding: .6em;
   margin: 25px;
   position: relative;
@@ -41,7 +41,7 @@
 .article {
   width: 24em;
   border: 1px solid #ccc;
-  box-shadow: whitesmoke;
+  box-shadow: vars.$box-shadow;
   padding: .6em;
   margin: 25px;
   position: relative;

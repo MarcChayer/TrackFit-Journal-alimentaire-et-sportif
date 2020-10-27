@@ -8,6 +8,7 @@ import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
+import Articles from 'src/components/Articles';
 
 // == Composant
 const App = () => (
@@ -27,6 +28,18 @@ const App = () => (
       <Header />
       <Dashboard />
       <Statistics />
+    </Route>
+    <Route path="/articles/alimentation">
+      <Header />
+      <Articles />
+    </Route>
+    <Route path="/articles/sport">
+      <Header />
+      <Articles />
+    </Route>
+    <Route path="/articles/bien-etre">
+      <Header />
+      <Articles />
     </Route>
   </div>
 );

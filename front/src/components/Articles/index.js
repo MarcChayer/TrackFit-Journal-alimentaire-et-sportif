@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from 'src/assets/images/illustration-alimentation.svg';
+import logo from 'src/assets/images/icones/illustration-alimentation.svg';
 import Article from './Article';
 import './articles.scss';
 
