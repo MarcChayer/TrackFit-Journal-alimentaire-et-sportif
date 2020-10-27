@@ -160,7 +160,7 @@ const dashboardController = {
             const idUser = parseInt(req.params.id);
             const dataTask = await Task.findByPk(idUser);
             await dataTask.destroy();
-            res.status(200).json(dataTask);
+            res.status(200).json('Cette tâche est bien supprimée');
         } catch (error) {
             console.log(error);
             res.status(500).json(error.toString());
