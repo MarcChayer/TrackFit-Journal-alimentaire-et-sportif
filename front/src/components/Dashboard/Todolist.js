@@ -1,77 +1,51 @@
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import { faSquare, faCheckSquare, faEdit } from '@fortawesome/free-regular-svg-icons';
+import modalplus from 'src/assets/images/icones/icone-add-task.svg';
+import modaltrash from 'src/assets/images/icones/icone-poubelle.svg';
 
 const Todolist = () => (
   <div className="todolist">
     <div className="todolist__header">
       <h2>À faire</h2>
-      <FontAwesomeIcon icon={faPlus} />
+      <a href=""> <img src={modalplus} alt="ajouter une tâche" className="modal-img" /> </a>
     </div>
 
     <ul className="todolist__items">
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
       <li className="todolist__item">
-        <FontAwesomeIcon icon={faSquare} />
+        <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
-      </li>
-      <li className="todolist__item todolist__item--done">
-        <FontAwesomeIcon icon={faCheckSquare} />
-        <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
-      </li>
-      <li className="todolist__item todolist__item--done">
-        <FontAwesomeIcon icon={faCheckSquare} />
-        <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
-      </li>
-
-      <li className="todolist__item todolist__item--done">
-        <FontAwesomeIcon icon={faCheckSquare} />
-        <span>Tâche à faire</span>
-        <FontAwesomeIcon icon={faEdit} />
-        <FontAwesomeIcon icon={faTrashAlt} />
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
       </li>
     </ul>
   </div>

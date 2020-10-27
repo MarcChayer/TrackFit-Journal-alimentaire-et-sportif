@@ -11,7 +11,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    box-shadow: vars.$box-shadow;
+    border-bottom: 2px solid vars.$primary-color;
+    // box-shadow: vars.$box-shadow;
     z-index: 1;
   }
 
@@ -38,7 +39,7 @@
 
   
   .signin {
-    margin: 0 2em 0 0;
+    margin: 0 1.8em 0 0;
 
     &-link { // lien pour se loguer
       text-align: right;

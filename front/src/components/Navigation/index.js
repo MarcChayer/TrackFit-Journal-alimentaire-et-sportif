@@ -2,6 +2,9 @@
 import React from 'react';
 
 import './navigation.scss';
+import profile from 'src/assets/images/profile.svg';
+import burger from 'src/assets/images/icones/icone-burger.svg';
+import statistics from 'src/assets/images/icones/icone-statistics.svg';
 
 // == Composant
 const Navigation = () => (
@@ -18,9 +21,9 @@ const Navigation = () => (
 
     <nav className="navigation--mobile">
       <ul className="navigation-list">
-        <li className="navigation-link"><a href="#"><img src="http://paurtfolio.fr/apo/profile.svg" alt="profile utilisateur" className="navigation--mobile-img"/></a></li>
-        <li className="navigation-link"><a href="#"><img src="http://paurtfolio.fr/apo/statistics.svg" alt="statistiques utilisateur" className="navigation--mobile-img"/></a></li>
-        <li className="navigation-link"><a href="#"><img src="http://paurtfolio.fr/apo/toggle.svg" alt="navigation" className="navigation--mobile-img"/></a></li>
+        <li className="navigation-link"><a href="#"><img src={profile} alt="profile utilisateur" className="navigation--mobile-img"/></a></li>
+        <li className="navigation-link"><a href="#"><img src={statistics} alt="statistiques utilisateur" className="navigation--mobile-img"/></a></li>
+        <li className="navigation-link"><a href="#"><img src={burger} alt="navigation" className="navigation--mobile-img"/></a></li>
       </ul>
     </nav>
   </div>

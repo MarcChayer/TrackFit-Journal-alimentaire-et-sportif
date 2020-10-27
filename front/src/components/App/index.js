@@ -7,25 +7,31 @@ import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
 import Dashboard from 'src/components/Dashboard';
-// import Statistics from 'src/components/Statistics';
+import Statistics from 'src/components/Statistics';
+import Articles from 'src/components/Articles';
+
 
 // == Composant
 const App = () => (
   <div className="app">
+    <Header />
     <Route path="/">
       <Header />
     </Route>
     <Route path="/inscription">
-      <Header />
       <CreateAccount />
     </Route>
     <Route path="/connexion">
-      <Header />
       <Login />
     </Route>
     <Route path="/tableaudebord">
-      <Header />
       <Dashboard />
+    </Route>
+    <Route path="/statistiques">
+      <Statistics />
+    </Route>
+    <Route path="/articles">
+      <Articles />
     </Route>
   </div>
 );
