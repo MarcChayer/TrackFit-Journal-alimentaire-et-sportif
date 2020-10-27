@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { registerInputChange } from '../actions/user';
+import { inputChange } from '../actions/user';
 
 import Field from '../components/CreateAccount/Field';
 
@@ -8,11 +8,11 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onChange: (value, name) => {
+  changeField: (value, name) => {
     const object = {
       [name]: value,
     };
-    dispatch(registerInputChange(object));
+    dispatch(inputChange(object));
   },
 });
 
