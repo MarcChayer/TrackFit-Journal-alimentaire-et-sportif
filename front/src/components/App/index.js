@@ -8,7 +8,7 @@ import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
-import Articles from 'src/components/Articles';
+import Articles from 'src/containers/Articles';
 
 // == Composant
 const App = () => (
@@ -29,15 +29,7 @@ const App = () => (
       <Dashboard />
       <Statistics />
     </Route>
-    <Route path="/articles/alimentation">
-      <Header />
-      <Articles />
-    </Route>
-    <Route path="/articles/sport">
-      <Header />
-      <Articles />
-    </Route>
-    <Route path="/articles/bien-etre">
+    <Route path="/articles/:slug">
       <Header />
       <Articles />
     </Route>

@@ -1,16 +1,32 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import add from 'src/assets/images/favorite.svg';
 
-const Article = () => (
+import './articles.scss';
+
+const Article = ({ article }) => (
   <li className="article">
     <article>
-      <img src="http://www.athletesdubienetre.fr/wp-content/uploads/sport-canin-selection-sports-avec-votre-chien.jpg" alt="article" className="article__img" />
-      <h2 className="article__title">Titre du post</h2>
-      <p className="article__excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet optio adipisci sint possimus doloremque doloribus molestiae ab distinctio assumenda omnis? Blanditiis similique quidem maxime error? Aspernatur temporibus ex magnam quaerat.</p>
-      <a href="articles/article1" className="article__seemore">Voir plus</a>
+      <img src={article.media} alt="article" className="article__img" />
+      <h2 className="article__title">{article.title}</h2>
+      <p className="article__excerpt">{article.content}</p>
+      <a href="articles/article/:id" className="article__seemore">Voir plus</a>
       <a href="#"><img className="fav" src={add} alt="addfavorite" /></a>
     </article>
   </li>
 );
+
+Article.propTypes = {
+  article: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      title: PropTypes.string,
+      content: PropTypes.string,
+      source: PropTypes.string,
+      media: PropTypes.string,
+      label: PropTypes.string,
+    }).isRequired,
+  ).isRequired,
+};
 
 export default Article;
