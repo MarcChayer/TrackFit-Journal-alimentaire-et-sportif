@@ -17,7 +17,7 @@ import './header.scss';
 const Header = () => (
   <header className="header">
 
-    <img src={logo} alt="logoTrackFit" className="logo" />
+    <a href="/"><img src={logo} alt="logoTrackFit" className="logo" /></a>
 
     <div className="navigation">
       <Navigation />

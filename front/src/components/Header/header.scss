@@ -12,15 +12,31 @@
     align-items: center;
     background-color: white;
     border-bottom: 2px solid vars.$primary-color;
-    // box-shadow: vars.$box-shadow;
     z-index: 1;
   }
 
   .logo {
-    width: 9em;
+    width: 16em;
     margin: 1em;
-  }
-  
+    padding: 3em;
+    margin-left: -2em;
+    margin-right: 5em;
+
+    @media (min-width:700px) and (max-width:1200px) {
+      width: 9em;
+      margin: 1em;
+      padding: 0;
+    }
+}
+
+svg path .st1 {
+  fill: white;
+}
+
+svg path .st1:hover {
+  fill: blue;
+}
+
   .navigation--desktop {
     display: block;
   }
@@ -39,8 +55,8 @@
 
   
   .signin {
-    margin: 0 1.8em 0 0;
-
+    margin: 0 1.2em 0 0;
+    
     &-link { // lien pour se loguer
       text-align: right;
     }

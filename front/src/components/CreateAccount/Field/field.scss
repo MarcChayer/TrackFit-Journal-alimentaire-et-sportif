@@ -1,11 +1,9 @@
 @use 'src/styles/vars';
 
-.input {
-  float: right;
-  padding: 6px;
-  font-size: 17px;
-  border: 1px solid vars.$secondary-color;
-  border-radius: 5px;
+.create-input {
+  padding: .46em;
+  border: 2px solid vars.$secondary-color;
   width: 100%;
-  height: 3em;
+  font-size: 1em;
+  margin: 0.3em 0;
 }

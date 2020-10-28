@@ -6,15 +6,14 @@ import { Route } from 'react-router-dom';
 import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
+import Articles from 'src/components/Articles';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
-import Articles from 'src/components/Articles';
-
+import Settings from 'src/components/Settings';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Header />
     <Route path="/">
       <Header />
     </Route>
@@ -24,14 +23,17 @@ const App = () => (
     <Route path="/connexion">
       <Login />
     </Route>
+    <Route path="/articles">
+      <Articles />
+    </Route>
     <Route path="/tableaudebord">
       <Dashboard />
     </Route>
     <Route path="/statistiques">
       <Statistics />
     </Route>
-    <Route path="/articles">
-      <Articles />
+    <Route path="/parametres">
+      <Settings />
     </Route>
   </div>
 );

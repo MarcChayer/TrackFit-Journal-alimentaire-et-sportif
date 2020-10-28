@@ -14,6 +14,11 @@
 
   &-link {
     margin: 0 15px;
+    color: vars.$primary-color;
+  
+    &:hover {
+      color: vars.$secondary-color;
+    }
   }
 
   &-img {

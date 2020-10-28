@@ -18,6 +18,39 @@ const FavoriteArticles = () => (
         <p>article.content</p>
       </div>
     </li>
+
+    <li className="favs__item">
+      <div className="favs__overview">
+        <FontAwesomeIcon icon={faHeart} />
+        <img src="http://www.athletesdubienetre.fr/wp-content/uploads/sport-canin-selection-sports-avec-votre-chien.jpg" alt="article" className="favs__thumbnail" />
+      </div>
+      <div className="favs__excerpt">
+        <h3>article.title</h3>
+        <p>article.content</p>
+      </div>
+    </li>
+
+    <li className="favs__item">
+      <div className="favs__overview">
+        <FontAwesomeIcon icon={faHeart} />
+        <img src="http://www.athletesdubienetre.fr/wp-content/uploads/sport-canin-selection-sports-avec-votre-chien.jpg" alt="article" className="favs__thumbnail" />
+      </div>
+      <div className="favs__excerpt">
+        <h3>article.title</h3>
+        <p>article.content</p>
+      </div>
+    </li>
+
+    <li className="favs__item">
+      <div className="favs__overview">
+        <FontAwesomeIcon icon={faHeart} />
+        <img src="http://www.athletesdubienetre.fr/wp-content/uploads/sport-canin-selection-sports-avec-votre-chien.jpg" alt="article" className="favs__thumbnail" />
+      </div>
+      <div className="favs__excerpt">
+        <h3>article.title</h3>
+        <p>article.content</p>
+      </div>
+    </li>
   </ul>
 );
 

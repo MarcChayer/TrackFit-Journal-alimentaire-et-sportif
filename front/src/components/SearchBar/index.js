@@ -5,7 +5,7 @@ import './searchBar.scss';
 
 // == Composant
 const SearchBar = () => (
-  <input type="text" placeholder="🔍 Rechercher..." />
+  <input className="searchbar-input" type="text" placeholder="🔍 Rechercher..." />
 );
 
 // == Export

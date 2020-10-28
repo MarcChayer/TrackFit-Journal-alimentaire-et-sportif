@@ -8,44 +8,44 @@ const Todolist = () => (
   <div className="todolist">
     <div className="todolist__header">
       <h2>À faire</h2>
-      <a href=""> <img src={modalplus} alt="ajouter une tâche" className="modal-img" /> </a>
+      <a href=""> <img src={modalplus} alt="ajouter une tâche" className="todolist__modalplus-img" /> </a>
     </div>
 
     <ul className="todolist__items">
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
       <li className="todolist__item">
         <input type="checkbox" className="todolist__checkbox" />
         <span>Tâche à faire</span>
-        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todo-img" /></a>
+        <a href="#"><img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" /></a>
       </li>
     </ul>
   </div>

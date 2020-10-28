@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 // == Import npm
 import React from 'react';
 
@@ -7,11 +6,15 @@ import './statistics.scss';
 
 // == Import composants
 import Menu from 'src/components/Statistics/Menu';
+import Stats from './Stats';
 
 // == Composant
 const Statistics = () => (
-  <div className="statistics">
+  <div className="stats">
     <Menu />
+    <div className="statistics">
+      <Stats />
+    </div>
   </div>
 );
 

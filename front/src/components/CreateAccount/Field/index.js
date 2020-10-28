@@ -17,7 +17,7 @@ const Field = ({
 
   return (
     <input
-      className="input"
+      className="create-input"
       name={name}
       type={type}
       placeholder={placeholder}

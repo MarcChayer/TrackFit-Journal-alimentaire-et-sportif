@@ -1,66 +1,61 @@
 @use 'src/styles/vars';
+
 .login {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 34em;
+  height: 60vh;
+  margin: 8em auto;
+  padding: 2em;
   background-color: white;
-  width: 40%;
-  margin:auto ;
-  margin-top: 80px;  
+  border-radius: vars.$light-radius;
+  box-shadow: vars.$box-shadow;
+
+  @media (max-width:700px) {
+    width:90%;
+    margin: 5em auto;
+  }
 }
 
-.logotrackfit { 
-  width: 150px;
-  margin: auto;
-}
-
-.formlog {
+.log-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 1em;
-  margin-top: 1em;
+  margin: 1em 0;
 }
 
-label {
-  margin-bottom: 0.5em;
-  margin-top: 0.5em;
+.log-label {
+  margin: 0.5em 0;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-.log {
-  margin-top: 0.25em;
+.log-title {
+  margin: 0;
+  font-size: 2.7em;
+  text-align: center;
 }
 
-.title {
-  margin: auto;
-  margin-top: 1em;
-  font-size: 2em;
-}
-
-.button {
+.log-button {
   margin-top: 1em;
   height: 4em;
   font-size: 1em;
   font-weight: bold;
   color: white;
   border: none;
-  background-color: #3d5499;
+  background-color: vars.$primary-color;
 }
 
-.log {
-  height: 3em;
+.log-input {
+  padding: .46em;
+  border: 2px solid vars.$secondary-color;
+  width: 100%;
+  font-size: 1em;
+  margin: 0.3em 0;
 }
 
-
-.id {
+.log-id {
+  color: vars.$primary-color;
   font-weight: bold;
-  color: #3d5499;
-}
-
-
-
-@media (max-width:900px) { // mobile
-  .login {
-    width:90%;
-  }
 }
