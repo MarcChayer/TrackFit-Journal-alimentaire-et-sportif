@@ -1,6 +1,8 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 
+import './trackers.scss';
+
 import food from 'src/assets/images/icones/icone-alimentation.svg';
 import water from 'src/assets/images/icones/icone-water.svg';
 import sleep from 'src/assets/images/icones/icone-sommeil.svg';

@@ -9,7 +9,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchArticles: () => {
-    // console.log(ownProps);
     console.log('je passe dans le container fetchArticles');
     dispatch(fetchArticles());
   },

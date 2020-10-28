@@ -6,7 +6,7 @@ import { Route } from 'react-router-dom';
 import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
-import Dashboard from 'src/components/Dashboard';
+import Dashboard from 'src/containers/Dashboard';
 import Statistics from 'src/components/Statistics';
 import Articles from 'src/containers/Articles';
 

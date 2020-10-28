@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './menu.scss';
+
 const Menu = () => (
   <div className="dashboard__menu">
     <ul className="dashboard__menu-list">

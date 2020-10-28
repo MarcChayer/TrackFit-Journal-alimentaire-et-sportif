@@ -1,0 +1,88 @@
+@use 'src/styles/vars';
+
+.favs-todo {
+  height: 42vh; //21em
+  display: flex;
+  border-radius: 20px 20px 0 0;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.favs,
+.todolist {
+  flex: 1;
+  padding: 2em;
+  border-radius: 2em;
+  box-shadow: vars.$box-shadow;
+  background-color: white;
+}
+
+.favs {
+  overflow-y: scroll;
+  margin-right: 2em;
+  -webkit-scrollbar {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color:vars.$background-color;
+  }
+
+  @media screen and (max-width: 900px) {
+    margin-right: 0;
+    margin-bottom: 2em;
+  }
+
+  &__item {
+    display: flex;
+    align-items: stretch;
+    height: 110px;
+    margin-bottom: 1em;
+    background-color: white;
+    border: 1px solid vars.$background-color;
+    border-radius: 20px;
+  }
+
+  &__overview {
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    max-width: 110px;
+
+    & svg {
+        font-size: 1.5em;
+        position: absolute;
+        top: 0.5em;
+        left: 0.5em;
+        cursor: pointer;
+        color: #ccb8b8;
+    }
+  }
+
+  &__thumbnail {
+    max-width: none;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+  }
+
+  &__excerpt {
+    flex: 3;
+    padding: 1em;
+    background-color: vars.$background-color;
+    border-radius: 0 20px 20px 0;
+
+    & p {
+      font-size: 14px;
+      line-height: 1.6;
+      display: block;
+      display: -webkit-box;
+      overflow: hidden;
+      height: 67.2px;
+      margin: 0 auto !important;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  }
+}
