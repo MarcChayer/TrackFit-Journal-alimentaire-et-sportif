@@ -2,8 +2,6 @@
 
 .logo-category {
   width: 24em;
-  border: 1px solid #ccc;
-  box-shadow: vars.$box-shadow;
   padding: .6em;
   margin: 25px;
   position: relative;
@@ -17,32 +15,28 @@
 
 .article__img {
   width: 100%;
-  border-radius: 1em;
+  border-radius: 1em 1em 0 0;
 }
 
 .fav {
   width: 3em;
   position: relative;
-  float: left;
-  padding: 0.5em;
-}
-
-.posts__title {
-  margin-top: 4em;
-  font-weight: bold;
-  color: #3d5499;
-  font-size: 1.5em;
+  float: right;
+  padding: .5em;
+  margin-top: 0.4em;
+  margin-right: 0.4em;
 }
 
 .articles {
   text-align: center;
+  margin-top: 6em;
 }
 
 .article {
+  background-color: white;
   width: 24em;
   border: 1px solid #ccc;
   box-shadow: vars.$box-shadow;
-  padding: .6em;
   margin: 25px;
   position: relative;
   overflow: hidden;
@@ -65,11 +59,11 @@
   border: 1px solid #ccc;
   background-color: #3d5499;
   color: #fff;
-  padding: .4em;
-  border-radius: 0.5em;
+  padding: .4em 0.8em;
+  border-radius: 1em;
   position: relative;
   float: right;
-  margin: 1em .5em 0;
+  margin: 1em 1em 0 0;
 }
 
 .more__articles {
@@ -77,8 +71,8 @@
   border: 1px solid #ccc;
   background-color: #6abfbd;
   color: white;
-  border-radius: 0.5em;
-  padding: 1em 2.5em;
+  border-radius: 1em;
+  padding: 0.5em 1.2em;
   margin-bottom: 2em;
   display: inline-block;
 
@@ -97,4 +91,5 @@
 .article__excerpt {
   text-align: justify;
   font-size: 1em;
+  padding: 0 1em;
 }

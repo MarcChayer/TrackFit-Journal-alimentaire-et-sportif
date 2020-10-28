@@ -6,7 +6,6 @@ import './articles.scss';
 const Articles = () => (
 
   <div className="articles">
-    <h1 className="posts__title">Notre sélection d'articles portant sur l'alimentation :</h1>
     <ul className="articles__list">
       <img className="logo-category" src={logo} alt="aliment" />
       <Article />
