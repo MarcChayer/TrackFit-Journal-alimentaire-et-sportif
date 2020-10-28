@@ -8,6 +8,7 @@ import SearchBar from 'src/components/SearchBar';
 
 // image
 import logo from 'src/assets/images/logo.svg';
+import login from 'src/assets/images/login.svg';
 
 // == Import
 import './header.scss';
@@ -16,7 +17,7 @@ import './header.scss';
 const Header = () => (
   <header className="header">
 
-    <img src={logo} alt="logoTrackFit" className="logo" />
+    <a href="/"><img src={logo} alt="logoTrackFit" className="logo" /></a>
 
     <div className="navigation">
       <Navigation />
@@ -29,7 +30,7 @@ const Header = () => (
 
       <div className="signin">
         <a href="/connexion" className="signin-link">
-          <img src="http://paurtfolio.fr/apo/login.svg" alt="se connecter" className="signin-img" />
+          <img src={login} alt="se connecter" className="signin-img" />
         </a>
       </div>
     </div>

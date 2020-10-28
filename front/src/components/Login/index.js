@@ -5,23 +5,23 @@ import './login.scss';
 
 const Login = () => (
   <div className="login">
-    <h1 className="title">S'identifier</h1>
+    <h1 className="log-title">S'identifier</h1>
 
-    <form className="formlog">
-      <label>E-mail :
-        <input className="log" type="text" placeholder="E-mail" />
+    <form className="log-form">
+      <label className="log-label">E-mail :
+        <input className="log-input" type="text" placeholder="E-mail" />
       </label>
-      <label>Mot de passe :
-        <input className="log" type="text" placeholder="Mot de passe" />
+      <label className="log-label">Mot de passe :
+        <input className="log-input" type="text" placeholder="Mot de passe" />
       </label>
-      <label>
+      <label className="log-label">
         <input type="checkbox" />
         Rester connecté
       </label>
-      <button className="button" type="submit">S'identifier</button>
+      <button className="log-button" type="submit">S'identifier</button>
     </form>
 
-    <p>Vous ne possédez pas de compte ?<a className="id" href="/inscription"> Inscrivez-vous</a></p>
+    <p>Vous ne possédez pas de compte ?<a className="log-id" href="/inscription"> Inscrivez-vous</a></p>
   </div>
 );
 

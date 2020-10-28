@@ -1,9 +1,5 @@
 @use 'src/styles/vars';
 
-.navigation--desktop {
-  
-}
-
 .navigation {
   &-list {
     display: flex;
@@ -14,6 +10,11 @@
 
   &-link {
     margin: 0 15px;
+    color: vars.$primary-color;
+  
+    &:hover {
+      color: vars.$secondary-color;
+    }
   }
 
   &-img {
@@ -36,6 +37,7 @@
     left: 0px;
     right: 0px;
     background-color: white;
+    border-top: 2px solid vars.$primary-color;
     z-index: 2;
 
     &-img {

@@ -27,6 +27,9 @@ const App = () => (
     <Route path="/tableaudebord">
       <Header />
       <Dashboard />
+    </Route>
+    <Route path="/statistiques">
+      <Header />
       <Statistics />
     </Route>
     <Route path="/articles/:slug">
