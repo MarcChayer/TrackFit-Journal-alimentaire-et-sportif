@@ -75,7 +75,8 @@ const userController = {
                 req.session.user = user.toJSON();
                 // On oublie pas de supprimer le mot de passe
                 delete req.session.user.password;
-                res.status(200).json(user);
+                // console.log(req.session.user);
+                res.status(200).json('Connexion successful');
                 // Puis on redirige vers la page d'accueil
                 // res.redirect('/');
             }

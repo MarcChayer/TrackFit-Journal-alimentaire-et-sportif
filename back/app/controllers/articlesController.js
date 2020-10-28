@@ -2,8 +2,9 @@ const Article = require('../models/article');
 
 const articlesController = {
     getArticlesByLabel : async (req, res) => {
+        const { label } = req.params;
         try {     
-            const allArticles = await Article.findAll();
+            const allArticles = await Article.findAll({ where: { label: label } });
             if (allArticles) {
                 res.status(200).json(allArticles);
             } else {
