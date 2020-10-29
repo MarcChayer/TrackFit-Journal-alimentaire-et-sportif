@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './userDetails.scss';
 
 import profile from 'src/assets/images/profile.svg';
@@ -10,8 +12,7 @@ const UserDetails = ({ userData }) => {
   if (!userData || !userData.firstName) {
     return <div>recuperation de la ressource</div>;
   }
-  console.log(userData.weights.length);
-  
+
   return (
     <div className="dashboard__right">
       <div className="user-details">
@@ -26,8 +27,8 @@ const UserDetails = ({ userData }) => {
             {/* <li className="user-details__tag">{userData.weights.map((item) => (
               <div>{item.weight}</div>
             ))} kg </li> */}
-            <li className="user-details__tag">{userData.weights[userData.weights.length-1].weight} kg</li>
-            <li className="user-details__tag">{userData.weights[userData.weights.length-1].imc}</li>
+            <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
+            <li className="user-details__tag">{userData.weights[userData.weights.length - 1].imc}</li>
           </ul>
         </div>
       </div>
@@ -70,8 +71,11 @@ const UserDetails = ({ userData }) => {
         </li>
       </ul>
     </div>
-
   );
+};
+
+UserDetails.propTypes = {
+  userData: PropTypes.objectOf().isRequired,
 };
 
 // == Export
