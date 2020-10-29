@@ -5,11 +5,11 @@ import React from 'react';
 import './dashboard.scss';
 
 // == Import composants
-import Menu from 'src/components/Dashboard/Menu';
-import Trackers from 'src/components/Dashboard/Trackers';
-import FavoriteArticles from 'src/components/Dashboard/FavoriteArticles';
-import Todolist from 'src/components/Dashboard/Todolist';
-import UserDetails from 'src/components/Dashboard/UserDetails';
+import Trackers from './Trackers';
+import FavoriteArticles from './FavoriteArticles';
+import Todolist from './Todolist';
+import UserDetails from './UserDetails';
+import Menu from './Menu';
 
 // == Composant
 const Dashboard = () => (

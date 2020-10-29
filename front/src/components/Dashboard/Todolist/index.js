@@ -3,6 +3,7 @@ import React from 'react';
 
 import modalplus from 'src/assets/images/icones/icone-add-task.svg';
 import modaltrash from 'src/assets/images/icones/icone-poubelle.svg';
+import './todolist.scss';
 
 const Todolist = () => (
   <div className="todolist">

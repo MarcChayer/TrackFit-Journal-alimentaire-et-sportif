@@ -7,6 +7,7 @@ import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/components/Login';
 import Articles from 'src/components/Articles';
+import OneArticle from 'src/components/Articles/OneArticle';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
 import Settings from 'src/components/Settings';
@@ -25,6 +26,9 @@ const App = () => (
     </Route>
     <Route path="/articles">
       <Articles />
+    </Route>
+    <Route path="/article1">
+      <OneArticle />
     </Route>
     <Route path="/tableaudebord">
       <Dashboard />

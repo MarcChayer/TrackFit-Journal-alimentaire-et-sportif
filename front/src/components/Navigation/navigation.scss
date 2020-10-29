@@ -1,9 +1,5 @@
 @use 'src/styles/vars';
 
-.navigation--desktop {
-  
-}
-
 .navigation {
   &-list {
     display: flex;
@@ -15,6 +11,10 @@
   &-link {
     margin: 0 15px;
     color: vars.$primary-color;
+    font-size: 1.2em;
+    @media screen and (max-width:1020px) {
+      font-size: 1em;
+    }
   
     &:hover {
       color: vars.$secondary-color;

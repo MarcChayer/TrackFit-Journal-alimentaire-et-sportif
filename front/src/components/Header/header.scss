@@ -1,6 +1,6 @@
 @use 'src/styles/vars';
  
-  .header { // header englobe logo + compo navigation (en desktop uniquement) + compo searchbar + logo signin
+  .header { // header englobe logo + compo navigation (en desktop uniquement) + logos login + signup | logout
     position:fixed;
     top: 0;
     left: 0;
@@ -16,16 +16,17 @@
   }
 
   .logo {
-    width: 16em;
-    margin: 1em;
-    padding: 3em;
-    margin-left: -2em;
-    margin-right: 5em;
+    width: 10em;
+    padding: 1em;
 
     @media (min-width:700px) and (max-width:1200px) {
       width: 9em;
       margin: 1em;
       padding: 0;
+    }
+    @media (max-width: 700px) {
+        margin: 0em 0 0em -1em;
+        padding: 1.5em;
     }
 }
 
@@ -45,7 +46,7 @@ svg path .st1:hover {
     display: none;
   }
   
-  .bloc-right { // bloc à droite, comprend searchbar + signin
+  .bloc-right { // bloc à droite (login + signup | logout)
     float: right;
     display: flex;
     flex-direction: row;
@@ -53,8 +54,15 @@ svg path .st1:hover {
     align-items: center;
   }
 
-  
-  .signin {
+  .bloc-left { // bloc à gauche (logo)
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .login {
     margin: 0 1.2em 0 0;
     
     &-link { // lien pour se loguer
@@ -62,7 +70,88 @@ svg path .st1:hover {
     }
 
     &-img { // logo pour se loguer
-      width: 2.5em;
+      display: none;
+      @media screen and (max-width:900px) {
+        display: block;
+        width: 2.5em;
+        margin: auto 2em;
+      }
+    }
+
+    &-p {
+      padding: 1em;
+      font-size: 1.2em;
+      color: #3d5499;
+      @media screen and (max-width:900px) {
+        //display: none;
+        font-size: 1.2em;
+
+      }
+      @media screen and (max-width:1020px) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .signup {
+    margin: 0 1.2em 0 0;
+    
+    &-link { // lien pour s'inscrire
+      text-align: right;
+    }
+
+    &-img { // logo pour s'inscrire
+      display: none;
+      @media screen and (max-width:900px) {
+        display: block;
+        width: 2.5em;
+        margin: auto 2em;
+      }
+    }
+
+    &-p {
+      padding: 1em;
+      font-size: 1.2em;
+      color: #3d5499;
+      @media screen and (max-width:900px) {
+        //display: none;
+        font-size: 1.2em;
+
+      }
+      @media screen and (max-width:1020px) {
+        font-size: 1em;
+      }
+    }
+  }
+
+  .logout {
+    margin: 0 1.2em 0 0;
+    
+    &-link { // lien pour se deloguer
+      text-align: right;
+    }
+
+    &-img { // logo pour se deloguer
+      display: none;
+      @media screen and (max-width:900px) {
+        display: block;
+        width: 2.5em;
+        margin: auto 2em;
+      }
+    }
+
+    &-p {
+      padding: 1em;
+      font-size: 1.2em;
+      color: #3d5499;
+      @media screen and (max-width:900px) {
+        //display: none;
+        font-size: 1.2em;
+
+      }
+      @media screen and (max-width:1020px) {
+        font-size: 1em;
+      }
     }
   }
 

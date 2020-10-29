@@ -1,0 +1,74 @@
+@use 'src/styles/vars';
+
+.favs-todo {
+  height: 42vh; //21em
+  display: flex;
+  border-radius: 20px 20px 0 0;
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.favs,
+.todolist {
+  flex: 1;
+  padding: 2em;
+  border-radius: 2em;
+  box-shadow: vars.$box-shadow;
+  background-color: white;
+}
+
+.todolist {
+  overflow-y: scroll;
+  flex: 1;
+  max-height: 365px;
+
+  @media screen and (max-width: 900px) {
+    margin-right: 0;
+    margin-bottom: 4em;
+    height: max-content;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__item {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 2em;
+    background-color: vars.$background-color;
+    border-radius: 1em;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+
+    & span {
+      flex: 8;
+    }
+  }
+
+  &__checkbox {
+    color: #3d5499;
+    width: 2em;
+    height: 1em;
+  }
+
+  &__modalplus-img {
+    position: relative;
+    width: 1.5em;
+    top: -0.5em;
+    right: -1em;
+  }
+
+  &__modaltrash-img {
+    position: relative;
+    width: 1em;
+    right: 1em;
+ }
+}

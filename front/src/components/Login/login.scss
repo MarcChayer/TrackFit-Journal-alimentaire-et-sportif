@@ -48,11 +48,12 @@
 }
 
 .log-input {
-  padding: .46em;
-  border: 2px solid vars.$secondary-color;
+  padding: vars.$input-padding;
+  border: vars.$input-border;
+  border-radius:vars.$input-radius;
   width: 100%;
-  font-size: 1em;
-  margin: 0.3em 0;
+  font-size:vars.$input-fontsize;
+  margin:vars.$input-margin;
 }
 
 .log-id {

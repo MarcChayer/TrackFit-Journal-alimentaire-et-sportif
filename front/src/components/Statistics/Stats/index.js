@@ -12,16 +12,6 @@ const Stats = () => (
   <ul className="statistics__list">
 
     <li className="statistic">
-      <div className="statistics__header statistics__header__food" />
-      <img src={food} alt="food" className="statistics__rounded-img" />
-    </li>
-
-    <li className="statistic">
-      <div className="statistics__header statistics__header__water" />
-      <img src={water} alt="water" className="statistics__rounded-img" />
-    </li>
-
-    <li className="statistic">
       <div className="statistics__header statistics__header__profile" />
       <img src={profile} alt="profile" className="statistics__rounded-img" />
 
@@ -32,6 +22,16 @@ const Stats = () => (
         <li className="user-details__tag">75 kg</li>
         <li className="user-details__tag">IMC : 22.4</li>
       </ul>
+    </li>
+
+    <li className="statistic">
+      <div className="statistics__header statistics__header__food" />
+      <img src={food} alt="food" className="statistics__rounded-img" />
+    </li>
+
+    <li className="statistic">
+      <div className="statistics__header statistics__header__water" />
+      <img src={water} alt="water" className="statistics__rounded-img" />
     </li>
 
     <li className="statistic">
