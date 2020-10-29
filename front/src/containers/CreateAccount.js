@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   email: state.user.email,
   password: state.user.password,
   confirmedPassword: state.user.confirmedPassword,
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

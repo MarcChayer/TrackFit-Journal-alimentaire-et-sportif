@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './field.scss';
 
-const Field = ({
+const FieldLogin = ({
   name,
   type,
   placeholder,
@@ -11,13 +11,12 @@ const Field = ({
   changeField,
 }) => {
   const handleOnChange = (event) => {
-    console.log(event.target.value);
     changeField(event.target.value, event.target.name);
   };
 
   return (
     <input
-      className="create-input"
+      className="input"
       name={name}
       type={type}
       placeholder={placeholder}
@@ -28,7 +27,7 @@ const Field = ({
   );
 };
 
-Field.propTypes = {
+FieldLogin.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
@@ -36,8 +35,8 @@ Field.propTypes = {
   changeField: PropTypes.func.isRequired,
 };
 
-Field.defaultProps = {
+FieldLogin.defaultProps = {
   type: 'text',
 };
 
-export default Field;
+export default FieldLogin;

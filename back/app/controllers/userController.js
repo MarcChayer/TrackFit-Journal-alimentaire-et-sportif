@@ -42,8 +42,8 @@ const userController = {
                 });
                 await newUser.save();
                 res.status(200).json(newUser);
-                // on redirige ensuite sur la page login
-                // res.redirect('/login');
+                // // on redirige ensuite sur la page login
+                // res.redirect('/');
             }
         } catch (error) {
             console.log(error);
