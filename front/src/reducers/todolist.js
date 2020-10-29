@@ -1,17 +1,16 @@
 import {
-  FETCH_DASHBOARD_SUCCESS,
-} from '../actions/dashboard';
+  REGISTER_TASK_SUBMIT,
+} from '../actions/todolist';
 
 const initialState = {
-  allData: {},
+  addTask: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case FETCH_DASHBOARD_SUCCESS:
+    case REGISTER_TASK_SUBMIT:
       return {
         ...state,
-        allData: { ...action.payload },
       };
     default:
       return state;

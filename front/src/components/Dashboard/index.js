@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // == Import composants
 import Trackers from './Trackers';
 import FavoriteArticles from './FavoriteArticles';
-import Todolist from './Todolist';
+import Todolist from '../../containers/Todolist';
 import UserDetails from './UserDetails';
 import Menu from './Menu';
 
@@ -28,7 +28,9 @@ const Dashboard = ({ fetchDashboard, allData }) => {
             <FavoriteArticles
               articleFav={allData}
             />
-            <Todolist />
+            <Todolist
+              toDoList={allData}
+            />
           </div>
         </div>
         {/* dashboard__right"> */}

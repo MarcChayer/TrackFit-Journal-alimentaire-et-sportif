@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './favoriteArticles.scss';
 
-const FavoriteArticles = ({ articleFav }) => { 
+const FavoriteArticles = ({ articleFav }) => {
   if (!articleFav || !articleFav.articles) {
     return <div>recuperation de la ressource</div>;
   }
@@ -31,6 +31,7 @@ const FavoriteArticles = ({ articleFav }) => {
     </ul>
   );
 };
+
 FavoriteArticles.propTypes = {
   articleFav: PropTypes.objectOf().isRequired,
 };
