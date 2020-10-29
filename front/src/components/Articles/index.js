@@ -18,6 +18,7 @@ const Articles = ({ fetchArticles, list, errorMessage }) => {
         {
           list.map((article) => (
             <Article
+              key={article.id}
               article={article}
             />
           ))

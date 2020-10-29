@@ -1,16 +1,19 @@
 import {
-  REGISTER_TASK_SUBMIT,
+  ADD_TASK_INPUT_CHANGE,
 } from '../actions/todolist';
 
 const initialState = {
-  addTask: '',
+  labelNewTask: '',
+  allData: {},
 };
 
 const reducer = (state = initialState, action = {}) => {
+  console.log(action);
   switch (action.type) {
-    case REGISTER_TASK_SUBMIT:
+    case ADD_TASK_INPUT_CHANGE:
       return {
         ...state,
+        ...action.payload,
       };
     default:
       return state;

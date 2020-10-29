@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
-import { registerTaskSubmit } from '../actions/todolist';
+import { addTaskSubmit, addTaskInputChange } from '../actions/todolist';
 
 import Todolist from '../components/Dashboard/Todolist';
 
 const mapStateToProps = (state) => ({
-  addTask: state.dashboard.addTask,
+  labelNewTask: state.todolist.labelNewTask,
+  allData: state.dashboard.allData,
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  onChange: (value, name) => {
+    const object = {
+      [name]: value,
+    };
+    dispatch(addTaskInputChange(object));
+  },
   submitAddTask: () => {
-    dispatch(registerTaskSubmit());
+    dispatch(addTaskSubmit());
   },
 });
 

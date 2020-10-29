@@ -15,15 +15,15 @@ const FavoriteArticles = ({ articleFav }) => {
     <ul className="favs">
       <h2>Articles favoris</h2>
       {
-        articleFav.articles.map((articles) => (
-          <li className="favs__item">
+        articleFav.articles.map((article) => (
+          <li className="favs__item" key={article.id}>
             <div className="favs__overview">
               <FontAwesomeIcon icon={faHeart} />
-              <img src={articles.media} alt="article" className="favs__thumbnail" />
+              <img src={article.media} alt="article" className="favs__thumbnail" />
             </div>
             <div className="favs__excerpt">
-              <h3>{articles.title}</h3>
-              <p>{articles.content}</p>
+              <h3>{article.title}</h3>
+              <p>{article.content}</p>
             </div>
           </li>
         ))

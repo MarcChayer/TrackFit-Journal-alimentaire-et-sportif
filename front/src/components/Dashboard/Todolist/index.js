@@ -5,22 +5,30 @@ import modalplus from 'src/assets/images/icones/icone-add-task.svg';
 import modaltrash from 'src/assets/images/icones/icone-poubelle.svg';
 import './todolist.scss';
 
-const Todolist = ({ toDoList, addTask, submitAddTask }) => {
+const Todolist = ({
+  toDoList,
+  labelNewTask,
+  submitAddTask,
+  onChange,
+}) => {
   if (!toDoList || !toDoList.tasks) {
     return <div>recuperation de la ressource</div>;
   }
 
-  let addInputTask = false;
+  const handleClick = (event) => {
+    event.preventDefault();
+  };
+
+  const handleOnChange = (event) => {
+    event.preventDefault();
+    // console.log(event.target.name, event.target.value);
+    onChange(event.target.value, event.target.name);
+  };
+
   const handleOnSubmit = (event) => {
     event.preventDefault();
     console.log('handleOnSubmit');
     submitAddTask();
-  };
-
-  const handleClick = (event) => {
-    // action d'ajouter une tache (donc li qui contient input + icone)
-    // addTask(event.target);
-    event.preventDefault();
   };
 
   return (
@@ -36,7 +44,7 @@ const Todolist = ({ toDoList, addTask, submitAddTask }) => {
         <form action="" method="post">
           {
             toDoList.tasks.map((task) => (
-              <li className="todolist__item">
+              <li className="todolist__item" key={task.id}>
                 <input type="checkbox" className="todolist__checkbox" />
                 <span>{task.title}</span>
                 <a href="#">
@@ -48,11 +56,11 @@ const Todolist = ({ toDoList, addTask, submitAddTask }) => {
         </form>
         <form onSubmit={handleOnSubmit} className="form">
           <input
-            name="labelTask"
+            name="labelNewTask"
             className="form__input"
             type="text"
             placeholder="Ajouter une tâche"
-            value={addTask}
+            value={labelNewTask}
             onChange={handleOnChange}
           />
         </form>
@@ -63,7 +71,9 @@ const Todolist = ({ toDoList, addTask, submitAddTask }) => {
 
 Todolist.propTypes = {
   toDoList: PropTypes.objectOf().isRequired,
-  addTask: PropTypes.func.isRequired,
+  labelNewTask: PropTypes.func.isRequired,
+  submitAddTask: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 // == Export
