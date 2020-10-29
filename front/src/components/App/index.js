@@ -4,12 +4,12 @@ import { Route } from 'react-router-dom';
 
 import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
-import Login from 'src/components/Login';
-import Articles from 'src/components/Articles';
-import OneArticle from 'src/components/Articles/OneArticle';
+import Login from 'src/containers/Login';
+import Articles from 'src/containers/Articles';
+// import OneArticle from 'src/components/Articles/OneArticle';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
-import Settings from 'src/components/Settings';
+// import Settings from 'src/components/Settings';
 
 // == Composant
 const App = () => (
@@ -23,11 +23,8 @@ const App = () => (
     <Route path="/connexion">
       <Login />
     </Route>
-    <Route path="/articles">
+    <Route path="/articles/:slug">
       <Articles />
-    </Route>
-    <Route path="/article1">
-      <OneArticle />
     </Route>
     <Route path="/tableaudebord">
       <Dashboard />
@@ -35,12 +32,9 @@ const App = () => (
     <Route path="/statistiques">
       <Statistics />
     </Route>
-    <Route path="/parametres">
+    {/* <Route path="/parametres">
       <Settings />
-    </Route>
-    <Route path="/articles/:slug">
-      <Articles />
-    </Route>
+    </Route> */}
   </div>
 );
 
