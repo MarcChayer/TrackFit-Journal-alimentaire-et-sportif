@@ -28,7 +28,7 @@ const UserDetails = ({ userData }) => {
               <div>{item.weight}</div>
             ))} kg </li> */}
             <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
-            <li className="user-details__tag">{userData.weights[userData.weights.length - 1].imc}</li>
+            <li className="user-details__tag">imc : {userData.weights[userData.weights.length - 1].imc}</li>
           </ul>
         </div>
       </div>

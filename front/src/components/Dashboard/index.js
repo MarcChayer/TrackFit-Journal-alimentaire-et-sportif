@@ -25,7 +25,9 @@ const Dashboard = ({ fetchDashboard, allData }) => {
         <div className="dashboard__left">
           <Trackers />
           <div className="favs-todo">
-            <FavoriteArticles />
+            <FavoriteArticles
+              articleFav={allData}
+            />
             <Todolist />
           </div>
         </div>
