@@ -9,7 +9,7 @@ import Articles from 'src/containers/Articles';
 // import OneArticle from 'src/components/Articles/OneArticle';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
-// import Settings from 'src/components/Settings';
+import Settings from 'src/components/Settings';
 
 // == Composant
 const App = () => (
@@ -32,9 +32,9 @@ const App = () => (
     <Route path="/statistiques">
       <Statistics />
     </Route>
-    {/* <Route path="/parametres">
+    <Route path="/parametres">
       <Settings />
-    </Route> */}
+    </Route>
   </div>
 );
 
