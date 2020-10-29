@@ -146,8 +146,6 @@ const dashboardController = {
             if (dataTask) {
                 await dataTask.save();
                 res.status(200).json(dataTask);
-            } else {
-                res.status(404).json('Cet utilisateur n\'existe pas');
             }
         } catch (error) {
             console.log(error);
