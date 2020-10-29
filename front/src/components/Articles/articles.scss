@@ -10,6 +10,8 @@
   border-radius: 1em;
   @media (max-width: 1350px) {
     width: 22em;
+  @media (max-width: 850px) {
+    width: 30em;
   }
 }
 
@@ -29,7 +31,8 @@
 
 .articles {
   text-align: center;
-  margin-top: 6em;
+  margin: 6em auto auto auto;
+  width: 90%;
 }
 
 .article {
@@ -44,6 +47,8 @@
   border-radius: 1em;
   @media (max-width: 1350px) {
     width: 22em;
+  @media (max-width: 850px) {
+    width: 30em;
   }
 }
 

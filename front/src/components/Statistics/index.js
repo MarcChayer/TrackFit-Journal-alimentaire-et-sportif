@@ -5,7 +5,7 @@ import React from 'react';
 import './statistics.scss';
 
 // == Import composants
-import Menu from 'src/components/Statistics/Menu';
+import Menu from './Menu';
 import Stats from './Stats';
 
 // == Composant

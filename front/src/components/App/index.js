@@ -1,13 +1,15 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
-import Login from 'src/containers/Login';
+import Login from 'src/components/Login';
+import Articles from 'src/components/Articles';
+import OneArticle from 'src/components/Articles/OneArticle';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
-import Articles from 'src/containers/Articles';
+import Settings from 'src/components/Settings';
 
 // == Composant
 const App = () => (
@@ -16,23 +18,27 @@ const App = () => (
       <Header />
     </Route>
     <Route path="/inscription">
-      <Header />
       <CreateAccount />
     </Route>
     <Route path="/connexion">
-      <Header />
       <Login />
     </Route>
+    <Route path="/articles">
+      <Articles />
+    </Route>
+    <Route path="/article1">
+      <OneArticle />
+    </Route>
     <Route path="/tableaudebord">
-      <Header />
       <Dashboard />
     </Route>
     <Route path="/statistiques">
-      <Header />
       <Statistics />
     </Route>
+    <Route path="/parametres">
+      <Settings />
+    </Route>
     <Route path="/articles/:slug">
-      <Header />
       <Articles />
     </Route>
   </div>

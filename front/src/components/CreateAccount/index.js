@@ -26,44 +26,43 @@ const CreateAccount = (
   if (!isLogged) {
     return (
       <div className="createaccount">
+        <h1 className="create-title">Créer un compte</h1>
 
-        <h1 className="title">Créer un compte</h1>
-
-        <form className="createform" onSubmit={handleSubmit}>
-          <label>Votre nom :</label>
+        <form className="create-form" onSubmit={handleSubmit}>
+          <label className="create-label">Nom :</label>
           <Field
             value={firstName}
             name="firstName"
             placeholder="Nom"
           />
-          <label>Votre prénom :</label>
+          <label className="create-label">Prénom :</label>
           <Field
             value={lastName}
             name="lastName"
             placeholder="Prénom"
           />
-          <label>E-mail :</label>
+          <label className="create-label">E-mail :</label>
           <Field
             value={email}
             name="email"
             placeholder="E-mail"
           />
-          <label>Mot de passe :</label>
+          <label className="create-label">Mot de passe :</label>
           <Field
             value={password}
             name="password"
             placeholder="Mot de passe"
           />
-          <label>Confirmez votre mot de passe :</label>
+          <label className="create-label">Confirmez votre mot de passe :</label>
           <Field
             value={confirmedPassword}
             name="confirmedPassword"
             placeholder="Confirmez votre mot de passe"
           />
-          <button className="button" type="submit">Créer votre compte</button>
+          <button className="create-button" type="submit">Créer votre compte</button>
         </form>
 
-        <p>Vous avez déjà un compte ?<a className="id" href="/connexion"> Identifiez-vous</a></p>
+        <p>Vous avez déjà un compte ?<a className="create-id" href="/connexion"> Identifiez-vous</a></p>
       </div>
     );
   }

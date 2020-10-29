@@ -1,17 +1,18 @@
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import './userDetails.scss';
 
 import profile from 'src/assets/images/profile.svg';
 
 const UserDetails = () => (
-  <div className="dashboard__right">
+  <div className="dashboard__right user-details-header">
     <div className="user-details">
       <a href="#">
         <img src={profile} alt="profile" className="user-details__picture" />
       </a>
       <div className="user-details__infos">
-        <h2>Bonjour Paul Ochon !</h2>
+        <h2>Bonjour, Marc !</h2>
         <ul className="user-details__tags">
           <li className="user-details__tag">23 ans</li>
           <li className="user-details__tag">183 cm</li>
