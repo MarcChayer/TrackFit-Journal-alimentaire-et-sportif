@@ -19,7 +19,7 @@ CREATE TABLE "user" (
 
 -- la table 'weight'
 CREATE TABLE "weight" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
     "weight" INTEGER,
@@ -31,7 +31,7 @@ CREATE TABLE "weight" (
 --
 
 CREATE TABLE "article" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
     "source" TEXT NOT NULL,
@@ -65,7 +65,7 @@ CREATE TABLE "food_type" (
 --
 
 CREATE TABLE "food" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "food_type_id" INTEGER REFERENCES "food_type"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE "food" (
 
 -- la table 'water'
 CREATE TABLE "water" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
     "water" INTEGER
@@ -86,7 +86,7 @@ CREATE TABLE "water" (
 --
 
 CREATE TABLE "sleep" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" DATE NOT NULL,
     "bedTime" TIME NOT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE "sport_type" (
 --
 
 CREATE TABLE "sport" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "sport_type_id" INTEGER REFERENCES "sport_type"("id") NOT NULL,
     "date" TIMESTAMP NOT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE "sport" (
 --
 
 CREATE TABLE "task" (
-    "id" SERIAL PRIMARY KEY,
+    "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "title" TEXT NOT NULL
 );
