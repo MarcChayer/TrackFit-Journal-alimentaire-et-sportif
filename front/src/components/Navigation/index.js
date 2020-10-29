@@ -3,10 +3,7 @@ import React from 'react';
 
 import './navigation.scss';
 import profile from 'src/assets/images/profile.svg';
-import burger from 'src/assets/images/icones/icone-burger.svg';
 import statistics from 'src/assets/images/icones/icone-statistics.svg';
-
-import Toggle from './Toggle';
 
 // == Composant
 const Navigation = () => (
@@ -25,7 +22,7 @@ const Navigation = () => (
       <ul className="navigation-list">
         <li className="navigation-link"><a href="/tableaudebord"><img src={profile} alt="profile utilisateur" className="navigation--mobile-img" /></a></li>
         <li className="navigation-link"><a href="/statistiques"><img src={statistics} alt="statistiques utilisateur" className="navigation--mobile-img" /></a></li>
-        <li className="navigation-link"> <Toggle /> </li>
+        <li className="navigation-link">  </li>
       </ul>
     </nav>
   </div>
