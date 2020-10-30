@@ -31,6 +31,7 @@ const UserDetails = ({ userData }) => {
             <li className="user-details__tag">imc : {userData.weights[userData.weights.length - 1].imc}</li>
           </ul>
         </div>
+
       </div>
 
       <ul className="user-stats">

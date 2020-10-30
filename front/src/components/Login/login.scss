@@ -47,15 +47,6 @@
   background-color: vars.$primary-color;
 }
 
-.log-input {
-  padding: vars.$input-padding;
-  border: vars.$input-border;
-  border-radius:vars.$input-radius;
-  width: 100%;
-  font-size:vars.$input-fontsize;
-  margin:vars.$input-margin;
-}
-
 .log-id {
   color: vars.$primary-color;
   font-weight: bold;

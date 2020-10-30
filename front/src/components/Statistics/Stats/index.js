@@ -7,12 +7,12 @@ import sleep from 'src/assets/images/icones/icone-sommeil.svg';
 import sport from 'src/assets/images/icones/icone-sport.svg';
 import weight from 'src/assets/images/icones/icone-poids.svg';
 import profile from 'src/assets/images/profile.svg';
+import './stats.scss';
 
 const Stats = () => (
   <ul className="statistics__list">
 
-    <li className="statistic">
-      <div className="statistics__header statistics__header__profile" />
+    <li className="statistic statistic__profile">
       <img src={profile} alt="profile" className="statistics__rounded-img" />
 
       <h2>Bonjour Paul Ochon !</h2>
@@ -24,28 +24,23 @@ const Stats = () => (
       </ul>
     </li>
 
-    <li className="statistic">
-      <div className="statistics__header statistics__header__food" />
+    <li className="statistic statistic__food">
       <img src={food} alt="food" className="statistics__rounded-img" />
     </li>
 
-    <li className="statistic">
-      <div className="statistics__header statistics__header__water" />
+    <li className="statistic statistic__water">
       <img src={water} alt="water" className="statistics__rounded-img" />
     </li>
 
-    <li className="statistic">
-      <div className="statistics__header statistics__header__sleep" />
+    <li className="statistic statistic__sleep">
       <img src={sleep} alt="sleep" className="statistics__rounded-img" />
     </li>
 
-    <li className="statistic">
-      <div className="statistics__header statistics__header__sport" />
+    <li className="statistic statistic__sport">
       <img src={sport} alt="sport" className="statistics__rounded-img" />
     </li>
 
-    <li className="statistic">
-      <div className="statistics__header statistics__header__weight" />
+    <li className="statistic statistic__weight">
       <img src={weight} alt="poids" className="statistics__rounded-img" />
     </li>
   </ul>

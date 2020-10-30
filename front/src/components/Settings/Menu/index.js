@@ -8,10 +8,10 @@ const Menu = () => (
       <li className="dashboard__menu-item">
         <a href="/tableaudebord" className="dashboard__menu-link">Tableau de bord</a>
       </li>
-      <li className="dashboard__menu-item dashboard__menu-item-active">
+      <li className="dashboard__menu-item">
         <a href="/statistiques" className="dashboard__menu-link">Statistiques</a>
       </li>
-      <li className="dashboard__menu-item">
+      <li className="dashboard__menu-item dashboard__menu-item-active">
         <a href="/parametres" className="dashboard__menu-link">Paramètres</a>
       </li>
     </ul>

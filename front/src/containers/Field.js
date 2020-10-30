@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { inputChange } from '../actions/user';
 
-import Field from '../components/CreateAccount/Field';
+import FieldCreateAccount from '../components/CreateAccount/Field';
 
 const mapStateToProps = (state, ownProps) => ({
   value: state[ownProps],
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Field);
+export default connect(mapStateToProps, mapDispatchToProps)(FieldCreateAccount);
