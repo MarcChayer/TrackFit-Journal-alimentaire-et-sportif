@@ -6,7 +6,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case FETCH_ARTICLES:
       // console.log(store.getState().router.params);
-      axios.get('http://localhost:5050/articles/alimentation')
+      axios.get('http://localhost:5050/articles')
         .then((res) => {
           console.log(res.data);
           store.dispatch(fetchArticlesSuccess(res.data));

@@ -10,6 +10,7 @@ const Todolist = ({
   labelNewTask,
   submitAddTask,
   onChange,
+  deleteOnClick,
 }) => {
   if (!toDoList || !toDoList.tasks) {
     return <div>recuperation de la ressource</div>;
@@ -26,8 +27,12 @@ const Todolist = ({
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    console.log('handleOnSubmit');
     submitAddTask();
+  };
+
+  const handleOnClick = (event) => {
+    // console.log(event.target.dataset.taskId);
+    deleteOnClick(event.target.dataset.taskId);
   };
 
   return (
@@ -38,6 +43,16 @@ const Todolist = ({
           <img src={modalplus} alt="ajouter une tâche" className="todolist__modalplus-img" />
         </a>
       </div>
+      <form onSubmit={handleOnSubmit} className="form">
+        <input
+          name="labelNewTask"
+          className="form__input"
+          type="text"
+          placeholder="Ajouter une tâche"
+          value={labelNewTask}
+          onChange={handleOnChange}
+        />
+      </form>
 
       <ul className="todolist__items">
         <form action="" method="post">
@@ -46,22 +61,12 @@ const Todolist = ({
               <li className="todolist__item" key={task.id}>
                 <input type="checkbox" className="todolist__checkbox" />
                 <span>{task.title}</span>
-                <a href="#">
-                  <img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" />
+                <a href="#" onClick={handleOnClick}>
+                  <img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" data-task-id={task.id} />
                 </a>
               </li>
             ))
           }
-        </form>
-        <form onSubmit={handleOnSubmit} className="form">
-          <input
-            name="labelNewTask"
-            className="form__input"
-            type="text"
-            placeholder="Ajouter une tâche"
-            value={labelNewTask}
-            onChange={handleOnChange}
-          />
         </form>
       </ul>
     </div>
@@ -70,9 +75,10 @@ const Todolist = ({
 
 Todolist.propTypes = {
   toDoList: PropTypes.objectOf().isRequired,
-  labelNewTask: PropTypes.func.isRequired,
+  labelNewTask: PropTypes.string.isRequired,
   submitAddTask: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  deleteOnClick: PropTypes.func.isRequired,
 };
 
 // == Export

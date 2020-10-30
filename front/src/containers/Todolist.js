@@ -1,5 +1,9 @@
 import { connect } from 'react-redux';
-import { addTaskSubmit, addTaskInputChange } from '../actions/todolist';
+import {
+  addTaskSubmit,
+  addTaskInputChange,
+  deleteTask,
+} from '../actions/todolist';
 
 import Todolist from '../components/Dashboard/Todolist';
 
@@ -17,6 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   submitAddTask: () => {
     dispatch(addTaskSubmit());
+  },
+  deleteOnClick: (taskId) => {
+    dispatch(deleteTask(taskId));
   },
 });
 

@@ -1,5 +1,6 @@
 import {
   ADD_TASK_INPUT_CHANGE,
+  ADD_TASK_SUCCESS,
 } from '../actions/todolist';
 
 const initialState = {
@@ -8,12 +9,16 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
-  console.log(action);
   switch (action.type) {
     case ADD_TASK_INPUT_CHANGE:
       return {
         ...state,
         ...action.payload,
+      };
+    case ADD_TASK_SUCCESS:
+      return {
+        ...state,
+        labelNewTask: '',
       };
     default:
       return state;

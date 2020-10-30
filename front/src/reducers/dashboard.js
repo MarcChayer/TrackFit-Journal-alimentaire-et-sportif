@@ -3,6 +3,7 @@ import {
 } from '../actions/dashboard';
 import {
   ADD_TASK_SUCCESS,
+  DELETE_TASK_SUCCESS,
 } from '../actions/todolist';
 
 const initialState = {
@@ -24,6 +25,17 @@ const reducer = (state = initialState, action = {}) => {
           tasks: [
             ...state.allData.tasks,
             action.payload,
+          ],
+        },
+      };
+    case DELETE_TASK_SUCCESS:
+      // console.log(state.allData.tasks);
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          tasks: [
+            ...action.payload,
           ],
         },
       };
