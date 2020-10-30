@@ -1,6 +1,15 @@
 const Article = require('../models/article');
 
 const articlesController = {
+    getAllArticles: async (req, res) => {
+        try {
+            const allArticles = await Article.findAll()
+            res.status(200).json(allArticles)
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
     getArticlesByLabel : async (req, res) => {
         const { label } = req.params;
         try {     

@@ -135,6 +135,20 @@ const dashboardController = {
             res.status(500).json(error.toString());
         }
     },
+    getAllTask: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const allTask = await Task.findAll({
+                where: {
+                    user_id: idUser
+                }
+            })
+            res.status(200).json(allTask)
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
 
     createTask: async (req, res) => {
         try {

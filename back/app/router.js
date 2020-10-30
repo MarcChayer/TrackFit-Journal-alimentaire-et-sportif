@@ -11,6 +11,7 @@ const dashboardController = require('./controllers/dashboardController');
 // route primordiale
 
 // routes articles :
+router.get('/articles/', articlesController.getAllArticles);
 router.get('/articles/:label', articlesController.getArticlesByLabel);
 router.get('/article/:label/:id', articlesController.getOneArticle);
 router.delete('/article/:label/:id', articlesController.deleteArticle);
@@ -39,6 +40,8 @@ router.post('/dashboard/:id/water', dashboardController.postDataWater);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/sleep', dashboardController.postDataSleep);
 
+// on envoie les nouvelles données du tracker task en bdd
+router.get('/dashboard/:id/task', dashboardController.getAllTask);
 // on envoie les nouvelles données du tracker task en bdd
 router.post('/dashboard/:id/task', dashboardController.createTask);
 // tracker task : supression d'une tâche
