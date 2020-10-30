@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import logo from 'src/assets/images/icones/illustration-alimentation.svg';
+import { useParams } from 'react-router-dom';
 
+import PropTypes from 'prop-types';
+import logoAlimentation from 'src/assets/images/icones/illustration-alimentation.svg';
+import logoSport from 'src/assets/images/icones/illustration-sport.svg';
+import logoBienEtre from 'src/assets/images/icones/illustration-bien-etre.svg';
 import Article from './Article';
 import './articles.scss';
 
@@ -9,15 +12,35 @@ const Articles = ({ fetchArticles, list, errorMessage }) => {
   useEffect(() => {
     fetchArticles();
   }, []);
+  const { slug } = useParams();
+  const articleList = list.filter((item) => (
+    item.label === slug
+  ));
+  let logoImage = '';
+
+  switch (slug) {
+    case 'alimentation':
+      logoImage = logoAlimentation;
+      break;
+    case 'sport':
+      logoImage = logoSport;
+      break;
+    case 'bienetre':
+      logoImage = logoBienEtre;
+      break;
+    default:
+      logoImage = logoAlimentation;
+  }
 
   return (
     <div className="articles">
       {errorMessage}
       <ul className="articles__list">
-        <img className="logo-category" src={logo} alt="aliment" />
+        <img className="logo-category" src={logoImage} alt="aliment" />
         {
-          list.map((article) => (
+          articleList.map((article) => (
             <Article
+              key={article.id}
               article={article}
             />
           ))

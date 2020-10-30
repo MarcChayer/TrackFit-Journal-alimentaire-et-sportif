@@ -135,6 +135,20 @@ const dashboardController = {
             res.status(500).json(error.toString());
         }
     },
+    getAllTask: async (req, res) => {
+        try {
+            const idUser = parseInt(req.params.id);
+            const allTask = await Task.findAll({
+                where: {
+                    user_id: idUser
+                }
+            })
+            res.status(200).json(allTask)
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    },
 
     createTask: async (req, res) => {
         try {
@@ -146,8 +160,6 @@ const dashboardController = {
             if (dataTask) {
                 await dataTask.save();
                 res.status(200).json(dataTask);
-            } else {
-                res.status(404).json('Cet utilisateur n\'existe pas');
             }
         } catch (error) {
             console.log(error);

@@ -1,12 +1,12 @@
 // == Import npm
 import React from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/containers/Login';
 import Articles from 'src/containers/Articles';
-import Dashboard from 'src/components/Dashboard';
+import Dashboard from 'src/containers/Dashboard';
 import Statistics from 'src/components/Statistics';
 import Settings from 'src/components/Settings';
 import NotFound from 'src/components/NotFound';

@@ -14,7 +14,9 @@ const Article = ({ article }) => (
       </div>
       <h2 className="article__title">{article.title}</h2>
       <p className="article__excerpt">{article.content}</p>
+
       <a href={article.source} target="_blank" className="article__seemore">Voir l'article</a>
+
     </article>
   </li>
 );
