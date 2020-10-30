@@ -7,6 +7,8 @@ import './params.scss';
 import profile from 'src/assets/images/profile.svg';
 import man from 'src/assets/images/man.svg';
 import woman from 'src/assets/images/woman.svg';
+import settingsIcone from 'src/assets/images/icones/settings-icone.svg';
+import paramsIcone from 'src/assets/images/icones/params-icone.svg';
 import add from 'src/assets/images/icones/icone-open-modal-sport.svg';
 
 const Params = () => (
@@ -21,13 +23,12 @@ const Params = () => (
             <img src={add} alt="ajouter" className="user-add__picture" />
           </a>
         </li>
-        <li className="user-params__tag-list">Paul</li>
-        <li className="user-params__tag-list">Ochon</li>
-        <li className="user-params__tag-list">Homme</li>
-        <li className="user-params__tag-list">23 ans</li>
-        <li className="user-params__tag-list">183 cm</li>
-        <li className="user-params__tag-list">75 kg</li>
-        <li className="user-params__tag-list">IMC : 22.4</li>
+        <li className="user-params__tag-list">user.firstName user.lastName</li>
+        <li className="user-params__tag-list">user.birthdate</li>
+        <li className="user-params__tag-list">Poids initial : user.weight kg</li>
+        <li className="user-params__tag-list">Poids à atteindre : kg</li>
+        <li className="user-params__tag-list">IMC : user.imc</li>
+        <li className="user-params__tag-list">Heures de sommeil : user.sleep h</li>
       </ul>
     </div>
 
@@ -36,7 +37,7 @@ const Params = () => (
       <form className="settings-form">
 
         <div className="params-settings-bloc">
-          <h1 className="settings-title">Vos informations personnelles</h1>
+          <h1 className="settings-title">Vos informations :</h1>
           <div className="settings-content">
             <label className="settings-label">Prénom
               <input className="settings-input" type="text" placeholder="Prénom" />
@@ -44,50 +45,9 @@ const Params = () => (
             <label className="settings-label">Nom
               <input className="settings-input" type="text" placeholder="Nom" />
             </label>
-            <label className="settings-label">Age
-              <input className="settings-input" type="number" placeholder="Age" />
+            <label className="settings-label">Date de naissance
+              <input className="settings-input" type="date" placeholder="Age" />
             </label>
-          </div>
-        </div>
-
-        <div className="params-settings-bloc-middle">
-          <h1 className="settings-title">Plus d'infos sur vous...</h1>
-          <p className="personnal-info">Pour effectuer un suivi exact, nous avons besoin de quelques informations basiques de votre part :</p>
-          <div className="personnal-settings-content">
-            <div className="more-infos gender-infos">
-              <p className="label-personnal">Quel est votre sexe ?</p>
-              <label className="label-personnal"><img src={man} alt="homme" className="picto" />
-                <input type="radio" className="radio-is-hidden" name="gender" value="man" />
-              </label>
-              {/* attention, bien laisser le name="gender" => propose UN SEUL choix ! */}
-              <label className="label-personnal"><img src={woman} alt="femme" className="picto" />
-                <input type="radio" className="radio-is-hidden" name="gender" value="woman" />
-              </label>
-            </div>
-
-            <div className="more-infos">
-              <label className="label-personnal">Combien mesurez-vous ?
-                <input className="input-personnal" type="number" placeholder="170 cm" />
-              </label>
-            </div>
-
-            <div className="more-infos">
-              <label className="label-personnal">Combien pesez-vous ?
-                <input className="input-personnal" type="number" placeholder="69 kg" />
-              </label>
-            </div>
-
-            <div className="more-infos">
-              <label className="label-personnal">Combien d'heures de sommeil estimez-vous avoir besoin par nuit ?
-                <input className="input-personnal" type="number" placeholder="7 h" />
-              </label>
-            </div>
-          </div>
-
-        </div>
-        <div className="params-settings-bloc">
-          <h1 className="settings-title">Modifications de vos identifiants</h1>
-          <div className="settings-content">
             <label className="settings-label">E-mail
               <input className="settings-input" type="email" placeholder="E-mail" />
             </label>
@@ -99,10 +59,49 @@ const Params = () => (
             </label>
           </div>
         </div>
-        <button className="settings-button" type="submit">Mettre à jour</button>
 
+        <div className="params-settings-bloc-questions">
+          <h1 className="settings-title">Paramètres de l'application :</h1>
+          <p className="personnal-info">Pour effectuer un suivi exact, nous avons besoin de quelques informations basiques de votre part :</p>
+          <div className="personnal-settings-content">
+            <label className="label-personnal">Votre genre :
+              <input className="input-personnal" type="text" placeholder="Homme / Femme" />
+            </label>
+            {/* <p className="label-personnal">Homme ou Femme ?</p>
+               <div className="gender-infos">
+                <label className="label-personnal"><img src={man} alt="homme" className="picto" />
+                  <input type="radio" className="radio-is-hidden" name="gender" value="man" />
+                </label>
+                 attention, bien laisser le name="gender" => propose UN SEUL choix !
+                <label className="label-personnal"><img src={woman} alt="femme" className="picto" />
+                  <input type="radio" className="radio-is-hidden" name="gender" value="woman" />
+                </label>
+              </div> */}
+
+            <label className="label-personnal">Votre taille en cm :
+              <input className="input-personnal" type="number" placeholder="170 cm" />
+            </label>
+
+            <label className="label-personnal">Votre poids initial :
+              <input className="input-personnal" type="number" placeholder="69 kg" />
+            </label>
+
+            <label className="label-personnal">Votre poids à atteindre :
+              <input className="input-personnal" type="number" placeholder="69 kg" />
+            </label>
+
+            <label className="label-personnal">Votre besoin en Kcal* :
+              <input className="input-personnal" type="number" placeholder="1 500 Kcal" />
+              <p className="precision-kcal">* par défaut : 2 000 pour un homme / 1 800 pour une femme</p>
+            </label>
+            <label className="label-personnal">Votre besoin en sommeil :
+              <input className="input-personnal" type="number" placeholder="7 h" />
+            </label>
+          </div>
+        </div>
       </form>
-
+      <img src={paramsIcone} alt="illustration" className="illustration" />
+      <button className="settings-button" type="submit">Mettre à jour</button>
     </div>
   </div>
 );

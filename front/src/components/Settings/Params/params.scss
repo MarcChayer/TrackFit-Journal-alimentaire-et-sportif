@@ -51,8 +51,9 @@
 .params-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-evenly;
+  align-items:flex-start;
+  margin-top: 2em;
 
   @media screen and (max-width:900px) {
     flex-direction: column;
@@ -66,10 +67,9 @@
   border: 1px solid #ccc;
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
-  border-top: 2em solid vars.$profile-color;
+  border-top: 2em solid vars.$primary-color;
   border-radius: 1em 1em 2em 2em;
-  margin-right: 1em;
-  height: 63vh;
+  height: 60vh;
 
   @media screen and (max-width:900px) {
     flex-direction: row;
@@ -78,38 +78,39 @@
 
 .params-settings {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
-  border-top: 2em solid vars.$profile-color;
+  border-top: 2em solid vars.$primary-color;
   border-radius: 1em 1em 2em 2em;
-  margin-left: 1em;
-  width: 70vw;
+  width: 80vw;
   max-width: 80vw;
+  height: 60vh;
 
   &-bloc {
     display:flex;
     flex-direction: column;
-    margin: auto auto 1em auto;
-    // border: 1px solid blue;
+    margin: 0;
     padding: 1em;
-    width: 40vw;
-    height: 32vh;
-    // align-items: center;
+    width: 29vw;
+    min-width: 29vw;
+    max-width: 29vw;
+    height: 48vh;
+    border-right: 4px solid vars.$secondary-color;
   }
 
-  &-bloc-middle {
+  &-bloc-questions {
     display:flex;
     flex-direction: column;
-    margin: auto auto 1em auto;
-    // border: 1px solid blue;
-    padding: 1em;
-    width: 40vw;
-    height: 57vh;
-    // align-items: center;
+    margin: 0;
+    padding: 1em 1em 1em 3em;
+    width: 30vw;
+    // min-width: 30vw;
+    // max-width: 30vw;
+    // height: 57vh;
   }
 }
 
@@ -139,6 +140,11 @@
   width: 13vw;
   border-radius: 5px;
   background-color: #adacac;
+  text-align: left;
+
+  @media screen and (max-width:900px) {
+    margin: auto auto 1em auto;
+  }
 }
 
 .user-params__tag-list {
@@ -148,7 +154,7 @@
 .settings-content {
   display: flex;  
   flex-wrap: wrap;
-  margin-top: 4em;
+  margin-top: 6em;
   justify-content: left;
 
   // @media screen and (max-width:1500px) {
@@ -159,9 +165,16 @@
   // }
 }
 
+.personnal-settings-content {
+  display: flex;  
+  flex-wrap: wrap;
+  margin-top: 2em;
+  justify-content: left;
+}
+
 .settings-form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 2em;
@@ -173,6 +186,7 @@
   width: 11em;
   text-align: left;
   margin-right: 2em;
+  color: #4B5C6B;
 }
 
 .settings-title {
@@ -194,13 +208,17 @@
   padding: vars.$input-padding;
   border: vars.$input-border;
   border-radius:vars.$input-radius;
-  width: 100%;
   font-size:vars.$input-fontsize;
   margin:vars.$input-margin;
+  width: 100%;
 
   // @media screen and (max-width:1200px) {
   //   width: 20vw;
   // }
+}
+.precision-kcal {
+    font-size: 0.7em;
+    width: 20em;
 }
 
 .settings-button {
@@ -214,37 +232,24 @@
   position: relative;
   border-radius: 3em;
   padding: 1em;
+  margin: 1em 1em 1em 10em;
 }
 
-.personnal-settings-content {
-  display: flex;  
-  flex-wrap: wrap;
-}
-
-.more-infos {
-  border: 1px solid #000;
-  padding: 1em;
-  height: 10em;
-  width: 14em;
-  margin: 1em 1em 1em 0;
-  display: flex;
-  align-items: center;
-}
-
-.gender-infos {
-  display: initial;
-  padding-top: 2em;
-  text-align: center;
-}
+// .gender-infos {
+//   display: flex;
+//   flex-direction: row;
+// }
 
 .label-personnal {
   font-size: 1em;
-  text-align: center;
-  color: vars.$primary-color;
+  text-align: left;
+  font-weight: bold;
+  margin: 0.5em;
+  color: #4B5C6B;
 }
 
 .personnal-info{
-  margin-top: 3em;
+  margin-top: 2em;
   font-size: 1em;
   text-align: left;
   color: vars.$primary-color;
@@ -254,11 +259,19 @@
   padding: vars.$input-padding;
   border: vars.$input-border;
   border-radius:vars.$input-radius;
-  width: 100%;
   font-size:vars.$input-fontsize;
   margin:vars.$input-margin;
+  display: flex;
+  text-align: center;
 }
 
 .radio-is-hidden {
   display: none;
+}
+
+.illustration {
+  position: absolute;
+    width: 16vw;
+    top: 27em;
+    right: 5em;
 }
