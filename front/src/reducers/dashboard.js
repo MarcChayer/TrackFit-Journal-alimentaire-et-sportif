@@ -17,16 +17,14 @@ const reducer = (state = initialState, action = {}) => {
         allData: { ...action.payload },
       };
     case ADD_TASK_SUCCESS:
-      const test = state.allData.tasks.push(action.payload);
-      console.log(test);
       return {
         ...state,
         allData: {
           ...state.allData,
-          // tasks: {
-          //   ...state.allData.tasks,
-          //   ...action.payload,
-          // },
+          tasks: [
+            ...state.allData.tasks,
+            action.payload,
+          ],
         },
       };
     default:

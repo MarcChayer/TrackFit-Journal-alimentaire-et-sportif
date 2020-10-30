@@ -21,7 +21,6 @@ const Todolist = ({
 
   const handleOnChange = (event) => {
     event.preventDefault();
-    // console.log(event.target.name, event.target.value);
     onChange(event.target.value, event.target.name);
   };
 
