@@ -64,6 +64,16 @@ const Params = () => (
             <label className="label-personnal">Votre genre :
               <input className="input-personnal" type="text" placeholder="Homme / Femme" />
             </label>
+            {/* <p className="label-personnal">Homme ou Femme ?</p>
+               <div className="gender-infos">
+                <label className="label-personnal"><img src={man} alt="homme" className="picto" />
+                  <input type="radio" className="radio-is-hidden" name="gender" value="man" />
+                </label>
+                 attention, bien laisser le name="gender" => propose UN SEUL choix !
+                <label className="label-personnal"><img src={woman} alt="femme" className="picto" />
+                  <input type="radio" className="radio-is-hidden" name="gender" value="woman" />
+                </label>
+              </div> */}
 
             <label className="label-personnal">Votre taille en cm :
               <input className="input-personnal" type="number" placeholder="170 cm" />

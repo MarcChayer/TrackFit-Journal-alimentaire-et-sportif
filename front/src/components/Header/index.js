@@ -8,9 +8,6 @@ import Navigation from 'src/components/Navigation';
 
 // image
 import logo from 'src/assets/images/logo.svg';
-import login from 'src/assets/images/login.svg';
-import signup from 'src/assets/images/signup.svg';
-import logout from 'src/assets/images/logout.svg';
 
 // == Import
 import './header.scss';
