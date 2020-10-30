@@ -18,8 +18,9 @@ export const loginInputSubmit = () => ({
 });
 
 // A mettre à jour avec la réponse de l'action LOGIN_INPUT_SUBMIT
-export const userIsConnected = () => ({
+export const userIsConnected = (session) => ({
   type: USER_IS_CONNECTED,
+  session,
 });
 
 // A mettre à jour avec la réponse de l'action REGISTER_INPUT_SUBMIT

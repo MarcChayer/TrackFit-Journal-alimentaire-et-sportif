@@ -58,7 +58,7 @@ const userController = {
 		try {
 			// On vérifie que l'utilisateur est présent en BDD
         const user = await User.findOne({ where: { email: email } });
-        console.log(user);
+        // console.log(user);
 			if (!user) {
                 bodyError.push(`Cet utilisateur n'existe pas`);
                 res.status(404).json(bodyError);
@@ -72,11 +72,19 @@ const userController = {
                 // L'utilisateur existe en BDD, et le mot de passe est correct
                 // Il faut donc connecter cet utilisateur
                 // On le stocke dans la session
-                req.session.user = user.toJSON();
+                // req.session.user = user.toJSON();
+                req.session.user = {
+                    connected_user: true,
+                    id: user.id,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                }
                 // On oublie pas de supprimer le mot de passe
                 delete req.session.user.password;
+                const messageConnexion = 'Connexion successful';
                 // console.log(req.session.user);
-                res.status(200).json('Connexion successful');
+                res.status(200).json({message: messageConnexion, session: req.session.user});
                 // Puis on redirige vers la page d'accueil
                 // res.redirect('/');
             }

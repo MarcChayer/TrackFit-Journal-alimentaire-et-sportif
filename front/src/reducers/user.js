@@ -13,6 +13,13 @@ const initialState = {
   password: '',
   confirmedPassword: '',
   isLogged: false,
+  session: {
+    connected_user: false,
+    email: '',
+    firstName: '',
+    lastName: '',
+    id: null,
+  },
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -27,15 +34,20 @@ const reducer = (state = initialState, action = {}) => {
         ...action.payload,
       };
     case LOGIN_INPUT_SUBMIT:
+      console.log('je passe dans login input submit');
       return {
         ...state,
       };
     case USER_IS_CONNECTED:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de LOGIN_INPUT_SUBMIT)
+      console.log(action.session);
       return {
         ...state,
         isLogged: true,
+        session: {
+          ...action.session,
+        },
       };
     case USER_IS_SUBSCRIBED:
       // Ne pas oublier de récupérer le payload de l'action creator
