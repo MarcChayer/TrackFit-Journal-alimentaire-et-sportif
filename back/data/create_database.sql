@@ -13,6 +13,7 @@ CREATE TABLE "user" (
     "gender" TEXT,
     "height" INTEGER,
     "estimatedSleepTime" INTEGER,
+    "weightGoal" INTEGER,
     "password" TEXT NOT NULL,
     "is_admin" BOOLEAN NOT NULL DEFAULT FALSE
 );
