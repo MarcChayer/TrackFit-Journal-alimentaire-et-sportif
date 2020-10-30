@@ -61,26 +61,22 @@ const Params = () => (
           <h1 className="settings-title">Paramètres de l'application :</h1>
           <p className="personnal-info">Pour effectuer un suivi exact, nous avons besoin de quelques informations basiques de votre part :</p>
           <div className="personnal-settings-content">
-            <label className="label-personnal">Votre genre :
+            {/* <label className="label-personnal">Votre genre :
               <input className="input-personnal" type="text" placeholder="Homme / Femme" />
+            </label> */}
+            <label className="label-personnal">Vous êtes...
+              <select className="input-personnal-gender" name="genders" id="gender-select">
+                <option value="male">un homme</option>
+                <option value="female">une femme</option>
+              </select>
             </label>
-            {/* <p className="label-personnal">Homme ou Femme ?</p>
-               <div className="gender-infos">
-                <label className="label-personnal"><img src={man} alt="homme" className="picto" />
-                  <input type="radio" className="radio-is-hidden" name="gender" value="man" />
-                </label>
-                 attention, bien laisser le name="gender" => propose UN SEUL choix !
-                <label className="label-personnal"><img src={woman} alt="femme" className="picto" />
-                  <input type="radio" className="radio-is-hidden" name="gender" value="woman" />
-                </label>
-              </div> */}
 
             <label className="label-personnal">Votre taille en cm :
               <input className="input-personnal" type="number" placeholder="170 cm" />
             </label>
 
             <label className="label-personnal">Votre poids initial :
-              <input className="input-personnal" type="number" placeholder="69 kg" />
+              <input className="input-personnal" type="number" placeholder="89 kg" />
             </label>
 
             <label className="label-personnal">Votre poids à atteindre :

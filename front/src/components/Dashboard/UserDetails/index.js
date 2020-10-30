@@ -12,7 +12,7 @@ const UserDetails = () => (
         <img src={profile} alt="profile" className="user-details__picture" />
       </a>
       <div className="user-details__infos">
-        <h2>Bonjour, Marc !</h2>
+        <h2>Bonjour, Paul !</h2>
         <ul className="user-details__tags">
           <li className="user-details__tag">23 ans</li>
           <li className="user-details__tag">183 cm</li>

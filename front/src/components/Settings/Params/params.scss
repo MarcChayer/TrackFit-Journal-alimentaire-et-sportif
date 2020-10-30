@@ -208,7 +208,7 @@
   padding: vars.$input-padding;
   border: vars.$input-border;
   border-radius:vars.$input-radius;
-  font-size:vars.$input-fontsize;
+  font-size: 0.95em;
   margin:vars.$input-margin;
   width: 100%;
 
@@ -262,7 +262,17 @@
   font-size:vars.$input-fontsize;
   margin:vars.$input-margin;
   display: flex;
-  text-align: center;
+}
+
+.input-personnal-gender {
+  padding: vars.$input-padding;
+  border: vars.$input-border;
+  border-radius:vars.$input-radius;
+  font-size:vars.$input-fontsize;
+  margin:vars.$input-margin;
+  display: flex;
+  width: 14em;
+  background-color: #b6e4e4;
 }
 
 .radio-is-hidden {

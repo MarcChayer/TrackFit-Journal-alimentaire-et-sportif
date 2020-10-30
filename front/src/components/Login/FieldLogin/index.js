@@ -16,7 +16,7 @@ const FieldLogin = ({
 
   return (
     <input
-      className="input"
+      className="log-input"
       name={name}
       type={type}
       placeholder={placeholder}

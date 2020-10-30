@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import add from 'src/assets/images/favorite.svg';
 
 import './articles.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Article = ({ article }) => (
   <li className="article">
     <article>
-      <img src={article.media} alt="article" className="article__img" />
+      <div className="favs__overview-one">
+        <a href="/favoris"><FontAwesomeIcon icon={faHeart} /></a>
+        <img src={article.media} alt="article" className="article__img" />
+      </div>
       <h2 className="article__title">{article.title}</h2>
       <p className="article__excerpt">{article.content}</p>
       <a href={article.source} target="_blank" className="article__seemore">Voir l'article</a>
-      <a href="#"><img className="fav" src={add} alt="addfavorite" /></a>
     </article>
   </li>
 );
