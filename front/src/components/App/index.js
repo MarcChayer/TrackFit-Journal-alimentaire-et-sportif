@@ -1,40 +1,54 @@
 // == Import npm
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import Header from 'src/components/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/containers/Login';
 import Articles from 'src/containers/Articles';
-// import OneArticle from 'src/components/Articles/OneArticle';
 import Dashboard from 'src/components/Dashboard';
 import Statistics from 'src/components/Statistics';
 import Settings from 'src/components/Settings';
+import NotFound from 'src/components/NotFound';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <Route path="/">
-      <Header />
-    </Route>
-    <Route path="/inscription">
-      <CreateAccount />
-    </Route>
-    <Route path="/connexion">
-      <Login />
-    </Route>
-    <Route path="/articles/:slug">
-      <Articles />
-    </Route>
-    <Route path="/tableaudebord">
-      <Dashboard />
-    </Route>
-    <Route path="/statistiques">
-      <Statistics />
-    </Route>
-    <Route path="/parametres">
-      <Settings />
-    </Route>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Header />
+        </Route>
+        <Route path="/inscription">
+          <Header />
+          <CreateAccount />
+        </Route>
+        <Route path="/connexion">
+          <Header />
+          <Login />
+        </Route>
+        <Route path="/articles/:slug">
+          <Header />
+          <Articles />
+        </Route>
+        <Route path="/tableaudebord">
+          <Header />
+          <Dashboard />
+        </Route>
+        <Route path="/statistiques">
+          <Header />
+          <Statistics />
+        </Route>
+        <Route path="/parametres">
+          <Header />
+          <Settings />
+        </Route>
+        <Route path="*">
+          <Header />
+          <NotFound />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   </div>
 );
 

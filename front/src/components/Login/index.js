@@ -21,17 +21,17 @@ const Login = ({
   if (!isLogged) {
     return (
       <div className="login">
-        <h1 className="title">S'identifier</h1>
+        <h1 className="log-title">S'identifier</h1>
 
-        <form className="formlog" onSubmit={handleSubmit}>
-          <label>E-mail :
+        <form className="log-form" onSubmit={handleSubmit}>
+          <label className="log-label">E-mail :
             <FieldLogin
               value={email}
               name="email"
               placeholder="E-mail"
             />
           </label>
-          <label>Mot de passe :
+          <label className="log-label">Mot de passe :
             <FieldLogin
               value={password}
               name="password"
@@ -42,7 +42,7 @@ const Login = ({
           <input type="checkbox" />
           Rester connecté
         </label> */}
-          <button className="button" type="submit">S'identifier</button>
+          <button className="log-button" type="submit">S'identifier</button>
         </form>
 
         <p>Vous ne possédez pas de compte ?<a className="id" href="/inscription"> Inscrivez-vous</a></p>

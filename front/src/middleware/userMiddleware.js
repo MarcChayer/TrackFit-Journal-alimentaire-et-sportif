@@ -11,7 +11,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       // 'http://52.91.105.182/signup'
-      axios.post('http://localhost:5050/signup', {
+      axios.post('http://52.91.105.182/signup', {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         email: store.getState().user.email,
@@ -34,7 +34,7 @@ export default (store) => (next) => (action) => {
       //   email: store.getState().user.email,
       //   password: store.getState().user.password,
       // };
-      axios.post('http://localhost:5050/login', {
+      axios.post('http://52.91.105.182/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
       })
