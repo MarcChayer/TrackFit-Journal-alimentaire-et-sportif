@@ -13,7 +13,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case ADD_TASK_SUBMIT:
       // console.log('middleware todolist');
-      axios.post(`http://localhost:5050/dashboard/${userId}/task`, {
+      axios.post(`http://52.91.105.182/dashboard/${userId}/task`, {
         title: store.getState().todolist.labelNewTask,
       })
         .then((res) => {
@@ -26,7 +26,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case DELETE_TASK:
-      axios.delete(`http://localhost:5050/dashboard/${userId}/task/${action.taskId}`, {
+      axios.delete(`http://52.91.105.182/dashboard/${userId}/task/${action.taskId}`, {
         title: store.getState().todolist.labelNewTask,
       })
         .then((res) => {
