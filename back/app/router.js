@@ -11,7 +11,7 @@ const dashboardController = require('./controllers/dashboardController');
 // route primordiale
 
 // routes articles :
-router.get('/articles/', articlesController.getAllArticles);
+router.get('/articles', articlesController.getAllArticles);
 router.get('/articles/:label', articlesController.getArticlesByLabel);
 router.get('/article/:label/:id', articlesController.getOneArticle);
 router.delete('/article/:label/:id', articlesController.deleteArticle);

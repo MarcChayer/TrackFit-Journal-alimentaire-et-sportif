@@ -10,7 +10,7 @@ const Article = ({ article }) => (
       <img src={article.media} alt="article" className="article__img" />
       <h2 className="article__title">{article.title}</h2>
       <p className="article__excerpt">{article.content}</p>
-      <a href={article.source} target="_blank" className="article__seemore">Voir l'article</a>
+      <a href="articles/article/:id" className="article__seemore">Voir plus</a>
       <a href="#"><img className="fav" src={add} alt="addfavorite" /></a>
     </article>
   </li>
