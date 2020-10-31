@@ -31,7 +31,7 @@ export default (store) => (next) => (action) => {
       break;
     case LOGIN_INPUT_SUBMIT:
       // http://52.91.105.182
-      axios.post('http://52.91.105.182/login', {
+      axios.post('http://localhost:5050/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
       },

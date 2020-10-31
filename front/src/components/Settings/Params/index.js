@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './params.scss';
 
@@ -16,9 +17,9 @@ const Params = () => (
       <ul className="user-params__tags">
         <li className="user-params__tag-list">
           <img src={profile} alt="profile" className="user-params__picture" />
-          <a href="#">
+          <NavLink to="#">
             <img src={add} alt="ajouter" className="user-add__picture" />
-          </a>
+          </NavLink>
         </li>
         <li className="user-params__tag-list">user.firstName user.lastName</li>
         <li className="user-params__tag-list">user.birthdate</li>

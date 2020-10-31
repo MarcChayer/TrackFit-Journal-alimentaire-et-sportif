@@ -1,6 +1,6 @@
-/* eslint-disable import/no-unresolved */
 // == Import npm
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // component
 import Navigation from 'src/components/Navigation';
@@ -13,34 +13,44 @@ import logo from 'src/assets/images/logo.svg';
 import './header.scss';
 
 // == Composant
-const Header = () => (
-  <header className="header">
-
-    <div className="bloc-left">
-      <a href="/"><img src={logo} alt="logoTrackFit" className="logo" /></a>
-    </div>
-
-    <div className="navigation">
-      <Navigation />
-    </div>
-
-    <div className="bloc-right">
-      <a href="/connexion" className="login-link">
-        {/*<img src={login} alt="se connecter" className="login-img" />*/}
-        <p className="login-p">Connexion</p>
-      </a>
-      <a href="/inscription" className="signup-link">
-        {/*<img src={signup} alt="s'inscrire" className="signup-img" />*/}
-        <p className="signup-p">Inscription</p>
-      </a>
-      {/*<a href="/deconnexion" className="logout-link">
-        <img src={logout} alt="se déconnecter" className="logout-img" />
-        <p className="logout-p">Déconnexion</p>
-      </a>*/}
-    </div>
-
-  </header>
-);
-
+const Header = ({
+  isLogged,
+  firstName,
+}) => {
+  console.log(firstName);
+  return (
+    <header className="header">
+      <div className="bloc-left">
+        <NavLink to="/" exact><img src={logo} alt="logoTrackFit" className="logo" />
+        </NavLink>
+      </div>
+      <div className="navigation">
+        <Navigation />
+      </div>
+      { isLogged
+        ? (
+          <div className="bloc-right">
+            <NavLink to="/parametres" className="login-link">
+              <p className="login-p">{firstName}</p>
+            </NavLink>
+            <NavLink to="/" className="logout-link">
+              {/* <img src={logout} alt="se déconnecter" className="logout-img" /> */}
+              <p className="logout-p">Déconnexion</p>
+            </NavLink>
+          </div>
+        )
+        : (
+          <div className="bloc-right">
+            <NavLink to="/connexion" className="login-link">
+              <p className="login-p">Connexion</p>
+            </NavLink>
+            <NavLink to="/inscription" className="signup-link">
+              <p className="signup-p">Inscription</p>
+            </NavLink>
+          </div>
+        )}
+    </header>
+  );
+};
 // == Export
 export default Header;

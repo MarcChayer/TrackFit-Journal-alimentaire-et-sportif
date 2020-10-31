@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Field from 'src/containers/Field';
 
@@ -62,7 +62,7 @@ const CreateAccount = (
           <button className="create-button" type="submit">Créer votre compte</button>
         </form>
 
-        <p>Vous avez déjà un compte ?<a className="create-id" href="/connexion"> Identifiez-vous</a></p>
+        <p>Vous avez déjà un compte ?<NavLink to="/connexion" className="create-id"> Identifiez-vous</NavLink></p>
       </div>
     );
   }

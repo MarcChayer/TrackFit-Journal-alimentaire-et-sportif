@@ -1,5 +1,6 @@
 // == Import npm
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './navigation.scss';
 import profile from 'src/assets/images/profile.svg';
@@ -10,18 +11,18 @@ const Navigation = () => (
   <div className="navigation">
     <nav className="navigation--desktop">
       <ul className="navigation-list">
-        <li><a href="/" className="navigation-link">Accueil</a></li>
-        <li><a href="/articles/alimentation" className="navigation-link">Alimentation</a></li>
-        <li><a href="/articles/sport" className="navigation-link">Sport</a></li>
-        <li><a href="/articles/bienetre" className="navigation-link">Bien-être</a></li>
-        <li><a href="/tableaudebord" className="navigation-link">Tableau de bord</a></li>
+        <li><NavLink to="/" className="navigation-link">Accueil</NavLink></li>
+        <li><NavLink to="/articles/alimentation" className="navigation-link">Alimentation</NavLink></li>
+        <li><NavLink to="/articles/sport" className="navigation-link">Sport</NavLink></li>
+        <li><NavLink to="/articles/bienetre" className="navigation-link">Bien-être</NavLink></li>
+        <li><NavLink to="/tableaudebord" className="navigation-link">Tableau de bord</NavLink></li>
       </ul>
     </nav>
 
     <nav className="navigation--mobile">
       <ul className="navigation-list">
-        <li className="navigation-link"><a href="/tableaudebord"><img src={profile} alt="profile utilisateur" className="navigation--mobile-img" /></a></li>
-        <li className="navigation-link"><a href="/statistiques"><img src={statistics} alt="statistiques utilisateur" className="navigation--mobile-img" /></a></li>
+        <li className="navigation-link"><NavLink to="/tableaudebord"><img src={profile} alt="profile utilisateur" className="navigation--mobile-img" /></NavLink></li>
+        <li className="navigation-link"><NavLink to="/statistiques"><img src={statistics} alt="statistiques utilisateur" className="navigation--mobile-img" /></NavLink></li>
         <li className="navigation-link">  </li>
       </ul>
     </nav>

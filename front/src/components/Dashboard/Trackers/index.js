@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './trackers.scss';
 
@@ -19,7 +20,7 @@ const Trackers = () => (
 
     <li className="trackers__item">
       <div className="trackers__header trackers__header__food" />
-      <a href="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></a>
+      <NavLink to="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
       <img src={food} alt="food" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>1800 / 2400 Kcal</span>
@@ -28,7 +29,7 @@ const Trackers = () => (
 
     <li className="trackers__item">
       <div className="trackers__header trackers__header__water" />
-      <a href="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></a>
+      <NavLink to="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
       <img src={water} alt="water" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>15 / 200 cl</span>
@@ -37,7 +38,7 @@ const Trackers = () => (
 
     <li className="trackers__item">
       <div className="trackers__header trackers__header__sleep" />
-      <a href="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+      <NavLink to="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={sleep} alt="sleep" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>8 / 8 h</span>
@@ -46,7 +47,7 @@ const Trackers = () => (
 
     <li className="trackers__item">
       <div className="trackers__header trackers__header__sport" />
-      <a href="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+      <NavLink to="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={sport} alt="sport" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>25 / 30 min</span>
@@ -55,7 +56,7 @@ const Trackers = () => (
 
     <li className="trackers__item">
       <div className="trackers__header trackers__header__weight" />
-      <a href="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+      <NavLink to="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={weight} alt="poids" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>80 / 65 kg</span>
