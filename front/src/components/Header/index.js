@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // component
 import Navigation from 'src/components/Navigation';
@@ -16,12 +17,17 @@ import './header.scss';
 const Header = ({
   isLogged,
   firstName,
+  logoutHandler,
 }) => {
   console.log(firstName);
   return (
     <header className="header">
       <div className="bloc-left">
-        <NavLink to="/" exact><img src={logo} alt="logoTrackFit" className="logo" />
+        <NavLink
+          to="/"
+          exact
+        >
+          <img src={logo} alt="logoTrackFit" className="logo" />
         </NavLink>
       </div>
       <div className="navigation">
@@ -35,7 +41,7 @@ const Header = ({
             </NavLink>
             <NavLink to="/" className="logout-link">
               {/* <img src={logout} alt="se déconnecter" className="logout-img" /> */}
-              <p className="logout-p">Déconnexion</p>
+              <p className="logout-p" onClick={logoutHandler}>Déconnexion</p>
             </NavLink>
           </div>
         )
@@ -51,6 +57,12 @@ const Header = ({
         )}
     </header>
   );
+};
+
+Header.propTypes = {
+  isLogged: PropTypes.bool.isRequired,
+  firstName: PropTypes.string.isRequired,
+  logoutHandler: PropTypes.func.isRequired,
 };
 // == Export
 export default Header;

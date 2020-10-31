@@ -43,7 +43,7 @@ const reducer = (state = initialState, action = {}) => {
       console.log(action.session);
       return {
         ...state,
-        isLogged: true,
+        isLogged: !state.isLogged,
         session: {
           ...action.session,
         },
