@@ -17,40 +17,35 @@ import modalweight from 'src/assets/images/icones/icone-open-modal-poids.svg';
 
 const Trackers = () => (
   <ul className="trackers">
-    <li className="trackers__item">
-      <div className="trackers__header trackers__header__food" />
+    <li className="trackers__item trackers__food">
       <NavLink to="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
       <img src={food} alt="food" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>1800 / 2400 Kcal</span>
       </li>
     </li>
-    <li className="trackers__item">
-      <div className="trackers__header trackers__header__water" />
+    <li className="trackers__item trackers__water">
       <NavLink to="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
       <img src={water} alt="water" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>15 / 200 cl</span>
       </li>
     </li>
-    <li className="trackers__item">
-      <div className="trackers__header trackers__header__sleep" />
+    <li className="trackers__item trackers__sleep">
       <NavLink to="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={sleep} alt="sleep" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>8 / 8 h</span>
       </li>
     </li>
-    <li className="trackers__item">
-      <div className="trackers__header trackers__header__sport" />
+    <li className="trackers__item trackers__sport">
       <NavLink to="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={sport} alt="sport" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>25 / 30 min</span>
       </li>
     </li>
-    <li className="trackers__item">
-      <div className="trackers__header trackers__header__weight" />
+    <li className="trackers__item trackers__weight">
       <NavLink to="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={weight} alt="poids" className="trackers__rounded-img" />
       <li className="user-stats__item">
