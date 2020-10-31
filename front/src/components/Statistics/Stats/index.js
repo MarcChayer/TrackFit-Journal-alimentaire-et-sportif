@@ -7,13 +7,14 @@ import sleep from 'src/assets/images/icones/icone-sommeil.svg';
 import sport from 'src/assets/images/icones/icone-sport.svg';
 import weight from 'src/assets/images/icones/icone-poids.svg';
 import profile from 'src/assets/images/profile.svg';
+
 import './stats.scss';
 
 const Stats = () => (
   <ul className="statistics__list">
 
     <li className="statistic statistic__profile">
-      <img src={profile} alt="profile" className="statistics__rounded-img" />
+      <img src={profile} alt="profile" className="statistics__rounded-img-profile" />
 
       <h2>Bonjour Paul Ochon !</h2>
       <ul className="user-details__tags">

@@ -10,7 +10,7 @@ import profile from 'src/assets/images/profile.svg';
 const UserDetails = ({ userData }) => {
   // console.log(userData.weights[0]);
   if (!userData || !userData.firstName) {
-    return <div>recuperation de la ressource</div>;
+    return <div>Récupération de la ressource...</div>;
   }
 
   return (
@@ -22,13 +22,13 @@ const UserDetails = ({ userData }) => {
         <div className="user-details__infos">
           <h2>Bonjour, {userData.firstName} !</h2>
           <ul className="user-details__tags">
-            <li className="user-details__tag">{userData.birthdate}</li>
+            <li className="user-details__tag">{userData.birthdate} ans</li>
             <li className="user-details__tag">{userData.height} cm</li>
             {/* <li className="user-details__tag">{userData.weights.map((item) => (
               <div>{item.weight}</div>
             ))} kg </li> */}
             <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
-            <li className="user-details__tag">imc : {userData.weights[userData.weights.length - 1].imc}</li>
+            <li className="user-details__tag">IMC : {userData.weights[userData.weights.length - 1].imc}</li>
           </ul>
         </div>
 

@@ -13,8 +13,9 @@ const FavoriteArticles = ({ articleFav }) => {
   }
   return (
     <ul className="favs">
-      <h2>Articles favoris</h2>
-      {
+      <div className="favs-content">
+        <h2>Articles favoris</h2>
+        {
         articleFav.articles.map((article) => (
           <li className="favs__item" key={article.id}>
             <div className="favs__overview">
@@ -28,6 +29,7 @@ const FavoriteArticles = ({ articleFav }) => {
           </li>
         ))
       }
+      </div>
     </ul>
   );
 };
