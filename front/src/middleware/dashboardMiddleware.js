@@ -8,7 +8,7 @@ export default (store) => (next) => (action) => {
   console.log(userId);
   switch (action.type) {
     case FETCH_DASHBOARD:
-      axios.get(`http://localhost:5050/dashboard/${userId}`)
+      axios.get(`http://52.91.105.182/dashboard/${userId}`)
         .then((res) => {
           console.log(res.data);
           store.dispatch(fetchDashboardSuccess(res.data));

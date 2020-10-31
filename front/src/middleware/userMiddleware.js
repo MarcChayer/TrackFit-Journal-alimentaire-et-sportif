@@ -12,7 +12,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       // 'http://52.91.105.182/signup'
-      axios.post('http://localhost:5050/signup', {
+      axios.post('http://52.91.105.182/signup', {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         email: store.getState().user.email,
@@ -32,7 +32,7 @@ export default (store) => (next) => (action) => {
       break;
     case LOGIN_INPUT_SUBMIT:
       // http://52.91.105.182
-      axios.post('http://localhost:5050/login', {
+      axios.post('http://52.91.105.182/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
       },
@@ -49,7 +49,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case LOGOUT_HANDLER:
-      axios.post('http://localhost:5050/logout', {},
+      axios.post('http://52.91.105.182/logout', {},
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
