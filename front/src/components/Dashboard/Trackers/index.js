@@ -17,7 +17,6 @@ import modalweight from 'src/assets/images/icones/icone-open-modal-poids.svg';
 
 const Trackers = () => (
   <ul className="trackers">
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__food" />
       <NavLink to="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
@@ -26,7 +25,6 @@ const Trackers = () => (
         <span>1800 / 2400 Kcal</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__water" />
       <NavLink to="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
@@ -35,7 +33,6 @@ const Trackers = () => (
         <span>15 / 200 cl</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__sleep" />
       <NavLink to="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
@@ -44,7 +41,6 @@ const Trackers = () => (
         <span>8 / 8 h</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__sport" />
       <NavLink to="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
@@ -53,7 +49,6 @@ const Trackers = () => (
         <span>25 / 30 min</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__weight" />
       <NavLink to="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>

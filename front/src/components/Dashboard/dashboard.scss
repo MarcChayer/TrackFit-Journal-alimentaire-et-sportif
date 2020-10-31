@@ -79,12 +79,14 @@
 
   &__right { //dashboard__right
     display: flex;
-    flex: 1;
+    // flex: 1;
+    flex: 0.7;
     flex-direction: column;
-    margin: 0 0 0 2em;
+    margin: 0 1em 0 2em;
     background-color: white;
     border-radius: 2em;
     box-shadow: vars.$box-shadow;
+    border-top: 2em solid vars.$profile-color;
     
     @media screen and (max-width: 1200px) {
           -webkit-box-orient: vertical;

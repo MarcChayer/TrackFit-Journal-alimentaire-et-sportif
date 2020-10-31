@@ -11,7 +11,7 @@ import profile from 'src/assets/images/profile.svg';
 const UserDetails = ({ userData }) => {
   console.log(userData);
   if (!userData || !userData.firstName) {
-    return <div>recuperation de la ressource</div>;
+    return <div>Récupération de la ressource...</div>;
   }
   const userDataItem = userData.weights.length > 0;
 
@@ -24,7 +24,8 @@ const UserDetails = ({ userData }) => {
         <div className="user-details__infos">
           <h2>Bonjour, {userData.firstName} !</h2>
           <ul className="user-details__tags">
-            <li className="user-details__tag">age: {userData.birthdate}</li>
+
+            <li className="user-details__tag">Age : {userData.birthdate}</li>
             <li className="user-details__tag">{userData.height} cm</li>
             {/* <li className="user-details__tag">{userData.weights.map((item) => (
               <div>{item.weight}</div>
@@ -34,8 +35,8 @@ const UserDetails = ({ userData }) => {
               : <li className="user-details__tag">--kg</li>}
 
             { userDataItem
-              ? <li className="user-details__tag">imc: {userData.weights[userData.weights.length - 1].imc}</li>
-              : <li className="user-details__tag">imc: --</li>}
+              ? <li className="user-details__tag">IMC : {userData.weights[userData.weights.length - 1].imc}</li>
+              : <li className="user-details__tag">IMC : --</li>}
             {/* { userData.weights.length > 0 && <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>}
             { userData.weights.length < 0 && <li className="user-details__tag">--kg</li>}
             { userData.weights.length > 0 && <li className="user-details__tag">imc: {userData.weights[userData.weights.length - 1].imc}</li>}

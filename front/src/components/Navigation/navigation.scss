@@ -45,8 +45,13 @@
     z-index: 2;
 
     &-img {
-      width: 56px;
-      padding: 10px;
+      width: 3em;
+      margin: 0.5em;
+
+      &-border {
+        border: 0.17em solid vars.$primary-color;
+        border-radius: 5em;
+      }
     }
   }
 }

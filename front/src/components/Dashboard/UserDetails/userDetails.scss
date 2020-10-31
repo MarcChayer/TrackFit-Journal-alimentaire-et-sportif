@@ -4,13 +4,6 @@
   text-align: center;
   flex: 2;
 
-  &-header {
-    width: 100%;
-    border-radius: 1em 1em 2em 2em;
-    z-index: 0;
-    border-top: 20px solid vars.$profile-color;
-  }
-
   &__picture {
     width: 8em;
     border-radius: vars.$full-radius;

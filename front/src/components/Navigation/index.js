@@ -4,7 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 import './navigation.scss';
 import profile from 'src/assets/images/profile.svg';
-import statistics from 'src/assets/images/icones/icone-statistics.svg';
+import hamburger from 'src/assets/images/icones/icone-nav-burger.svg';
+import statistics from 'src/assets/images/icones/icone-nav-stat.svg';
+// import Hamburger from 'src/components/Hamburger';
 
 // == Composant
 const Navigation = () => (
@@ -23,7 +25,7 @@ const Navigation = () => (
       <ul className="navigation-list">
         <li className="navigation-link"><NavLink to="/tableaudebord"><img src={profile} alt="profile utilisateur" className="navigation--mobile-img" /></NavLink></li>
         <li className="navigation-link"><NavLink to="/statistiques"><img src={statistics} alt="statistiques utilisateur" className="navigation--mobile-img" /></NavLink></li>
-        <li className="navigation-link">  </li>
+        <li className="navigation-link"><NavLink to="/navigation"><img src={hamburger} alt="navigation" className="navigation--mobile-img" /></NavLink></li>
       </ul>
     </nav>
   </div>
