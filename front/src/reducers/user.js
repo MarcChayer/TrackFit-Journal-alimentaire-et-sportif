@@ -34,7 +34,6 @@ const reducer = (state = initialState, action = {}) => {
         ...action.payload,
       };
     case LOGIN_INPUT_SUBMIT:
-      console.log('je passe dans login input submit');
       return {
         ...state,
       };
@@ -52,9 +51,13 @@ const reducer = (state = initialState, action = {}) => {
     case USER_IS_SUBSCRIBED:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de REGISTER_INPUT_SUBMIT)
+      console.log(action.session);
       return {
         ...state,
         isLogged: true,
+        session: {
+          ...action.session,
+        },
       };
     default:
       return state;

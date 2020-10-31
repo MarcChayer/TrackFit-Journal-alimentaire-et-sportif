@@ -35,13 +35,17 @@ const userController = {
                 // on stock le password crypté
                 const passwordEncrypted = bcrypt.hashSync(password, 10);
                 let newUser = User.build({
-                    lastName,
-                    firstName,
-                    email,
+                    lastName : req.body.lastName,
+                    firstName : req.body.firstName,
+                    email : req.body.email,
                     password: passwordEncrypted,
                 });
-                await newUser.save();
-                res.status(200).json(newUser);
+                // await newUser.save();
+                // res.status(200).json(newUser);
+                const save = await newUser.save(user);
+                const messageInscription = 'Inscription successful';
+
+                res.status(200).json({message: messageInscription, userSave : save, session: req.session.user});
                 // // on redirige ensuite sur la page login
                 // res.redirect('/');
             }

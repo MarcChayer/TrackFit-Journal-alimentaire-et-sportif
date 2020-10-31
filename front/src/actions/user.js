@@ -24,6 +24,7 @@ export const userIsConnected = (session) => ({
 });
 
 // A mettre à jour avec la réponse de l'action REGISTER_INPUT_SUBMIT
-export const userIsSubscribed = () => ({
+export const userIsSubscribed = (session) => ({
   type: USER_IS_SUBSCRIBED,
+  session,
 });
