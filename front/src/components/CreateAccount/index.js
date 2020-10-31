@@ -52,12 +52,14 @@ const CreateAccount = (
             value={password}
             name="password"
             placeholder="Mot de passe"
+            type="password"
           />
           <label className="create-label">Confirmez votre mot de passe :</label>
           <Field
             value={confirmedPassword}
             name="confirmedPassword"
             placeholder="Confirmez votre mot de passe"
+            type="password"
           />
           <button className="create-button" type="submit">Créer votre compte</button>
         </form>
