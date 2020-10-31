@@ -1,8 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-
 import './trackers.scss';
-
 import food from 'src/assets/images/icones/icone-alimentation.svg';
 import water from 'src/assets/images/icones/icone-water.svg';
 import sleep from 'src/assets/images/icones/icone-sommeil.svg';
@@ -13,57 +11,93 @@ import modalwater from 'src/assets/images/icones/icone-open-modal-water.svg';
 import modalsleep from 'src/assets/images/icones/icone-open-modal-sommeil.svg';
 import modalsport from 'src/assets/images/icones/icone-open-modal-sport.svg';
 import modalweight from 'src/assets/images/icones/icone-open-modal-poids.svg';
+import ModalSleep from '../ModalSleep';
+import ModalSport from '../ModalSport';
+import ModalWeight from '../ModalWeight';
+import ModalWater from '../ModalWater';
+import ModalFood from '../ModalFood';
 
-const Trackers = () => (
+const getModal = (name, closeHandler) => {
+  let Modal;
+  if (name === 'food') Modal = ModalFood;
+  else if (name === 'water') Modal = ModalWater;
+  if (name === 'sleep') Modal = ModalSleep;
+  else if (name === 'sport') Modal = ModalSport;
+  else if (name === 'weight') Modal = ModalWeight;
+  return <Modal onClick={() => closeHandler(null)} />;
+}
+const Trackers = () => {
+  const [modal, setModal] = React.useState(null);
+  return (
   <ul className="trackers">
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__food" />
-      <a href="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></a>
+      <img
+        onClick={() => setModal('food')}
+        src={modalfood}
+        alt="ajouter une entrée"
+        className="trackers__modal-img"
+      />
       <img src={food} alt="food" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>1800 / 2400 Kcal</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__water" />
-      <a href="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></a>
+      <img
+        onClick={() => setModal('water')}
+        src={modalwater}
+        alt="ajouter une entrée"
+        className="trackers__modal-img"
+      />
       <img src={water} alt="water" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>15 / 200 cl</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__sleep" />
-      <a href="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+      <img
+        onClick={() => setModal('sleep')}
+        src={modalsleep}
+        alt="ajouter une entrée"
+        className="trackers__modal-img"
+      />
       <img src={sleep} alt="sleep" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>8 / 8 h</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__sport" />
-      <a href="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+      <img
+        onClick={() => setModal('sport')}
+        src={modalsport}
+        alt="ajouter une entrée"
+        className="trackers__modal-img"
+      />
       <img src={sport} alt="sport" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>25 / 30 min</span>
       </li>
     </li>
-
     <li className="trackers__item">
       <div className="trackers__header trackers__header__weight" />
-      <a href="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+      <img
+        onClick={() => setModal('weight')}
+        src={modalweight}
+        alt="ajouter une entrée"
+        className="trackers__modal-img"
+      />
       <img src={weight} alt="poids" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>80 / 65 kg</span>
       </li>
     </li>
-
+    { modal && <div className="trackers-modal">{ getModal(modal, setModal) }</div> }
   </ul>
-);
-
+  );
+};
 // == Export
 export default Trackers;
