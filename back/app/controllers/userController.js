@@ -144,6 +144,29 @@ const userController = {
             res.status(500).json(error.toString());
         }
     },
+
+    logoutAction: async (req, res) => {
+        try {
+            // tableau d'erreur
+            const messageTab = [];
+            // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
+            if (req.session.user.connected_user === false) {
+                const messageLogout = 'Aucun utilisateur n\'est connecté';
+                messageTab.push({messageLogout: messageLogout});
+                return res.status(404).json({message: messageTab, session: req.session.user});
+            };
+            // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
+            if (req.session.user.connected_user === true){
+                req.session.user = {connected_user: false};
+                const messageLogout = 'Déconnexion de l\'utilisateur ok';
+                messageTab.push({messageLogout: messageLogout});
+                return res.status(200).json({message: messageTab, session: req.session.user});
+            };
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    }
 };
 
 module.exports = userController;

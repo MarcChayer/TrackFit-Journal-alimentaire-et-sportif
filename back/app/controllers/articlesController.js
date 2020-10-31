@@ -45,7 +45,7 @@ const articlesController = {
             const id = parseInt(req.params.id);
             const article = await Article.findByPk(id);
             await article.destroy()
-            res.status(200).json(user);
+            res.status(200).json(article);
             // Puis on redirige vers la page d'accueil
             res.redirect('/');
         } catch (error) {
