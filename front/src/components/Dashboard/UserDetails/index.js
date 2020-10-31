@@ -2,33 +2,45 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import './userDetails.scss';
 
 import profile from 'src/assets/images/profile.svg';
 
 const UserDetails = ({ userData }) => {
-  // console.log(userData.weights[0]);
+  console.log(userData);
   if (!userData || !userData.firstName) {
     return <div>Récupération de la ressource...</div>;
   }
+  const userDataItem = userData.weights.length > 0;
 
   return (
     <div className="dashboard__right">
       <div className="user-details">
-        <a href="#">
+        <NavLink to="#">
           <img src={profile} alt="profile" className="user-details__picture" />
-        </a>
+        </NavLink>
         <div className="user-details__infos">
           <h2>Bonjour, {userData.firstName} !</h2>
           <ul className="user-details__tags">
-            <li className="user-details__tag">{userData.birthdate} ans</li>
+
+            <li className="user-details__tag">Age : {userData.birthdate}</li>
             <li className="user-details__tag">{userData.height} cm</li>
             {/* <li className="user-details__tag">{userData.weights.map((item) => (
               <div>{item.weight}</div>
             ))} kg </li> */}
-            <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
-            <li className="user-details__tag">IMC : {userData.weights[userData.weights.length - 1].imc}</li>
+            { userDataItem
+              ? <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
+              : <li className="user-details__tag">--kg</li>}
+
+            { userDataItem
+              ? <li className="user-details__tag">IMC : {userData.weights[userData.weights.length - 1].imc}</li>
+              : <li className="user-details__tag">IMC : --</li>}
+            {/* { userData.weights.length > 0 && <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>}
+            { userData.weights.length < 0 && <li className="user-details__tag">--kg</li>}
+            { userData.weights.length > 0 && <li className="user-details__tag">imc: {userData.weights[userData.weights.length - 1].imc}</li>}
+            { userData.weights.length < 0 && <li className="user-details__tag">imc: --</li>} */}
           </ul>
         </div>
 

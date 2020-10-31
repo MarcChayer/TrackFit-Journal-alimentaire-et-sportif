@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './trackers.scss';
 
@@ -16,41 +17,41 @@ import modalweight from 'src/assets/images/icones/icone-open-modal-poids.svg';
 
 const Trackers = () => (
   <ul className="trackers">
-
-    <li className="trackers__item trackers__food">
-      <a href="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></a>
+    <li className="trackers__item">
+      <div className="trackers__header trackers__header__food" />
+      <NavLink to="#"><img src={modalfood} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
       <img src={food} alt="food" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>1800 / 2400 Kcal</span>
       </li>
     </li>
-
-    <li className="trackers__item trackers__water">
-      <a href="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></a>
+    <li className="trackers__item">
+      <div className="trackers__header trackers__header__water" />
+      <NavLink to="#"><img src={modalwater} alt="ajouter une entrée" className="trackers__modal-img" /></NavLink>
       <img src={water} alt="water" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>15 / 200 cl</span>
       </li>
     </li>
-
-    <li className="trackers__item trackers__sleep">
-      <a href="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+    <li className="trackers__item">
+      <div className="trackers__header trackers__header__sleep" />
+      <NavLink to="#"> <img src={modalsleep} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={sleep} alt="sleep" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>8 / 8 h</span>
       </li>
     </li>
-
-    <li className="trackers__item trackers__sport">
-      <a href="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+    <li className="trackers__item">
+      <div className="trackers__header trackers__header__sport" />
+      <NavLink to="#"> <img src={modalsport} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={sport} alt="sport" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>25 / 30 min</span>
       </li>
     </li>
-
-    <li className="trackers__item trackers__weight">
-      <a href="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </a>
+    <li className="trackers__item">
+      <div className="trackers__header trackers__header__weight" />
+      <NavLink to="#"> <img src={modalweight} alt="ajouter une entrée" className="trackers__modal-img" /> </NavLink>
       <img src={weight} alt="poids" className="trackers__rounded-img" />
       <li className="user-stats__item">
         <span>80 / 65 kg</span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
 import modaltrash from 'src/assets/images/icones/icone-poubelle.svg';
 import './todolist.scss';
@@ -47,7 +48,6 @@ const Todolist = ({
             </form>
           </h2>
         </div>
-
         <ul className="todolist__items">
           <form action="" method="post">
             {
@@ -55,9 +55,9 @@ const Todolist = ({
               <li className="todolist__item" key={task.id}>
                 <input type="checkbox" className="todolist__checkbox" />
                 <span>{task.title}</span>
-                <a href="#" onClick={handleOnClick}>
+                <NavLink to="#" onClick={handleOnClick}>
                   <img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" data-task-id={task.id} />
-                </a>
+                </NavLink>
               </li>
             ))
           }

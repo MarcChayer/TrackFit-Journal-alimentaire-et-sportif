@@ -11,7 +11,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       // 'http://52.91.105.182/signup'
-      axios.post('http://52.91.105.182/signup', {
+      axios.post('http://localhost:5050/signup', {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         email: store.getState().user.email,
@@ -20,29 +20,28 @@ export default (store) => (next) => (action) => {
       })
         .then((res) => {
           console.log(res.data);
+          console.log('res.data.userSave', res.data.userSave);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(userIsSubscribed());
+          store.dispatch(userIsSubscribed(res.data.userSave));
         })
         .catch((error) => {
           console.log(error);
         });
       break;
     case LOGIN_INPUT_SUBMIT:
-      console.log('middleware loginInPutSubmit');
-      // const userLogin = {
-      //   email: store.getState().user.email,
-      //   password: store.getState().user.password,
-      // };
-      axios.post('http://52.91.105.182/login', {
+      // http://52.91.105.182
+      axios.post('http://localhost:5050/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
-      })
+      },
+      { withCredentials: true })
         .then((res) => {
           console.log(res.data);
+          // console.log('res.data.session', res.data.session);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(userIsConnected());
+          store.dispatch(userIsConnected(res.data.session));
         })
         .catch((error) => {
           console.log(error);
