@@ -5,6 +5,7 @@ import {
   LOGIN_INPUT_SUBMIT,
   userIsConnected,
   userIsSubscribed,
+  LOGOUT_HANDLER,
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -47,7 +48,22 @@ export default (store) => (next) => (action) => {
           console.log(error);
         });
       break;
+    case LOGOUT_HANDLER:
+      axios.post('http://localhost:5050/logout', {},
+        { withCredentials: true })
+        .then((res) => {
+          console.log(res.data);
+          // console.log('res.data.session', res.data.session);
+          // A faire : envoyer les variables de la session utilisateur
+          // Attention ! mettre à jour l'action creator
+          store.dispatch(userIsConnected(res.data.session));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
     default:
       next(action);
+      break;
   }
 };

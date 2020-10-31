@@ -13,11 +13,22 @@ import Menu from './Menu';
 import './dashboard.scss';
 
 // == Composant
-const Dashboard = ({ fetchDashboard, allData }) => {
+const Dashboard = ({
+  fetchDashboard,
+  allData,
+  isLogged,
+}) => {
   useEffect(() => {
     fetchDashboard();
   }, []);
 
+  if (!isLogged) {
+    return (
+      <div className="dashboard">
+        <p>Vous devez vous connecter pour acceder à cette page</p>
+      </div>
+    );
+  }
   return (
     <div className="dashboard">
       <Menu />
@@ -44,6 +55,7 @@ const Dashboard = ({ fetchDashboard, allData }) => {
 
 Dashboard.propTypes = {
   fetchDashboard: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export
