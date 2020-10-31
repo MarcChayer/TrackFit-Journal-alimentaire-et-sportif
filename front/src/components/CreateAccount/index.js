@@ -69,7 +69,7 @@ const CreateAccount = (
     );
   }
 
-  return (<Redirect to="/" exact />);
+  return (<Redirect to="/tableaudebord" exact />);
 };
 
 CreateAccount.propTypes = {
