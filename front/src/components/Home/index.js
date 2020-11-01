@@ -1,10 +1,12 @@
 // == Import npm
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // image
 import illustration1 from 'src/assets/images/illustrations/illustration-accueil.svg';
 import illustration2 from 'src/assets/images/illustrations/illustration-accueil-2.svg';
-import test from 'src/assets/images/illustrations/test-accueil.png';
+import testDesktop from 'src/assets/images/illustrations/test-accueil-d.png';
+import testMobile from 'src/assets/images/illustrations/test-accueil-m.png';
 
 // == Import
 import './home.scss';
@@ -39,10 +41,14 @@ const Home = () => (
     <div className="home-bloc-bottom">
       <img src={illustration2} alt="illustration page d'accueil" className="home-bloc-bottom-img" />
       <span className="home-title-white">Aperçu et fonctionnalités du journal alimentaire</span>
-      <img src={test} alt="illustration page d'accueil" className="home-bloc-bottom-img--test" />
+      <img src={testDesktop} alt="illustration page d'accueil" className="home-bloc-bottom-img--test-d" />
+      <img src={testMobile} alt="illustration page d'accueil" className="home-bloc-bottom-img--test-m" />
 
       <span className="home-subtitle-pc">Et bien entendu, la possibilité d’obtenir des statistiques !
-      <button className="signup-home-button" type="submit">Inscrivez-vous !</button></span>
+        <button className="signup-home-button" type="submit">
+          <NavLink to="/connexion">Inscrivez-vous !</NavLink>
+        </button>
+      </span>
     </div>
   </div>
 );

@@ -1,5 +1,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 // == Import composants
@@ -30,8 +32,8 @@ const Dashboard = ({
         <p className="dashboard-guests">Veuillez vous identifier ou créer un compte.</p>
         <img src={connectionRequired} alt="connexion requise" className="dashboard-guests-img" />
         <div className="buttons-connexion-required">
-          <button className="signup-dashboard-button" type="submit">S'inscrire</button>
-          <button className="signin-dashboard-button" type="submit">Se connecter</button>
+          <button className="signup-dashboard-button" type="submit"><NavLink to="/inscription">S'inscrire</NavLink></button>
+          <button className="signin-dashboard-button" type="submit"><NavLink to="/connexion">Se connecter</NavLink></button>
         </div>
       </div>
     );
