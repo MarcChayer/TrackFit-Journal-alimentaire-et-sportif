@@ -37,7 +37,7 @@ const Header = ({
         ? (
           <div className="bloc-right">
             <NavLink to="/parametres" className="login-link">
-              <p className="login-p">{firstName}</p>
+              <p className="login-p">{firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()}</p>
             </NavLink>
             <NavLink to="/" className="logout-link">
               {/* <img src={logout} alt="se déconnecter" className="logout-img" /> */}
