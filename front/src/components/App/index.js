@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Header from 'src/containers/Header';
+import Home from 'src/components/Home';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/containers/Login';
 import Articles from 'src/containers/Articles';
@@ -17,6 +18,7 @@ const App = () => (
     <Switch>
       <Route exact path="/">
         <Header />
+        <Home />
       </Route>
       <Route path="/inscription">
         <Header />

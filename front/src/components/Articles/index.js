@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
-import logoAlimentation from 'src/assets/images/icones/illustration-alimentation.svg';
-import logoSport from 'src/assets/images/icones/illustration-sport.svg';
-import logoBienEtre from 'src/assets/images/icones/illustration-bien-etre.svg';
+import logoAlimentation from 'src/assets/images/illustrations/illustration-alimentation.svg';
+import logoSport from 'src/assets/images/illustrations/illustration-sport.svg';
+import logoBienEtre from 'src/assets/images/illustrations/illustration-bien-etre.svg';
 import Article from './Article';
 import './articles.scss';
 

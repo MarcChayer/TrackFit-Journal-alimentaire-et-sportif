@@ -1,8 +1,11 @@
 // == Import npm
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
 // == Import composants
+import connectionRequired from 'src/assets/images/illustrations/illustration-connexion-requise.svg';
 import Trackers from './Trackers';
 import FavoriteArticles from './FavoriteArticles';
 import Todolist from '../../containers/Todolist';
@@ -24,8 +27,14 @@ const Dashboard = ({
 
   if (!isLogged) {
     return (
-      <div className="dashboard">
-        <p>Vous devez vous connecter pour acceder à cette page</p>
+      <div className="dashboard-connexion-required">
+        <p className="dashboard-guests">Cet espace est réservé aux membres connectés.</p>
+        <p className="dashboard-guests">Veuillez vous identifier ou créer un compte.</p>
+        <img src={connectionRequired} alt="connexion requise" className="dashboard-guests-img" />
+        <div className="buttons-connexion-required">
+          <button className="signup-dashboard-button" type="submit"><NavLink to="/inscription">S'inscrire</NavLink></button>
+          <button className="signin-dashboard-button" type="submit"><NavLink to="/connexion">Se connecter</NavLink></button>
+        </div>
       </div>
     );
   }

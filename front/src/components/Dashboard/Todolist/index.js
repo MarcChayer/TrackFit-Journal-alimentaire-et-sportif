@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import modaltrash from 'src/assets/images/icones/icone-poubelle.svg';
+import modaltrash from 'src/assets/images/icone-poubelle.svg';
 import './todolist.scss';
 
 const Todolist = ({
