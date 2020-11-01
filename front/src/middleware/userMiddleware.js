@@ -53,7 +53,7 @@ export default (store) => (next) => (action) => {
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
-          // console.log('res.data.session', res.data.session);
+          console.log('res.data.session', res.data.session);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
           store.dispatch(userIsConnected(res.data.session));

@@ -31,14 +31,14 @@ const CreateAccount = (
         <form className="create-form" onSubmit={handleSubmit}>
           <label className="create-label">Nom :</label>
           <Field
-            value={firstName}
-            name="firstName"
+            value={lastName}
+            name="lastName"
             placeholder="Nom"
           />
           <label className="create-label">Prénom :</label>
           <Field
-            value={lastName}
-            name="lastName"
+            value={firstName}
+            name="firstName"
             placeholder="Prénom"
           />
           <label className="create-label">E-mail :</label>
@@ -69,7 +69,7 @@ const CreateAccount = (
     );
   }
 
-  return (<Redirect to="/tableaudebord" exact />);
+  return (<Redirect to="/connexion" exact />);
 };
 
 CreateAccount.propTypes = {
