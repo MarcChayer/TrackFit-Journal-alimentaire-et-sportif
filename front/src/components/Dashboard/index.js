@@ -24,7 +24,7 @@ const Dashboard = ({
   useEffect(() => {
     fetchDashboard();
   }, []);
-
+  console.log('allData', allData);
   if (!isLogged) {
     return (
       <div className="dashboard-connexion-required">

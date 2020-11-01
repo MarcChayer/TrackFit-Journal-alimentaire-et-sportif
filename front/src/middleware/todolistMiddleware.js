@@ -34,10 +34,11 @@ export default (store) => (next) => (action) => {
         .then((res) => {
           console.log(res.data);
           // http://52.91.105.182/dashboard/
-          axios.get(`http://52.91.105.182/dashboard/${userId}/task`).then((res2) => {
-            console.log(res2.data);
-            store.dispatch(deleteTaskSuccess(res2.data));
-          });
+          axios.get(`http://52.91.105.182/dashboard/${userId}/task`)
+            .then((res2) => {
+              console.log(res2.data);
+              store.dispatch(deleteTaskSuccess(res2.data));
+            });
         })
         .catch((error) => {
           console.log(error);

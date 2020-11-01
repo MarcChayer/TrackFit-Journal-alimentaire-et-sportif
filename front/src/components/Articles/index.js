@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import logoAlimentation from 'src/assets/images/illustrations/illustration-alimentation.svg';
 import logoSport from 'src/assets/images/illustrations/illustration-sport.svg';
 import logoBienEtre from 'src/assets/images/illustrations/illustration-bien-etre.svg';
-import Article from './Article';
+import Article from '../../containers/Article';
 import './articles.scss';
 
 const Articles = ({ fetchArticles, list, errorMessage }) => {
@@ -17,7 +17,6 @@ const Articles = ({ fetchArticles, list, errorMessage }) => {
     item.label === slug
   ));
   let logoImage = '';
-
   switch (slug) {
     case 'alimentation':
       logoImage = logoAlimentation;
@@ -34,7 +33,7 @@ const Articles = ({ fetchArticles, list, errorMessage }) => {
 
   return (
     <div className="articles">
-      {errorMessage}
+      {/* {errorMessage} */}
       <ul className="articles__list">
         <img className="logo-category" src={logoImage} alt="aliment" />
         {
