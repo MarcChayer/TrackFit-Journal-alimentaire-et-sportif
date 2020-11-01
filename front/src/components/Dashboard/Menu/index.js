@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './menu.scss';
 
@@ -6,13 +7,13 @@ const Menu = () => (
   <div className="dashboard__menu">
     <ul className="dashboard__menu-list">
       <li className="dashboard__menu-item dashboard__menu-item-active">
-        <a href="/tableaudebord" className="dashboard__menu-link">Tableau de bord</a>
+        <NavLink to="/tableaudebord" className="dashboard__menu-link">Tableau de bord</NavLink>
       </li>
       <li className="dashboard__menu-item">
-        <a href="/statistiques" className="dashboard__menu-link">Statistiques</a>
+        <NavLink to="/statistiques" className="dashboard__menu-link">Statistiques</NavLink>
       </li>
       <li className="dashboard__menu-item">
-        <a href="/parametres" className="dashboard__menu-link">Paramètres</a>
+        <NavLink to="/parametres" className="dashboard__menu-link">Paramètres</NavLink>
       </li>
     </ul>
   </div>

@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Header from 'src/components/Header';
+import Header from 'src/containers/Header';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/containers/Login';
 import Articles from 'src/containers/Articles';

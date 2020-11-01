@@ -4,6 +4,7 @@ import Dashboard from '../components/Dashboard';
 
 const mapStateToProps = (state) => ({
   allData: state.dashboard.allData,
+  isLogged: state.user.isLogged,
 });
 
 const mapDispatchToProps = (dispatch) => ({

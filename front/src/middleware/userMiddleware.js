@@ -5,6 +5,7 @@ import {
   LOGIN_INPUT_SUBMIT,
   userIsConnected,
   userIsSubscribed,
+  LOGOUT_HANDLER,
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -20,29 +21,42 @@ export default (store) => (next) => (action) => {
       })
         .then((res) => {
           console.log(res.data);
+          console.log('res.data.userSave', res.data.userSave);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(userIsSubscribed());
+          store.dispatch(userIsSubscribed(res.data.userSave));
         })
         .catch((error) => {
           console.log(error);
         });
       break;
     case LOGIN_INPUT_SUBMIT:
-      console.log('middleware loginInPutSubmit');
-      // const userLogin = {
-      //   email: store.getState().user.email,
-      //   password: store.getState().user.password,
-      // };
+      // http://52.91.105.182
       axios.post('http://52.91.105.182/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
-      })
+      },
+      { withCredentials: true })
         .then((res) => {
           console.log(res.data);
+          // console.log('res.data.session', res.data.session);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(userIsConnected());
+          store.dispatch(userIsConnected(res.data.session));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case LOGOUT_HANDLER:
+      axios.post('http://52.91.105.182/logout', {},
+        { withCredentials: true })
+        .then((res) => {
+          console.log(res.data);
+          // console.log('res.data.session', res.data.session);
+          // A faire : envoyer les variables de la session utilisateur
+          // Attention ! mettre à jour l'action creator
+          store.dispatch(userIsConnected(res.data.session));
         })
         .catch((error) => {
           console.log(error);
@@ -50,5 +64,6 @@ export default (store) => (next) => (action) => {
       break;
     default:
       next(action);
+      break;
   }
 };

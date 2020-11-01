@@ -19,6 +19,8 @@ router.delete('/article/:label/:id', articlesController.deleteArticle);
 // routes users : 
 router.post('/login', userController.loginAction);
 router.post('/signup', userController.signupAction);
+// routes lougout
+router.post('/logout', userController.logoutAction);
 
 // profil d'un utilisateur
 router.get('/profile/:id', userController.getProfile);
@@ -35,6 +37,13 @@ router.post('/dashboard/:id/sport', dashboardController.postDataSport);
 router.post('/dashboard/:id/food', dashboardController.postDataFood);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/weight', dashboardController.postDataWeight);
+
+// on ajoute les articles fav en bdd pour l'utilisateur ciblé
+router.post('/user/:user_id/article/:article_id', dashboardController.postAllArticleFav);
+
+// on ajoute les articles fav en bdd pour l'utilisateur ciblé
+router.delete('/user/:user_id/article/:article_id', dashboardController.removeArticleFromUser);
+
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/water', dashboardController.postDataWater);
 // Envoyer les données du tracker 

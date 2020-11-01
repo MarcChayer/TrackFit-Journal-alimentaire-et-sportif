@@ -35,13 +35,17 @@ const userController = {
                 // on stock le password crypté
                 const passwordEncrypted = bcrypt.hashSync(password, 10);
                 let newUser = User.build({
-                    lastName,
-                    firstName,
-                    email,
+                    lastName : req.body.lastName,
+                    firstName : req.body.firstName,
+                    email : req.body.email,
                     password: passwordEncrypted,
                 });
-                await newUser.save();
-                res.status(200).json(newUser);
+                // await newUser.save();
+                // res.status(200).json(newUser);
+                const save = await newUser.save(user);
+                const messageInscription = 'Inscription successful';
+
+                res.status(200).json({message: messageInscription, userSave : save, session: req.session.user});
                 // // on redirige ensuite sur la page login
                 // res.redirect('/');
             }
@@ -58,7 +62,7 @@ const userController = {
 		try {
 			// On vérifie que l'utilisateur est présent en BDD
         const user = await User.findOne({ where: { email: email } });
-        console.log(user);
+        // console.log(user);
 			if (!user) {
                 bodyError.push(`Cet utilisateur n'existe pas`);
                 res.status(404).json(bodyError);
@@ -72,11 +76,19 @@ const userController = {
                 // L'utilisateur existe en BDD, et le mot de passe est correct
                 // Il faut donc connecter cet utilisateur
                 // On le stocke dans la session
-                req.session.user = user.toJSON();
+                // req.session.user = user.toJSON();
+                req.session.user = {
+                    connected_user: true,
+                    id: user.id,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    email: user.email,
+                }
                 // On oublie pas de supprimer le mot de passe
                 delete req.session.user.password;
+                const messageConnexion = 'Connexion successful';
                 // console.log(req.session.user);
-                res.status(200).json('Connexion successful');
+                res.status(200).json({message: messageConnexion, session: req.session.user});
                 // Puis on redirige vers la page d'accueil
                 // res.redirect('/');
             }
@@ -132,6 +144,29 @@ const userController = {
             res.status(500).json(error.toString());
         }
     },
+
+    logoutAction: async (req, res) => {
+        try {
+            // tableau d'erreur
+            const messageTab = [];
+            // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
+            if (req.session.user.connected_user === false) {
+                const messageLogout = 'Aucun utilisateur n\'est connecté';
+                messageTab.push({messageLogout: messageLogout});
+                return res.status(404).json({message: messageTab, session: req.session.user});
+            };
+            // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
+            if (req.session.user.connected_user === true){
+                req.session.user = {connected_user: false};
+                const messageLogout = 'Déconnexion de l\'utilisateur ok';
+                messageTab.push({messageLogout: messageLogout});
+                return res.status(200).json({message: messageTab, session: req.session.user});
+            };
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
+    }
 };
 
 module.exports = userController;

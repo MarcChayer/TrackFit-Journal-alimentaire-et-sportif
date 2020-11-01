@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import './params.scss';
 
@@ -16,9 +17,9 @@ const Params = () => (
       <ul className="user-params__tags">
         <li className="user-params__tag-list">
           <img src={profile} alt="profile" className="user-params__picture" />
-          <a href="#">
+          <NavLink to="#">
             <img src={add} alt="ajouter" className="user-add__picture" />
-          </a>
+          </NavLink>
         </li>
         <li className="user-params__tag-list">user.firstName user.lastName</li>
         <li className="user-params__tag-list">user.birthdate</li>
@@ -43,7 +44,7 @@ const Params = () => (
               <input className="settings-input" type="text" placeholder="Nom" />
             </label>
             <label className="settings-label">Date de naissance
-              <input className="settings-input" type="date" placeholder="Age" />
+              <input className="settings-input" type="date" placeholder="JJ/MM/AAAA" />
             </label>
             <label className="settings-label">E-mail
               <input className="settings-input" type="email" placeholder="E-mail" />
@@ -83,10 +84,10 @@ const Params = () => (
               <input className="input-personnal" type="number" placeholder="69 kg" />
             </label>
 
-            <label className="label-personnal">Votre besoin en Kcal* :
+            {/* <label className="label-personnal">Votre besoin en Kcal* :
               <input className="input-personnal" type="number" placeholder="1 500 Kcal" />
               <p className="precision-kcal">* par défaut : 2 000 pour un homme / 1 800 pour une femme</p>
-            </label>
+            </label> */}
             <label className="label-personnal">Votre besoin en sommeil :
               <input className="input-personnal" type="number" placeholder="7 h" />
             </label>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import FieldLogin from 'src/containers/Field';
 
@@ -36,6 +36,7 @@ const Login = ({
               value={password}
               name="password"
               placeholder="Mot de passe"
+              type="password"
             />
           </label>
           {/* <label>
@@ -45,7 +46,7 @@ const Login = ({
           <button className="log-button" type="submit">S'identifier</button>
         </form>
 
-        <p>Vous ne possédez pas de compte ?<a className="log-id" href="/inscription"> Inscrivez-vous</a></p>
+        <p>Vous ne possédez pas de compte ?<NavLink to="/inscription" className="log-id"> Identifiez-vous</NavLink></p>
       </div>
     );
   }
