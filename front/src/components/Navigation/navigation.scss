@@ -13,6 +13,11 @@
     margin: 0 15px;
     color: vars.$primary-color;
     font-size: 1.2em;
+
+    &--active {
+      color: vars.$secondary-color;
+    }
+
     @media screen and (max-width:1020px) {
       font-size: 1em;
     }
@@ -23,9 +28,12 @@
       font-size: 0.89em;
     }
   
+   
     &:hover {
       color: vars.$secondary-color;
     }
+
+    
   }
 
   &-img {

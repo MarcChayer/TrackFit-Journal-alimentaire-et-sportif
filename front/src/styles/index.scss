@@ -39,7 +39,12 @@ body {
   //background-color: transparent;
  //border-left: 1px solid #bab7b7a3;
   //border-radius: 5em;
-} 
+}
+
+button:hover {
+  background-color: vars.$secondary-color;
+  transition: 0.3s ease all;
+}
 
 ::-webkit-scrollbar-corner {
   background-color: vars.$primary-color;

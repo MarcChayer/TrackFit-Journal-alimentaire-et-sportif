@@ -69,9 +69,10 @@
 
   &-subtitle-pc {
     font-size: 2em;
+    margin-top: 1.5em;
     color: vars.$primary-color;
     font-weight: lighter;
-    margin-top: 0.5em;
+
     @media screen and (max-width:900px) {
       font-size: 1.5em;
     }
@@ -165,6 +166,9 @@
 
 .home-bloc-bottom-img--test-d {
   width: 100%;
+  box-shadow: vars.$box-shadow;
+  border-radius: vars.$light-radius;
+
   @media screen and (max-width:900px) {
     display: none;
   }
