@@ -36,6 +36,7 @@ const Login = ({
               value={password}
               name="password"
               placeholder="Mot de passe"
+              type="password"
             />
           </label>
           {/* <label>
