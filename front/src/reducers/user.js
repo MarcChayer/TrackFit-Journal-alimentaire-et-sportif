@@ -40,7 +40,7 @@ const reducer = (state = initialState, action = {}) => {
     case USER_IS_CONNECTED:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de LOGIN_INPUT_SUBMIT)
-      console.log(action.session);
+      console.log('action.session.connected_user dans USER AVEC USER IS CONNECTED', action.session.connected_user);
       return {
         ...state,
         isLogged: !state.isLogged,

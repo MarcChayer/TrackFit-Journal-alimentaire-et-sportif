@@ -7,12 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Article = ({ article }) => {
-  console.log('je suis la source', article.source);
+  console.log('je suis la source', article.id);
   return (
     <li className="article">
       <article>
         <div className="favs__overview-one">
-          <NavLink to="/favoris"><FontAwesomeIcon icon={faHeart} /></NavLink>
+          <FontAwesomeIcon icon={faHeart} key={article.id} />
           <img src={article.media} alt="article" className="article__img" />
         </div>
         <h2 className="article__title">{article.title}</h2>
