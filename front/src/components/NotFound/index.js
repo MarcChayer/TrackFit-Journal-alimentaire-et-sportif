@@ -3,8 +3,8 @@ import React from 'react';
 
 // == Import
 import './notfound.scss';
-import notfoundDesktop from 'src/assets/images/icones/notfound-d.png';
-import notfoundMobile from 'src/assets/images/icones/notfound-m.png';
+import notfoundDesktop from 'src/assets/images/illustrations/illustration-notfound-d.svg';
+import notfoundMobile from 'src/assets/images/illustrations/notfound-m.png';
 
 // == Composant
 const NotFound = () => (

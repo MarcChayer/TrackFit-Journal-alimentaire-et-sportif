@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom';
 
 import './trackers.scss';
 
-import food from 'src/assets/images/icones/icone-alimentation.svg';
-import water from 'src/assets/images/icones/icone-water.svg';
-import sleep from 'src/assets/images/icones/icone-sommeil.svg';
-import sport from 'src/assets/images/icones/icone-sport.svg';
-import weight from 'src/assets/images/icones/icone-poids.svg';
-import modalfood from 'src/assets/images/icones/icone-open-modal-alimentation.svg';
-import modalwater from 'src/assets/images/icones/icone-open-modal-water.svg';
-import modalsleep from 'src/assets/images/icones/icone-open-modal-sommeil.svg';
-import modalsport from 'src/assets/images/icones/icone-open-modal-sport.svg';
-import modalweight from 'src/assets/images/icones/icone-open-modal-poids.svg';
+import food from 'src/assets/images/trackers/icone-alimentation.svg';
+import water from 'src/assets/images/trackers/icone-water.svg';
+import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
+import sport from 'src/assets/images/trackers/icone-sport.svg';
+import weight from 'src/assets/images/trackers/icone-poids.svg';
+import modalfood from 'src/assets/images/trackers/icone-open-modal-alimentation.svg';
+import modalwater from 'src/assets/images/trackers/icone-open-modal-water.svg';
+import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
+import modalsport from 'src/assets/images/trackers/icone-open-modal-sport.svg';
+import modalweight from 'src/assets/images/trackers/icone-open-modal-poids.svg';
 
 const Trackers = () => (
   <ul className="trackers">

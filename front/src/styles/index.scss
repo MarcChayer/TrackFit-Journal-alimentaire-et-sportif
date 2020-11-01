@@ -6,8 +6,11 @@
   src: url("../assets/fonts/Roboto-Regular.ttf");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   background-color: vars.$background-color;
   overflow-x: hidden;
   width: 100%;

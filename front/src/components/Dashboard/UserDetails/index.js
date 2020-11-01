@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 import './userDetails.scss';
 
-import profile from 'src/assets/images/profile.svg';
+import profile from 'src/assets/images/trackers/user.svg';
 
 const UserDetails = ({ userData }) => {
   console.log(userData);

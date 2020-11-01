@@ -1,12 +1,12 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 
-import food from 'src/assets/images/icones/icone-alimentation.svg';
-import water from 'src/assets/images/icones/icone-water.svg';
-import sleep from 'src/assets/images/icones/icone-sommeil.svg';
-import sport from 'src/assets/images/icones/icone-sport.svg';
-import weight from 'src/assets/images/icones/icone-poids.svg';
-import profile from 'src/assets/images/profile.svg';
+import food from 'src/assets/images/trackers/icone-alimentation.svg';
+import water from 'src/assets/images/trackers/icone-water.svg';
+import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
+import sport from 'src/assets/images/trackers/icone-sport.svg';
+import weight from 'src/assets/images/trackers/icone-poids.svg';
+import profile from 'src/assets/images/trackers/user.svg';
 
 import './stats.scss';
 

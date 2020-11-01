@@ -55,6 +55,10 @@
         left: 0.5em;
         cursor: pointer;
         color: vars.$background-color;
+
+        &:hover {
+            color: vars.$hover-fav;
+        }
     }
   }
 

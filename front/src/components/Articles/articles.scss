@@ -2,11 +2,11 @@
 
 .logo-category {
   width: 24em;
-  padding: .6em;
+  // padding: .6em;
   margin: 25px;
   position: relative;
   overflow: hidden;
-  padding-bottom: 1em; 
+  // padding-bottom: 1em; 
   border-radius: 1em;
   @media (max-width: 1350px) {
     width: 22em;
@@ -18,7 +18,7 @@
 
 .article__img {
   width: 100%;
-  height: 20vh;
+  height: 17em;
   object-fit: cover;
   border-radius: 1em 1em 0 0;
 }
@@ -45,6 +45,10 @@
   color: vars.$background-color;
 }
 
+.favs__overview-one svg :hover{
+  color: vars.$hover-fav;
+}
+
 .articles {
   text-align: center;
   margin: 6em auto auto auto;
@@ -52,17 +56,15 @@
 }
 
 .article {
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #ccc;
-  box-shadow: vars.$box-shadow;
+  -webkit-box-shadow: rgba(100,100,111,.2) 0 7px 29px 0;
+  box-shadow: 0 7px 29px 0 rgba(100,100,111,.2);
   margin: 25px;
   position: relative;
   overflow: hidden;
-  padding-bottom: 1em; 
+  padding-bottom: 1em;
   border-radius: 1em;
-  height: 26em;
-  max-height: 26em;
-  min-height: 26em;
   width: 24em;
   max-width: 24em;
   min-width: 24em;
@@ -79,6 +81,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-end;
   max-width: 90em;
   margin: auto;
 }
@@ -123,7 +126,7 @@
   text-align: justify;
   font-size: 1em;
   padding: 0 1em;
-  height: 7em;
+  height: auto;
   display: -webkit-box;
   -webkit-line-clamp: 7;
   -webkit-box-orient: vertical;

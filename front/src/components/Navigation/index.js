@@ -3,9 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './navigation.scss';
-import profile from 'src/assets/images/profile.svg';
-import hamburger from 'src/assets/images/icones/icone-nav-burger.svg';
-import statistics from 'src/assets/images/icones/icone-nav-stat.svg';
+import profile from 'src/assets/images/icone-nav-profile.svg';
+import hamburger from 'src/assets/images/icone-nav-burger.svg';
+import statistics from 'src/assets/images/icone-nav-stat.svg';
 // import Hamburger from 'src/components/Hamburger';
 
 // == Composant
