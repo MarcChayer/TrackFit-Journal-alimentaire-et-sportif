@@ -1,5 +1,5 @@
 import React from "react";
-import Food from 'src/assets/images/icones/icone-alimentation.svg';
+import Food from 'src/assets/images/trackers/icone-alimentation.svg';
 
 import './modalfood.scss';
 

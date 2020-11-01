@@ -46,7 +46,7 @@ const Login = ({
           <button className="log-button" type="submit">S'identifier</button>
         </form>
 
-        <p>Vous ne possédez pas de compte ?<NavLink to="/inscription" className="log-id"> Identifiez-vous</NavLink></p>
+        <p>Vous ne possédez pas de compte ?<NavLink to="/inscription" className="log-id"> Inscrivez-vous </NavLink></p>
       </div>
     );
   }

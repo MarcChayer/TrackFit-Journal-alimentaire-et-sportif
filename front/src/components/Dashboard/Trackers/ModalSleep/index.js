@@ -1,5 +1,5 @@
 import React from 'react';
-import sleep from 'src/assets/images/icones/icone-sommeil.svg';
+import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
 
 import './modalsleep.scss';
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Sport from 'src/assets/images/icones/icone-sport.svg';
+import Sport from 'src/assets/images/trackers/icone-sport.svg';
 
 import './modalsport.scss';
 
