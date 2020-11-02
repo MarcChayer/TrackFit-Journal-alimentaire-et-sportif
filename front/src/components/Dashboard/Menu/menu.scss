@@ -30,12 +30,12 @@
         cursor: pointer;
         color: white;
         background-color: vars.$secondary-color;
-        border-radius: 3em;
+        border-radius: 5em;
       }
 
       &-active { //dashboard__menu-item dashboard__menu-item-active
         color: white;;
-        border-radius: 3em;
+        border-radius: 5em;
         background-color: vars.$secondary-color;
       }
     }

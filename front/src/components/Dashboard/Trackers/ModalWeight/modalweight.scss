@@ -6,6 +6,7 @@
   float: left;
   padding-left: 1em;
   padding-top: 1em;
+
   @media (max-width: 1350px) {
     width: 5em;
   }
@@ -13,47 +14,58 @@
 
 .modal-weight {
   background-color: white;
-  width: 28em;
-  border: 1px solid #ccc;
-  box-shadow: 8px 8px 12px #aaa;
+  width: 36em;
+  height: 27em;
+  box-shadow: vars.$box-shadow;
   padding: .6em;
-  margin: 25px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   padding-bottom: 1em; 
-  border-radius: 1em;
-  border-top: 18px solid #fcdcac;
+  border-radius: 2em;
+  border-top: 2em solid vars.$weight-color;
+
   @media (max-width: 1350px) {
     width: 25em;
-    margin-top: 69em;
-  }
-  
+  }  
 }
-.modal-button {
-  border: 1px solid #ccc;
-  background-color: #3D5499;
+
+.modal-button-weight {
+  background-color: #3d5499;
   color: #fff;
-  padding: .4em 0.8em;
-  border-radius: 1em;
-  position: relative;
-  float: right;
-  margin: -2em 1em 0 0;
-  width: 6em;
-  height: 3em;
+  padding: 0.89em;
+  border: none;
+  border-radius: 2em;
+  margin: .5em;
+  width: 5em;
+  height: 1.5em;
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
+  font-size: 1.65em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: vars.$secondary-color;
+    transition: all .3s ease;
+  }
+
   @media (max-width: 1350px) {
     width: 85%;
     margin-top:.2em;
   }
 }
 
-
-.mod-form {
+.mod-form-weight {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 2em;
   padding-left: 5em;
+
   @media (max-width: 1350px) {
     width: 20em;
     margin: 2em auto;
@@ -61,7 +73,7 @@
   }
 }
 
-.mod-label {
+.mod-label-weight {
   margin: 0.5em 0;
   font-size: 1.1em;
   font-weight: 300;
@@ -69,28 +81,26 @@
   font-weight: bold;
 }
 
-.mod-input {
+.mod-input-weight {
   padding: .46em;
   border: 2px solid vars.$secondary-color;
   width: 50%;
   font-size: 1em;
   margin: 0.3em 0;
   border-radius: 1em;
-  
 }
 
-.mod-title {
+.mod-title-weight {
   padding-left: 2em;
   color: #3D5499;
   margin-top: 1em;
   margin-left: 1em;
   font-size: 2em;
+
   @media (max-width: 1350px) {
-    width: 85%;
-    
+    width: 85%;  
   }
 }
-
 
 .trackers-modal {
   position: absolute;
@@ -98,4 +108,3 @@
   background: transparent;
   margin: 0 auto;
 } 
-
