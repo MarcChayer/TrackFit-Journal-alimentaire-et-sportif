@@ -1,10 +1,15 @@
 @use 'src/styles/vars';
 
 .favs-todo {
-  height: 42vh; //21em
+  height: auto; 
+  // height: 42vh; 
   display: flex;
   border-radius: 20px 20px 0 0;
 
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 2em;
+  }
+  
   @media screen and (max-width: 900px) {
     flex-direction: column;
     height: auto;
@@ -77,11 +82,14 @@
  }
 }
 
-.form__input {
+h2 {
   font-weight: 700;
-  width: 100%;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+.form__input {  
+  width: 100%;
   font-size: 1em;
   display: flex;
   align-items: center;
@@ -90,10 +98,10 @@
   border: none;
   padding: 1em;
   margin-left: -1em;
-  margin-top: -0.55em;
-    
+  margin-top: 0.25em;
+
   &::placeholder {
-    color: #4b5c6b;
+    color: vars.$primary-color;
   }
 }
 
