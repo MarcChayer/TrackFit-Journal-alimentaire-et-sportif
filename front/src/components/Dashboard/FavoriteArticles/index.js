@@ -16,19 +16,19 @@ const FavoriteArticles = ({ articleFav }) => {
       <div className="favs-content">
         <h2>Articles favoris</h2>
         {
-        articleFav.articles.map((article) => (
-          <li className="favs__item" key={article.id}>
-            <div className="favs__overview">
-              <FontAwesomeIcon icon={faHeart} />
-              <img src={article.media} alt="article" className="favs__thumbnail" />
-            </div>
-            <div className="favs__excerpt">
-              <h3>{article.title}</h3>
-              <p>{article.content}</p>
-            </div>
-          </li>
-        ))
-      }
+          articleFav.articles.map((article) => (
+            <li className="favs__item" key={article.id}>
+              <div className="favs__overview">
+                <FontAwesomeIcon icon={faHeart} />
+                <img src={article.media} alt="article" className="favs__thumbnail" />
+              </div>
+              <div className="favs__excerpt">
+                <h3>{article.title}</h3>
+                <p>{article.content}</p>
+              </div>
+            </li>
+          ))
+        }
       </div>
     </ul>
   );

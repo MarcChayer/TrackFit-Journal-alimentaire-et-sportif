@@ -7,7 +7,7 @@ import {
 } from '../actions/articles';
 import {
   ADD_ARTICLE_FAV,
-  // DELETE_ARTICLE_FAV,
+  DELETE_ARTICLE_FAV,
 } from '../actions/article';
 
 export default (store) => (next) => (action) => {
@@ -39,19 +39,19 @@ export default (store) => (next) => (action) => {
           store.dispatch(error);
         });
       break;
-    // case DELETE_ARTICLE_FAV:
-    //   // console.log('action.taskId', action.articleId);
-    //   // http://52.91.105.182/
-    //   axios.delete(`http://52.91.105.182/user/${userId}/article/${action.articleId}`)
-    //     .then((res) => {
-    //       console.log(res.data);
-    //       store.dispatch(res.data);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error);
-    //       store.dispatch(error);
-    //     });
-    //   break;
+    case DELETE_ARTICLE_FAV:
+      // console.log('action.taskId', action.articleId);
+      // http://52.91.105.182/
+      axios.delete(`http://52.91.105.182/user/${userId}/article/${action.articleId}`)
+        .then((res) => {
+          console.log(res.data);
+          store.dispatch(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+          store.dispatch(error);
+        });
+      break;
     default:
       next(action);
   }

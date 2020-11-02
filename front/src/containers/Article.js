@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Article from 'src/components/Articles/Article';
 import {
   addArticleFav,
-  // deleteArticleFav,
+  deleteArticleFav,
 } from '../actions/article';
 
 const mapStateToProps = (state) => ({
@@ -13,7 +13,10 @@ const mapDispatchToProps = (dispatch) => ({
   addFavOnClick: (articleId) => {
     // console.log('articleId', articleId);
     dispatch(addArticleFav(articleId));
-    // dispatch(deleteArticleFav(articleId));
+  },
+  deleteOnClick: (articleId) => {
+    console.log('articleId', articleId);
+    dispatch(deleteArticleFav(articleId));
   },
 });
 
