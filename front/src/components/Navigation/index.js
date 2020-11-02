@@ -13,7 +13,7 @@ const Navigation = () => (
   <div className="navigation">
     <nav className="navigation--desktop">
       <ul className="navigation-list">
-        <li><NavLink to="/" className="navigation-link" activeClassName="navigation-link--active">Accueil</NavLink></li>
+        <li><NavLink to="/" exact activeClassName="navigation-link--active" className="navigation-link">Accueil</NavLink></li>
         <li><NavLink to="/articles/alimentation" className="navigation-link" activeClassName="navigation-link--active">Alimentation</NavLink></li>
         <li><NavLink to="/articles/sport" className="navigation-link" activeClassName="navigation-link--active">Sport</NavLink></li>
         <li><NavLink to="/articles/bienetre" className="navigation-link" activeClassName="navigation-link--active">Bien-être</NavLink></li>

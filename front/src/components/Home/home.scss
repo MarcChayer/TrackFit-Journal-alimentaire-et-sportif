@@ -10,9 +10,10 @@
     height: 127vh;
     max-height: 127vh;
     min-height: 127vh;
-    padding: 0 5%;
+    padding: 0 5vw;
 
     @media screen and (max-width:900px) {
+      position: absolute;
       max-height: 104.5vh;
       min-height: 104.5vh;
       height: 104.5vh;
@@ -87,11 +88,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    padding: 0 10%;
+    padding: 0 10vw;
 
     @media screen and (max-width:900px) {
-      padding: 0 4%;
+      position: absolute;
+      padding: 0 4vw;
       height: auto;
+      top: 58em;
       margin-top: -6.3em;
     }
 
@@ -104,8 +107,8 @@
       @media screen and (max-width:900px) {
         position: absolute;
         left: 3em;
-        top: 37.18em;
         height: 14em;
+        top: -12.82em;
       }
     }
   }
@@ -172,7 +175,7 @@
 }
 
 .home-bloc-bottom-img--test-d {
-  width: 100%;
+  width: 100vw;
   box-shadow: vars.$box-shadow;
   border-radius: vars.$light-radius;
 
@@ -186,7 +189,7 @@
 
   @media screen and (max-width:900px) {
     display: block;
-    width: 80%;
+    width: 25em;
     margin: auto;
   }
 }
