@@ -43,13 +43,13 @@ const App = ({
           <CreateAccount />
         </Route>
         )}
-        {!isLogged
-        && (
+        {/* {!isLogged
+        && ( */}
         <Route path="/connexion">
           <Header />
           <Login />
         </Route>
-        )}
+        {/* )} */}
         <Route path="/articles/:slug">
           <Header />
           <Articles />
@@ -76,6 +76,7 @@ const App = ({
 };
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
+  justSubscribe: PropTypes.bool.isRequired,
 };
 
 // == Export
