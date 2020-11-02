@@ -41,7 +41,7 @@ const Todolist = ({
                 name="labelNewTask"
                 className="form__input"
                 type="text"
-                placeholder="Saisissez une tâche directement ici"
+                placeholder="Saissisez votre tâche ici"
                 value={labelNewTask}
                 onChange={handleOnChange}
               />
