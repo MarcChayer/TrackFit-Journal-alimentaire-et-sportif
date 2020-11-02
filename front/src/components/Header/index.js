@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // component
-import Navigation from 'src/components/Navigation';
+import Navigation from 'src/containers/Navigation';
 
 // image
 import logo from 'src/assets/images/logo.svg';
