@@ -22,7 +22,10 @@
       color: white;
       border-radius: vars.$full-radius;
       background-color: vars.$primary-color;
-
+      
+      @media screen and (max-width: 900px) {
+        font-size: 0.9em;
+      }
       &:not(:last-of-type) { //dashboard__menu-item:not(:last-of-type)
         margin-right: 1em;
       }
