@@ -7,10 +7,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import './favoriteArticles.scss';
 
-const FavoriteArticles = ({ articleFav }) => {
+const FavoriteArticles = ({
+  articleFav,
+  addFavOnClick,
+  deleteOnClick,
+}) => {
   if (!articleFav || !articleFav.articles) {
     return <div>recuperation de la ressource</div>;
   }
+  const handleOnClick = () => {
+    // console.log(event.target.dataset.articleId);
+    // console.log(article.id);
+    // addFavOnClick(articleFav.id);
+    deleteOnClick(articleFav.id);
+  };
+  // console.log('articleFav', articleFav.id);
+
   return (
     <ul className="favs">
       <div className="favs-content">
@@ -19,7 +31,7 @@ const FavoriteArticles = ({ articleFav }) => {
           articleFav.articles.map((article) => (
             <li className="favs__item" key={article.id}>
               <div className="favs__overview">
-                <FontAwesomeIcon icon={faHeart} />
+                <FontAwesomeIcon icon={faHeart} onClick={handleOnClick} />
                 <img src={article.media} alt="article" className="favs__thumbnail" />
               </div>
               <div className="favs__excerpt">
@@ -36,6 +48,8 @@ const FavoriteArticles = ({ articleFav }) => {
 
 FavoriteArticles.propTypes = {
   articleFav: PropTypes.objectOf().isRequired,
+  addFavOnClick: PropTypes.func.isRequired,
+  deleteOnClick: PropTypes.func.isRequired,
 };
 
 // == Export
