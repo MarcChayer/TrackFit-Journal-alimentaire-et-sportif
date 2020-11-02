@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 // component
 import Navigation from 'src/components/Navigation';
-// import SearchBar from 'src/components/SearchBar';
 
 // image
 import logo from 'src/assets/images/logo.svg';
@@ -40,7 +39,6 @@ const Header = ({
               <p className="login-p">{firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()}</p>
             </NavLink>
             <NavLink to="/" className="logout-link">
-              {/* <img src={logout} alt="se déconnecter" className="logout-img" /> */}
               <p className="logout-p" onClick={logoutHandler}>Déconnexion</p>
             </NavLink>
           </div>
