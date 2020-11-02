@@ -3,9 +3,10 @@ import axios from 'axios';
 import {
   REGISTER_INPUT_SUBMIT,
   LOGIN_INPUT_SUBMIT,
-  userIsConnected,
+  loginSuccess,
   userIsSubscribed,
   LOGOUT_HANDLER,
+  logoutSuccess,
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -42,7 +43,7 @@ export default (store) => (next) => (action) => {
           // console.log('res.data.session', res.data.session);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(userIsConnected(res.data.session));
+          store.dispatch(loginSuccess(res.data.session));
         })
         .catch((error) => {
           console.log(error);
@@ -53,10 +54,9 @@ export default (store) => (next) => (action) => {
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
-          console.log('res.data.session', res.data.session);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(userIsConnected(res.data.session));
+          store.dispatch(logoutSuccess());
         })
         .catch((error) => {
           console.log(error);

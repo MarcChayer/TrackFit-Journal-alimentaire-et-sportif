@@ -2,24 +2,20 @@ import {
   REGISTER_INPUT_SUBMIT,
   INPUT_CHANGE,
   LOGIN_INPUT_SUBMIT,
-  USER_IS_CONNECTED,
+  LOGIN_SUCCESS,
+  LOGOUT_SUCCESS,
   USER_IS_SUBSCRIBED,
 } from '../actions/user';
 
 const initialState = {
+  id: null,
   lastName: '',
   firstName: '',
   email: '',
   password: '',
   confirmedPassword: '',
   isLogged: false,
-  session: {
-    connected_user: false,
-    email: '',
-    firstName: '',
-    lastName: '',
-    id: null,
-  },
+  justSubscribe: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -37,16 +33,25 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
       };
-    case USER_IS_CONNECTED:
+    case LOGIN_SUCCESS:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de LOGIN_INPUT_SUBMIT)
-      console.log('action.session.connected_user dans USER AVEC USER IS CONNECTED', action.session.connected_user);
+      console.log('action.session.connected_user dans USER AVEC USER IS CONNECTED', action.payload);
       return {
         ...state,
-        isLogged: !state.isLogged,
-        session: {
-          ...action.session,
-        },
+        ...action.payload,
+        isLogged: true,
+        password: '',
+      };
+    case LOGOUT_SUCCESS:
+      return {
+        ...state,
+        id: null,
+        lastName: '',
+        firstName: '',
+        email: '',
+        password: '',
+        isLogged: false,
       };
     case USER_IS_SUBSCRIBED:
       // Ne pas oublier de récupérer le payload de l'action creator
@@ -54,10 +59,14 @@ const reducer = (state = initialState, action = {}) => {
       console.log(action.session);
       return {
         ...state,
-        isLogged: true,
-        session: {
-          ...action.session,
-        },
+        id: null,
+        lastName: '',
+        firstName: '',
+        email: '',
+        password: '',
+        confirmedPassword: '',
+        isLogged: false,
+        justSubscribe: true,
       };
     default:
       return state;
