@@ -44,10 +44,13 @@ const userController = {
                 // res.status(200).json(newUser);
                 const save = await newUser.save(user);
                 const messageInscription = 'Inscription successful';
+                const messageErrorInscription = 'Inscription aborted';
 
-                res.status(200).json({message: messageInscription, userSave : save, session: req.session.user});
-                // // on redirige ensuite sur la page login
-                // res.redirect('/');
+                if (save.id) {
+                    res.status(200).json(messageInscription)
+                } else {
+                    res.status(500).json(messageErrorInscription)
+                }
             }
         } catch (error) {
             console.log(error);
@@ -87,6 +90,7 @@ const userController = {
                 // On oublie pas de supprimer le mot de passe
                 delete req.session.user.password;
                 const messageConnexion = 'Connexion successful';
+                console.log('req.session.user', req.session.user);
                 // console.log(req.session.user);
                 res.status(200).json({message: messageConnexion, session: req.session.user});
                 // Puis on redirige vers la page d'accueil
