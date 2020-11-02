@@ -4,7 +4,7 @@ import { logoutHandler } from '../actions/user';
 
 const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
-  firstName: state.user.session.firstName,
+  firstName: state.user.firstName,
 });
 
 const mapDispatchToProps = (dispatch) => ({

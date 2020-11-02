@@ -21,9 +21,11 @@ const Dashboard = ({
   allData,
   isLogged,
 }) => {
-  useEffect(() => {
-    fetchDashboard();
-  }, []);
+  if (isLogged) {
+    useEffect(() => {
+      fetchDashboard();
+    }, []);
+  }
 
   if (!isLogged) {
     return (
