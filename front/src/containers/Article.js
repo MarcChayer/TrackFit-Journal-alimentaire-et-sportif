@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import Article from 'src/components/Articles/Article';
 import {
-  addArticleFav,
-  deleteArticleFav,
+  toggleFavArticle,
 } from '../actions/article';
 
 const mapStateToProps = (state) => ({
@@ -10,13 +9,9 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  addFavOnClick: (articleId) => {
+  toggleFavArticle: (articleId) => {
     // console.log('articleId', articleId);
-    dispatch(addArticleFav(articleId));
-  },
-  deleteOnClick: (articleId) => {
-    console.log('articleId', articleId);
-    dispatch(deleteArticleFav(articleId));
+    dispatch(toggleFavArticle(articleId));
   },
 });
 

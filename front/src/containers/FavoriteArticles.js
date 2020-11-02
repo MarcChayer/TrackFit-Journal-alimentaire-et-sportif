@@ -3,7 +3,7 @@ import FavoriteArticles from 'src/components/Dashboard/FavoriteArticles';
 import {
   addArticleFav,
   deleteArticleFav,
-} from '../actions/article';
+} from '../actions/articles';
 
 const mapStateToProps = (state) => ({});
 

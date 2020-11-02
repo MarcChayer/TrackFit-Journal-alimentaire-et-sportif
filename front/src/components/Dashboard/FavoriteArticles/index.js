@@ -18,10 +18,9 @@ const FavoriteArticles = ({
   const handleOnClick = () => {
     // console.log(event.target.dataset.articleId);
     // console.log(article.id);
-    // addFavOnClick(articleFav.id);
+    console.log(articleFav.id);
     deleteOnClick(articleFav.id);
   };
-  // console.log('articleFav', articleFav.id);
 
   return (
     <ul className="favs">

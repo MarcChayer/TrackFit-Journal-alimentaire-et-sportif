@@ -6,8 +6,7 @@ import {
   fetchArticlesError,
 } from '../actions/articles';
 import {
-  ADD_ARTICLE_FAV,
-  DELETE_ARTICLE_FAV,
+  TOGGLE_FAV_ARTICLE,
 } from '../actions/article';
 
 export default (store) => (next) => (action) => {
@@ -26,30 +25,18 @@ export default (store) => (next) => (action) => {
           store.dispatch(fetchArticlesError());
         });
       break;
-    case ADD_ARTICLE_FAV:
-      // console.log('action.taskId', action.articleId);
+    case TOGGLE_FAV_ARTICLE:
+      console.log('action.articleId', action.articleId);
       // http://52.91.105.182/
-      axios.post(`http://52.91.105.182/user/${userId}/article/${action.articleId}`)
+      axios.get(`http://52.91.105.182/user/${userId}/article/${action.articleId}`, {},
+        { withCredentials: true })
         .then((res) => {
           console.log(res.data);
-          store.dispatch(res.data);
+          // store.dispatch(res.data);
         })
         .catch((error) => {
           console.log(error);
-          store.dispatch(error);
-        });
-      break;
-    case DELETE_ARTICLE_FAV:
-      // console.log('action.taskId', action.articleId);
-      // http://52.91.105.182/
-      axios.delete(`http://52.91.105.182/user/${userId}/article/${action.articleId}`)
-        .then((res) => {
-          console.log(res.data);
-          store.dispatch(res.data);
-        })
-        .catch((error) => {
-          console.log(error);
-          store.dispatch(error);
+          // store.dispatch(error);
         });
       break;
     default:

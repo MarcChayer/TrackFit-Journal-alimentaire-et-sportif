@@ -8,8 +8,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Article = ({
   article,
-  addFavOnClick,
-  deleteOnClick,
+  toggleFavArticle,
   favArticles,
 }) => {
   // correspond a la liste d'article fav de l'user connecté
@@ -18,8 +17,8 @@ const Article = ({
   const handleOnClick = () => {
     // console.log(event.target.dataset.articleId);
     // console.log(article.id);
-    addFavOnClick(article.id);
-    deleteOnClick(article.id);
+    toggleFavArticle(article.id);
+    // deleteOnClick(article.id);
   };
   return (
     <li className="article" key={article.id}>
@@ -58,8 +57,7 @@ Article.propTypes = {
       label: PropTypes.string,
     }).isRequired,
   ).isRequired,
-  addFavOnClick: PropTypes.func.isRequired,
-  deleteOnClick: PropTypes.func.isRequired,
+  toggleFavArticle: PropTypes.func.isRequired,
 };
 
 export default Article;
