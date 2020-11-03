@@ -1,5 +1,5 @@
-export const TRACKER_INPUT_SUBMIT = 'TRACKER_INPUT_SUBMIT';
+export const FETCH_SPORT_LIST = 'FETCH_SPORT_LIST';
 
-export const trackerInputSubmit = () => ({
-  type: TRACKER_INPUT_SUBMIT,
+export const fetchSportList = () => ({
+  type: FETCH_SPORT_LIST,
 });

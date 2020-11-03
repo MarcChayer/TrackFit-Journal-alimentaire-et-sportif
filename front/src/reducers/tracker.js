@@ -3,8 +3,6 @@ import {
 } from '../actions/trackers';
 
 const initialState = {
-  estimatedSleepTime: '',
-  
 };
 
 const reducer = (state = initialState, action = {}) => {
