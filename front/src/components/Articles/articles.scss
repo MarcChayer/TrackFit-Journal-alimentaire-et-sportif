@@ -49,6 +49,10 @@
   color: vars.$hover-fav;
 }
 
+.favs__overview-selected svg {
+  color: vars.$hover-fav;
+}
+
 .articles {
   text-align: center;
   margin: 6em auto auto auto;

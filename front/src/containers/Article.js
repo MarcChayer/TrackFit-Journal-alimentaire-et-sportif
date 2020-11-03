@@ -5,7 +5,7 @@ import {
 } from '../actions/article';
 
 const mapStateToProps = (state) => ({
-  colorFavArticles: state.dashboard.allData.articles,
+  colorFavArticles: state.article.favArticle,
 });
 
 const mapDispatchToProps = (dispatch) => ({

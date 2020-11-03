@@ -4,7 +4,9 @@ import {
   toggleFavArticle,
 } from '../actions/article';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  colorFavArticles: state.article.favArticle,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   toggleFavArticle: (articleId) => {

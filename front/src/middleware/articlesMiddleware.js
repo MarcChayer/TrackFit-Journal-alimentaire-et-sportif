@@ -31,12 +31,13 @@ export default (store) => (next) => (action) => {
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
-          // store.dispatch(res.data);
+          // store.dispatch();
         })
         .catch((error) => {
           console.log(error);
           // store.dispatch(error);
         });
+      next(action);
       break;
     default:
       next(action);

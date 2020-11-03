@@ -12,15 +12,14 @@ const Article = ({
   colorFavArticles,
 }) => {
   // correspond a la liste d'article fav de l'user connecté
-  console.log('favArticles', colorFavArticles);
+  console.log('colorFavArticles', colorFavArticles);
   const handleOnClick = () => {
     toggleFavArticle(article.id);
   };
-
   return (
     <li className="article" key={article.id}>
       <article>
-        <div className="favs__overview-one">
+        <div className={colorFavArticles.includes(article.id) ? 'favs__overview-one favs__overview-selected' : 'favs__overview-one'}>
           <FontAwesomeIcon icon={faHeart} onClick={handleOnClick} />
           <img src={article.media} alt="article" className="article__img" />
         </div>
@@ -44,15 +43,8 @@ Article.propTypes = {
       label: PropTypes.string,
     }).isRequired,
   ).isRequired,
-  colorFavArticles: PropTypes.objectOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      content: PropTypes.string,
-      source: PropTypes.string,
-      media: PropTypes.string,
-      label: PropTypes.string,
-    }).isRequired,
+  colorFavArticles: PropTypes.arrayOf(
+    PropTypes.number,
   ).isRequired,
   toggleFavArticle: PropTypes.func.isRequired,
 };
