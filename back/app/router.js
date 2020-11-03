@@ -38,11 +38,12 @@ router.post('/dashboard/:id/food', dashboardController.postDataFood);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/weight', dashboardController.postDataWeight);
 
-// on ajoute les articles fav en bdd pour l'utilisateur ciblé
-router.post('/user/:user_id/article/:article_id', dashboardController.postAllArticleFav);
+router.get('/user/:user_id/article/:article_id', dashboardController.toggleFavArticle);
+// // on ajoute les articles fav en bdd pour l'utilisateur ciblé
+// router.post('/user/:user_id/article/:article_id', dashboardController.postAllArticleFav);
 
-// on ajoute les articles fav en bdd pour l'utilisateur ciblé
-router.delete('/user/:user_id/article/:article_id', dashboardController.removeArticleFromUser);
+// // on ajoute les articles fav en bdd pour l'utilisateur ciblé
+// router.delete('/user/:user_id/article/:article_id', dashboardController.removeArticleFromUser);
 
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/water', dashboardController.postDataWater);
