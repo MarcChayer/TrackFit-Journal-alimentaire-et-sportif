@@ -212,37 +212,34 @@ const dashboardController = {
     // }
     toggleFavArticle: async (req, res) => {
         try {
-                    // récupération des id
-        const userId = parseInt(req.params.user_id);
-        const articleId = parseInt(req.params.article_id);
+            // récupération des id
+            const userId = parseInt(req.params.user_id);
+            const articleId = parseInt(req.params.article_id);
 
-        const addArticle = await Article.findByPk(articleId, {
-            include: {
-                association:'users',
-                where : { id: userId }
+            const addArticle = await Article.findByPk(articleId, {
+                include: {
+                    association:'users',
+                    where : { id: userId }
+                }
+            });
+            if (addArticle) {
+                await addArticle.removeUser(userId);
+            } else {
+                const article = await Article.findByPk(articleId);
+                const addUser = await User.findByPk(userId);
+                await article.addUser(addUser);
             }
-        });
-        // console.log('userId', userId);
-        // console.log('addArticle', addArticle);
-
-        if (addArticle) {
-            console.log('userId', userId);
-            console.log('addArticle', addArticle);
-            // const addUser = await User.findByPk(userId);
-            // if (addUser) {
-            await addArticle.removeUser(userId);
-            // }
-            // {}, {where : {id: userId} }
-            // addArticle.users.splice(0, 1);
-        } else {
-            const article = await Article.findByPk(articleId);
-            const addUser = await User.findByPk(userId);
-            await article.addUser(addUser);
-        }
-        res.status(200).json(addArticle);
+            const user = await User.findByPk(userId, {
+                // Récupération des informations de sleep, food, sport, water, weight, task, article_fav
+                include: [
+                    {association: 'articles'},
+                ]
+            });
+            // console.log(user.articles);
+            res.status(200).json(user.articles);
         } catch (error) {
             console.log(error);
-            
+            res.status(500).json(error.toString());
         }
     },
         // const findUser = addArticle.users.find(element => element.id === userId);
