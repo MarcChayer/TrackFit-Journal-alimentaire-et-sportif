@@ -57,7 +57,7 @@
 
 .article {
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: none;
   -webkit-box-shadow: rgba(100,100,111,.2) 0 7px 29px 0;
   box-shadow: 0 7px 29px 0 rgba(100,100,111,.2);
   margin: 25px;
@@ -123,11 +123,12 @@
 .article__title {
   padding-bottom: 1em;
   padding-top: 1em;
+  margin: 0 .9em;
   font-weight: 600;
-  font-size: 1.15em;
-  margin: 0 0.7em;
+  font-size: .92em;
   text-align: left;
   height: 4em;
+  color: vars.$primary-color;
 }
 
 .article__excerpt {
