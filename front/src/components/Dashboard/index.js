@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // == Import composants
 import connectionRequired from 'src/assets/images/illustrations/illustration-connexion-requise.svg';
 import Trackers from './Trackers';
-import FavoriteArticles from './FavoriteArticles';
+import FavoriteArticles from '../../containers/FavoriteArticles';
 import Todolist from '../../containers/Todolist';
 import UserDetails from './UserDetails';
 import Menu from './Menu';

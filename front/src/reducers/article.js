@@ -2,6 +2,9 @@ import {
   FETCH_ARTICLES_SUCCESS,
   FETCH_ARTICLES_ERROR,
 } from '../actions/articles';
+// import {
+//   TOGGLE_FAV_ARTICLE,
+// } from '../actions/article';
 
 const initialState = {
   list: [],
@@ -21,6 +24,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         error: 'Aucun article ici',
       };
+    // case TOGGLE_FAV_ARTICLE:
+    //   console.log('action.articleId', ...action.articleId);
+    //   return {
+    //     ...state,
+    //     articles: [...action.articleId],
+    //   };
     default:
       return state;
   }

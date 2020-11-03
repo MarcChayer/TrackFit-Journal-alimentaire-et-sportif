@@ -33,7 +33,7 @@ const Articles = ({ fetchArticles, list, errorMessage }) => {
 
   return (
     <div className="articles">
-      {/* {errorMessage} */}
+      {errorMessage}
       <ul className="articles__list">
         <img className="logo-category" src={logoImage} alt="aliment" />
         {

@@ -14,7 +14,6 @@ export default (store) => (next) => (action) => {
   console.log('user id article middle', userId);
   switch (action.type) {
     case FETCH_ARTICLES:
-      // console.log(store.getState().router.params);
       axios.get('http://52.91.105.182/articles')
         .then((res) => {
           console.log(res.data);
