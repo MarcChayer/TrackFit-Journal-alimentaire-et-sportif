@@ -8,6 +8,7 @@ import userMiddleware from '../middleware/userMiddleware';
 import articlesMiddleware from '../middleware/articlesMiddleware';
 import dashboardMiddleware from '../middleware/dashboardMiddleware';
 import todolistMiddleware from '../middleware/todolistMiddleware';
+import trackersMiddleware from '../middleware/trackersMiddleware';
 
 // == Enhancers
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -19,6 +20,7 @@ const enhancers = composeEnhancers(
     articlesMiddleware,
     dashboardMiddleware,
     todolistMiddleware,
+    trackersMiddleware,
   ),
 );
 

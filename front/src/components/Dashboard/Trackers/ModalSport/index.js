@@ -1,20 +1,31 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Sport from 'src/assets/images/trackers/icone-sport.svg';
 import PropTypes from 'prop-types';
 
 import './modalsport.scss';
 
-const ModalSport = ({ onClick, fetchSportList }) => {
+const ModalSport = ({
+  onClick,
+  fetchSportList,
+  sportTypeList,
+}) => {
   useEffect(() => {
     fetchSportList();
   }, []);
+  const inputSportTime = useRef(null);
+  const [sportTime, setSportTime] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('soumission du formulaire sleep');
+    // console.log('event.target', event.target);
     onClick();
+    console.log('sportTime', sportTime);
+  };
+  const inputChange = (event) => {
+    console.log('event.target', event.target);
+    setSportTime(inputSportTime.current.value);
   };
   return (
     <div className="modal-sport">
@@ -26,7 +37,13 @@ const ModalSport = ({ onClick, fetchSportList }) => {
       </div>
       <form className="mod-form-sport" onSubmit={handleSubmit}>
         <label className="mod-label-sport">Activité physique :</label>
-        <input className="mod-input-sport" type="text" />
+        <select className="mod-input-sport" name="sport-list" id="sport-select">
+          {
+            sportTypeList.map((item) => (
+              <option value={item.id}>{item.name}</option>
+            ))
+          }
+        </select>
         <label className="mod-label-sport">Intensité :</label>
         <select className="mod-input-sport" name="intensities" id="intensity-select">
           <option value="1">Effort léger</option>
@@ -34,7 +51,7 @@ const ModalSport = ({ onClick, fetchSportList }) => {
           <option value="3">Effort intense</option>
         </select>
         <label className="mod-label-sport">Durée de la séance :</label>
-        <input className="mod-input-sport" type="time" />
+        <input className="mod-input-sport" type="time" value={sportTime} ref={inputSportTime} onChange={inputChange} />
         <button type="submit" className="modal-button-sport">
           Valider
         </button>
@@ -45,6 +62,8 @@ const ModalSport = ({ onClick, fetchSportList }) => {
 
 ModalSport.propTypes = {
   onClick: PropTypes.func.isRequired,
+  fetchSportList: PropTypes.func.isRequired,
+  sportTypeList: PropTypes.func.isRequired,
 };
 
 export default ModalSport;
