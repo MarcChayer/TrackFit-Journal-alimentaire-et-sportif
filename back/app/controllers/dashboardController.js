@@ -195,21 +195,6 @@ const dashboardController = {
         }
     },
 
-    // postAllArticleFav: async (req, res) => {
-    //     try {
-    //         const { user_id, article_id } = req.params;
-
-    //         const user = await User.findByPk(user_id);
-    //         const article = await User.findByPk(article_id);
-
-    //         if (user && article) {
-    //             await user.addArticle(article)
-    //         }
-    //     } catch (error) {
-    //         console.log(error);
-    //         res.status(500).json(error.toString());
-    //     }
-    // }
     toggleFavArticle: async (req, res) => {
         try {
             // récupération des id

@@ -29,7 +29,6 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
     case DELETE_TASK_SUCCESS:
-      // console.log(state.allData.tasks);
       return {
         ...state,
         allData: {
