@@ -18,26 +18,28 @@
       height: 35px;
       margin: 0;
       padding: 1em;
-      transition: 0.5s ease all;
       color: white;
       border-radius: vars.$full-radius;
       background-color: vars.$primary-color;
 
+      @media screen and (max-width: 900px) {
+        font-size: 0.9em;
+      }
+      
       &:not(:last-of-type) { //dashboard__menu-item:not(:last-of-type)
         margin-right: 1em;
       }
 
       &:hover { //dashboard__menu-item dashboard__menu-item:hover
         cursor: pointer;
-        transition: 0.5s ease all;
         color: white;
         background-color: vars.$secondary-color;
-        border-radius: 3em;
+        border-radius: 5em;
       }
 
       &-active { //dashboard__menu-item dashboard__menu-item-active
         color: white;;
-        border-radius: 3em;
+        border-radius: 5em;
         background-color: vars.$secondary-color;
       }
     }

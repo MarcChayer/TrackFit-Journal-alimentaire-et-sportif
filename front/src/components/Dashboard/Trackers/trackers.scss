@@ -76,3 +76,10 @@
 .trackers__weight {
   border-top: 2em solid vars.$weight-color;
 }
+
+.trackers-modal {
+  position: absolute;
+  width: 100%;
+  background: transparent;
+  margin: 0 auto;
+} 

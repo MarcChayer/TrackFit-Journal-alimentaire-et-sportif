@@ -13,7 +13,7 @@ const Todolist = ({
   deleteOnClick,
 }) => {
   if (!toDoList || !toDoList.tasks) {
-    return <div>recuperation de la ressource</div>;
+    return <div>Récupération de la ressource</div>;
   }
 
   const handleOnChange = (event) => {
@@ -35,13 +35,13 @@ const Todolist = ({
     <div className="todolist">
       <div className="todo-content">
         <div className="todolist__header">
-          <h2>
+          <h2>A FAIRE
             <form onSubmit={handleOnSubmit} className="form">
               <input
                 name="labelNewTask"
                 className="form__input"
                 type="text"
-                placeholder="Ajouter une tache (cliquez)"
+                placeholder="Saissisez votre tâche ici"
                 value={labelNewTask}
                 onChange={handleOnChange}
               />

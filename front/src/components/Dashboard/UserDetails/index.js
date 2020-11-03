@@ -25,14 +25,20 @@ const UserDetails = ({ userData }) => {
           <h2>Bonjour, {userData.firstName} !</h2>
           <ul className="user-details__tags">
 
-            <li className="user-details__tag">Age : {userData.birthdate}</li>
-            <li className="user-details__tag">{userData.height} cm</li>
+            {/* <li className="user-details__tag">{userData.birthdate} ans</li> */}
+            {/* <li className="user-details__tag">{userData.height} cm</li> */}
             {/* <li className="user-details__tag">{userData.weights.map((item) => (
               <div>{item.weight}</div>
             ))} kg </li> */}
             { userDataItem
+              ? <li className="user-details__tag">{userData.birthdate} ans</li>
+              : <li className="user-details__tag">-- ans</li>}
+            { userDataItem
+              ? <li className="user-details__tag">{userData.height} cm</li>
+              : <li className="user-details__tag">-- cm</li>}
+            { userDataItem
               ? <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
-              : <li className="user-details__tag">--kg</li>}
+              : <li className="user-details__tag">-- kg</li>}
 
             { userDataItem
               ? <li className="user-details__tag">IMC : {userData.weights[userData.weights.length - 1].imc}</li>

@@ -7,7 +7,6 @@
 .statistic {
   background-color: white;
   border-radius: 2em;
-  // border-radius: 2em 2em 0 0;
   box-shadow: vars.$box-shadow;
   margin: 1em;
   position: relative;
@@ -16,9 +15,9 @@
   height: 18em;
   height: 21em;
   width: 36.5em;
-  @media (max-width: 1350px) {
+  @media (max-width: 1600px) {
     width: 27em;
-    height: auto;
+    height: 18em;
   }
 }
 
@@ -171,15 +170,20 @@
   text-transform: uppercase;
 }
 
-.user-details__tags {
+.user-details__tags--stats {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 1em;
+
+  @media screen and (max-width:1500px) {
+    margin: auto;
+    width: 23em;
+  }
 }
 
-.user-details__tag {
+.user-details__tag--stats {
   font-size: 1em;
   margin: .3em;
   padding: .35em .7em;

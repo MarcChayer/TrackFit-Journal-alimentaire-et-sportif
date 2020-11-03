@@ -195,67 +195,104 @@ const dashboardController = {
         }
     },
 
-    postAllArticleFav: async (req, res) => {
-        // try {
+    toggleFavArticle: async (req, res) => {
+        try {
             // récupération des id
-            const userId = req.params.user_id;
-            const articleId = req.params.article_id;
-    
-            // on récupère la l'article
+            const userId = parseInt(req.params.user_id);
+            const articleId = parseInt(req.params.article_id);
+
             const addArticle = await Article.findByPk(articleId, {
-                include: 'users'
+                include: {
+                    association:'users',
+                    where : { id: userId }
+                }
             });
-            if (!addArticle) {
-                return res.status(404).json('Article non trouvé');
+            if (addArticle) {
+                await addArticle.removeUser(userId);
+            } else {
+                const article = await Article.findByPk(articleId);
+                const addUser = await User.findByPk(userId);
+                await article.addUser(addUser);
             }
-            // on récupère le user
-            const addUser = await User.findByPk(userId);
-            if (!addUser) {
-                return res.status(404).json('User non trouvé');
-            }
-            // on retire le user à l'article grâce à sequelize
-            await addArticle.addUser(addUser);
-            // on doit recharger l'article si on veut voir la modification dans notre réponse
-            await addArticle.reload();
-            // on envoit la réponse
-            res.json(addArticle);
-        // } catch (error) {
-        //     console.log(error);
-        //     res.status(500).json(error.toString());
-        // }
-    },
-    // dissociation de user avec l'article
-    removeArticleFromUser: async (req, res) => {
-        // try {
-            // récupération des id
-            const userId = req.params.user_id;
-            const articleId = req.params.article_id;
-            // console.log(req.params.user_id);
-            // console.log(req.params.article_id);
-            // on récupère l'article'
-            const addArticle = await Article.findByPk(articleId, {
-                include: 'users'
+            const user = await User.findByPk(userId, {
+                // Récupération des informations de sleep, food, sport, water, weight, task, article_fav
+                include: [
+                    {association: 'articles'},
+                ]
             });
-            if (!addArticle) {
-                return res.status(404).json('Article non trouvé');
-            }
-            // on récupère le user
-            const addUser = await User.findByPk(userId);
-            if (!addUser) {
-                return res.status(404).json('User non trouvé');
-            }
-            // on retire le user à l'article grâce à sequelize
-            await addArticle.removeUser(addUser);
-            // on doit recharger l'article si on veut voir la modification dans notre réponse
-            await addArticle.reload();
-            // on envoit la réponse
-            res.json(addArticle);
-            
-        // } catch (error) {
-        //     console.log(error);
-        //     res.status(500).json(error.toString());
-        // }
+            // console.log(user.articles);
+            res.status(200).json(user.articles);
+        } catch (error) {
+            console.log(error);
+            res.status(500).json(error.toString());
+        }
     },
+        // const findUser = addArticle.users.find(element => element.id === userId);
+        // console.log('findUser', findUser);
+        // if (!addArticle) {
+        //     return res.status(404).json('Article non trouvé');
+        // }
+        // // on récupère le user
+        // const addUser = await User.findByPk(userId);
+        // if (!addUser) {
+        //     return res.status(404).json('User non trouvé');
+        // }
+        // // on retire le user à l'article grâce à sequelize
+        // await addArticle.addUser(addUser);
+        // // on doit recharger l'article si on veut voir la modification dans notre réponse
+        // await addArticle.reload();
+        // // on envoit la réponse
+        // res.json(addArticle);
+    // postAllArticleFav: async (req, res) => {
+    //     // récupération des id
+    //     const userId = req.params.user_id;
+    //     const articleId = req.params.article_id;
+
+    //     // on récupère la l'article
+    //     const addArticle = await Article.findByPk(articleId, {
+    //         include: 'users'
+    //     });
+    //     if (!addArticle) {
+    //         return res.status(404).json('Article non trouvé');
+    //     }
+    //     // on récupère le user
+    //     const addUser = await User.findByPk(userId);
+    //     if (!addUser) {
+    //         return res.status(404).json('User non trouvé');
+    //     }
+    //     // on retire le user à l'article grâce à sequelize
+    //     await addArticle.addUser(addUser);
+    //     // on doit recharger l'article si on veut voir la modification dans notre réponse
+    //     await addArticle.reload();
+    //     // on envoit la réponse
+    //     res.json(addArticle);
+    // },
+    // // dissociation de user avec l'article
+    // removeArticleFromUser: async (req, res) => {
+    //     // récupération des id
+    //     const userId = req.params.user_id;
+    //     const articleId = req.params.article_id;
+    //     // console.log(req.params.user_id);
+    //     // console.log(req.params.article_id);
+    //     // on récupère l'article'
+    //     const addArticle = await Article.findByPk(articleId, {
+    //         include: 'users'
+    //     });
+    //     if (!addArticle) {
+    //         return res.status(404).json('Article non trouvé');
+    //     }
+    //     // on récupère le user
+    //     const addUser = await User.findByPk(userId);
+    //     if (!addUser) {
+    //         return res.status(404).json('User non trouvé');
+    //     }
+    //     // on retire le user à l'article grâce à sequelize
+    //     await addArticle.removeUser(addUser);
+    //     // on doit recharger l'article si on veut voir la modification dans notre réponse
+    //     await addArticle.reload();
+    //     // on envoit la réponse
+    //     res.json(addArticle);
+    // },
 };
 // const idUser = parseInt(req.params.id);
 // const ArticleFav = new Article({

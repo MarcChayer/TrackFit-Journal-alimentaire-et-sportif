@@ -17,11 +17,11 @@ const Stats = () => (
       <img src={profile} alt="profile" className="statistics__rounded-img-profile" />
 
       <h2>Bonjour Paul Ochon !</h2>
-      <ul className="user-details__tags">
-        <li className="user-details__tag">23 ans</li>
-        <li className="user-details__tag">183 cm</li>
-        <li className="user-details__tag">75 kg</li>
-        <li className="user-details__tag">IMC : 22.4</li>
+      <ul className="user-details__tags--stats">
+        <li className="user-details__tag--stats">23 ans</li>
+        <li className="user-details__tag--stats">183 cm</li>
+        <li className="user-details__tag--stats">75 kg</li>
+        <li className="user-details__tag--stats">IMC : 22.4</li>
       </ul>
     </li>
 

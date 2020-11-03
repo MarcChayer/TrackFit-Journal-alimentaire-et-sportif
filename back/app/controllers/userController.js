@@ -44,10 +44,13 @@ const userController = {
                 // res.status(200).json(newUser);
                 const save = await newUser.save(user);
                 const messageInscription = 'Inscription successful';
+                const messageErrorInscription = 'Inscription aborted';
 
-                res.status(200).json({message: messageInscription, userSave : save, session: req.session.user});
-                // // on redirige ensuite sur la page login
-                // res.redirect('/');
+                if (save.id) {
+                    res.status(200).json(messageInscription)
+                } else {
+                    res.status(500).json(messageErrorInscription)
+                }
             }
         } catch (error) {
             console.log(error);
@@ -78,7 +81,6 @@ const userController = {
                 // On le stocke dans la session
                 // req.session.user = user.toJSON();
                 req.session.user = {
-                    connected_user: true,
                     id: user.id,
                     firstName: user.firstName,
                     lastName: user.lastName,
@@ -87,6 +89,7 @@ const userController = {
                 // On oublie pas de supprimer le mot de passe
                 delete req.session.user.password;
                 const messageConnexion = 'Connexion successful';
+                console.log('req.session.user', req.session.user);
                 // console.log(req.session.user);
                 res.status(200).json({message: messageConnexion, session: req.session.user});
                 // Puis on redirige vers la page d'accueil
@@ -147,21 +150,23 @@ const userController = {
 
     logoutAction: async (req, res) => {
         try {
-            // tableau d'erreur
-            const messageTab = [];
-            // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
-            if (req.session.user.connected_user === false) {
-                const messageLogout = 'Aucun utilisateur n\'est connecté';
-                messageTab.push({messageLogout: messageLogout});
-                return res.status(404).json({message: messageTab, session: req.session.user});
-            };
-            // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
-            if (req.session.user.connected_user === true){
-                req.session.user = {connected_user: false};
-                const messageLogout = 'Déconnexion de l\'utilisateur ok';
-                messageTab.push({messageLogout: messageLogout});
-                return res.status(200).json({message: messageTab, session: req.session.user});
-            };
+            // // tableau d'erreur
+            // const messageTab = [];
+            // // si l'utilisateur n'est pas connecter on renvoie la session a false avec un message
+            // if (req.session.user.connected_user === false) {
+            //     const messageLogout = 'Aucun utilisateur n\'est connecté';
+            //     messageTab.push({messageLogout: messageLogout});
+            //     return res.status(404).json({message: messageTab, session: req.session.user});
+            // };
+            // // si l'utilisateur est connecter on lui renvoie sa session avec un message de confirmation
+            // if (req.session.user.connected_user === true){
+            //     req.session.user = {connected_user: false};
+            //     const messageLogout = 'Déconnexion de l\'utilisateur ok';
+            //     messageTab.push({messageLogout: messageLogout});
+            //     return res.status(200).json({message: messageTab, session: req.session.user});
+            // };
+            req.session.destroy();
+            res.status(200).json({isLogged: false});
         } catch (error) {
             console.log(error);
             res.status(500).json(error.toString());

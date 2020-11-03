@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-
 import PropTypes from 'prop-types';
+import Article from '../../containers/Article';
+
 import logoAlimentation from 'src/assets/images/illustrations/illustration-alimentation.svg';
 import logoSport from 'src/assets/images/illustrations/illustration-sport.svg';
 import logoBienEtre from 'src/assets/images/illustrations/illustration-bien-etre.svg';
-import Article from '../../containers/Article';
+
 import './articles.scss';
 
 const Articles = ({ fetchArticles, list, errorMessage }) => {
