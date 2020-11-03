@@ -4,7 +4,7 @@ import React from 'react';
 // == Import
 import './notfound.scss';
 import notfoundDesktop from 'src/assets/images/illustrations/illustration-notfound-d.svg';
-import notfoundMobile from 'src/assets/images/illustrations/notfound-m.png';
+import notfoundMobile from 'src/assets/images/illustrations/illustration-notfound-m.svg';
 
 // == Composant
 const NotFound = () => (

@@ -7,7 +7,7 @@
   padding-left: 1em;
   padding-top: 1em;
 
-  @media (max-width: 1350px) {
+  @media (max-width: 900px) {
     width: 5em;
   }
 }
@@ -25,9 +25,13 @@
   border-radius: 2em;
   border-top: 2em solid vars.$sleep-color;
 
-  @media (max-width: 1350px) {
-    width: 25em;
-  }
+  @media (max-width: 900px) {
+    width: 26em;
+    margin-left: 0em;
+    height: auto;
+    position: absolute;
+    top: 36.38em;
+  }  
 }
 
 .modal-button-sleep {
@@ -53,12 +57,11 @@
     transition: all .3s ease;
   }
 
-  @media (max-width: 1350px) {
-    width: 85%;
-    margin-top:.2em;
+  @media (max-width: 900px) {
+    width: 4em;
+    font-size: 1.5em;
   }
 }
-
 
 .mod-form-sleep {
   display: flex;
@@ -67,7 +70,7 @@
   margin: 2em;
   padding-left: 5em;
   
-  @media (max-width: 1350px) {
+  @media (max-width: 900px) {
     width: 20em;
     margin: 2em auto;
     padding-left: 2em;
@@ -88,7 +91,7 @@
   width: 50%;
   font-size: 1em;
   margin: 0.3em 0;
-  border-radius: 1em;
+  border-radius: 5em;
 }
 
 .mod-title-sleep {
@@ -98,14 +101,14 @@
   margin-left: 1em;
   font-size: 2em;
 
-  @media (max-width: 1350px) {
+  @media (max-width: 900px) {
     width: 85%;
   }
 }
 
-.trackers-modal {
-  position: absolute;
-  width: 100%;
-  background: transparent;
-  margin: 0 auto;
-} 
+// .trackers-modal {
+//   position: absolute;
+//   width: 100%;
+//   background: transparent;
+//   margin: 0 auto;
+// } 
