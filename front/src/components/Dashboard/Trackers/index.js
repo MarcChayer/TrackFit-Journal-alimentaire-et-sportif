@@ -13,7 +13,7 @@ import modalwater from 'src/assets/images/trackers/icone-open-modal-water.svg';
 import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
 import modalsport from 'src/assets/images/trackers/icone-open-modal-sport.svg';
 import modalweight from 'src/assets/images/trackers/icone-open-modal-poids.svg';
-import ModalSleep from './ModalSleep';
+import ModalSleep from '../../../containers/ModalSleep';
 import ModalSport from './ModalSport';
 import ModalWeight from './ModalWeight';
 import ModalWater from './ModalWater';

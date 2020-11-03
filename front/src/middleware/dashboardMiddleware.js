@@ -5,7 +5,7 @@ import { FETCH_DASHBOARD, fetchDashboardSuccess } from '../actions/dashboard';
 export default (store) => (next) => (action) => {
   const userId = store.getState().user.id;
   // const userId = store.getState().dashboard.allData.id;
-  console.log(userId);
+  // console.log(userId);
   switch (action.type) {
     case FETCH_DASHBOARD:
       axios.get(`http://52.91.105.182/dashboard/${userId}`)
