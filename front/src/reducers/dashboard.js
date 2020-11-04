@@ -9,6 +9,7 @@ import {
 } from '../actions/todolist';
 import {
   SET_SPORT_SUCCESS,
+  SET_FOOD_SUCCESS,
 } from '../actions/trackers';
 
 const initialState = {
@@ -79,6 +80,18 @@ const reducer = (state = initialState, action = {}) => {
           ],
         },
       };
+    case SET_FOOD_SUCCESS:
+      console.log('state123', action.payload);
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          foods: [
+            ...state.allData.foods,
+            action.payload,
+          ],
+        },
+      };
     default:
       return state;
   }
@@ -89,6 +102,15 @@ export const getLastSport = (sports) => {
   let caloryTotal = [];
   if (sports && sports.length > 0) {
     caloryTotal = sports[sports.length - 1].caloryTotal;
+  }
+  return caloryTotal;
+};
+
+export const getLastFood = (foods) => {
+  console.log(foods);
+  let caloryTotal = [];
+  if (foods && foods.length > 0) {
+    caloryTotal = foods[foods.length - 1].caloryTotal;
   }
   return caloryTotal;
 };

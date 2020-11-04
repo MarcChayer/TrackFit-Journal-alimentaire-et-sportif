@@ -18,12 +18,10 @@ export default (store) => (next) => (action) => {
     type,
     payload,
   } = action;
-  console.log('middleware', action, userId);
   switch (type) {
     case FETCH_DASHBOARD:
       axios.get(`http://52.91.105.182/dashboard/${userId}`, { withCredentials: true })
         .then((res) => {
-          console.log('aaaaaaaaaaaaaaaa', res.data);
           store.dispatch(fetchDashboardSuccess(res.data));
         })
         .catch((error) => {
