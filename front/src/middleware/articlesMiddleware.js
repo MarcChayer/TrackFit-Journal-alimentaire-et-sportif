@@ -14,7 +14,7 @@ export default (store) => (next) => (action) => {
   console.log('user id article middle', userId);
   switch (action.type) {
     case FETCH_ARTICLES:
-      axios.get('http://52.91.105.182/articles')
+      axios.get('http://52.91.105.182/articles', { withCredentials: true })
         .then((res) => {
           console.log(res.data);
           store.dispatch(fetchArticlesSuccess(res.data));

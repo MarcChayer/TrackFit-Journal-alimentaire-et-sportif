@@ -14,6 +14,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         sport: action.payload,
       };
+
     default:
       return state;
   }

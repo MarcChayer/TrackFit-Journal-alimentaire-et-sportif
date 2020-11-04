@@ -5,16 +5,17 @@ import { NavLink } from 'react-router-dom';
 import './trackers.scss';
 import food from 'src/assets/images/trackers/icone-alimentation.svg';
 import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
-import sport from 'src/assets/images/trackers/icone-sport.svg';
 import modalfood from 'src/assets/images/trackers/icone-open-modal-alimentation.svg';
 import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
-import modalsport from 'src/assets/images/trackers/icone-open-modal-sport.svg';
-import ModalWater from 'src/containers/ModalWater';
-import ModalWeight from 'src/containers/ModalWeight';
+
+import TrackerSport from '../../../containers/TrackerSport';
 import TrackerWater from 'src/containers/TrackerWater';
 import TrackerWeight from 'src/containers/TrackerWeight';
+
+import ModalWater from 'src/containers/ModalWater';
+import ModalWeight from 'src/containers/ModalWeight';
+import ModalSport from 'src/containers/ModalSport';
 import ModalSleep from './ModalSleep';
-import ModalSport from '../../../containers/ModalSport';
 import ModalFood from './ModalFood';
 
 const getModal = (name, closeHandler) => {
@@ -40,7 +41,7 @@ const Trackers = () => {
         </NavLink>
         <img src={food} alt="food" className="trackers__rounded-img" />
         <li className="user-stats__item">
-          <span>1800 / 2400 Kcal</span>
+          <span>1800 / 2400 cal</span>
         </li>
       </li>
       <TrackerWater setModal={setModal} />
@@ -58,22 +59,8 @@ const Trackers = () => {
           <span>8 / 8 h</span>
         </li>
       </li>
-      <li className="trackers__item trackers__sport">
-        <NavLink to="#">
-          <img
-            onClick={() => setModal('sport')}
-            src={modalsport}
-            alt="ajouter une entrée"
-            className="trackers__modal-img"
-          />
-        </NavLink>
-        <img src={sport} alt="sport" className="trackers__rounded-img" />
-        <li className="user-stats__item">
-          <span>25 / 30 min</span>
-        </li>
-      </li>
+      <TrackerSport setModal={setModal} />
       <TrackerWeight setModal={setModal} />
-
       { modal && <div className="trackers-modal">{ getModal(modal, setModal) }</div> }
     </ul>
   );

@@ -7,6 +7,9 @@ import {
   ADD_TASK_SUCCESS,
   DELETE_TASK_SUCCESS,
 } from '../actions/todolist';
+import {
+  SET_SPORT_SUCCESS,
+} from '../actions/trackers';
 
 const initialState = {
   allData: {},
@@ -64,9 +67,30 @@ const reducer = (state = initialState, action = {}) => {
           ],
         },
       };
+    case SET_SPORT_SUCCESS:
+      console.log('state123', action.payload);
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          sports: [
+            ...state.allData.sports,
+            action.payload,
+          ],
+        },
+      };
     default:
       return state;
   }
+};
+
+export const getLastSport = (sports) => {
+  console.log(sports);
+  let caloryTotal = [];
+  if (sports && sports.length > 0) {
+    caloryTotal = sports[sports.length - 1].caloryTotal;
+  }
+  return caloryTotal;
 };
 
 export default reducer;

@@ -21,9 +21,9 @@ export default (store) => (next) => (action) => {
   console.log('middleware', action, userId);
   switch (type) {
     case FETCH_DASHBOARD:
-      axios.get(`http://52.91.105.182/dashboard/${userId}`)
+      axios.get(`http://52.91.105.182/dashboard/${userId}`, { withCredentials: true })
         .then((res) => {
-          console.log(res.data);
+          console.log('aaaaaaaaaaaaaaaa', res.data);
           store.dispatch(fetchDashboardSuccess(res.data));
         })
         .catch((error) => {
@@ -32,7 +32,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case SET_WATER:
-      axios.post(`http://52.91.105.182/dashboard/${userId}/water`, payload)
+      axios.post(`http://52.91.105.182/dashboard/${userId}/water`, payload, { withCredentials: true })
         .then((res) => {
           store.dispatch(setWaterSuccess(res.data));
         })
@@ -41,7 +41,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case SET_WEIGHT:
-      axios.post(`http://52.91.105.182/dashboard/${userId}/weight`, payload)
+      axios.post(`http://52.91.105.182/dashboard/${userId}/weight`, payload, { withCredentials: true })
         .then((res) => {
           store.dispatch(setWeightSuccess(res.data));
         })
