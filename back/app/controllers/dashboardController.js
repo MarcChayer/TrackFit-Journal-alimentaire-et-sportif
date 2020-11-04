@@ -37,6 +37,7 @@ const dashboardController = {
                 duration: req.body.sportTime,
                 intensity: req.body.sportIntensity,
                 // emotion: req.body.emotion,
+                // caloryTotal: parseInt(req.body.caloryTotal),
                 user_id: parseInt(req.params.id),
                 sport_type_id: parseInt(req.body.sportType),
             });
@@ -46,7 +47,6 @@ const dashboardController = {
                 let intensity = '';
                 switch(dataSport.intensity) {
                     case "1" :
-                        console.log('ICI');
                         intensity = 0.8
                         break;
                     case "2" : 

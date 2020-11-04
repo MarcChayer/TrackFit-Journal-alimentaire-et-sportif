@@ -114,7 +114,7 @@ CREATE TABLE "sport" (
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "sport_type_id" INTEGER REFERENCES "sport_type"("id") NOT NULL,
     "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    "caloryTotal" INTEGER NOT NULL,
+    "caloryTotal" INTEGER,
     "duration" INTEGER NOT NULL,
     "intensity" TEXT NOT NULL,
     "emotion" TEXT
