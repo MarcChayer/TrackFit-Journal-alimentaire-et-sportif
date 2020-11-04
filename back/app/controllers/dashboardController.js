@@ -1,4 +1,4 @@
-const { Article, Food, Sleep, Sport, Task, User, Sport_type } = require('../models');
+const { Article, Food, Sleep, Sport, Task, User, Sport_type, Food_type } = require('../models');
 const Weight = require('../models/weight');
 const Water = require('../models/water');
 
@@ -72,12 +72,16 @@ const dashboardController = {
             const dataFood = new Food({
                 date: req.body.date,
                 quantity: req.body.quantity,
-                emotion: req.body.emotion,
+                // emotion: req.body.emotion,
                 user_id: req.params.id,
-                food_type_id: req.body.food_type_id,
+                food_type_id: req.body.food_type,
             });
             console.log('dataFood', dataFood);
             if (dataFood) {
+                const calory = await Food_type.findByPk(dataFood.food_type_id);
+                const quantity = dataFood.quantity;
+                const caloryTotal = (calory.value / 100) * quantity;
+                dataFood.caloryTotal = caloryTotal;
                 await dataFood.save();
                 res.status(200).json(dataFood);
             } else {
