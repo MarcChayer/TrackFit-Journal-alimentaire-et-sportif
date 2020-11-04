@@ -42,21 +42,23 @@ const dashboardController = {
             });
             if (dataSport) {
                 await dataSport.save();
-                const calory = Sport_type.findByPk(dataSport.sport_type_id);
+                const calory = await Sport_type.findByPk(dataSport.sport_type_id);
                 let intensity = '';
                 switch(dataSport.intensity) {
-                    case 1 :
+                    case "1" :
+                        console.log('ICI');
                         intensity = 0.8
                         break;
-                    case 2 : 
+                    case "2" : 
                         intensity = 1
                         break;
-                    case 3 : 
+                    case "3" : 
                         intensity = 1.30
                         break;
                 }
-                const caloryTotal = (calory * dataSport.duration / 60) * intensity;
-                dataSport["caloryTotal"] = caloryTotal;
+
+                const caloryTotal = (parseInt(calory.value) * dataSport.duration / 60) * intensity;
+                dataSport["caloryTotal"] = caloryTotal;               
                 res.status(200).json(dataSport);
             } else {
                 res.status(404).json('Cet utilisateur n\'existe pas');
