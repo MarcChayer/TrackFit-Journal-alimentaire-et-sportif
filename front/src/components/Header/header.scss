@@ -83,13 +83,19 @@ svg path .st1:hover {
       padding: 1em;
       font-size: 1.2em;
       color: #3d5499;
-      @media screen and (max-width:900px) {
-        //display: none;
-        font-size: 1.2em;
-
+   
+      &:hover {
+        color:vars.$secondary-color;
       }
+
       @media screen and (max-width:1020px) {
         font-size: 1em;
+      }
+      @media screen and (min-width:1020px) and (max-width:1070px) {
+        font-size: 1em;
+      }
+      @media screen and (min-width:900px) and (max-width:990px) {
+        font-size: 0.89em;
       }
     }
   }
@@ -114,13 +120,19 @@ svg path .st1:hover {
       padding: 1em;
       font-size: 1.2em;
       color: #3d5499;
-      @media screen and (max-width:900px) {
-        //display: none;
-        font-size: 1.2em;
 
+      &:hover {
+        color:vars.$secondary-color;
       }
+
       @media screen and (max-width:1020px) {
         font-size: 1em;
+      }
+      @media screen and (min-width:1020px) and (max-width:1070px) {
+        font-size: 1em;
+      }
+      @media screen and (min-width:900px) and (max-width:990px) {
+        font-size: 0.89em;
       }
     }
   }
@@ -145,13 +157,19 @@ svg path .st1:hover {
       padding: 1em;
       font-size: 1.2em;
       color: #3d5499;
-      @media screen and (max-width:900px) {
-        //display: none;
-        font-size: 1.2em;
-
+      
+      &:hover {
+        color:vars.$secondary-color;
       }
+
       @media screen and (max-width:1020px) {
         font-size: 1em;
+      }
+      @media screen and (min-width:1020px) and (max-width:1070px) {
+        font-size: 1em;
+      }
+      @media screen and (min-width:900px) and (max-width:990px) {
+        font-size: 0.89em;
       }
     }
   }
@@ -165,4 +183,8 @@ svg path .st1:hover {
   .navigation--mobile {
     display: block;
   } 
+}
+
+.navigation-link--active p {
+  color: vars.$secondary-color;
 }
