@@ -7,6 +7,7 @@ const userController = require('./controllers/userController');
 const articlesController = require('./controllers/articlesController');
 const dashboardController = require('./controllers/dashboardController');
 const sportTypeController = require('./controllers/sportTypeController');
+const foodTypeController = require('./controllers/foodTypeController');
 
 
 // route primordiale
@@ -54,8 +55,11 @@ router.delete('/dashboard/:id/task/:id', dashboardController.deleteTask);
 // on modifie les données d'une task
 router.patch('/dashboard/:id/task/:id', dashboardController.updateTask);
 
-// route dashboard
+// route tracker sport
 router.get('/sportTypeList', sportTypeController.getAllSportsType);
+
+// route tracker food
+router.get('/foodTypeList', foodTypeController.getAllFoodsType);
 
 // Export
 module.exports = router;
