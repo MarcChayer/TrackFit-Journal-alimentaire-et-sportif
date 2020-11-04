@@ -6,6 +6,7 @@ const router = express.Router();
 const userController = require('./controllers/userController');
 const articlesController = require('./controllers/articlesController');
 const dashboardController = require('./controllers/dashboardController');
+const sportTypeController = require('./controllers/sportTypeController');
 
 
 // route primordiale
@@ -31,6 +32,7 @@ router.delete('/profile/:id', userController.deleteProfile);
 
 // route dashboard
 router.get('/dashboard/:id', dashboardController.getAllInfos);
+
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/sport', dashboardController.postDataSport);
 // Envoyer les données du tracker 
@@ -58,6 +60,9 @@ router.post('/dashboard/:id/task', dashboardController.createTask);
 router.delete('/dashboard/:id/task/:id', dashboardController.deleteTask);
 // on modifie les données d'une task
 router.patch('/dashboard/:id/task/:id', dashboardController.updateTask);
+
+// route dashboard
+router.get('/sportTypeList', sportTypeController.getAllSportsType);
 
 // Export
 module.exports = router;

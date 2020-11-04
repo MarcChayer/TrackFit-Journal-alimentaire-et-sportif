@@ -13,13 +13,12 @@ import {
 export default (store) => (next) => (action) => {
   const userId = store.getState().user.id;
   // const userId = store.getState().dashboard.allData.id;
+
   const {
     type,
     payload,
   } = action;
-
   console.log('middleware', action, userId);
-
   switch (type) {
     case FETCH_DASHBOARD:
       axios.get(`http://52.91.105.182/dashboard/${userId}`)

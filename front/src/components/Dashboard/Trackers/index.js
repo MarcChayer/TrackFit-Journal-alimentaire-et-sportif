@@ -14,7 +14,7 @@ import ModalWeight from 'src/containers/ModalWeight';
 import TrackerWater from 'src/containers/TrackerWater';
 import TrackerWeight from 'src/containers/TrackerWeight';
 import ModalSleep from './ModalSleep';
-import ModalSport from './ModalSport';
+import ModalSport from '../../../containers/ModalSport';
 import ModalFood from './ModalFood';
 
 const getModal = (name, closeHandler) => {
