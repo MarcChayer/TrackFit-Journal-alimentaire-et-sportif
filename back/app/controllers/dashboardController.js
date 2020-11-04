@@ -10,13 +10,13 @@ const dashboardController = {
             const user = await User.findByPk(id, {
                 // Récupération des informations de sleep, food, sport, water, weight, task, article_fav
                 include: [
-                    {association: 'sleeps'},
                     {association: 'foods', include: ['foods_type']},
                     {association: 'sports', include: ['sports_type']},
                     {association: 'weights'},
                     {association: 'waters'},
                     {association: 'tasks'},
                     {association: 'articles'},
+                    {association: 'sleeps'},
                 ]
             });
             if (user) {

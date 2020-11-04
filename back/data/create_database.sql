@@ -70,7 +70,7 @@ CREATE TABLE "food" (
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "food_type_id" INTEGER REFERENCES "food_type"("id") NOT NULL,
     "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    "caloryTotal" INTEGER NOT NULL,
+    "caloryTotal" INTEGER,
     "quantity" INTEGER NOT NULL,
     "emotion" TEXT
 );

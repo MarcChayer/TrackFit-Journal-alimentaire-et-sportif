@@ -183,7 +183,7 @@ INSERT INTO food_type(name,value) VALUES ('Chips',239);
 INSERT INTO food_type(name,value) VALUES ('Kebab',506);
 INSERT INTO food_type(name,value) VALUES ('Frites',291);
 INSERT INTO food_type(name,value) VALUES ('Nutella',547);
-INSERT INTO food_type(name,value) VALUES ('Pizza Margherita',199);
+INSERT INTO food_type(name,value) VALUES ('Pizza',199);
 
 --------------------------------------------------------
 
