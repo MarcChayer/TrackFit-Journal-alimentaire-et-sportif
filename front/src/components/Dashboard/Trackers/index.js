@@ -4,19 +4,17 @@ import { NavLink } from 'react-router-dom';
 
 import './trackers.scss';
 import food from 'src/assets/images/trackers/icone-alimentation.svg';
-import water from 'src/assets/images/trackers/icone-water.svg';
 import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
 import sport from 'src/assets/images/trackers/icone-sport.svg';
-import weight from 'src/assets/images/trackers/icone-poids.svg';
 import modalfood from 'src/assets/images/trackers/icone-open-modal-alimentation.svg';
-import modalwater from 'src/assets/images/trackers/icone-open-modal-water.svg';
 import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
 import modalsport from 'src/assets/images/trackers/icone-open-modal-sport.svg';
-import modalweight from 'src/assets/images/trackers/icone-open-modal-poids.svg';
+import ModalWater from 'src/containers/ModalWater';
+import ModalWeight from 'src/containers/ModalWeight';
+import TrackerWater from 'src/containers/TrackerWater';
+import TrackerWeight from 'src/containers/TrackerWeight';
 import ModalSleep from './ModalSleep';
 import ModalSport from '../../../containers/ModalSport';
-import ModalWeight from './ModalWeight';
-import ModalWater from './ModalWater';
 import ModalFood from './ModalFood';
 
 const getModal = (name, closeHandler) => {
@@ -45,20 +43,7 @@ const Trackers = () => {
           <span>1800 / 2400 Kcal</span>
         </li>
       </li>
-      <li className="trackers__item trackers__water">
-        <NavLink to="#">
-          <img
-            onClick={() => setModal('water')}
-            src={modalwater}
-            alt="ajouter une entrée"
-            className="trackers__modal-img"
-          />
-        </NavLink>
-        <img src={water} alt="water" className="trackers__rounded-img" />
-        <li className="user-stats__item">
-          <span>15 / 200 cl</span>
-        </li>
-      </li>
+      <TrackerWater setModal={setModal} />
       <li className="trackers__item trackers__sleep">
         <NavLink to="#">
           <img
@@ -87,20 +72,8 @@ const Trackers = () => {
           <span>25 / 30 min</span>
         </li>
       </li>
-      <li className="trackers__item trackers__weight">
-        <NavLink to="#">
-          <img
-            onClick={() => setModal('weight')}
-            src={modalweight}
-            alt="ajouter une entrée"
-            className="trackers__modal-img"
-          />
-        </NavLink>
-        <img src={weight} alt="poids" className="trackers__rounded-img" />
-        <li className="user-stats__item">
-          <span>80 / 65 kg</span>
-        </li>
-      </li>
+      <TrackerWeight setModal={setModal} />
+
       { modal && <div className="trackers-modal">{ getModal(modal, setModal) }</div> }
     </ul>
   );

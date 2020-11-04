@@ -54,10 +54,10 @@
         top: 0.5em;
         left: 0.5em;
         cursor: pointer;
-        color: vars.$background-color;
+        color: vars.$hover-fav;
 
         &:hover {
-            color: vars.$hover-fav;
+            color: vars.$background-color;
         }
     }
   }

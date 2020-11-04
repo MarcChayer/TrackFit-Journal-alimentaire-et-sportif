@@ -27,7 +27,7 @@ const Todolist = ({
   };
 
   const handleOnClick = (event) => {
-    // console.log(event.target.dataset.taskId);
+    console.log(event.target.dataset);
     deleteOnClick(event.target.dataset.taskId);
   };
 

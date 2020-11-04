@@ -43,9 +43,7 @@
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
   border-radius: 1em 1em 2em 2em;
-  // width: 80vw;
-  // max-width: 80vw;
-  height: 60vh;
+  height: fit-content;
   width: min-content;
 
   @media screen and (max-width:900px) {
@@ -84,10 +82,7 @@
     flex-direction: column;
     margin: 0;
     padding: 1em 1em 1em 2em;
-    width: 30vw;
-    // min-width: 30vw;
-    // max-width: 30vw;
-    // height: 57vh;
+    width: fit-content;
 
     @media screen and (max-width:900px) {
       width:100%;
@@ -162,6 +157,7 @@
   flex-wrap: wrap;
   margin-top: 2em;
   justify-content: left;
+  flex-direction: column;
 }
 
 .settings-form {
@@ -180,9 +176,11 @@
   margin-right: 2em;
   color: #4B5C6B;
 
+  @media screen and (max-width:900px) {
   &--update {
     margin-top: 2em;
   }
+}
 }
 
 .settings-title {
@@ -242,7 +240,8 @@
   position: relative;
   border-radius: 3em;
   padding: 1em;
-  margin: 1em 1em 1em 10em;
+  // margin: 1em 1em 1em 10em;
+  margin: 1em 1em 1em 1em;
 
   @media screen and (max-width:900px) {
       height: 3em;
@@ -255,7 +254,25 @@
       position: relative;
       border-radius: 5em;
       padding: 1em;
-      margin: 2em 0 0 12em;
+      margin: 1em 0 0em 12em;
+  }
+}
+
+.settings-button-2 {
+  height: 3em;
+  width: 9em;
+  font-size: 1em;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  background-color: #3d5499;
+  position: relative;
+  border-radius: 3em;
+  padding: 1em;
+  margin: 1em 1em 1em 10em;
+
+  @media screen and (max-width:900px) {
+      margin: 1em 0 1em 12em;
   }
 }
 
@@ -268,8 +285,9 @@
 }
 
 .personnal-info{
-  margin-top: 2em;
   font-size: 1em;
+  width: 21em;
+  margin-top: 0em;
   text-align: left;
   color: vars.$primary-color;
 
@@ -288,6 +306,7 @@
   font-size:vars.$input-fontsize;
   margin:vars.$input-margin;
   display: flex;
+  width: 20em;
 
   @media screen and (max-width:900px) {
     width: 20.5em;
@@ -302,7 +321,7 @@
   margin:vars.$input-margin;
   display: flex;
   background-color: #b6e4e4;
-  width: 20.6em;
+  width: 20em;
 }
 
 .radio-is-hidden {
@@ -314,4 +333,13 @@
     width: 16vw;
     top: 27em;
     right: 5em;
+}
+
+select:focus {
+  background-color: #b6e4e4;
+  outline: none;
+}
+
+select {
+  background-color: #b6e4e4;
 }
