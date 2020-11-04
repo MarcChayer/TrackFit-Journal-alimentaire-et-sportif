@@ -23,7 +23,7 @@ CREATE TABLE "weight" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    "weight" INTEGER,
+    "weight" NUMERIC,
     "imc" INTEGER
 );
 
@@ -70,6 +70,7 @@ CREATE TABLE "food" (
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "food_type_id" INTEGER REFERENCES "food_type"("id") NOT NULL,
     "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "caloryTotal" INTEGER NOT NULL,
     "quantity" INTEGER NOT NULL,
     "emotion" TEXT
 );
@@ -113,6 +114,7 @@ CREATE TABLE "sport" (
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "sport_type_id" INTEGER REFERENCES "sport_type"("id") NOT NULL,
     "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    "caloryTotal" INTEGER NOT NULL,
     "duration" INTEGER NOT NULL,
     "intensity" TEXT NOT NULL,
     "emotion" TEXT
