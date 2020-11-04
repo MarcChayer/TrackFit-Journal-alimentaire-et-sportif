@@ -22,7 +22,7 @@ CREATE TABLE "user" (
 CREATE TABLE "weight" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
-    "date" TIMESTAMP NOT NULL,
+    "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     "weight" INTEGER,
     "imc" INTEGER
 );
@@ -69,7 +69,7 @@ CREATE TABLE "food" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "food_type_id" INTEGER REFERENCES "food_type"("id") NOT NULL,
-    "date" TIMESTAMP NOT NULL,
+    "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     "quantity" INTEGER NOT NULL,
     "emotion" TEXT
 );
@@ -78,7 +78,7 @@ CREATE TABLE "food" (
 CREATE TABLE "water" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
-    "date" TIMESTAMP NOT NULL,
+    "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     "water" INTEGER
 );
 
@@ -112,7 +112,7 @@ CREATE TABLE "sport" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "sport_type_id" INTEGER REFERENCES "sport_type"("id") NOT NULL,
-    "date" TIMESTAMP NOT NULL,
+    "date" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     "duration" INTEGER NOT NULL,
     "intensity" TEXT NOT NULL,
     "emotion" TEXT

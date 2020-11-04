@@ -1,4 +1,4 @@
-const { Article, Food, Sleep, Sport, Task, User } = require('../models');
+const { Article, Food, Sleep, Sport, Task, User, Sport_type } = require('../models');
 const Weight = require('../models/weight');
 const Water = require('../models/water');
 
@@ -33,15 +33,30 @@ const dashboardController = {
     postDataSport: async (req, res) => {
         try {
             const dataSport = new Sport({
-                date: req.body.date,
-                duration: req.body.duration,
-                intensity: req.body.intensity,
-                emotion: req.body.emotion,
-                user_id: req.params.id,
-                sport_type_id: req.body.sport_type_id,
+                // date: req.body.date,
+                duration: req.body.sportTime,
+                intensity: req.body.sportIntensity,
+                // emotion: req.body.emotion,
+                user_id: parseInt(req.params.id),
+                sport_type_id: parseInt(req.body.sportType),
             });
             if (dataSport) {
                 await dataSport.save();
+                const calory = Sport_type.findByPk(dataSport.sport_type_id);
+                let intensity = '';
+                switch(dataSport.intensity) {
+                    case 1 :
+                        intensity = 0.8
+                        break;
+                    case 2 : 
+                        intensity = 1
+                        break;
+                    case 3 : 
+                        intensity = 1.30
+                        break;
+                }
+                const caloryTotal = (calory * dataSport.duration / 60) * intensity;
+                dataSport["caloryTotal"] = caloryTotal;
                 res.status(200).json(dataSport);
             } else {
                 res.status(404).json('Cet utilisateur n\'existe pas');
