@@ -90,7 +90,7 @@ const Params = () => (
             <label className="label-personnal">Votre besoin en sommeil :
               <input className="input-personnal" type="number" min="1" max="24" placeholder="7 h" />
             </label>
-            <button className="settings-button" type="submit">Mettre à jour</button>
+            <button className="settings-button-2" type="submit">Mettre à jour</button>
           </form>
         </div>
       </div>

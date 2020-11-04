@@ -35,7 +35,7 @@ const Header = ({
       { isLogged
         ? (
           <div className="bloc-right">
-            <NavLink to="/parametres" className="login-link">
+            <NavLink to="/parametres" className="login-link" activeClassName="navigation-link--active">
               <p className="login-p">{firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()}</p>
             </NavLink>
             <NavLink to="/" className="logout-link">
@@ -45,10 +45,10 @@ const Header = ({
         )
         : (
           <div className="bloc-right">
-            <NavLink to="/connexion" className="login-link">
+            <NavLink to="/connexion" className="login-link" activeClassName="navigation-link--active">
               <p className="login-p">Connexion</p>
             </NavLink>
-            <NavLink to="/inscription" className="signup-link">
+            <NavLink to="/inscription" className="signup-link" activeClassName="navigation-link--active">
               <p className="signup-p">Inscription</p>
             </NavLink>
           </div>
