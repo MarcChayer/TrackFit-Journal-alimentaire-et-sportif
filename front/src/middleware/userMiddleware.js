@@ -81,10 +81,21 @@ export default (store) => (next) => (action) => {
           console.log(error);
         });
       break;
-      case PARAMS_INPUT_SUBMIT:
+    case PARAMS_INPUT_SUBMIT:
       console.log('PARAMS_INPUT_SUBMIT');
-      axios.patch(`http://52.91.105.182/profile/${userId}`, {},
-        { withCredentials: true })
+      axios.patch(`http://52.91.105.182/profile/${userId}`, {
+        lastName: store.getState().user.lastName,
+        firstName: store.getState().user.firstName,
+        email: store.getState().user.email,
+        password: store.getState().user.password,
+        confirmedPassword: store.getState().user.confirmedPassword,
+        birthdate: store.getState().user.birthdate,
+        height: store.getState().user.height,
+        estimatedSleepTime: store.getState().user.estimatedSleepTime,
+        weightGoal: store.getState().user.weightGoal,
+        weight: store.getState().user.weight,
+      },
+      { withCredentials: true })
         .then((res) => {
           console.log('PARAMS_INPUT_SUBMIT', res.data);
           // A faire : envoyer les variables de la session utilisateur

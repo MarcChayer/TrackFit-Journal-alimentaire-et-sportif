@@ -15,6 +15,11 @@ const initialState = {
   email: '',
   password: '',
   confirmedPassword: '',
+  birthdate: '',
+  height: '',
+  estimatedSleepTime: '',
+  weightGoal: '',
+  weight: '',
   isLogged: false,
   justSubscribe: false,
 };
