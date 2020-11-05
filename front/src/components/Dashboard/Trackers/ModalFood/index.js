@@ -43,7 +43,7 @@ const ModalFood = ({
       <form className="mod-form-food" onSubmit={handleSubmit}>
         <div className="mod-meal">
           <label className="mod-label-food">Aliment :</label>
-          <select className="mod-input-food" name="food_list" id="food-select" ref={inputFoodType} onChange={inputChange}>
+          <select className="mod-input-food" name="food_type" id="food-select" ref={inputFoodType} onChange={inputChange}>
             {
               foodTypeList.map((item) => (
                 <option value={item.id}>{item.name}</option>

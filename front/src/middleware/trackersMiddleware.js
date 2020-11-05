@@ -42,7 +42,7 @@ export default (store) => (next) => (action) => {
       break;
     case SET_TRACKER_FOOD:
       console.log('SET_TRACKER_FOOD', action.payload);
-      axios.post(`http://52.91.105.182/dashboard/${userId}/food`, action.payload,
+      axios.post(`http://localhost:5050/dashboard/${userId}/food`, action.payload,
         { withCredentials: true })
         .then((res) => {
           console.log('SET_TRACKER_FOOD', res.data);

@@ -7,9 +7,11 @@ import {
   userIsSubscribed,
   LOGOUT_HANDLER,
   logoutSuccess,
+  CHECK_AUTH,
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
+  console.log('middlewareUser');
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       // 'http://52.91.105.182/signup'
@@ -57,6 +59,20 @@ export default (store) => (next) => (action) => {
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
           store.dispatch(logoutSuccess());
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case CHECK_AUTH:
+      // console.log('CHECK_AUTH MIDDLEWARE');
+      axios.post('http://52.91.105.182/isLogged', {},
+        { withCredentials: true })
+        .then((res) => {
+          console.log('CHECK_AUTH', res.data);
+          // A faire : envoyer les variables de la session utilisateur
+          // Attention ! mettre à jour l'action creator
+          store.dispatch(loginSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);
