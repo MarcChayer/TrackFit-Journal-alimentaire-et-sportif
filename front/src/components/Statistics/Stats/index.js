@@ -1,14 +1,19 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 
-import food from 'src/assets/images/trackers/icone-alimentation.svg';
-import water from 'src/assets/images/trackers/icone-water.svg';
-import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
-import sport from 'src/assets/images/trackers/icone-sport.svg';
-import weight from 'src/assets/images/trackers/icone-poids.svg';
+// import food from 'src/assets/images/trackers/icone-alimentation.svg';
+// import water from 'src/assets/images/trackers/icone-water.svg';
+// import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
+// import sport from 'src/assets/images/trackers/icone-sport.svg';
+// import weight from 'src/assets/images/trackers/icone-poids.svg';
 import profile from 'src/assets/images/trackers/user.svg';
 
 import './stats.scss';
+import StatFood from './StatFood';
+import StatWater from './StatWater';
+import StatSleep from './StatSleep';
+import StatSport from './StatSport';
+import StatWeight from './StatWeight';
 
 const Stats = () => (
   <ul className="statistics__list">
@@ -25,25 +30,12 @@ const Stats = () => (
       </ul>
     </li>
 
-    <li className="statistic statistic__food">
-      <img src={food} alt="food" className="statistics__rounded-img" />
-    </li>
+    <StatFood />
+    <StatWater />
+    <StatSleep />
+    <StatSport />
+    <StatWeight />
 
-    <li className="statistic statistic__water">
-      <img src={water} alt="water" className="statistics__rounded-img" />
-    </li>
-
-    <li className="statistic statistic__sleep">
-      <img src={sleep} alt="sleep" className="statistics__rounded-img" />
-    </li>
-
-    <li className="statistic statistic__sport">
-      <img src={sport} alt="sport" className="statistics__rounded-img" />
-    </li>
-
-    <li className="statistic statistic__weight">
-      <img src={weight} alt="poids" className="statistics__rounded-img" />
-    </li>
   </ul>
 );
 
