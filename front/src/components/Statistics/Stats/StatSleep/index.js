@@ -23,6 +23,7 @@ const StatSleep = () => (
           axis: { stroke: '#3D5499' },
           tickLabels: { stroke: '#3D5499' },
         }}
+        tickFormat={(t) => `${Math.round(t)}`}
       />
       <VictoryAxis
         dependentAxis
