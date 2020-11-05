@@ -26,13 +26,13 @@ app.use(
         // Force à sauvegarder dans l'espace de stockage des sessions même si la session n'a pas initialisée
 		saveUninitialized: true, 
 		cookie: {
-            maxAge: 12 * 30 * 24 * 60 * 60 * 1000
+            maxAge: 8 * 60 * 60 * 1000
 		},
 	}),
 );
 
 // Ici on utilise notre custom user middleware afin de remplir la variable locals.connected_user
-app.use(userMiddleware);
+// app.use(userMiddleware);
 
 // middleware CORS pour autoriser l'accées à l'API d'un autre domaine
 
@@ -43,7 +43,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Credentials', true);
     // partage des données entres origins
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH, PUT, DELETE');
     next();
 });
 

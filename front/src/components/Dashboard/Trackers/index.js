@@ -3,19 +3,21 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './trackers.scss';
-import food from 'src/assets/images/trackers/icone-alimentation.svg';
-import sport from 'src/assets/images/trackers/icone-sport.svg';
-import modalfood from 'src/assets/images/trackers/icone-open-modal-alimentation.svg';
-import modalsport from 'src/assets/images/trackers/icone-open-modal-sport.svg';
-import ModalWater from 'src/containers/ModalWater';
-import ModalSleep from 'src/containers/ModalSleep';
-import ModalWeight from 'src/containers/ModalWeight';
+
+import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
+import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
+
 import TrackerWater from 'src/containers/TrackerWater';
 import TrackerWeight from 'src/containers/TrackerWeight';
+import TrackerSport from 'src/containers/TrackerSport';
+import TrackerFood from 'src/containers/TrackerFood';
 import TrackerSleep from 'src/containers/TrackerSleep';
 
-import ModalSport from '../../../containers/ModalSport';
-import ModalFood from './ModalFood';
+import ModalWater from 'src/containers/ModalWater';
+import ModalWeight from 'src/containers/ModalWeight';
+import ModalSport from 'src/containers/ModalSport';
+import ModalFood from 'src/containers/ModalFood';
+import ModalSleep from 'src/containers/ModalSleep';
 
 const getModal = (name, closeHandler) => {
   let Modal;
@@ -30,37 +32,11 @@ const Trackers = () => {
   const [modal, setModal] = React.useState(null);
   return (
     <ul className="trackers">
-      <li className="trackers__item trackers__food">
-        <NavLink to="#"><img
-          onClick={() => setModal('food')}
-          src={modalfood}
-          alt="ajouter une entrée"
-          className="trackers__modal-img"
-        />
-        </NavLink>
-        <img src={food} alt="food" className="trackers__rounded-img" />
-        <li className="user-stats__item">
-          <span>1800 / 2400 Kcal</span>
-        </li>
-      </li>
+      <TrackerFood setModal={setModal} />
       <TrackerWater setModal={setModal} />
       <TrackerSleep setModal={setModal} />
-      <li className="trackers__item trackers__sport">
-        <NavLink to="#">
-          <img
-            onClick={() => setModal('sport')}
-            src={modalsport}
-            alt="ajouter une entrée"
-            className="trackers__modal-img"
-          />
-        </NavLink>
-        <img src={sport} alt="sport" className="trackers__rounded-img" />
-        <li className="user-stats__item">
-          <span>25 / 30 min</span>
-        </li>
-      </li>
+      <TrackerSport setModal={setModal} />
       <TrackerWeight setModal={setModal} />
-
       { modal && <div className="trackers-modal">{ getModal(modal, setModal) }</div> }
     </ul>
   );

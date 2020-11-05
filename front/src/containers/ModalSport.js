@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import ModalSport from 'src/components/Dashboard/Trackers/ModalSport';
-import { fetchSportList } from '../actions/trackers';
+import {
+  fetchSportList,
+  setTrackerSport,
+} from '../actions/trackers';
 
 const mapStateToProps = (state) => ({
   sportTypeList: state.tracker.sport,
@@ -8,8 +11,16 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchSportList: () => {
-    console.log('container fetchSport');
     dispatch(fetchSportList());
+  },
+  setTrackerSport: (sportTime, sportIntensity, sportType) => {
+    // console.log('container setTrackerSport');
+    const object = {
+      sportTime,
+      sportIntensity,
+      sportType,
+    };
+    dispatch(setTrackerSport(object));
   },
 });
 

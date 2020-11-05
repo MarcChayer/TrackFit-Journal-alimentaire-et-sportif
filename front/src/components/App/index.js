@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Route,
   Switch,
@@ -22,7 +22,12 @@ import NotFound from 'src/components/NotFound';
 const App = ({
   isLogged,
   justSubscribe,
+  checkAuth,
 }) => {
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
   const location = useLocation();
   console.log(location.pathname);
   return (
@@ -77,6 +82,7 @@ const App = ({
 App.propTypes = {
   isLogged: PropTypes.bool.isRequired,
   justSubscribe: PropTypes.bool.isRequired,
+  checkAuth: PropTypes.func.isRequired,
 };
 
 // == Export

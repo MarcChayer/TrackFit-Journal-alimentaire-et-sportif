@@ -171,7 +171,24 @@ const userController = {
             console.log(error);
             res.status(500).json(error.toString());
         }
-    }
+    },
+    // on interroge le bakc pour savoir si on a une session
+    isLogged: (req, res) => {
+        console.log(req.session.user);
+        if (req.session.user) {
+            res.json({
+                id: req.session.user.id,
+                firstName: req.session.user.firstName,
+                lastName: req.session.user.lastName,
+                email: req.session.user.email,
+                isLogged: true,
+            });
+        } else {
+            res.json({
+                isLogged: false,
+            });
+        }
+    },
 };
 
 module.exports = userController;

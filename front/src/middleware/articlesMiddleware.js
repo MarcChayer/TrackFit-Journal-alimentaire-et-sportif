@@ -7,6 +7,7 @@ import {
 } from '../actions/articles';
 import {
   TOGGLE_FAV_ARTICLE,
+  toggleFavArticleSuccess,
 } from '../actions/article';
 
 export default (store) => (next) => (action) => {
@@ -14,7 +15,7 @@ export default (store) => (next) => (action) => {
   console.log('user id article middle', userId);
   switch (action.type) {
     case FETCH_ARTICLES:
-      axios.get('http://52.91.105.182/articles')
+      axios.get('http://52.91.105.182/articles', { withCredentials: true })
         .then((res) => {
           console.log(res.data);
           store.dispatch(fetchArticlesSuccess(res.data));
@@ -31,7 +32,7 @@ export default (store) => (next) => (action) => {
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
-          // store.dispatch();
+          store.dispatch(toggleFavArticleSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);

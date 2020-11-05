@@ -1,4 +1,4 @@
-const { Article, Food, Sleep, Sport, Task, User } = require('../models');
+const { Article, Food, Sleep, Sport, Task, User, Sport_type, Food_type } = require('../models');
 const Weight = require('../models/weight');
 const Water = require('../models/water');
 
@@ -10,13 +10,13 @@ const dashboardController = {
             const user = await User.findByPk(id, {
                 // Récupération des informations de sleep, food, sport, water, weight, task, article_fav
                 include: [
-                    {association: 'sleeps'},
                     {association: 'foods', include: ['foods_type']},
                     {association: 'sports', include: ['sports_type']},
                     {association: 'weights'},
                     {association: 'waters'},
                     {association: 'tasks'},
                     {association: 'articles'},
+                    {association: 'sleeps'},
                 ]
             });
             if (user) {
@@ -33,15 +33,30 @@ const dashboardController = {
     postDataSport: async (req, res) => {
         try {
             const dataSport = new Sport({
-                date: req.body.date,
-                duration: req.body.duration,
-                intensity: req.body.intensity,
-                emotion: req.body.emotion,
-                user_id: req.params.id,
-                sport_type_id: req.body.sport_type_id,
+                duration: req.body.sportTime,
+                intensity: req.body.sportIntensity,
+                // emotion: req.body.emotion,
+                user_id: parseInt(req.params.id),
+                sport_type_id: parseInt(req.body.sportType),
             });
             if (dataSport) {
-                await dataSport.save();
+                const calory = await Sport_type.findByPk(dataSport.sport_type_id);
+                let intensity = '';
+                switch(dataSport.intensity) {
+                    case "1" :
+                        intensity = 0.8
+                        break;
+                        case "2" : 
+                        intensity = 1
+                        break;
+                        case "3" : 
+                        intensity = 1.30
+                        break;
+                    }
+                    
+                    const caloryTotal = (parseInt(calory.value) * dataSport.duration / 60) * intensity;
+                    dataSport.dataValues.caloryTotal = caloryTotal;           
+                    await dataSport.save();
                 res.status(200).json(dataSport);
             } else {
                 res.status(404).json('Cet utilisateur n\'existe pas');
@@ -53,16 +68,24 @@ const dashboardController = {
     },
 
     postDataFood: async (req, res) => {
+        console.log(req.body);
         try {
             const dataFood = new Food({
-                date: req.body.date,
-                quantity: req.body.quantity,
-                emotion: req.body.emotion,
-                user_id: req.params.id,
-                food_type_id: req.body.food_type_id,
+                // date: req.body.date,
+                quantity: req.body.foodQuantity,
+                // emotion: req.body.emotion,
+                user_id: parseInt(req.params.id),
+                food_type_id: parseInt(req.body.foodType),
             });
             console.log('dataFood', dataFood);
             if (dataFood) {
+                const calory = await Food_type.findByPk(dataFood.food_type_id);
+                // console.log('calory', calory);
+                const quantity = dataFood.quantity;
+                console.log('quantity', quantity);
+                const caloryTotal = (parseInt(calory.value) / 100) * quantity;
+                // console.log('caloryTotal', caloryTotal);
+                dataFood.caloryTotal = parseInt(caloryTotal);
                 await dataFood.save();
                 res.status(200).json(dataFood);
             } else {
@@ -120,9 +143,8 @@ const dashboardController = {
             const idUser = parseInt(req.params.id);
             const dataSleep = new Sleep({
                 user_id: idUser,
-                date: req.body.date,
-                bedTime: req.body.bedTime,
-                wakeUpTime: req.body.wakeUpTime,
+                // date: req.body.date,
+                sleepHours: req.body.sleepHours,
             });
             if (dataSleep) {
                 await dataSleep.save();

@@ -3,16 +3,22 @@ import {
   SET_WATER_SUCCESS,
   SET_WEIGHT_SUCCESS,
   SET_SLEEP_SUCCESS,
-} from '../actions/dashboard';
+} 
+from '../actions/dashboard';
 import {
   ADD_TASK_SUCCESS,
   DELETE_TASK_SUCCESS,
 } from '../actions/todolist';
-
+import {
+  SET_SPORT_SUCCESS,
+  SET_FOOD_SUCCESS,
+} from '../actions/trackers';
+import {
+  TOGGLE_FAV_ARTICLE_SUCCESS,
+} from '../actions/article';
 const initialState = {
   allData: {},
 };
-
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case FETCH_DASHBOARD_SUCCESS:
@@ -65,6 +71,40 @@ const reducer = (state = initialState, action = {}) => {
           ],
         },
       };
+    case SET_SPORT_SUCCESS:
+      // console.log('state123', action.payload);
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          sports: [
+            ...state.allData.sports,
+            action.payload,
+          ],
+        },
+      };
+    case SET_FOOD_SUCCESS:
+      console.log('state123', action.payload);
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          foods: [
+            ...state.allData.foods,
+            action.payload,
+          ],
+        },
+      };
+    case TOGGLE_FAV_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          articles: [
+            ...action.payload,
+          ],
+        },
+      };
     case SET_SLEEP_SUCCESS:
       return {
         ...state,
@@ -80,7 +120,6 @@ const reducer = (state = initialState, action = {}) => {
       return state;
   }
 };
-
 export const getLastSleep = (sleeps) => {
   console.log(sleeps);
   let sleepHours = [];
@@ -88,5 +127,20 @@ export const getLastSleep = (sleeps) => {
     sleepHours = sleeps[sleeps.length - 1].sleepHours;
   }
   return sleepHours;
+};export const getLastSport = (sports) => {
+  console.log(sports);
+  let caloryTotal = [];
+  if (sports && sports.length > 0) {
+    caloryTotal = sports[sports.length - 1].caloryTotal;
+  }
+  return caloryTotal;
+};
+export const getLastFood = (foods) => {
+  console.log(foods);
+  let caloryTotal = [];
+  if (foods && foods.length > 0) {
+    caloryTotal = foods[foods.length - 1].caloryTotal;
+  }
+  return caloryTotal;
 };
 export default reducer;
