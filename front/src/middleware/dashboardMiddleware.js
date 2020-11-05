@@ -4,9 +4,11 @@ import {
   FETCH_DASHBOARD,
   SET_WATER,
   SET_WEIGHT,
+  SET_SLEEP,
   fetchDashboardSuccess,
   setWaterSuccess,
   setWeightSuccess,
+  setSleepSuccess,
 
 } from '../actions/dashboard';
 
@@ -44,6 +46,15 @@ export default (store) => (next) => (action) => {
       axios.post(`http://52.91.105.182/dashboard/${userId}/weight`, payload)
         .then((res) => {
           store.dispatch(setWeightSuccess(res.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      break;
+    case SET_SLEEP:
+      axios.post(`http://52.91.105.182/dashboard/${userId}/sleep`, payload)
+        .then((res) => {
+          store.dispatch(setSleepSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);

@@ -4,16 +4,16 @@ import { NavLink } from 'react-router-dom';
 
 import './trackers.scss';
 import food from 'src/assets/images/trackers/icone-alimentation.svg';
-import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
 import sport from 'src/assets/images/trackers/icone-sport.svg';
 import modalfood from 'src/assets/images/trackers/icone-open-modal-alimentation.svg';
-import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
 import modalsport from 'src/assets/images/trackers/icone-open-modal-sport.svg';
 import ModalWater from 'src/containers/ModalWater';
+import ModalSleep from 'src/containers/ModalSleep';
 import ModalWeight from 'src/containers/ModalWeight';
 import TrackerWater from 'src/containers/TrackerWater';
 import TrackerWeight from 'src/containers/TrackerWeight';
-import ModalSleep from './ModalSleep';
+import TrackerSleep from 'src/containers/TrackerSleep';
+
 import ModalSport from '../../../containers/ModalSport';
 import ModalFood from './ModalFood';
 
@@ -44,20 +44,7 @@ const Trackers = () => {
         </li>
       </li>
       <TrackerWater setModal={setModal} />
-      <li className="trackers__item trackers__sleep">
-        <NavLink to="#">
-          <img
-            onClick={() => setModal('sleep')}
-            src={modalsleep}
-            alt="ajouter une entrée"
-            className="trackers__modal-img"
-          />
-        </NavLink>
-        <img src={sleep} alt="sleep" className="trackers__rounded-img" />
-        <li className="user-stats__item">
-          <span>8 / 8 h</span>
-        </li>
-      </li>
+      <TrackerSleep setModal={setModal} />
       <li className="trackers__item trackers__sport">
         <NavLink to="#">
           <img

@@ -2,6 +2,7 @@ import {
   FETCH_DASHBOARD_SUCCESS,
   SET_WATER_SUCCESS,
   SET_WEIGHT_SUCCESS,
+  SET_SLEEP_SUCCESS,
 } from '../actions/dashboard';
 import {
   ADD_TASK_SUCCESS,
@@ -64,9 +65,28 @@ const reducer = (state = initialState, action = {}) => {
           ],
         },
       };
+    case SET_SLEEP_SUCCESS:
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          sleeps: [
+            ...state.allData.sleeps,
+            action.payload,
+          ],
+        },
+      };
     default:
       return state;
   }
 };
 
+export const getLastSleep = (sleeps) => {
+  console.log(sleeps);
+  let lastSleep = [];
+  if (sleeps && sleeps.length > 0) {
+    lastSleep = sleeps[sleeps.length - 1].lastSleep;
+  }
+  return lastSleep;
+};
 export default reducer;
