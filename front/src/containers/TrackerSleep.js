@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
+import { getLastSleep } from 'src/reducers/dashboard';
 import TrackerSleep from '../components/Dashboard/Trackers/TrackerSleep';
-import { getLastSleep } from '../reducers/dashboard';
 
 const mapStateToProps = (state) => ({
   sleep: getLastSleep(state.dashboard.allData.sleeps),

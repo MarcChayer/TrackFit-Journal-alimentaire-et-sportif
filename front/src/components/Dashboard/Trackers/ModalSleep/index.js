@@ -11,27 +11,22 @@ const ModalSleep = ({
   setSleep,
 }) => {
   const inputBedTime = useRef(null);
-  const inputWakeUpTime = useRef(null);
-  const [bedTimeValue, setBedTimeValue] = React.useState(0);
-  const [WakeUpTimeValue, setWakeUpTimeValue] = React.useState(0);
+  const [sleepHours, setsleepHoursValue] = React.useState(0);
   const onValidate = React.useCallback(() => {
     setSleep({
       date: new Date(),
-      bedTime: bedTimeValue,
-      wakeUpTime: WakeUpTimeValue,
+      sleepHours,
     });
     onClick();
-  }, [bedTimeValue, WakeUpTimeValue]);
+  }, [sleepHours]);
 
   return (
     <div className="modal-sleep">
       <img className="logo-sleep" src={sleep} alt="" />
       <h1 className="mod-title-sleep">Sommeil</h1>
       <form className="mod-form-sleep">
-        <label className="mod-label-sleep">Heure de coucher :</label>
-        <input className="mod-input-sleep" type="time" name="bedTime" ref={inputBedTime} value={bedTimeValue} onChange={(e) => setBedTimeValue(e.target.value)} />
-        <label className="mod-label-sleep">Heure de réveil :</label>
-        <input className="mod-input-sleep" type="time" name="wakeUpTime" ref={inputWakeUpTime} value={WakeUpTimeValue} onChange={(e) => setWakeUpTimeValue(e.target.value)} />
+        <label className="mod-label-sleep">Heure de sommeil :</label>
+        <input className="mod-input-sleep" type="number" name="sleepHours" ref={inputBedTime} value={sleepHours} onChange={(e) => setsleepHoursValue(e.target.value)} />
         <button className="modal-button-sleep" type="button" onClick={onValidate}> Valider</button>
       </form>
     </div>

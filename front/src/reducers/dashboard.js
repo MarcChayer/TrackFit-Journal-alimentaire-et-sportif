@@ -83,10 +83,10 @@ const reducer = (state = initialState, action = {}) => {
 
 export const getLastSleep = (sleeps) => {
   console.log(sleeps);
-  let lastSleep = [];
+  let sleepHours = [];
   if (sleeps && sleeps.length > 0) {
-    lastSleep = sleeps[sleeps.length - 1].lastSleep;
+    sleepHours = sleeps[sleeps.length - 1].sleepHours;
   }
-  return lastSleep;
+  return sleepHours;
 };
 export default reducer;

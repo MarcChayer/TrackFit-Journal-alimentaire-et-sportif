@@ -17,7 +17,7 @@ const TrackerSleep = ({ setModal, sleep }) => (
     </NavLink>
     <img src={iconsleep} alt="sleep" className="trackers__rounded-img" />
     <li className="user-stats__item">
-      <span>{sleep} / 8h</span>
+      <span>{sleep}h / 8h</span>
     </li>
   </li>
 );
