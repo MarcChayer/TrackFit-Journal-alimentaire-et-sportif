@@ -5,7 +5,7 @@ class Sport extends Sequelize.Model {};
 
 Sport.init({
     date: Sequelize.DATEONLY,
-    caloryTotal: Sequelize.STRING,
+    caloryTotal: Sequelize.INTEGER,
     duration: Sequelize.INTEGER,
     intensity: Sequelize.STRING,
     emotion: Sequelize.STRING

@@ -7,7 +7,7 @@ Food.init({
     date: Sequelize.DATE,
     quantity: Sequelize.INTEGER,
     emotion: Sequelize.STRING,
-    caloryTotal: Sequelize.STRING
+    caloryTotal: Sequelize.INTEGER
 }, {
     sequelize,
     tableName: "food"
