@@ -24,6 +24,7 @@
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   background-color: white;
+  height: 21em;
 }
 
 .todolist {
@@ -108,7 +109,8 @@ h2 {
 
 .todo-content {
   overflow-y: scroll;
-  height: 18em;
+  // height: 18em;
+  height: 17em;
 }
 
 .todo-content::-webkit-scrollbar {

@@ -6,7 +6,6 @@ import { NavLink } from 'react-router-dom';
 import './params.scss';
 
 import profile from 'src/assets/images/trackers/user.svg';
-import paramsIcone from 'src/assets/images/illustrations/params-icone.svg';
 import add from 'src/assets/images/trackers/icone-open-modal-sport.svg';
 
 const Params = () => (
@@ -94,7 +93,6 @@ const Params = () => (
           </form>
         </div>
       </div>
-      {/* <img src={paramsIcone} alt="illustration" className="illustration" /> */}
     </div>
   </div>
 );
