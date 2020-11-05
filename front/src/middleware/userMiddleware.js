@@ -12,9 +12,9 @@ import {
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
-  console.log('middlewareUser');
+  // console.log('middlewareUser');
   const userId = store.getState().user.id;
-  console.log(userId);
+  // console.log(userId);
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       // 'http://52.91.105.182/signup'
@@ -92,7 +92,7 @@ export default (store) => (next) => (action) => {
         birthdate: store.getState().user.birthdate,
         height: store.getState().user.height,
         estimatedSleepTime: store.getState().user.estimatedSleepTime,
-        weightGoal: store.getState().user.weightGoal,
+        // weightGoal: store.getState().user.weightGoal,
         weight: store.getState().user.weight,
       },
       { withCredentials: true })

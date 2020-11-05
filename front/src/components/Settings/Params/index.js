@@ -12,17 +12,15 @@ const Params = (
   {
     lastName,
     firstName,
-    email,
     birthdate,
     height,
     estimatedSleepTime,
     weight,
     weightGoal,
-    password,
-    confirmedPassword,
     handleParams,
   },
 ) => {
+  console.log('firstName', firstName);
   const handleSubmit = (event) => {
     event.preventDefault();
     handleParams();
@@ -57,7 +55,7 @@ const Params = (
                 <Field
                   value={firstName}
                   name="firstName"
-                  placeholder="Prénom"
+                  placeholder={firstName}
                   type="text"
                   className="settings-input"
                 />
@@ -66,7 +64,7 @@ const Params = (
                 <Field
                   value={lastName}
                   name="lastName"
-                  placeholder="Nom"
+                  placeholder={lastName}
                   type="text"
                   className="settings-input"
                 />
@@ -75,37 +73,10 @@ const Params = (
                 <Field
                   value={birthdate}
                   name="birthdate"
-                  placeholder="JJ/MM/AAAA"
+                  placeholder={birthdate}
                   type="date"
                   min="1900-01-01"
                   max="2020-12-31"
-                  className="settings-input"
-                />
-              </label>
-              <label className="settings-label settings-label--update">E-mail
-                <Field
-                  value={email}
-                  name="email"
-                  placeholder="E-mail"
-                  type="email"
-                  className="settings-input"
-                />
-              </label>
-              <label className="settings-label">Nouveau mot de passe
-                <Field
-                  value={password}
-                  name="password"
-                  placeholder="Nouveau mot de passe"
-                  type="password"
-                  className="settings-input"
-                />
-              </label>
-              <label className="settings-label">Confirmation de mot de passe
-                <Field
-                  value={confirmedPassword}
-                  name="confirmedPassword"
-                  placeholder="Ressaisissez votre mot de passe"
-                  type="password"
                   className="settings-input"
                 />
               </label>
@@ -115,7 +86,7 @@ const Params = (
                 <Field
                   value={height}
                   name="height"
-                  placeholder="170 cm"
+                  placeholder={height}
                   type="number"
                   min="100"
                   max="200"
@@ -127,7 +98,7 @@ const Params = (
                 <Field
                   value={weight}
                   name="weight"
-                  placeholder="89 kg"
+                  placeholder={weight}
                   type="number"
                   min="40"
                   max="140"
@@ -135,7 +106,7 @@ const Params = (
                 />
               </label>
 
-              <label className="label-personnal">Votre poids à atteindre :
+              {/* <label className="label-personnal">Votre poids à atteindre :
                 <Field
                   value={weightGoal}
                   name="weightGoal"
@@ -145,13 +116,13 @@ const Params = (
                   max="140"
                   className="settings-input"
                 />
-              </label>
+              </label> */}
 
               <label className="label-personnal">Votre besoin en sommeil :
                 <Field
                   value={estimatedSleepTime}
                   name="estimatedSleepTime"
-                  placeholder="7 h"
+                  placeholder={estimatedSleepTime}
                   type="number"
                   min="1"
                   max="24"
@@ -170,14 +141,11 @@ const Params = (
 Params.propTypes = {
   lastName: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
   birthdate: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
   estimatedSleepTime: PropTypes.number.isRequired,
   weight: PropTypes.number.isRequired,
   weightGoal: PropTypes.number.isRequired,
-  password: PropTypes.string.isRequired,
-  confirmedPassword: PropTypes.string.isRequired,
   handleParams: PropTypes.func.isRequired,
 };
 

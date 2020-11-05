@@ -6,14 +6,10 @@ import { paramsInputSubmit, inputChange } from '../actions/user';
 const mapStateToProps = (state) => ({
   lastName: state.user.lastName,
   firstName: state.user.firstName,
-  email: state.user.email,
-  password: state.user.password,
-  confirmedPassword: state.user.confirmedPassword,
   birthdate: state.user.birthdate,
   height: state.user.height,
   estimatedSleepTime: state.user.estimatedSleepTime,
   weight: state.user.weight,
-  weightGoal: state.user.weightGoal,
 });
 
 const mapDispatchToProps = (dispatch) => ({

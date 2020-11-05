@@ -17,7 +17,7 @@ const initialState = {
   birthdate: '',
   height: '',
   estimatedSleepTime: '',
-  weightGoal: '',
+  weightGoal: '75',
   weight: '',
   isLogged: false,
   justSubscribe: false,
