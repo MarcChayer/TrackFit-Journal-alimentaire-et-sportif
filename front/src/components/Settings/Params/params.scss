@@ -320,7 +320,7 @@
   font-size:vars.$input-fontsize;
   margin:vars.$input-margin;
   display: flex;
-  background-color: #b6e4e4;
+  background-color: vars.$background-color;
   width: 20em;
 }
 
@@ -336,10 +336,10 @@
 }
 
 select:focus {
-  background-color: #b6e4e4;
+  background-color: vars.$background-color;
   outline: none;
 }
 
 select {
-  background-color: #b6e4e4;
+  background-color: vars.$background-color;
 }

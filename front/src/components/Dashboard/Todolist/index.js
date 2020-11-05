@@ -53,7 +53,7 @@ const Todolist = ({
             {
             toDoList.tasks.map((task) => (
               <li className="todolist__item" key={task.id}>
-                <input type="checkbox" className="todolist__checkbox" />
+                {/* <input type="checkbox" className="todolist__checkbox" /> */}
                 <span>{task.title}</span>
                 <NavLink to="#" onClick={handleOnClick}>
                   <img src={modaltrash} alt="supprimer une tâche" className="todolist__modaltrash-img" data-task-id={task.id} />

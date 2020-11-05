@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import weight from 'src/assets/images/trackers/icone-poids.svg';
-import illuweight from 'src/assets/images/illustrations/illustration-weight.svg';
 
 import './modalweight.scss';
 
@@ -20,7 +19,6 @@ const ModalWeight = ({ onClick, setWeight }) => {
   return (
     <div className="modal-weight">
       <img className="logo-weight" src={weight} alt="" />
-      <img className="illu-weight" src={illuweight} alt="" />
       <h1 className="mod-title-weight">Poids</h1>
       <form className="mod-form-weight">
         <label className="mod-label-weight">Nouveau poids :</label>

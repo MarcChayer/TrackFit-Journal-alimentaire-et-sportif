@@ -210,9 +210,9 @@ INSERT INTO "water" ("user_id", "date", "water") VALUES
 -- Contenu de la table 'sleep'
 --
 
-INSERT INTO "sleep" ("user_id", "date", "bedTime", "wakeUpTime") VALUES
-(1, '2020-12-10', '12:00:00', '07:00:00'),
-(2, '2020-04-12', '11:00:00', '06:00:00');
+INSERT INTO "sleep" ("user_id", "date", "sleepHours") VALUES
+(1, '2020-12-10', '9'),
+(2, '2020-04-12', '12');
 
 -- --------------------------------------------------------
 

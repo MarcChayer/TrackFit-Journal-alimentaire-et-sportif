@@ -5,8 +5,7 @@ class Sleep extends Sequelize.Model {};
 
 Sleep.init({
     date: Sequelize.DATE,
-    bedTime: Sequelize.TIME,
-    wakeUpTime: Sequelize.TIME
+    sleepHours: Sequelize.INTEGER,
 }, {
     sequelize,
     tableName: "sleep"

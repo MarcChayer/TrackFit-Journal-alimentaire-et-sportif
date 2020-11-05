@@ -90,9 +90,8 @@ CREATE TABLE "water" (
 CREATE TABLE "sleep" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
-    "date" DATE NOT NULL,
-    "bedTime" TIME NOT NULL,
-    "wakeUpTime" TIME NOT NULL
+    "date" DATE DEFAULT CURRENT_TIMESTAMP,
+    "sleepHours" INTEGER NOT NULL
 );
 
 --
