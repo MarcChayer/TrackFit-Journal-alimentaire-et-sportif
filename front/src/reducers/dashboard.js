@@ -2,7 +2,9 @@ import {
   FETCH_DASHBOARD_SUCCESS,
   SET_WATER_SUCCESS,
   SET_WEIGHT_SUCCESS,
-} from '../actions/dashboard';
+  SET_SLEEP_SUCCESS,
+} 
+from '../actions/dashboard';
 import {
   ADD_TASK_SUCCESS,
   DELETE_TASK_SUCCESS,
@@ -11,15 +13,12 @@ import {
   SET_SPORT_SUCCESS,
   SET_FOOD_SUCCESS,
 } from '../actions/trackers';
-
 import {
   TOGGLE_FAV_ARTICLE_SUCCESS,
 } from '../actions/article';
-
 const initialState = {
   allData: {},
 };
-
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case FETCH_DASHBOARD_SUCCESS:
@@ -106,12 +105,29 @@ const reducer = (state = initialState, action = {}) => {
           ],
         },
       };
+    case SET_SLEEP_SUCCESS:
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          sleeps: [
+            ...state.allData.sleeps,
+            action.payload,
+          ],
+        },
+      };
     default:
       return state;
   }
 };
-
-export const getLastSport = (sports) => {
+export const getLastSleep = (sleeps) => {
+  console.log(sleeps);
+  let sleepHours = [];
+  if (sleeps && sleeps.length > 0) {
+    sleepHours = sleeps[sleeps.length - 1].sleepHours;
+  }
+  return sleepHours;
+};export const getLastSport = (sports) => {
   console.log(sports);
   let caloryTotal = [];
   if (sports && sports.length > 0) {
@@ -119,7 +135,6 @@ export const getLastSport = (sports) => {
   }
   return caloryTotal;
 };
-
 export const getLastFood = (foods) => {
   console.log(foods);
   let caloryTotal = [];
@@ -128,5 +143,4 @@ export const getLastFood = (foods) => {
   }
   return caloryTotal;
 };
-
 export default reducer;
