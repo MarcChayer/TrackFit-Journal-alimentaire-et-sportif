@@ -144,8 +144,7 @@ const dashboardController = {
             const dataSleep = new Sleep({
                 user_id: idUser,
                 date: req.body.date,
-                bedTime: req.body.bedTime,
-                wakeUpTime: req.body.wakeUpTime,
+                sleepHours: req.body.sleepHours,
             });
             if (dataSleep) {
                 await dataSleep.save();

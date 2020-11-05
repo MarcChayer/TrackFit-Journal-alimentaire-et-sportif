@@ -91,8 +91,7 @@ CREATE TABLE "sleep" (
     "id" INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     "user_id" INTEGER REFERENCES "user"("id") NOT NULL,
     "date" DATE NOT NULL,
-    "bedTime" TIME NOT NULL,
-    "wakeUpTime" TIME NOT NULL
+    "sleepHours" INTEGER NOT NULL
 );
 
 --
