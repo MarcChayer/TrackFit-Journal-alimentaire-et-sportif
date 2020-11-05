@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import Field from 'src/components/Settings/Params/Field';
+import PropTypes from 'prop-types';
+import Field from 'src/containers/Field';
 
 import './params.scss';
 
 import profile from 'src/assets/images/trackers/user.svg';
-import add from 'src/assets/images/trackers/icone-open-modal-sport.svg';
 
 const Params = (
   {
@@ -37,9 +36,6 @@ const Params = (
         <ul className="user-params__tags">
           <li className="user-params__tag-list">
             <img src={profile} alt="profile" className="user-params__picture" />
-            <NavLink to="#">
-              <img src={add} alt="ajouter" className="user-add__picture" />
-            </NavLink>
           </li>
           <li className="user-params__tag-list">user.firstName user.lastName</li>
           <li className="user-params__tag-list">user.birthdate</li>
@@ -69,7 +65,7 @@ const Params = (
               <label className="settings-label">Nom
                 <Field
                   value={lastName}
-                  name="lasttName"
+                  name="lastName"
                   placeholder="Nom"
                   type="text"
                   className="settings-input"
@@ -169,6 +165,20 @@ const Params = (
       </div>
     </div>
   );
+};
+
+Params.propTypes = {
+  lastName: PropTypes.string.isRequired,
+  firstName: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  birthdate: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+  estimatedSleepTime: PropTypes.number.isRequired,
+  weight: PropTypes.number.isRequired,
+  weightGoal: PropTypes.number.isRequired,
+  password: PropTypes.string.isRequired,
+  confirmedPassword: PropTypes.string.isRequired,
+  handleParams: PropTypes.func.isRequired,
 };
 
 // == Export

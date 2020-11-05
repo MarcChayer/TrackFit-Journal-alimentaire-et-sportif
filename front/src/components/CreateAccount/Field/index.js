@@ -11,7 +11,8 @@ const Field = ({
   changeField,
 }) => {
   const handleOnChange = (event) => {
-    // console.log(event.target.value);
+    console.log(event.target.value);
+    console.log('Je suis là');
     changeField(event.target.value, event.target.name);
   };
 

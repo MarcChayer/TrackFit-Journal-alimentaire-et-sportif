@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Params from 'src/components/Settings/Params';
+import Params from '../components/Settings/Params';
 
 import { paramsInputSubmit, inputChange } from '../actions/user';
 
