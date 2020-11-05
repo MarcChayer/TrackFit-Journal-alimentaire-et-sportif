@@ -3,8 +3,7 @@ import {
   SET_WATER_SUCCESS,
   SET_WEIGHT_SUCCESS,
   SET_SLEEP_SUCCESS,
-} 
-from '../actions/dashboard';
+} from '../actions/dashboard';
 import {
   ADD_TASK_SUCCESS,
   DELETE_TASK_SUCCESS,
@@ -16,6 +15,7 @@ import {
 import {
   TOGGLE_FAV_ARTICLE_SUCCESS,
 } from '../actions/article';
+
 const initialState = {
   allData: {},
 };
@@ -127,7 +127,8 @@ export const getLastSleep = (sleeps) => {
     sleepHours = sleeps[sleeps.length - 1].sleepHours;
   }
   return sleepHours;
-};export const getLastSport = (sports) => {
+};
+export const getLastSport = (sports) => {
   console.log(sports);
   let caloryTotal = [];
   if (sports && sports.length > 0) {
