@@ -9,6 +9,7 @@ import {
 import PropTypes from 'prop-types';
 
 import Header from 'src/containers/Header';
+import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import CreateAccount from 'src/containers/CreateAccount';
 import Login from 'src/containers/Login';
@@ -17,6 +18,7 @@ import Dashboard from 'src/containers/Dashboard';
 import Statistics from 'src/components/Statistics';
 import Settings from 'src/components/Settings';
 import NotFound from 'src/components/NotFound';
+import LegalNotice from 'src/components/LegalNotice';
 
 // == Composant
 const App = ({
@@ -31,6 +33,7 @@ const App = ({
         <Route exact path="/">
           <Header />
           <Home />
+          <Footer />
         </Route>
         {!isLogged && justSubscribe && location.pathname === '/inscription'
         && (
@@ -65,6 +68,10 @@ const App = ({
         <Route path="/parametres">
           <Header />
           <Settings />
+        </Route>
+        <Route path="/mentionslegales">
+          <Header />
+          <LegalNotice />
         </Route>
         <Route path="*">
           <Header />

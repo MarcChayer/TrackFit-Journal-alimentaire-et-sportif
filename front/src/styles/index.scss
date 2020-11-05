@@ -16,6 +16,16 @@ body {
   width: 100%;
 }
 
+select:focus {
+  background-color: vars.$background-color;
+  outline: none;
+}
+
+select {
+  background-color: vars.$background-color;
+}
+
+
 ::-webkit-scrollbar {
   width: 15px;
 } /* this targets the default scrollbar (compulsory) */
