@@ -71,9 +71,9 @@
   padding-left: 5em;
 
   @media (max-width: 900px) {
-    width: 20em;
-    margin: 2em auto;
     padding-left: 2em;
+    width: 17em;
+    margin: 2em auto auto -1em;
   }
 }
 
@@ -88,7 +88,7 @@
 .mod-input-sport {
   padding: .46em;
   border: 2px solid vars.$secondary-color;
-  width: 90%;
+  width: 54%;
   font-size: 1em;
   margin: 0.3em 0;
   border-radius: 5em;
