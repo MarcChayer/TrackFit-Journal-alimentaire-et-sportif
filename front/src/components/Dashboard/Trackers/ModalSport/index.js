@@ -59,7 +59,7 @@ const ModalSport = ({
           <option value="2">Effort modéré</option>
           <option value="3">Effort intense</option>
         </select>
-        <label className="mod-label-sport">Durée de la séance :</label>
+        <label className="mod-label-sport">Durée de la séance (en minutes):</label>
         <input className="mod-input-sport" type="number" value={sportTime} ref={inputSportTime} onChange={inputChange} />
         <button type="submit" className="modal-button-sport">
           Valider
