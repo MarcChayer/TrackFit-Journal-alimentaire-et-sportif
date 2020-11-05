@@ -143,7 +143,7 @@ const dashboardController = {
             const idUser = parseInt(req.params.id);
             const dataSleep = new Sleep({
                 user_id: idUser,
-                date: req.body.date,
+                // date: req.body.date,
                 sleepHours: req.body.sleepHours,
             });
             if (dataSleep) {
