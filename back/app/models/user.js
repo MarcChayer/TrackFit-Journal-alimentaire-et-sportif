@@ -11,7 +11,6 @@ User.init({
     gender: Sequelize.STRING,
     height: Sequelize.INTEGER,
     estimatedSleepTime: Sequelize.INTEGER,
-    weightGoal: Sequelize.INTEGER,
     password: Sequelize.STRING,
     is_admin: Sequelize.BOOLEAN
 }, {
