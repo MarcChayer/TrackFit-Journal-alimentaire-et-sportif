@@ -12,6 +12,10 @@ import {
   SET_FOOD_SUCCESS,
 } from '../actions/trackers';
 
+import {
+  TOGGLE_FAV_ARTICLE_SUCCESS,
+} from '../actions/article';
+
 const initialState = {
   allData: {},
 };
@@ -89,6 +93,16 @@ const reducer = (state = initialState, action = {}) => {
           foods: [
             ...state.allData.foods,
             action.payload,
+          ],
+        },
+      };
+    case TOGGLE_FAV_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        allData: {
+          ...state.allData,
+          articles: [
+            ...action.payload,
           ],
         },
       };

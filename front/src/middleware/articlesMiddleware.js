@@ -7,6 +7,7 @@ import {
 } from '../actions/articles';
 import {
   TOGGLE_FAV_ARTICLE,
+  toggleFavArticleSuccess,
 } from '../actions/article';
 
 export default (store) => (next) => (action) => {
@@ -31,7 +32,7 @@ export default (store) => (next) => (action) => {
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
-          // store.dispatch();
+          store.dispatch(toggleFavArticleSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);
