@@ -11,6 +11,8 @@ const foodTypeController = require('./controllers/foodTypeController');
 
 
 // route primordiale
+// routes auth :
+router.post('/isLogged', userController.isLogged);
 
 // routes articles :
 router.get('/articles', articlesController.getAllArticles);

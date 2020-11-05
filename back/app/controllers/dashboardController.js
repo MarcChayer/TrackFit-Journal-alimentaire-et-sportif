@@ -68,9 +68,10 @@ const dashboardController = {
     },
 
     postDataFood: async (req, res) => {
+        console.log(req.body);
         try {
             const dataFood = new Food({
-                date: req.body.date,
+                // date: req.body.date,
                 quantity: req.body.quantity,
                 // emotion: req.body.emotion,
                 user_id: req.params.id,
@@ -79,6 +80,7 @@ const dashboardController = {
             console.log('dataFood', dataFood);
             if (dataFood) {
                 const calory = await Food_type.findByPk(dataFood.food_type_id);
+                console.log('calory', calory);
                 const quantity = dataFood.quantity;
                 const caloryTotal = (calory.value / 100) * quantity;
                 dataFood.caloryTotal = caloryTotal;

@@ -32,7 +32,7 @@ app.use(
 );
 
 // Ici on utilise notre custom user middleware afin de remplir la variable locals.connected_user
-app.use(userMiddleware);
+// app.use(userMiddleware);
 
 // middleware CORS pour autoriser l'accées à l'API d'un autre domaine
 
