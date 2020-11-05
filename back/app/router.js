@@ -7,9 +7,12 @@ const userController = require('./controllers/userController');
 const articlesController = require('./controllers/articlesController');
 const dashboardController = require('./controllers/dashboardController');
 const sportTypeController = require('./controllers/sportTypeController');
+const foodTypeController = require('./controllers/foodTypeController');
 
 
 // route primordiale
+// routes auth :
+router.post('/isLogged', userController.isLogged);
 
 // routes articles :
 router.get('/articles', articlesController.getAllArticles);
@@ -30,28 +33,21 @@ router.patch('/profile/:id', userController.updateProfile);
 // suppression du profil d'un utilisateur
 router.delete('/profile/:id', userController.deleteProfile);
 
+// toggle pour ajouter ou supp un article des favoris
+router.get('/user/:user_id/article/:article_id', dashboardController.toggleFavArticle);
+
 // route dashboard
 router.get('/dashboard/:id', dashboardController.getAllInfos);
-
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/sport', dashboardController.postDataSport);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/food', dashboardController.postDataFood);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/weight', dashboardController.postDataWeight);
-
-router.get('/user/:user_id/article/:article_id', dashboardController.toggleFavArticle);
-// // on ajoute les articles fav en bdd pour l'utilisateur ciblé
-// router.post('/user/:user_id/article/:article_id', dashboardController.postAllArticleFav);
-
-// // on ajoute les articles fav en bdd pour l'utilisateur ciblé
-// router.delete('/user/:user_id/article/:article_id', dashboardController.removeArticleFromUser);
-
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/water', dashboardController.postDataWater);
 // Envoyer les données du tracker 
 router.post('/dashboard/:id/sleep', dashboardController.postDataSleep);
-
 // on envoie les nouvelles données du tracker task en bdd
 router.get('/dashboard/:id/task', dashboardController.getAllTask);
 // on envoie les nouvelles données du tracker task en bdd
@@ -61,8 +57,11 @@ router.delete('/dashboard/:id/task/:id', dashboardController.deleteTask);
 // on modifie les données d'une task
 router.patch('/dashboard/:id/task/:id', dashboardController.updateTask);
 
-// route dashboard
+// route tracker sport
 router.get('/sportTypeList', sportTypeController.getAllSportsType);
+
+// route tracker food
+router.get('/foodTypeList', foodTypeController.getAllFoodsType);
 
 // Export
 module.exports = router;

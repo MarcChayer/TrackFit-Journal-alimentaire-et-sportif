@@ -183,7 +183,7 @@ INSERT INTO food_type(name,value) VALUES ('Chips',239);
 INSERT INTO food_type(name,value) VALUES ('Kebab',506);
 INSERT INTO food_type(name,value) VALUES ('Frites',291);
 INSERT INTO food_type(name,value) VALUES ('Nutella',547);
-INSERT INTO food_type(name,value) VALUES ('Pizza Margherita',199);
+INSERT INTO food_type(name,value) VALUES ('Pizza',199);
 
 --------------------------------------------------------
 
@@ -191,8 +191,8 @@ INSERT INTO food_type(name,value) VALUES ('Pizza Margherita',199);
 -- Contenu de la table 'food'
 --
 
-INSERT INTO "food" ("user_id", "food_type_id", "date", "quantity", "emotion") VALUES
-(1, 1, '2020-12-10 14:00:00', '300', 'happy');
+INSERT INTO "food" ("user_id", "food_type_id", "date", "caloryTotal", "quantity", "emotion") VALUES
+(1, 1, '2020-12-10 14:00:00', '1280', '300', 'happy');
 
 --------------------------------------------------------
 
@@ -251,9 +251,9 @@ INSERT INTO sport_type(name,value) VALUES ('Ski (descente)',300);
 -- Contenu de la table 'sport'
 --
 
-INSERT INTO "sport" ("user_id", "sport_type_id", "date", "duration", "intensity", "emotion") VALUES
-(1, 1, '2020-04-10 18:00:00','60', 'effort intense', 'happy'),
-(2, 1, '2020-01-09 17:00:00','120', 'effort intense', 'happy');
+INSERT INTO "sport" ("user_id", "sport_type_id", "date", "caloryTotal", "duration", "intensity", "emotion") VALUES
+(1, 1, '2020-04-10 18:00:00', '1080', '60', 'effort intense', 'happy'),
+(2, 1, '2020-01-09 17:00:00', '1092', '120', 'effort intense', 'happy');
 
 --------------------------------------------------------
 

@@ -16,7 +16,7 @@ export default (store) => (next) => (action) => {
       // http://52.91.105.182/dashboard/
       axios.post(`http://52.91.105.182/dashboard/${userId}/task`, {
         title: store.getState().todolist.labelNewTask,
-      })
+      }, { withCredentials: true })
         .then((res) => {
           console.log(res.data);
           store.dispatch(addTaskSuccess(res.data));
@@ -30,7 +30,7 @@ export default (store) => (next) => (action) => {
       // http://52.91.105.182/dashboard/
       axios.delete(`http://52.91.105.182/dashboard/${userId}/task/${action.taskId}`, {
         title: store.getState().todolist.labelNewTask,
-      })
+      }, { withCredentials: true })
         .then((res) => {
           console.log(res.data);
           // http://52.91.105.182/dashboard/

@@ -6,7 +6,8 @@ class Food extends Sequelize.Model {};
 Food.init({
     date: Sequelize.DATE,
     quantity: Sequelize.INTEGER,
-    emotion: Sequelize.STRING
+    emotion: Sequelize.STRING,
+    caloryTotal: Sequelize.INTEGER
 }, {
     sequelize,
     tableName: "food"

@@ -6,6 +6,11 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const USER_IS_CONNECTED = 'USER_IS_CONNECTED';
 export const USER_IS_SUBSCRIBED = 'USER_IS_SUBSCRIBED';
 export const LOGOUT_HANDLER = 'LOGOUT_HANDLER';
+export const CHECK_AUTH = 'CHECK_AUTH';
+
+export const checkAuth = () => ({
+  type: CHECK_AUTH,
+});
 
 export const registerInputSubmit = () => ({
   type: REGISTER_INPUT_SUBMIT,

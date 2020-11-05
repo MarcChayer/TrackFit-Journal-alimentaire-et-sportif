@@ -5,7 +5,7 @@ class Weight extends Sequelize.Model {};
 
 Weight.init({
     date: Sequelize.DATE,
-    weight: Sequelize.INTEGER,
+    weight: Sequelize.FLOAT,
     imc: Sequelize.INTEGER
 }, {
     sequelize,

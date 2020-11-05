@@ -5,6 +5,7 @@ import {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
   USER_IS_SUBSCRIBED,
+  CHECK_AUTH_SUCCESS,
 } from '../actions/user';
 
 const initialState = {
@@ -19,6 +20,7 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
+  console.log('reducerUser');
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       return {
