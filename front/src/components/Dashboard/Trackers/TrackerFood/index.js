@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import food from 'src/assets/images/trackers/icone-alimentation.svg';
 import modalfood from 'src/assets/images/trackers/icone-open-modal-alimentation.svg';
 
-const TrackerFood = ({ setModal }) => (
+const TrackerFood = ({ setModal, lastFoodCalory }) => (
   <li className="trackers__item trackers__food">
     <NavLink to="#"><img
       onClick={() => setModal('food')}
@@ -16,7 +16,7 @@ const TrackerFood = ({ setModal }) => (
     </NavLink>
     <img src={food} alt="food" className="trackers__rounded-img" />
     <li className="user-stats__item">
-      <span>1800 / 2400 cal</span>
+      <span>{lastFoodCalory} cal</span>
     </li>
   </li>
 );

@@ -69,7 +69,7 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
     case SET_SPORT_SUCCESS:
-      console.log('state123', action.payload);
+      // console.log('state123', action.payload);
       return {
         ...state,
         allData: {
