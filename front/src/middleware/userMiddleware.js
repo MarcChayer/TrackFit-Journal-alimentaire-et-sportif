@@ -48,7 +48,7 @@ export default (store) => (next) => (action) => {
           // console.log('res.data.session', res.data.session);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(loginSuccess(res.data.session));
+          store.dispatch(loginSuccess(res.data.user));
         })
         .catch((error) => {
           console.log(error);
