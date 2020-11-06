@@ -16,27 +16,27 @@ import StatSport from './StatSport';
 import StatWeight from './StatWeight';
 
 const Stats = () => (
-  <ul className="statistics__list">
+  <div>
+    <ul className="statistics__list">
 
-    <li className="statistic statistic__profile">
-      <img src={profile} alt="profile" className="statistics__rounded-img-profile" />
+      <li className="statistic statistic__profile">
+        <img src={profile} alt="profile" className="statistics__rounded-img-profile" />
 
-      <h2>Bonjour Paul Ochon !</h2>
-      <ul className="user-details__tags--stats">
-        <li className="user-details__tag--stats">23 ans</li>
-        <li className="user-details__tag--stats">183 cm</li>
-        <li className="user-details__tag--stats">75 kg</li>
-        <li className="user-details__tag--stats">IMC : 22.4</li>
-      </ul>
-    </li>
-
-    <StatFood />
-    <StatWater />
-    <StatSleep />
-    <StatSport />
-    <StatWeight />
-
-  </ul>
+        <h2>Bonjour Paul Ochon !</h2>
+        <ul className="user-details__tags--stats">
+          <li className="user-details__tag--stats">23 ans</li>
+          <li className="user-details__tag--stats">183 cm</li>
+          <li className="user-details__tag--stats">75 kg</li>
+          <li className="user-details__tag--stats">IMC : 22.4</li>
+        </ul>
+      </li>
+      <StatFood />
+      <StatWater />
+      <StatSleep />
+      <StatSport />
+      <StatWeight />
+    </ul>
+  </div>
 );
 
 // == Export

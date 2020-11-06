@@ -6,7 +6,7 @@ import './statistics.scss';
 
 // == Import composants
 import Menu from './Menu';
-import Stats from './Stats';
+import Stats from '../../containers/Stats';
 
 // == Composant
 const Statistics = () => (
