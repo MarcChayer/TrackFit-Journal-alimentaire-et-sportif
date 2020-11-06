@@ -3,7 +3,7 @@
 .params-content {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-end;
   align-items:flex-start;
 
   @media screen and (max-width:1300px) {
@@ -25,7 +25,9 @@
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
   border-radius: 1em 1em 2em 2em;
-  height: auto;
+  // height: auto;
+  height: 35em;
+  margin-right: 2em;
 
   @media screen and (max-width:900px) {
     margin: 2em auto;
@@ -45,7 +47,8 @@
   border-radius: 1em 1em 2em 2em;
   height: fit-content;
   width: min-content;
-
+  margin-right: 2em;
+  
   @media screen and (max-width:900px) {
     margin: 2em auto;
     width: 25em;
@@ -136,7 +139,7 @@
 .settings-content {
   display: flex;  
   flex-wrap: wrap;
-  margin-top: 6em;
+  margin-top: 3em;
   justify-content: left;
 
   // @media screen and (max-width:1500px) {
@@ -286,8 +289,8 @@
 
 .personnal-info{
   font-size: 1em;
-  width: 21em;
-  margin-top: 0em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   text-align: left;
   color: vars.$primary-color;
 
@@ -342,4 +345,13 @@ select:focus {
 
 select {
   background-color: vars.$background-color;
+}
+
+
+.user-params__illustration {
+  width: 45em;
+  margin-left: 2em;
+  position: absolute;
+  right: 66em;
+  top: 19em;
 }

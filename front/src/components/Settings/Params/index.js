@@ -7,6 +7,7 @@ import Field from 'src/containers/Field';
 import './params.scss';
 
 import profile from 'src/assets/images/trackers/user.svg';
+import settings from 'src/assets/images/illustrations/illustration-settings.svg';
 
 const Params = (
   {
@@ -51,7 +52,7 @@ const Params = (
           <div className="params-settings-bloc">
             <h1 className="settings-title">Vos informations :</h1>
             <div className="settings-content">
-              <label className="settings-label">Prénom
+              <label className="settings-label">Prénom :
                 <Field
                   value={firstName}
                   name="firstName"
@@ -60,7 +61,7 @@ const Params = (
                   className="settings-input"
                 />
               </label>
-              <label className="settings-label">Nom
+              <label className="settings-label">Nom :
                 <Field
                   value={lastName}
                   name="lastName"
@@ -69,7 +70,10 @@ const Params = (
                   className="settings-input"
                 />
               </label>
-              <label className="settings-label">Date de naissance
+
+              <p className="personnal-info">Pour effectuer un suivi exact, nous avons besoin de quelques informations basiques de votre part :</p>
+
+              <label className="settings-label">Date de naissance :
                 <Field
                   value={birthdate}
                   name="birthdate"
@@ -80,9 +84,8 @@ const Params = (
                   className="settings-input"
                 />
               </label>
-              <p className="personnal-info">Pour effectuer un suivi exact, nous avons besoin de quelques informations basiques de votre part :</p>
 
-              <label className="label-personnal">Votre taille en cm :
+              <label className="settings-label">Taille en cm :
                 <Field
                   value={height}
                   name="height"
@@ -94,7 +97,7 @@ const Params = (
                 />
               </label>
 
-              <label className="label-personnal">Votre poids initial :
+              <label className="settings-label">Poids initial :
                 <Field
                   value={weight}
                   name="weight"
@@ -106,7 +109,7 @@ const Params = (
                 />
               </label>
 
-              {/* <label className="label-personnal">Votre poids à atteindre :
+              {/* <label className="settings-label">Votre poids à atteindre :
                 <Field
                   value={weightGoal}
                   name="weightGoal"
@@ -118,7 +121,7 @@ const Params = (
                 />
               </label> */}
 
-              <label className="label-personnal">Votre besoin en sommeil :
+              <label className="settings-label">Besoin en sommeil :
                 <Field
                   value={estimatedSleepTime}
                   name="estimatedSleepTime"
@@ -134,6 +137,8 @@ const Params = (
           <button className="settings-button" type="submit">Mettre à jour</button>
         </form>
       </div>
+      <img src={settings} alt="paramètres" className="user-params__illustration" />
+
     </div>
   );
 };
