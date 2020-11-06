@@ -20,7 +20,6 @@ const Params = (
     handleParams,
   },
 ) => {
-  console.log('firstName', firstName);
   const handleSubmit = (event) => {
     event.preventDefault();
     handleParams();
@@ -35,12 +34,12 @@ const Params = (
           <li className="user-params__tag-list">
             <img src={profile} alt="profile" className="user-params__picture" />
           </li>
-          <li className="user-params__tag-list">user.firstName user.lastName</li>
-          <li className="user-params__tag-list">user.birthdate</li>
-          <li className="user-params__tag-list">Poids initial : user.weight kg</li>
-          <li className="user-params__tag-list">Poids à atteindre : kg</li>
+          <li className="user-params__tag-list">Prénom : {firstName}</li>
+          <li className="user-params__tag-list">Nom : {lastName}</li>
+          <li className="user-params__tag-list">Poids initial : {weight}kg</li>
+          {/* <li className="user-params__tag-list">Poids à atteindre : kg</li> */}
           <li className="user-params__tag-list">IMC : user.imc</li>
-          <li className="user-params__tag-list">Heures de sommeil : user.sleep h</li>
+          <li className="user-params__tag-list">Sommeil nécessaire : {estimatedSleepTime}h</li>
         </ul>
       </div>
 

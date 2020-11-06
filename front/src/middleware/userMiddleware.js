@@ -86,9 +86,6 @@ export default (store) => (next) => (action) => {
       axios.patch(`http://52.91.105.182/profile/${userId}`, {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
-        email: store.getState().user.email,
-        password: store.getState().user.password,
-        confirmedPassword: store.getState().user.confirmedPassword,
         birthdate: store.getState().user.birthdate,
         height: store.getState().user.height,
         estimatedSleepTime: store.getState().user.estimatedSleepTime,
