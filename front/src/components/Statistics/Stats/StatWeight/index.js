@@ -71,12 +71,12 @@ const StatWeight = () => (
           labels: { fontSize: 12, fill: '#FBBB51' },
         }}
         data={[
-          { x: 1, y: 2 },
-          { x: 2, y: 3 },
+          { x: 1, y: 6 },
+          { x: 2, y: 7 },
           { x: 3, y: 5 },
-          { x: 4, y: 4 },
-          { x: 5, y: 7 },
-          { x: 6, y: 9 },
+          { x: 4, y: 7 },
+          { x: 5, y: 8 },
+          { x: 6, y: 6 },
           { x: 7, y: 7 },
         ]}
 
