@@ -13,11 +13,16 @@ const UserDetails = ({ userData }) => {
   if (!userData || !userData.firstName) {
     return <div>Récupération de la ressource...</div>;
   }
-  const userDataItem = userData.id > 0;
+
   const birthdate = new Date(userData.birthdate);
   const diff = Date.now() - birthdate.getTime();
   const age = new Date(diff);
   const displayAge = Math.abs(age.getUTCFullYear() - 1970);
+
+  const userDataHeigth = userData.height > 0;
+  const userDataweight = userData.weights.length > 0;
+  const userDataImc = userData.imc > 0;
+  const userDataAge = (userDataHeigth + userDataweight) > 0;
 
   return (
     <div className="dashboard__right">
@@ -34,17 +39,16 @@ const UserDetails = ({ userData }) => {
             {/* <li className="user-details__tag">{userData.weights.map((item) => (
               <div>{item.weight}</div>
             ))} kg </li> */}
-            { userDataItem
+            { userDataAge
               ? <li className="user-details__tag">{displayAge} ans</li>
               : <li className="user-details__tag">-- ans</li>}
-            { userDataItem
+            { userDataHeigth
               ? <li className="user-details__tag">{userData.height} cm</li>
               : <li className="user-details__tag">-- cm</li>}
-            { userDataItem
+            { userDataweight
               ? <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>
               : <li className="user-details__tag">-- kg</li>}
-
-            { userDataItem
+            { userDataImc
               ? <li className="user-details__tag">IMC : {userData.imc}</li>
               : <li className="user-details__tag">IMC : --</li>}
             {/* { userData.weights.length > 0 && <li className="user-details__tag">{userData.weights[userData.weights.length - 1].weight} kg</li>}

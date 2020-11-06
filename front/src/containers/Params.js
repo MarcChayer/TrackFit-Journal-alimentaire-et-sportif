@@ -5,12 +5,15 @@ import { paramsInputSubmit, inputChange } from '../actions/user';
 
 const mapStateToProps = (state) => {
   const { weights = [] } = state.dashboard.allData;
-  let weight = 0;
+  let weight = "--";
+  let imc = "--";
 
   if (weights.length > 0) {
     weight = weights[weights.length - 1].weight;
   }
-  const imc = Math.round(weight / ((state.dashboard.allData.height/100) * (state.dashboard.allData.height/100)));
+  if (state.dashboard.allData.height && weights.length > 0) {
+    imc = Math.round(weight / ((state.dashboard.allData.height/100) * (state.dashboard.allData.height/100)));
+  }
   return ({
     lastName: state.dashboard.allData.lastName,
     firstName: state.dashboard.allData.firstName,

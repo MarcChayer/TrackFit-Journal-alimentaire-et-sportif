@@ -4,6 +4,7 @@ import TrackerSleep from '../components/Dashboard/Trackers/TrackerSleep';
 
 const mapStateToProps = (state) => ({
   sleep: getLastSleep(state.dashboard.allData.sleeps),
+  estimatedSleepTime: state.dashboard.allData.estimatedSleepTime,
 });
 
 const mapDispatchToProps = () => ({});
