@@ -3,7 +3,7 @@
 .params-content {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items:flex-start;
 
   @media screen and (max-width:1300px) {
@@ -27,7 +27,7 @@
   border-radius: 1em 1em 2em 2em;
   // height: auto;
   height: 35em;
-  margin-right: 2em;
+  margin-left: 2em;
 
   @media screen and (max-width:900px) {
     margin: 2em auto;
@@ -47,7 +47,7 @@
   border-radius: 1em 1em 2em 2em;
   height: fit-content;
   width: min-content;
-  margin-right: 2em;
+  margin-left: 2em;
   
   @media screen and (max-width:900px) {
     margin: 2em auto;
@@ -352,6 +352,6 @@ select {
   width: 45em;
   margin-left: 2em;
   position: absolute;
-  right: 66em;
+  left: 66em;
   top: 19em;
 }
