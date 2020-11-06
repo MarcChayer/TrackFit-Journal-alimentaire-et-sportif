@@ -3,14 +3,24 @@ import Params from '../components/Settings/Params';
 
 import { paramsInputSubmit, inputChange } from '../actions/user';
 
-const mapStateToProps = (state) => ({
-  lastName: state.user.lastName,
-  firstName: state.user.firstName,
-  birthdate: state.user.birthdate,
-  height: state.user.height,
-  estimatedSleepTime: state.user.estimatedSleepTime,
-  weight: state.user.weight,
-});
+const mapStateToProps = (state) => {
+  const { weights = [] } = state.dashboard.allData;
+  let weight = 0;
+
+  if (weights.length > 0) {
+    weight = weights[weights.length - 1].weight;
+  }
+  const imc = Math.round(weight / ((state.dashboard.allData.height/100) * (state.dashboard.allData.height/100)));
+  return ({
+    lastName: state.dashboard.allData.lastName,
+    firstName: state.dashboard.allData.firstName,
+    birthdate: state.dashboard.allData.birthdate,
+    height: state.dashboard.allData.height,
+    imc,
+    estimatedSleepTime: state.dashboard.allData.estimatedSleepTime,
+    weight,
+  });
+};
 
 const mapDispatchToProps = (dispatch) => ({
   handleParams: () => {
