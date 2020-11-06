@@ -40,7 +40,7 @@ const Home = () => (
     </div>
     <div className="home-bloc-bottom">
       <img src={illustration2} alt="illustration page d'accueil" className="home-bloc-bottom-img" />
-      <span className="home-title-white">Aperçu et fonctionnalités du journal alimentaire</span>
+      <span className="home-title-white">Aperçu des fonctionnalités du journal alimentaire</span>
       <img src={testDesktop} alt="illustration page d'accueil" className="home-bloc-bottom-img--test-d" />
       <img src={testMobile} alt="illustration page d'accueil" className="home-bloc-bottom-img--test-m" />
 
