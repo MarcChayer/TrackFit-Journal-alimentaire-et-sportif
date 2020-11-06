@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import {
-  VictoryLine, VictoryChart, VictoryTheme, VictoryAxis,
+  VictoryLine, VictoryChart, VictoryTheme, VictoryAxis, VictoryLabel,
 } from 'victory';
 
 import sport from 'src/assets/images/trackers/icone-sport.svg';
@@ -17,21 +17,49 @@ const StatSport = () => (
       minDomain={{ y: 0 }}
       domainPadding={{ x: 18 }}
     >
+      <VictoryLabel
+        x={310}
+        y={370}
+        text="Jours"
+        style={[
+          { fill: '#3D5499', fontSize: 24 },
+        ]}
+      />
+      <VictoryLabel
+        x={12}
+        y={140}
+        text="Calories"
+        angle={-90}
+        textAnchor="end"
+        style={[
+          { fill: '#3D5499', fontSize: 24 },
+        ]}
+      />
       <VictoryAxis
-        label="Jours"
         style={{
           axis: { stroke: '#3D5499' },
-          tickLabels: { stroke: '#3D5499' },
         }}
         tickFormat={(t) => `${Math.round(t)}`}
+        tickLabelComponent={(
+          <VictoryLabel
+            style={
+          { fill: '#3D5499' }
+        }
+          />
+        )}
       />
       <VictoryAxis
         dependentAxis
-        label="Calories"
         style={{
           axis: { stroke: '#3D5499' },
-          tickLabels: { stroke: '#3D5499' },
         }}
+        tickLabelComponent={(
+          <VictoryLabel
+            style={
+          { fill: '#3D5499' }
+        }
+          />
+        )}
       />
       <VictoryLine
         interpolation="natural"

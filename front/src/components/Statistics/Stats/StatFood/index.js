@@ -18,15 +18,24 @@ const StatFood = () => (
       domainPadding={{ x: 18 }}
     >
       <VictoryLabel
+        x={310}
+        y={370}
         text="Jours"
+        style={[
+          { fill: '#3D5499', fontSize: 24 },
+        ]}
       />
       <VictoryLabel
+        x={12}
+        y={140}
         text="Calories"
         angle={-90}
         textAnchor="end"
+        style={[
+          { fill: '#3D5499', fontSize: 24 },
+        ]}
       />
       <VictoryAxis
-        labels="jours"
         style={{
           axis: { stroke: '#3D5499' },
         }}
