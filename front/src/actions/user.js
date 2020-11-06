@@ -7,6 +7,7 @@ export const USER_IS_CONNECTED = 'USER_IS_CONNECTED';
 export const USER_IS_SUBSCRIBED = 'USER_IS_SUBSCRIBED';
 export const LOGOUT_HANDLER = 'LOGOUT_HANDLER';
 export const CHECK_AUTH = 'CHECK_AUTH';
+export const PARAMS_INPUT_SUBMIT = 'PARAMS_INPUT_SUBMIT';
 
 export const checkAuth = () => ({
   type: CHECK_AUTH,
@@ -49,4 +50,8 @@ export const userIsSubscribed = (session) => ({
 
 export const logoutHandler = () => ({
   type: LOGOUT_HANDLER,
+});
+
+export const paramsInputSubmit = () => ({
+  type: PARAMS_INPUT_SUBMIT,
 });

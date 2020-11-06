@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
@@ -9,11 +10,10 @@ import './userDetails.scss';
 import profile from 'src/assets/images/trackers/user.svg';
 
 const UserDetails = ({ userData }) => {
-  console.log(userData);
   if (!userData || !userData.firstName) {
     return <div>Récupération de la ressource...</div>;
   }
-  const userDataItem = userData.weights.length > 0;
+  const userDataItem = userData.id > 0;
 
   return (
     <div className="dashboard__right">

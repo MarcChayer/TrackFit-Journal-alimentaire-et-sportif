@@ -5,8 +5,8 @@ import React from 'react';
 import './settings.scss';
 
 // == Import composants
+import Params from 'src/containers/Params';
 import Menu from './Menu';
-import Params from './Params';
 
 // == Composant
 const Settings = () => (
