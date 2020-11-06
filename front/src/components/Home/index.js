@@ -46,7 +46,7 @@ const Home = () => (
 
       <span className="home-subtitle-pc">Et bien entendu, la possibilité d’obtenir des statistiques !
         <button className="signup-home-button" type="submit">
-          <NavLink to="/connexion">Inscrivez-vous !</NavLink>
+          <NavLink to="/inscription">Inscrivez-vous !</NavLink>
         </button>
       </span>
     </div>
