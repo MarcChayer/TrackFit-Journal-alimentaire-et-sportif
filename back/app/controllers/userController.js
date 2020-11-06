@@ -88,10 +88,11 @@ const userController = {
                 }
                 // On oublie pas de supprimer le mot de passe
                 delete req.session.user.password;
+                // delete user.password;
                 const messageConnexion = 'Connexion successful';
                 console.log('req.session.user', req.session.user);
                 // console.log(req.session.user);
-                res.status(200).json({message: messageConnexion, session: req.session.user});
+                res.status(200).json({message: messageConnexion, session: req.session.user, user: user});
                 // Puis on redirige vers la page d'accueil
                 // res.redirect('/');
             }
