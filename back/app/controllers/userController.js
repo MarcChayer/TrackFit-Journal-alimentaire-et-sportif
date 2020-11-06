@@ -178,11 +178,9 @@ const userController = {
     isLogged: (req, res) => {
         console.log(req.session.user);
         if (req.session.user) {
+            const user = await User.findByPk(req.session.user.id);
             res.json({
-                id: req.session.user.id,
-                firstName: req.session.user.firstName,
-                lastName: req.session.user.lastName,
-                email: req.session.user.email,
+                user,
                 isLogged: true,
             });
         } else {
