@@ -73,7 +73,6 @@ CreateAccount.propTypes = {
   password: PropTypes.string.isRequired,
   confirmedPassword: PropTypes.string.isRequired,
   handleRegisterUser: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool.isRequired,
 };
 
 export default CreateAccount;

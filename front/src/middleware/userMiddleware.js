@@ -17,8 +17,8 @@ export default (store) => (next) => (action) => {
   // console.log(userId);
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
-      // 'http://52.91.105.182/signup'
-      axios.post('http://52.91.105.182/signup', {
+      // 'http://localhost:5050/signup'
+      axios.post('http://localhost:5050/signup', {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         email: store.getState().user.email,
@@ -37,8 +37,10 @@ export default (store) => (next) => (action) => {
         });
       break;
     case LOGIN_INPUT_SUBMIT:
-      // http://52.91.105.182
-      axios.post('http://52.91.105.182/login', {
+      // http://localhost:5050
+      console.log('toto est là');
+      
+      axios.post('http://localhost:5050/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
       },
@@ -55,7 +57,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case LOGOUT_HANDLER:
-      axios.post('http://52.91.105.182/logout', {},
+      axios.post('http://localhost:5050/logout', {},
         { withCredentials: true })
         .then((res) => {
           console.log(res.data);
@@ -69,13 +71,16 @@ export default (store) => (next) => (action) => {
       break;
     case CHECK_AUTH:
       // console.log('CHECK_AUTH MIDDLEWARE');
-      axios.post('http://52.91.105.182/isLogged', {},
+      console.log('tata est là');
+      axios.post('http://localhost:5050/isLogged', {},
         { withCredentials: true })
         .then((res) => {
           console.log('CHECK_AUTH', res.data);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          store.dispatch(loginSuccess(res.data));
+          if (res.data.isLogged === true) {
+            store.dispatch(loginSuccess(res.data));
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -83,7 +88,7 @@ export default (store) => (next) => (action) => {
       break;
     case PARAMS_INPUT_SUBMIT:
       console.log('PARAMS_INPUT_SUBMIT');
-      axios.patch(`http://52.91.105.182/profile/${userId}`, {
+      axios.patch(`http://localhost:5050/profile/${userId}`, {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         birthdate: store.getState().user.birthdate,

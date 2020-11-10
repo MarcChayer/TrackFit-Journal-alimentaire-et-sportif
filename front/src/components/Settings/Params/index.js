@@ -18,14 +18,13 @@ const Params = (
     estimatedSleepTime,
     weight,
     imc,
-    weightGoal,
+    // weightGoal,
     handleParams,
   },
 ) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleParams();
-    console.log('soumission du formulaire');
   };
   return (
     <div className="params-content">
@@ -54,19 +53,19 @@ const Params = (
             <div className="settings-content">
               <label className="settings-label">Prénom :
                 <Field
-                  value={firstName}
                   name="firstName"
-                  placeholder={firstName}
                   type="text"
+                  placeholder={firstName}
+                  value={firstName}
                   className="settings-input"
                 />
               </label>
               <label className="settings-label">Nom :
                 <Field
-                  value={lastName}
                   name="lastName"
-                  placeholder={lastName}
                   type="text"
+                  placeholder={lastName}
+                  value={lastName}
                   className="settings-input"
                 />
               </label>
@@ -75,10 +74,10 @@ const Params = (
 
               <label className="settings-label">Date de naissance :
                 <Field
-                  value={birthdate}
                   name="birthdate"
-                  placeholder={birthdate}
                   type="date"
+                  placeholder={birthdate}
+                  value={birthdate}
                   min="1900-01-01"
                   max="2020-12-31"
                   className="settings-input"
@@ -87,10 +86,10 @@ const Params = (
 
               <label className="settings-label">Taille en cm :
                 <Field
-                  value={height}
                   name="height"
-                  placeholder={height}
                   type="number"
+                  placeholder={height}
+                  value={height}
                   min="100"
                   max="200"
                   className="settings-input"
@@ -99,10 +98,10 @@ const Params = (
 
               <label className="settings-label">Poids initial :
                 <Field
-                  value={weight}
                   name="weight"
-                  placeholder={weight}
                   type="number"
+                  placeholder={weight}
+                  value={weight}
                   min="40"
                   max="140"
                   className="settings-input"
@@ -123,10 +122,10 @@ const Params = (
 
               <label className="settings-label">Besoin en sommeil :
                 <Field
-                  value={estimatedSleepTime}
                   name="estimatedSleepTime"
-                  placeholder={estimatedSleepTime}
                   type="number"
+                  placeholder={estimatedSleepTime}
+                  value={estimatedSleepTime}
                   min="1"
                   max="24"
                   className="settings-input"
@@ -150,8 +149,9 @@ Params.propTypes = {
   height: PropTypes.number.isRequired,
   estimatedSleepTime: PropTypes.number.isRequired,
   weight: PropTypes.number.isRequired,
-  weightGoal: PropTypes.number.isRequired,
+  // weightGoal: PropTypes.number.isRequired,
   handleParams: PropTypes.func.isRequired,
+  imc: PropTypes.number.isRequired,
 };
 
 // == Export
