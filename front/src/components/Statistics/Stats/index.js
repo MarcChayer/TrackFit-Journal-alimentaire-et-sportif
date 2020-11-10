@@ -1,19 +1,14 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 
-// import food from 'src/assets/images/trackers/icone-alimentation.svg';
-// import water from 'src/assets/images/trackers/icone-water.svg';
-// import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
-// import sport from 'src/assets/images/trackers/icone-sport.svg';
-// import weight from 'src/assets/images/trackers/icone-poids.svg';
 import profile from 'src/assets/images/trackers/user.svg';
-
-import './stats.scss';
 import StatFood from './StatFood';
 import StatWater from './StatWater';
 import StatSleep from './StatSleep';
 import StatSport from './StatSport';
 import StatWeight from './StatWeight';
+
+import './stats.scss';
 
 const Stats = () => (
   <div>

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { connect } from 'react-redux';
 import { getLastSleep } from 'src/reducers/dashboard';
 import TrackerSleep from '../components/Dashboard/Trackers/TrackerSleep';

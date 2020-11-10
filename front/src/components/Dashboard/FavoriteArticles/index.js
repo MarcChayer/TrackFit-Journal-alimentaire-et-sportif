@@ -25,22 +25,24 @@ const FavoriteArticles = ({
               toggleFavArticle(article.id);
             };
             return (
-              <a href={article.source} target="_blank">
-                <li className="favs__item" key={article.id}>
-                  <div className="favs__overview">
-                    <div onClick={handleOnClick}>
-                      <FontAwesomeIcon
-                        icon={faHeart}
-                      />
-                    </div>
-                    <img src={article.media} alt="article" className="favs__thumbnail" />
+              <li className="favs__item" key={article.id}>
+                <div className="favs__overview">
+                  <div onClick={handleOnClick}>
+                    <FontAwesomeIcon
+                      icon={faHeart}
+                    />
                   </div>
+                  <img src={article.media} alt="article" className="favs__thumbnail" />
+                </div>
                   <div className="favs__excerpt">
+                  <a href={article.source} target="_blank">
+
                     <h3>{article.title}</h3>
                     <p>{article.content}</p>
+                    </a>
+
                   </div>
-                </li>
-              </a>
+              </li>
             );
           })
         }
