@@ -71,7 +71,6 @@ export default (store) => (next) => (action) => {
       break;
     case CHECK_AUTH:
       // console.log('CHECK_AUTH MIDDLEWARE');
-      console.log('tata est là');
       axios.post('http://52.91.105.182/isLogged', {},
         { withCredentials: true })
         .then((res) => {
@@ -87,7 +86,6 @@ export default (store) => (next) => (action) => {
         });
       break;
     case PARAMS_INPUT_SUBMIT:
-      console.log('PARAMS_INPUT_SUBMIT');
       axios.patch(`http://52.91.105.182/profile/${userId}`, {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,

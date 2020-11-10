@@ -45,7 +45,7 @@ const Home = () => (
       <img src={testMobile} alt="illustration page d'accueil" className="home-bloc-bottom-img--test-m" />
 
       <span className="home-subtitle-pc">Et bien entendu, la possibilité d’obtenir des statistiques !
-        <button className="signup-home-button" type="submit">
+        <button className="signup-home-button" type="button">
           <NavLink to="/inscription">Inscrivez-vous !</NavLink>
         </button>
       </span>

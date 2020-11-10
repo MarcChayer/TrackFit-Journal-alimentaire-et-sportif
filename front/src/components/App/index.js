@@ -44,13 +44,13 @@ const App = ({
         && (
         <Redirect to="/connexion" />
         )}
-        {!isLogged
-        && (
+        {/* {!isLogged
+        && ( */}
         <Route path="/inscription">
           <Header />
           <CreateAccount />
         </Route>
-        )}
+        {/* )} */}
         {/* {!isLogged
         && ( */}
         <Route path="/connexion">
