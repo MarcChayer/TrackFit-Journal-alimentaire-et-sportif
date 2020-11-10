@@ -119,23 +119,35 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 export const getLastSleep = (sleeps) => {
-  let sleepHours = [];
+  let sleepHours = 0;
+  // let sleepHours = [];
   if (sleeps && sleeps.length > 0) {
     sleepHours = sleeps[sleeps.length - 1].sleepHours;
+  }
+  if (!sleepHours) {
+    sleepHours = '--';
   }
   return sleepHours;
 };
 export const getLastSport = (sports) => {
-  let caloryTotal = [];
+  let caloryTotal = 0;
+  // let caloryTotal = [];
   if (sports && sports.length > 0) {
     caloryTotal = sports[sports.length - 1].caloryTotal;
+  }
+  if (!caloryTotal) {
+    caloryTotal = '--';
   }
   return caloryTotal;
 };
 export const getLastFood = (foods) => {
-  let caloryTotal = [];
+  let caloryTotal = 0;
+  // let caloryTotal = [];
   if (foods && foods.length > 0) {
     caloryTotal = foods[foods.length - 1].caloryTotal;
+  }
+  if (!caloryTotal) {
+    caloryTotal = '--';
   }
   return caloryTotal;
 };
