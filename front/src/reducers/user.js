@@ -24,7 +24,6 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action = {}) => {
-  console.log('reducerUser');
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       return {
@@ -42,7 +41,6 @@ const reducer = (state = initialState, action = {}) => {
     case LOGIN_SUCCESS:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de LOGIN_INPUT_SUBMIT)
-      console.log('action.session.connected_user dans USER AVEC USER IS CONNECTED', action.payload);
       return {
         ...state,
         ...action.payload,
@@ -62,7 +60,6 @@ const reducer = (state = initialState, action = {}) => {
     case USER_IS_SUBSCRIBED:
       // Ne pas oublier de récupérer le payload de l'action creator
       // (envoyé à partir de REGISTER_INPUT_SUBMIT)
-      console.log(action.session);
       return {
         ...state,
         id: null,

@@ -30,13 +30,11 @@ const reducer = (state = initialState, action = {}) => {
         error: 'Aucun article ici',
       };
     case FETCH_DASHBOARD_SUCCESS:
-      console.log('action.payload', action.payload);
       return {
         ...state,
         favArticle: action.payload.articles.map((article) => article.id),
       };
     case TOGGLE_FAV_ARTICLE:
-      console.log('action', action);
       // Si l'id de l'article véhiculé dans l'action, est present dans mon state
       if (state.favArticle.includes(action.articleId)) {
         // alors je retourne a nouveau le tableau de favoris avec une valeur en moins

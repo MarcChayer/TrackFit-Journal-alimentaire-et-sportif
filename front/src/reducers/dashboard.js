@@ -72,7 +72,6 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
     case SET_SPORT_SUCCESS:
-      // console.log('state123', action.payload);
       return {
         ...state,
         allData: {
@@ -84,7 +83,6 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
     case SET_FOOD_SUCCESS:
-      console.log('state123', action.payload);
       return {
         ...state,
         allData: {
@@ -121,7 +119,6 @@ const reducer = (state = initialState, action = {}) => {
   }
 };
 export const getLastSleep = (sleeps) => {
-  console.log(sleeps);
   let sleepHours = [];
   if (sleeps && sleeps.length > 0) {
     sleepHours = sleeps[sleeps.length - 1].sleepHours;
@@ -129,7 +126,6 @@ export const getLastSleep = (sleeps) => {
   return sleepHours;
 };
 export const getLastSport = (sports) => {
-  console.log(sports);
   let caloryTotal = [];
   if (sports && sports.length > 0) {
     caloryTotal = sports[sports.length - 1].caloryTotal;
@@ -137,7 +133,6 @@ export const getLastSport = (sports) => {
   return caloryTotal;
 };
 export const getLastFood = (foods) => {
-  console.log(foods);
   let caloryTotal = [];
   if (foods && foods.length > 0) {
     caloryTotal = foods[foods.length - 1].caloryTotal;
