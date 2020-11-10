@@ -17,7 +17,7 @@ const Params = (
     height,
     estimatedSleepTime,
     weight,
-    imc,
+    // imc,
     // weightGoal,
     handleParams,
   },
@@ -35,11 +35,11 @@ const Params = (
           <li className="user-params__tag-list">
             <img src={profile} alt="profile" className="user-params__picture" />
           </li>
-          <li className="user-params__tag-list">Prénom : {firstName}</li>
-          <li className="user-params__tag-list">Nom : {lastName}</li>
+          <li className="user-params__tag-list">Prénom : {firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()}</li>
+          <li className="user-params__tag-list">Nom : {lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()}</li>
           <li className="user-params__tag-list">Poids initial : {weight}kg</li>
           {/* <li className="user-params__tag-list">Poids à atteindre : kg</li> */}
-          <li className="user-params__tag-list">IMC : {imc}</li>
+          {/* <li className="user-params__tag-list">IMC : {imc}</li> */}
           <li className="user-params__tag-list">Sommeil nécessaire : {estimatedSleepTime}h</li>
         </ul>
       </div>

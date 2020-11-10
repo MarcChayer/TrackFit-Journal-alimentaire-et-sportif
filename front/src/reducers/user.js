@@ -5,6 +5,7 @@ import {
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
   USER_IS_SUBSCRIBED,
+  PARAMS_SUCCESS,
 } from '../actions/user';
 
 const initialState = {
@@ -70,6 +71,12 @@ const reducer = (state = initialState, action = {}) => {
         confirmedPassword: '',
         isLogged: false,
         justSubscribe: true,
+      };
+    case PARAMS_SUCCESS:
+      console.log('PARAMS_SUCCESS', action.payload);
+      return {
+        ...state,
+        ...action.payload,
       };
     default:
       return state;
