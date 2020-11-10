@@ -29,6 +29,7 @@ const Login = ({
               value={email}
               name="email"
               placeholder="E-mail"
+              type="email"
             />
           </label>
           <label className="log-label">Mot de passe :

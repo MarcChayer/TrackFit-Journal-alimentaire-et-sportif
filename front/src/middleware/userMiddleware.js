@@ -9,6 +9,7 @@ import {
   logoutSuccess,
   CHECK_AUTH,
   PARAMS_INPUT_SUBMIT,
+  paramsSuccess,
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
@@ -100,7 +101,7 @@ export default (store) => (next) => (action) => {
           console.log('PARAMS_INPUT_SUBMIT', res.data);
           // A faire : envoyer les variables de la session utilisateur
           // Attention ! mettre à jour l'action creator
-          // store.dispatch(loginSuccess(res.data));
+          store.dispatch(paramsSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);

@@ -15,13 +15,13 @@ const mapStateToProps = (state) => {
     imc = Math.round(weight / ((state.dashboard.allData.height/100) * (state.dashboard.allData.height/100)));
   }
   return ({
-    lastName: state.dashboard.allData.lastName,
-    firstName: state.dashboard.allData.firstName,
-    birthdate: state.dashboard.allData.birthdate,
-    height: state.dashboard.allData.height,
+    lastName: state.user.lastName,
+    firstName: state.user.firstName,
+    birthdate: state.user.birthdate,
+    height: state.user.height,
     imc,
-    estimatedSleepTime: state.dashboard.allData.estimatedSleepTime,
-    weight,
+    estimatedSleepTime: state.user.estimatedSleepTime,
+    weight: state.user.weight,
   });
 };
 

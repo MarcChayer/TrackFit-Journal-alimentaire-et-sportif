@@ -8,6 +8,7 @@ export const USER_IS_SUBSCRIBED = 'USER_IS_SUBSCRIBED';
 export const LOGOUT_HANDLER = 'LOGOUT_HANDLER';
 export const CHECK_AUTH = 'CHECK_AUTH';
 export const PARAMS_INPUT_SUBMIT = 'PARAMS_INPUT_SUBMIT';
+export const PARAMS_SUCCESS = 'PARAMS_SUCCESS';
 
 export const checkAuth = () => ({
   type: CHECK_AUTH,
@@ -54,4 +55,9 @@ export const logoutHandler = () => ({
 
 export const paramsInputSubmit = () => ({
   type: PARAMS_INPUT_SUBMIT,
+});
+
+export const paramsSuccess = (payload) => ({
+  type: PARAMS_SUCCESS,
+  payload,
 });

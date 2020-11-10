@@ -32,18 +32,21 @@ const CreateAccount = (
           value={lastName}
           name="lastName"
           placeholder="Nom"
+          type="text"
         />
         <label className="create-label">Prénom :</label>
         <Field
           value={firstName}
           name="firstName"
           placeholder="Prénom"
+          type="text"
         />
         <label className="create-label">E-mail :</label>
         <Field
           value={email}
           name="email"
           placeholder="E-mail"
+          type="email"
         />
         <label className="create-label">Mot de passe :</label>
         <Field
