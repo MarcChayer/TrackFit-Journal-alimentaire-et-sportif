@@ -8,7 +8,9 @@ const mapStateToProps = (state) => {
   if (waters.length > 0) {
     water = waters[waters.length - 1].water;
   }
-
+  if (!water) {
+    water = '--';
+  }
   return {
     water,
   };

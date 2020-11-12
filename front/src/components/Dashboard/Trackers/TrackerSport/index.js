@@ -21,5 +21,4 @@ const TrackerSport = ({ setModal, lastSportCalory }) => (
     </li>
   </li>
 );
-
 export default TrackerSport;

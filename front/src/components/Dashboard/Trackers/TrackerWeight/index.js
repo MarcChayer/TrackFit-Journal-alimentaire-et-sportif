@@ -10,7 +10,6 @@ const TrackerWeight = ({ setModal, weight }) => (
   // if (weight > 0) {
   //   weightGoal = weight * 0.96;
   // }
-  // return 
   <li className="trackers__item trackers__weight">
     <NavLink to="#">
       <img

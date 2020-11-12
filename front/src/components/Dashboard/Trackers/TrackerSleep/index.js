@@ -7,7 +7,7 @@ import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg'
 
 const TrackerSleep = ({ setModal, sleep, estimatedSleepTime }) => {
   if (!estimatedSleepTime) {
-    estimatedSleepTime = "--";
+    estimatedSleepTime = '--';
   }
   return (
     <li className="trackers__item trackers__sleep">
@@ -21,7 +21,7 @@ const TrackerSleep = ({ setModal, sleep, estimatedSleepTime }) => {
       </NavLink>
       <img src={iconsleep} alt="sleep" className="trackers__rounded-img" />
       <li className="user-stats__item">
-        <span>{sleep} h / {estimatedSleepTime} h</span>
+        <span>{sleep} / {estimatedSleepTime} h</span>
       </li>
     </li>
   );
