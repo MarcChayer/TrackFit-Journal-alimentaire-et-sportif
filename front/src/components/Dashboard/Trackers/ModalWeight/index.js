@@ -2,29 +2,29 @@
 /* eslint-disable react/button-has-type */
 import React from 'react';
 import PropTypes from 'prop-types';
-import weight from 'src/assets/images/trackers/icone-poids.svg';
+import iconweight from 'src/assets/images/trackers/icone-poids.svg';
 
 import './modalweight.scss';
 
 const ModalWeight = ({ onClick, setWeight }) => {
-  const [value, setValue] = React.useState(0);
-  const onValidate = React.useCallback(() => {
+  const [weight, setValue] = React.useState(0);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onClick();
     setWeight({
       date: new Date(),
-      weight: value,
+      weight,
     });
-    onClick();
-  }, [value]);
-
+  };
   return (
     <div className="modal-weight">
-      <img className="logo-weight" src={weight} alt="" />
+      <img className="logo-weight" src={iconweight} alt="" />
       <h1 className="mod-title-weight">Poids</h1>
-      <form className="mod-form-weight">
+      <form className="mod-form-weight" onSubmit={handleSubmit}>
         <label className="mod-label-weight">Nouveau poids :</label>
-        <input className="mod-input-weight" type="number" min="40" max="140" placeholder="80 kg" value={value} onChange={(e) => setValue(e.target.value)} />
+        <input className="mod-input-weight" type="number" min="40" max="140" placeholder="80 kg" value={weight} onChange={(e) => setValue(e.target.value)} />
+        <button className="modal-button-weight">Valider</button>
       </form>
-      <button className="modal-button-weight" type="button" onClick={onValidate}>Valider</button>
     </div>
   );
 };
