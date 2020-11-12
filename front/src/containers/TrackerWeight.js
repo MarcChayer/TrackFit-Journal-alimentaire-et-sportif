@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
     weight = weights[weights.length - 1].weight;
   }
   if (!weight) {
-    weight = '--';
+    weight = 0;
+    // weight = '--';
   }
   return {
     weight,
