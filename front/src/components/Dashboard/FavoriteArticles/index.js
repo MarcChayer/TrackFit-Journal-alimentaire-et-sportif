@@ -12,7 +12,7 @@ const FavoriteArticles = ({
   toggleFavArticle,
 }) => {
   if (!articleFav || !articleFav.articles) {
-    return <div>recuperation de la ressource</div>;
+    return <div>Récupération de la ressource</div>;
   }
   return (
     <ul className="favs">
@@ -34,14 +34,14 @@ const FavoriteArticles = ({
                   </div>
                   <img src={article.media} alt="article" className="favs__thumbnail" />
                 </div>
-                  <div className="favs__excerpt">
-                  <a href={article.source} target="_blank">
+                <div className="favs__excerpt">
+                  <a href={article.source} target="_blank" rel="noreferrer">
 
                     <h3>{article.title}</h3>
                     <p>{article.content}</p>
-                    </a>
+                  </a>
 
-                  </div>
+                </div>
               </li>
             );
           })
