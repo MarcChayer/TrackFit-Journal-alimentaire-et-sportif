@@ -7,8 +7,8 @@ import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg'
 
 const TrackerSleep = ({ setModal, sleep, estimatedSleepTime }) => {
   if (!estimatedSleepTime) {
-    // estimatedSleepTime = '--';
-    estimatedSleepTime = 0;
+    estimatedSleepTime = '--';
+    // estimatedSleepTime = 0;
   }
   return (
     <li className="trackers__item trackers__sleep">
