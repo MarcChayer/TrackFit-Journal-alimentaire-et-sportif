@@ -26,7 +26,7 @@ const UserDetails = ({ userData }) => {
   const userDataFoodCalory = userData.foods[userData.foods.length - 1].caloryTotal;
 
   const userDataWater = userData.waters.length > 0;
-  const userDataWaterDrunk = userData.waters[userData.waters.length - 1].waters;
+  const userDataWaterDrunk = userData.waters[userData.waters.length - 1].water;
 
   const userDataSport = userData.sports.length > 0;
   const userDataSportCalory = userData.sports[userData.sports.length - 1].caloryTotal;
@@ -96,8 +96,8 @@ const UserDetails = ({ userData }) => {
 
         <li className="user-stats__item">
           {
-              userDataWaterDrunk > 1500 ? <span className="user-stats__advices">Super, il est important de bien s'hydrater.</span>
-                : userDataWaterDrunk > 500 ? <span className="user-stats__advices">Pensez à boire suffisamment</span>
+              userDataWaterDrunk > 150 ? <span className="user-stats__advices">Super, il est important de bien s'hydrater.</span>
+                : userDataWaterDrunk > 50 ? <span className="user-stats__advices">Pensez à boire suffisamment</span>
                   : userDataWaterDrunk === 0 ? <span className="user-stats__advices">Aucune consommation d'eau enregistrée</span>
                     : <span className="user-stats__advices">Pensez à boire suffisamment</span>
           }
