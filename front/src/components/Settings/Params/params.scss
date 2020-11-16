@@ -36,6 +36,7 @@
 }
 
 .params-settings {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -45,8 +46,8 @@
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
   border-radius: 1em 1em 2em 2em;
-  height: fit-content;
-  width: min-content;
+  height: 35em;
+  width: 45em;
   margin-left: 2em;
   
   @media screen and (max-width:900px) {
@@ -66,10 +67,6 @@
     flex-direction: column;
     margin: 0;
     padding: 1em;
-    width: 29vw;
-    // min-width: 29vw;
-    // max-width: 29vw;
-    height: 48vh;
 
     @media screen and (max-width:900px) {
       height: -webkit-max-content;
@@ -169,12 +166,14 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   margin: 2em;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 
 .settings-label {
   font-size: 1.2em;
   font-weight: bold;
-  width: 11em;
+  width: 12em;
   text-align: left;
   margin-right: 2em;
   color: #4B5C6B;
@@ -234,16 +233,17 @@
 
 .settings-button {
   height: 3em;
-  width: 8vw;
+  width: 9em;
   font-size: 1em;
   font-weight: 700;
   color: #fff;
   border: none;
   background-color: #3d5499;
-  position: relative;
+  position: absolute;
   border-radius: 3em;
   padding: 1em;
-  // margin: 1em 1em 1em 10em;
+  bottom: 1em;
+  right: 1em;  
   margin: 1em 1em 1em 1em;
 
   @media screen and (max-width:900px) {

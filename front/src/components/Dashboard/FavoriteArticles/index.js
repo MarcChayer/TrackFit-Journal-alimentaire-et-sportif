@@ -12,7 +12,7 @@ const FavoriteArticles = ({
   toggleFavArticle,
 }) => {
   if (!articleFav || !articleFav.articles) {
-    return <div>Récupération de la ressource</div>;
+    return <div>Récupération de la ressource...</div>;
   }
   return (
     <ul className="favs">

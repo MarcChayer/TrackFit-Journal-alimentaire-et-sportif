@@ -93,7 +93,7 @@ export default (store) => (next) => (action) => {
         birthdate: store.getState().user.birthdate,
         height: store.getState().user.height,
         estimatedSleepTime: store.getState().user.estimatedSleepTime,
-        // weightGoal: store.getState().user.weightGoal,
+        weightGoal: store.getState().user.weightGoal,
         weight: store.getState().user.weight,
       },
       { withCredentials: true })
@@ -109,6 +109,6 @@ export default (store) => (next) => (action) => {
       break;
     default:
       next(action);
-      break;
+      // break;
   }
 };

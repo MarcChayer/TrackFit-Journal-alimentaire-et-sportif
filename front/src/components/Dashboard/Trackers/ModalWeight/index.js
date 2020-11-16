@@ -22,7 +22,7 @@ const ModalWeight = ({ onClick, setWeight }) => {
       <h1 className="mod-title-weight">Poids</h1>
       <form className="mod-form-weight" onSubmit={handleSubmit}>
         <label className="mod-label-weight">Nouveau poids :</label>
-        <input className="mod-input-weight" type="number" min="40" max="140" placeholder="80 kg" value={weight} onChange={(e) => setValue(e.target.value)} />
+        <input className="mod-input-weight" type="number" min="0" max="140" placeholder={weight} value={weight} onChange={(e) => setValue(e.target.value)} />
         <button className="modal-button-weight">Valider</button>
       </form>
     </div>

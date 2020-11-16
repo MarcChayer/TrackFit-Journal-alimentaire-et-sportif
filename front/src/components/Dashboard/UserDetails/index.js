@@ -14,6 +14,7 @@ const UserDetails = ({ userData }) => {
   if (!userData || !userData.firstName) {
     return <div>Récupération de la ressource...</div>;
   }
+  console.log('++++++++++++++ userData ++++++++++++++', userData);
 
   const birthdate = new Date(userData.birthdate);
   const diff = Date.now() - birthdate.getTime();
@@ -23,21 +24,22 @@ const UserDetails = ({ userData }) => {
   const userDataHeight = userData.height > 0;
 
   const userDataFood = userData.foods.length > 0;
-  const userDataFoodCalory = userData.foods[userData.foods.length - 1].caloryTotal;
+  const userDataFoodRecorded = userData.foods[userData.foods.length - 1];
 
   const userDataWater = userData.waters.length > 0;
-  const userDataWaterDrunk = userData.waters[userData.waters.length - 1].water;
+  const userDataWaterRecorded = userData.waters[userData.waters.length - 1];
 
   const userDataSport = userData.sports.length > 0;
-  const userDataSportCalory = userData.sports[userData.sports.length - 1].caloryTotal;
-  console.log('++++++++++++++userData', userData);
+  const userDataSportRecorded = userData.sports[userData.sports.length - 1];
 
   const userDataSleep = userData.sleeps.length > 0;
-  const userDataSleepHours = userData.sleeps[userData.sleeps.length - 1].sleepHours;
+  const userDataSleepRecorded = userData.sleeps[userData.sleeps.length - 1];
 
   const userDataWeight = userData.weights.length > 0;
+  const userDataWeightRecorded = userData.weights[userData.weights.length - 1];
+  const userActualWeight = userData.weights[userData.weights.length - 1];
+  const userWeightGoal = userData.weightGoal;
   // const userWeightGoal = 60;
-  // const userActualWeight = userData.weights[userData.weights.length - 1].weight;
 
   const userDataImc = userData.imc > 0;
   const userDataAge = (userDataHeight + userDataWeight) > 0;
@@ -81,11 +83,12 @@ const UserDetails = ({ userData }) => {
       <ul className="user-stats">
         <li className="user-stats__item">
           {
-              userDataFoodCalory > 2400 ? <span className="user-stats__advices">Attention , vous avez dépassé votre limite !</span>
-                : userDataFoodCalory > 2000 ? <span className="user-stats__advices">Attention à équilibrer vos repas...</span>
-                  : userDataFoodCalory > 1200 ? <span className="user-stats__advices">Pensez à varier votre alimentation</span>
-                    : userDataFoodCalory === 0 ? <span className="user-stats__advices">Aucun repas enregistrés</span>
-                      : <span className="user-stats__advices">Pensez à varier votre alimentation</span>
+              !userDataFoodRecorded ? <span className="user-stats__advices">Aucune entrée</span>
+                : userDataFoodRecorded.caloryTotal > 2400 ? <span className="user-stats__advices">Attention , vous avez dépassé votre limite !</span>
+                  : userDataFoodRecorded.caloryTotal > 2000 ? <span className="user-stats__advices">Attention à équilibrer vos repas...</span>
+                    : userDataFoodRecorded.caloryTotal > 1200 ? <span className="user-stats__advices">Pensez à varier votre alimentation.</span>
+                      : userDataFoodRecorded.caloryTotal === 0 ? <span className="user-stats__advices">Aucun repas enregistrés.</span>
+                        : <span className="user-stats__advices">Pensez à varier votre alimentation.</span>
           }
           <label htmlFor="calories">
             { userDataFood
@@ -96,10 +99,12 @@ const UserDetails = ({ userData }) => {
 
         <li className="user-stats__item">
           {
-              userDataWaterDrunk > 150 ? <span className="user-stats__advices">Super, il est important de bien s'hydrater.</span>
-                : userDataWaterDrunk > 50 ? <span className="user-stats__advices">Pensez à boire suffisamment</span>
-                  : userDataWaterDrunk === 0 ? <span className="user-stats__advices">Aucune consommation d'eau enregistrée</span>
-                    : <span className="user-stats__advices">Pensez à boire suffisamment</span>
+              !userDataWaterRecorded ? <span className="user-stats__advices">Aucune entrée</span>
+                : userDataWaterRecorded.water > 200 ? <span className="user-stats__advices">Attention à ne pas trop boire : ce n'est pas bon pour vos reins.</span>
+                  : userDataWaterRecorded.water > 150 ? <span className="user-stats__advices">Super, il est important de bien s'hydrater.</span>
+                    : userDataWaterRecorded.water > 50 ? <span className="user-stats__advices">Pensez à boire suffisamment.</span>
+                      : userDataWaterRecorded.water === 0 ? <span className="user-stats__advices">Aucune consommation d'eau enregistrée.</span>
+                        : <span className="user-stats__advices">Pensez à boire suffisamment.</span>
           }
           <label htmlFor="water">
             { userDataWater
@@ -110,10 +115,11 @@ const UserDetails = ({ userData }) => {
 
         <li className="user-stats__item">
           {
-              userDataSleepHours > 10 ? <span className="user-stats__advices">Attention à ne pas trop dormir ^_^</span>
-                : userDataSleepHours > 7 ? <span className="user-stats__advices">Super, il est important de bien dormir.</span>
-                  : userDataSleepHours === 0 ? <span className="user-stats__advices">Aucun sommeil enregistré</span>
-                    : <span className="user-stats__advices">Pensez à dormir suffisamment.</span>
+              !userDataSleepRecorded ? <span className="user-stats__advices">Aucune entrée</span>
+                : userDataSleepRecorded.sleepHours > 10 ? <span className="user-stats__advices">Attention à ne pas trop dormir ^_^</span>
+                  : userDataSleepRecorded.sleepHours > 7 ? <span className="user-stats__advices">Super, il est important de bien dormir.</span>
+                    : userDataSleepRecorded.sleepHours === 0 ? <span className="user-stats__advices">Aucun sommeil enregistré.</span>
+                      : <span className="user-stats__advices">Pensez à dormir suffisamment.</span>
           }
           <label htmlFor="sleep">
             { userDataSleep
@@ -124,10 +130,11 @@ const UserDetails = ({ userData }) => {
 
         <li className="user-stats__item">
           {
-              userDataSportCalory > 2000 ? <span className="user-stats__advices">Wow, vous vous êtes surpassé(e) !</span>
-                : userDataSportCalory > 1000 ? <span className="user-stats__advices">Bravo, continuez ainsi !</span>
-                  : userDataSportCalory === 0 ? <span className="user-stats__advices">Aucune activité sportive enregistrée</span>
-                    : <span className="user-stats__advices">Encore un petit effort...</span>
+              !userDataSportRecorded ? <span className="user-stats__advices">Aucune entrée</span>
+                : userDataSportRecorded.caloryTotal > 2000 ? <span className="user-stats__advices">Wow, vous vous êtes surpassé(e) !</span>
+                  : userDataSportRecorded.caloryTotal > 1000 ? <span className="user-stats__advices">Bravo, continuez ainsi !</span>
+                    : userDataSportRecorded.caloryTotal === 0 ? <span className="user-stats__advices">Aucune activité sportive enregistrée.</span>
+                      : <span className="user-stats__advices">Encore un petit effort...</span>
           }
           <label htmlFor="sport">
             { userDataSport
@@ -136,14 +143,21 @@ const UserDetails = ({ userData }) => {
           </label>
         </li>
 
-        {/* <li className="user-stats__item">
-          <span className="user-stats__advices">Courage, vous allez y arriver.</span>
+        <li className="user-stats__item">
+          {
+              !userDataWeightRecorded ? <span className="user-stats__advices">Aucune entrée</span>
+                : userDataWeightRecorded.weight > userWeightGoal ? <span className="user-stats__advices">Courage, encore quelques efforts...</span>
+                  : userDataWeightRecorded.weight < userWeightGoal && userDataWeightRecorded.weight > 0 ? <span className="user-stats__advices">Attention à ne pas perdre trop de poids...</span>
+                    : userDataWeightRecorded.weight == userWeightGoal ? <span className="user-stats__advices">Et voilà, nous y sommes. Bravo !</span>
+                      : userDataWeightRecorded.weight <= 0 ? <span className="user-stats__advices">Aucun poids enregistré.</span>
+                        : <span className="user-stats__advices">Courage, encore quelques efforts...</span>
+          }
           <label htmlFor="weight">
             { userDataWeight
-              ? <progress id="weight" max="1" value={1 - ((userActualWeight - userWeightGoal) / userWeightGoal)} className="progress-weight" />
+              ? <progress id="weight" max="1" value={1 - ((userActualWeight.weight - userWeightGoal) / userWeightGoal)} className="progress-weight" />
               : <progress id="weight" max="1" value="0" className="progress-weight" />}
           </label>
-            </li> */}
+        </li>
       </ul>
     </div>
   );

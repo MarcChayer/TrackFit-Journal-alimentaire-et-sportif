@@ -1,20 +1,21 @@
+/* eslint-disable max-len */
 import { connect } from 'react-redux';
-import Params from '../components/Settings/Params';
-
 import { paramsInputSubmit, inputChange } from '../actions/user';
+
+import Params from '../components/Settings/Params';
 
 const mapStateToProps = (state) => {
   const { weights = [] } = state.dashboard.allData;
-  //let weight = 0;
-  //let imc = 0;  
-  let weight = "--";
-  let imc = "--";
+  // let weight = 0;
+  // let imc = 0;
+  let weight = '--';
+  let imc = '--';
 
   if (weights.length > 0) {
     weight = weights[weights.length - 1].weight;
   }
   if (state.dashboard.allData.height && weights.length > 0) {
-    imc = Math.round(weight / ((state.dashboard.allData.height/100) * (state.dashboard.allData.height/100)));
+    imc = Math.round(weight / ((state.dashboard.allData.height / 100) * (state.dashboard.allData.height / 100)));
   }
   return ({
     lastName: state.user.lastName,
@@ -24,6 +25,7 @@ const mapStateToProps = (state) => {
     imc,
     estimatedSleepTime: state.user.estimatedSleepTime,
     weight: state.user.weight,
+    weightGoal: state.user.weightGoal,
   });
 };
 

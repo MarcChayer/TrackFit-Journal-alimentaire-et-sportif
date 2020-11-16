@@ -13,7 +13,7 @@ const Todolist = ({
   deleteOnClick,
 }) => {
   if (!toDoList || !toDoList.tasks) {
-    return <div>Récupération de la ressource</div>;
+    return <div>Récupération de la ressource...</div>;
   }
 
   const handleOnChange = (event) => {
