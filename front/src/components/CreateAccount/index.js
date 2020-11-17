@@ -24,47 +24,49 @@ const CreateAccount = (
   };
   return (
     <div className="createaccount">
-      <h1 className="create-title">Créer un compte</h1>
+      <div className="createaccount__content">
+        <h1 className="create-title">Créer un compte</h1>
 
-      <form className="create-form" onSubmit={handleSubmit}>
-        <label className="create-label">Nom :</label>
-        <Field
-          value={lastName}
-          name="lastName"
-          placeholder="Nom"
-          type="text"
-        />
-        <label className="create-label">Prénom :</label>
-        <Field
-          value={firstName}
-          name="firstName"
-          placeholder="Prénom"
-          type="text"
-        />
-        <label className="create-label">E-mail :</label>
-        <Field
-          value={email}
-          name="email"
-          placeholder="E-mail"
-          type="email"
-        />
-        <label className="create-label">Mot de passe :</label>
-        <Field
-          value={password}
-          name="password"
-          placeholder="Mot de passe"
-          type="password"
-        />
-        <label className="create-label">Confirmez votre mot de passe :</label>
-        <Field
-          value={confirmedPassword}
-          name="confirmedPassword"
-          placeholder="Confirmez votre mot de passe"
-          type="password"
-        />
-        <button className="create-button" type="submit">Créer votre compte</button>
-      </form>
-      <p>Vous avez déjà un compte ?<NavLink to="/connexion" className="create-id"> Identifiez-vous</NavLink></p>
+        <form className="create-form" onSubmit={handleSubmit}>
+          <label className="create-label">Nom :</label>
+          <Field
+            value={lastName}
+            name="lastName"
+            placeholder="Nom"
+            type="text"
+          />
+          <label className="create-label">Prénom :</label>
+          <Field
+            value={firstName}
+            name="firstName"
+            placeholder="Prénom"
+            type="text"
+          />
+          <label className="create-label">E-mail :</label>
+          <Field
+            value={email}
+            name="email"
+            placeholder="E-mail"
+            type="email"
+          />
+          <label className="create-label">Mot de passe :</label>
+          <Field
+            value={password}
+            name="password"
+            placeholder="Mot de passe"
+            type="password"
+          />
+          <label className="create-label">Confirmez votre mot de passe :</label>
+          <Field
+            value={confirmedPassword}
+            name="confirmedPassword"
+            placeholder="Confirmez votre mot de passe"
+            type="password"
+          />
+          <button className="create-button" type="submit">Créer votre compte</button>
+        </form>
+        <p>Vous avez déjà un compte ?<NavLink to="/connexion" className="create-id"> Identifiez-vous</NavLink></p>
+      </div>
     </div>
   );
 };

@@ -25,6 +25,7 @@ const Params = (
     event.preventDefault();
     handleParams();
   };
+
   return (
     <div className="params-content">
 
