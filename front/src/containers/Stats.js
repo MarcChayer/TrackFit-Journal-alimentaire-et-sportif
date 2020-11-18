@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import Stats from 'src/components/Statistics/Stats';
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  userData: state.dashboard.allData,
+});
 
 const mapDispatchToProps = (dispatch) => ({});
 

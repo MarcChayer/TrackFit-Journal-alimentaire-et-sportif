@@ -23,7 +23,7 @@ const ModalSleep = ({ onClick, setSleep }) => {
       <h1 className="mod-title-sleep">Sommeil</h1>
       <form className="mod-form-sleep" onSubmit={handleSubmit}>
         <label className="mod-label-sleep">Heure de sommeil :</label>
-        <input className="mod-input-sleep" type="number" name="sleepHours" ref={inputBedTime} value={sleepHours} onChange={(e) => setsleepHoursValue(e.target.value)} />
+        <input className="mod-input-sleep" type="number" name="sleepHours" ref={inputBedTime} value={sleepHours} min="0" max="24" onChange={(e) => setsleepHoursValue(e.target.value)} />
         <button className="modal-button-sleep"> Valider</button>
       </form>
     </div>

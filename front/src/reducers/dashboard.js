@@ -125,6 +125,7 @@ export const getLastSleep = (sleeps) => {
     sleepHours = sleeps[sleeps.length - 1].sleepHours;
   }
   if (!sleepHours) {
+    //sleepHours = 0;
     sleepHours = '--';
   }
   return sleepHours;
@@ -136,6 +137,7 @@ export const getLastSport = (sports) => {
     caloryTotal = sports[sports.length - 1].caloryTotal;
   }
   if (!caloryTotal) {
+    //caloryTotal = 0;
     caloryTotal = '--';
   }
   return caloryTotal;
@@ -147,6 +149,7 @@ export const getLastFood = (foods) => {
     caloryTotal = foods[foods.length - 1].caloryTotal;
   }
   if (!caloryTotal) {
+    //caloryTotal = 0;
     caloryTotal = '--';
   }
   return caloryTotal;

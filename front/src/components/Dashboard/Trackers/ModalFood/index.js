@@ -51,7 +51,7 @@ const ModalFood = ({
             }
           </select>
           <label className="mod-label-food">Quantité (en grammes) :</label>
-          <input className="mod-input-food" type="number" name="quantity" ref={inputFoodQuantity} value={foodQuantity} onChange={inputChange} />
+          <input className="mod-input-food" type="number" name="quantity" ref={inputFoodQuantity} value={foodQuantity} min="0" onChange={inputChange} />
         </div>
         <button className="modal-button-food"> Valider</button>
       </form>

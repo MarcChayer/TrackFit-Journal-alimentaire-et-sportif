@@ -6,10 +6,6 @@ import iconweight from 'src/assets/images/trackers/icone-poids.svg';
 import modalweight from 'src/assets/images/trackers/icone-open-modal-poids.svg';
 
 const TrackerWeight = ({ setModal, weight }) => (
-  // let weightGoal = "--";
-  // if (weight > 0) {
-  //   weightGoal = weight * 0.96;
-  // }
   <li className="trackers__item trackers__weight">
     <NavLink to="#">
       <img

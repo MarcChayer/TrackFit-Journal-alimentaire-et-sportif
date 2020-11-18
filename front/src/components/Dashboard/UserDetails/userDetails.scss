@@ -112,6 +112,7 @@ progress[value] {
   -webkit-appearance: none;
   appearance: none;
   height: 0.8em;
+  width: -webkit-fill-available;
 
   &::-webkit-progress-bar {
     align-self: stretch;

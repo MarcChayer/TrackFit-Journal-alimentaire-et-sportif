@@ -17,8 +17,7 @@ const Params = (
     height,
     estimatedSleepTime,
     weight,
-    // imc,
-    // weightGoal,
+    weightGoal,
     handleParams,
   },
 ) => {
@@ -26,6 +25,7 @@ const Params = (
     event.preventDefault();
     handleParams();
   };
+
   return (
     <div className="params-content">
 
@@ -38,8 +38,7 @@ const Params = (
           <li className="user-params__tag-list">Prénom : {firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase()}</li>
           <li className="user-params__tag-list">Nom : {lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase()}</li>
           <li className="user-params__tag-list">Poids initial : {weight}kg</li>
-          {/* <li className="user-params__tag-list">Poids à atteindre : kg</li> */}
-          {/* <li className="user-params__tag-list">IMC : {imc}</li> */}
+          <li className="user-params__tag-list">Poids à atteindre : {weightGoal}kg</li>
           <li className="user-params__tag-list">Sommeil nécessaire : {estimatedSleepTime}h</li>
         </ul>
       </div>
@@ -108,17 +107,17 @@ const Params = (
                 />
               </label>
 
-              {/* <label className="settings-label">Votre poids à atteindre :
+              <label className="settings-label">Votre poids à atteindre :
                 <Field
-                  value={weightGoal}
                   name="weightGoal"
-                  placeholder="79 kg"
                   type="number"
+                  placeholder={weightGoal}
+                  value={weightGoal}
                   min="40"
                   max="140"
                   className="settings-input"
                 />
-              </label> */}
+              </label>
 
               <label className="settings-label">Besoin en sommeil :
                 <Field
@@ -149,9 +148,8 @@ Params.propTypes = {
   height: PropTypes.number.isRequired,
   estimatedSleepTime: PropTypes.number.isRequired,
   weight: PropTypes.number.isRequired,
-  // weightGoal: PropTypes.number.isRequired,
+  weightGoal: PropTypes.number.isRequired,
   handleParams: PropTypes.func.isRequired,
-  imc: PropTypes.number.isRequired,
 };
 
 // == Export
