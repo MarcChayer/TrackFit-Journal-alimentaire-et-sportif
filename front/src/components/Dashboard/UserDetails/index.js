@@ -84,7 +84,7 @@ const UserDetails = ({ userData }) => {
         <li className="user-stats__item">
           {
               !userDataFoodRecorded ? <span className="user-stats__advices">Aucune entrée</span>
-                : userDataFoodRecorded.caloryTotal > 2400 ? <span className="user-stats__advices">Attention , vous avez dépassé votre limite !</span>
+                : userDataFoodRecorded.caloryTotal > 2400 ? <span className="user-stats__advices">Attention, vous avez dépassé votre limite !</span>
                   : userDataFoodRecorded.caloryTotal > 2000 ? <span className="user-stats__advices">Attention à équilibrer vos repas...</span>
                     : userDataFoodRecorded.caloryTotal > 1200 ? <span className="user-stats__advices">Pensez à varier votre alimentation.</span>
                       : userDataFoodRecorded.caloryTotal === 0 ? <span className="user-stats__advices">Aucun repas enregistrés.</span>
