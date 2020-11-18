@@ -2,7 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Field from 'src/containers/Field';
+import FieldParams from 'src/containers/FieldParams';
 
 import './params.scss';
 
@@ -51,7 +51,7 @@ const Params = (
             <h1 className="settings-title">Vos informations :</h1>
             <div className="settings-content">
               <label className="settings-label">Prénom :
-                <Field
+                <FieldParams
                   name="firstName"
                   type="text"
                   placeholder={firstName}
@@ -60,7 +60,7 @@ const Params = (
                 />
               </label>
               <label className="settings-label">Nom :
-                <Field
+                <FieldParams
                   name="lastName"
                   type="text"
                   placeholder={lastName}
@@ -72,7 +72,7 @@ const Params = (
               <p className="personnal-info">Pour effectuer un suivi exact, nous avons besoin de quelques informations basiques de votre part :</p>
 
               <label className="settings-label">Date de naissance :
-                <Field
+                <FieldParams
                   name="birthdate"
                   type="date"
                   placeholder={birthdate}
@@ -84,7 +84,7 @@ const Params = (
               </label>
 
               <label className="settings-label">Taille en cm :
-                <Field
+                <FieldParams
                   name="height"
                   type="number"
                   placeholder={height}
@@ -96,7 +96,7 @@ const Params = (
               </label>
 
               <label className="settings-label">Poids initial :
-                <Field
+                <FieldParams
                   name="weight"
                   type="number"
                   placeholder={weight}
@@ -108,7 +108,7 @@ const Params = (
               </label>
 
               <label className="settings-label">Votre poids à atteindre :
-                <Field
+                <FieldParams
                   name="weightGoal"
                   type="number"
                   placeholder={weightGoal}
@@ -120,7 +120,7 @@ const Params = (
               </label>
 
               <label className="settings-label">Besoin en sommeil :
-                <Field
+                <FieldParams
                   name="estimatedSleepTime"
                   type="number"
                   placeholder={estimatedSleepTime}
