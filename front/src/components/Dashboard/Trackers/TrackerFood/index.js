@@ -15,9 +15,9 @@ const TrackerFood = ({ setModal, lastFoodCalory }) => (
     />
     </NavLink>
     <img src={iconfood} alt="food" className="trackers__rounded-img" />
-    <li className="user-stats__item">
+    <p className="user-stats__item">
       <span>{lastFoodCalory} cal</span>
-    </li>
+    </p>
   </li>
 );
 

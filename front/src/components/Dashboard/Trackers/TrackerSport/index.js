@@ -16,9 +16,9 @@ const TrackerSport = ({ setModal, lastSportCalory }) => (
       />
     </NavLink>
     <img src={iconsport} alt="sport" className="trackers__rounded-img" />
-    <li className="user-stats__item">
+    <p className="user-stats__item">
       <span>{lastSportCalory} cal</span>
-    </li>
+    </p>
   </li>
 );
 export default TrackerSport;
