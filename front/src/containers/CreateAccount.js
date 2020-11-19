@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { registerInputSubmit } from '../actions/user';
-
 import CreateAccount from '../components/CreateAccount';
 
 const mapStateToProps = (state) => ({

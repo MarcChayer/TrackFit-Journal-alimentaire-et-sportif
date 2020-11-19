@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
+import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Field from 'src/containers/Field';
-
 import './createAccount.scss';
 
 const CreateAccount = (
@@ -19,9 +20,9 @@ const CreateAccount = (
 ) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log('soumission du formulaire d\'inscription');
     handleRegisterUser();
   };
+
   return (
     <div className="createaccount">
       <div className="createaccount__content">
@@ -65,6 +66,7 @@ const CreateAccount = (
           />
           <button className="create-button" type="submit">Créer votre compte</button>
         </form>
+        <ToastContainer />
         <p>Vous avez déjà un compte ?<NavLink to="/connexion" className="create-id"> Identifiez-vous</NavLink></p>
       </div>
     </div>

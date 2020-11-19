@@ -1,14 +1,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
-import React from 'react';
-import { Redirect, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { NavLink, Redirect } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import FieldLogin from 'src/containers/Field';
-
 import './login.scss';
 
 const Login = ({
-  email, password, handleLoginUser, isLogged,
+  email,
+  password,
+  handleLoginUser,
+  isLogged,
 }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -47,13 +51,12 @@ const Login = ({
         </label> */}
             <button className="log-button" type="submit">S'identifier</button>
           </form>
-
+          <ToastContainer />
           <p>Vous ne possédez pas de compte ?<NavLink to="/inscription" className="log-id"> Inscrivez-vous </NavLink></p>
         </div>
       </div>
     );
   }
-
   // Sinon on le redirige vers son tableau de bord
   return (<Redirect to="/tableaudebord" />);
 };
