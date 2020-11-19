@@ -1,20 +1,20 @@
 /* eslint-disable no-case-declarations */
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
-  REGISTER_INPUT_SUBMIT,
-  LOGIN_INPUT_SUBMIT,
-  loginSuccess,
-  userIsSubscribed,
-  LOGOUT_HANDLER,
+  CHECK_AUTH, loginSuccess, LOGIN_INPUT_SUBMIT,
   logoutSuccess,
-  CHECK_AUTH,
-  PARAMS_INPUT_SUBMIT,
-  paramsSuccess,
+  LOGOUT_HANDLER,
+  paramsSuccess, PARAMS_INPUT_SUBMIT, REGISTER_INPUT_SUBMIT,
+  userIsSubscribed
 } from '../actions/user';
 
 export default (store) => (next) => (action) => {
   // console.log('middlewareUser');
   const userId = store.getState().user.id;
+
+  toast.configure();
   // console.log(userId);
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
@@ -34,13 +34,14 @@ export default (store) => (next) => (action) => {
           store.dispatch(userIsSubscribed(res.data.userSave));
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error.response.data);
+          // store.dispatch(messageError(error.response.data));
+          error.response.data.map((element) => {
+            toast.error(element, { position: toast.POSITION.TOP_RIGHT });
+          });
         });
       break;
     case LOGIN_INPUT_SUBMIT:
-      // http://52.91.105.182
-      console.log('toto est là');
-      
       axios.post('http://52.91.105.182/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
@@ -55,6 +56,9 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           console.log(error);
+          error.response.data.map((element) => {
+            toast.error(element, { position: toast.POSITION.TOP_RIGHT });
+          });
         });
       break;
     case LOGOUT_HANDLER:

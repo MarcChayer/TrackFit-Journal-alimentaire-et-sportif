@@ -12,7 +12,6 @@ import {
 
 export default (store) => (next) => (action) => {
   const userId = store.getState().dashboard.allData.id;
-  console.log('user id article middle', userId);
   switch (action.type) {
     case FETCH_ARTICLES:
       axios.get('http://52.91.105.182/articles', { withCredentials: true })

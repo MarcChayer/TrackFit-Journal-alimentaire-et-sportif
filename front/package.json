@@ -65,6 +65,7 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
+    "react-toastify": "^6.1.0",
     "redux": "^4.0.5",
     "state-components": "^0.3.13",
     "victory": "^35.3.3"
