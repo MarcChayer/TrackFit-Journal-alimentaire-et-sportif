@@ -16,9 +16,9 @@ const TrackerWater = ({ setModal, water }) => (
       />
     </NavLink>
     <img src={iconwater} alt="water" className="trackers__rounded-img" />
-    <li className="user-stats__item">
+    <p className="user-stats__item">
       <span>{water} / 200 cl</span>
-    </li>
+    </p>
   </li>
 );
 

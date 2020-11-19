@@ -16,9 +16,9 @@ const TrackerWeight = ({ setModal, weight }) => (
       />
     </NavLink>
     <img src={iconweight} alt="poids" className="trackers__rounded-img" />
-    <li className="user-stats__item">
+    <p className="user-stats__item">
       <span>{weight} kg</span>
-    </li>
+    </p>
   </li>
 );
 
