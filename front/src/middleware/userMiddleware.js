@@ -1,4 +1,3 @@
-/* eslint-disable no-case-declarations */
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -27,15 +26,11 @@ export default (store) => (next) => (action) => {
         confirmedPassword: store.getState().user.confirmedPassword,
       })
         .then((res) => {
-          console.log(res.data);
-          console.log('res.data.userSave', res.data.userSave);
-          // A faire : envoyer les variables de la session utilisateur
-          // Attention ! mettre à jour l'action creator
+          // console.log('res.data.userSave', res.data.userSave);
           store.dispatch(userIsSubscribed(res.data.userSave));
         })
         .catch((error) => {
           console.log(error.response.data);
-          // store.dispatch(messageError(error.response.data));
           error.response.data.map((element) => {
             toast.error(element, { position: toast.POSITION.TOP_RIGHT });
           });
@@ -48,14 +43,9 @@ export default (store) => (next) => (action) => {
       },
       { withCredentials: true })
         .then((res) => {
-          console.log(res.data);
-          // console.log('res.data.session', res.data.session);
-          // A faire : envoyer les variables de la session utilisateur
-          // Attention ! mettre à jour l'action creator
           store.dispatch(loginSuccess(res.data.user));
         })
         .catch((error) => {
-          console.log(error);
           error.response.data.map((element) => {
             toast.error(element, { position: toast.POSITION.TOP_RIGHT });
           });
@@ -65,9 +55,7 @@ export default (store) => (next) => (action) => {
       axios.post('http://52.91.105.182/logout', {},
         { withCredentials: true })
         .then((res) => {
-          console.log(res.data);
-          // A faire : envoyer les variables de la session utilisateur
-          // Attention ! mettre à jour l'action creator
+          // console.log(res.data);
           store.dispatch(logoutSuccess());
         })
         .catch((error) => {
@@ -79,9 +67,7 @@ export default (store) => (next) => (action) => {
       axios.post('http://52.91.105.182/isLogged', {},
         { withCredentials: true })
         .then((res) => {
-          console.log('CHECK_AUTH', res.data);
-          // A faire : envoyer les variables de la session utilisateur
-          // Attention ! mettre à jour l'action creator
+          // console.log('CHECK_AUTH', res.data);
           if (res.data.isLogged === true) {
             store.dispatch(loginSuccess(res.data));
           }
@@ -103,8 +89,6 @@ export default (store) => (next) => (action) => {
       { withCredentials: true })
         .then((res) => {
           console.log('PARAMS_INPUT_SUBMIT', res.data);
-          // A faire : envoyer les variables de la session utilisateur
-          // Attention ! mettre à jour l'action creator
           store.dispatch(paramsSuccess(res.data));
         })
         .catch((error) => {
