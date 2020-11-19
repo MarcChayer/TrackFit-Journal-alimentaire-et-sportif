@@ -49,7 +49,7 @@ const ModalSport = ({
         <select className="mod-input-sport" name="sport-list" id="sport-select" ref={inputSportType} onChange={inputChange}>
           {
             sportTypeList.map((item) => (
-              <option value={item.id}>{item.name}</option>
+              <option key={item.id} value={item.id}>{item.name}</option>
             ))
           }
         </select>
