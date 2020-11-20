@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { inputChange, paramsInputSubmit } from '../actions/user';
 import Params from '../components/Settings/Params';
 
-
 const mapStateToProps = (state) => {
   const { weights = [] } = state.dashboard.allData;
   // let weight = 0;

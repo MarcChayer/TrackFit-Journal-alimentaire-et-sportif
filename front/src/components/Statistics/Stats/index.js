@@ -59,7 +59,7 @@ const Stats = ({ userData }) => {
   );
 };
 Stats.propTypes = {
-  userData: PropTypes.objectOf().isRequired,
+  userData: PropTypes.object.isRequired,
 };
 
 // == Export

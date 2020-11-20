@@ -2,6 +2,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 // import { NavLink } from 'react-router-dom';
 import './articles.scss';
 
@@ -27,6 +28,7 @@ const Article = ({
 
         <a href={article.source} target="_blank" className="article__seemore">Voir l'article</a>
       </article>
+      <ToastContainer />
     </li>
   );
 };

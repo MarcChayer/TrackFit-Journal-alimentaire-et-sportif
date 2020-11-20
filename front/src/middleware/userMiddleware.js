@@ -2,10 +2,14 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  CHECK_AUTH, loginSuccess, LOGIN_INPUT_SUBMIT,
+  CHECK_AUTH,
+  loginSuccess,
+  LOGIN_INPUT_SUBMIT,
   logoutSuccess,
   LOGOUT_HANDLER,
-  paramsSuccess, PARAMS_INPUT_SUBMIT, REGISTER_INPUT_SUBMIT,
+  paramsSuccess,
+  PARAMS_INPUT_SUBMIT,
+  REGISTER_INPUT_SUBMIT,
   userIsSubscribed
 } from '../actions/user';
 

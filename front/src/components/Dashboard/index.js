@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { NavLink } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 // == Import composants
 import connectionRequired from 'src/assets/images/illustrations/illustration-connexion-requise.svg';
 import FavoriteArticles from '../../containers/FavoriteArticles';
@@ -39,6 +40,7 @@ const Dashboard = ({
   }
   return (
     <div className="dashboard">
+      <ToastContainer />
       <Helmet defaultTitle="Tableau de bord">
         <title>Tableau de bord</title>
         <meta
