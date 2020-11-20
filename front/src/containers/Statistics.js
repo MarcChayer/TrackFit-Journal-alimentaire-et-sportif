@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchStatistics: () => {
-    console.log('je passe dans le container fetchStatistics');
+    // console.log('je passe dans le container fetchStatistics');
     dispatch(fetchStatistics());
   },
 });

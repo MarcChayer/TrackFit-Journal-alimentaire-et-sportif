@@ -9,7 +9,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   checkAuth: () => {
-    console.log('je passe ds checkAuth');
     dispatch(checkAuth());
   },
 });

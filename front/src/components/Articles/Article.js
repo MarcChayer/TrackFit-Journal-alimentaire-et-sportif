@@ -1,10 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// import { NavLink } from 'react-router-dom';
-
-import './articles.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
+import React from 'react';
+// import { NavLink } from 'react-router-dom';
+import './articles.scss';
 
 const Article = ({
   article,
@@ -12,7 +11,7 @@ const Article = ({
   colorFavArticles,
 }) => {
   // correspond a la liste d'article fav de l'user connecté
-  console.log('colorFavArticles', colorFavArticles);
+  // console.log('colorFavArticles', colorFavArticles);
   const handleOnClick = () => {
     toggleFavArticle(article.id);
   };
@@ -33,16 +32,7 @@ const Article = ({
 };
 
 Article.propTypes = {
-  article: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      content: PropTypes.string,
-      source: PropTypes.string,
-      media: PropTypes.string,
-      label: PropTypes.string,
-    }).isRequired,
-  ).isRequired,
+  article: PropTypes.object.isRequired,
   colorFavArticles: PropTypes.arrayOf(
     PropTypes.number,
   ).isRequired,

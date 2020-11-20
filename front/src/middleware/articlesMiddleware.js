@@ -1,14 +1,11 @@
 /* eslint-disable no-case-declarations */
 import axios from 'axios';
 import {
-  FETCH_ARTICLES,
-  fetchArticlesSuccess,
-  fetchArticlesError,
-} from '../actions/articles';
-import {
-  TOGGLE_FAV_ARTICLE,
-  toggleFavArticleSuccess,
+  toggleFavArticleSuccess, TOGGLE_FAV_ARTICLE
 } from '../actions/article';
+import {
+  fetchArticlesError, fetchArticlesSuccess, FETCH_ARTICLES
+} from '../actions/articles';
 
 export default (store) => (next) => (action) => {
   const userId = store.getState().dashboard.allData.id;
@@ -16,12 +13,12 @@ export default (store) => (next) => (action) => {
     case FETCH_ARTICLES:
       axios.get('http://52.91.105.182/articles', { withCredentials: true })
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           store.dispatch(fetchArticlesSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
-          store.dispatch(fetchArticlesError());
+          // console.log(error);
+          store.dispatch(fetchArticlesError(error));
         });
       break;
     case TOGGLE_FAV_ARTICLE:
@@ -30,11 +27,11 @@ export default (store) => (next) => (action) => {
       axios.get(`http://52.91.105.182/user/${userId}/article/${action.articleId}`, {},
         { withCredentials: true })
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           store.dispatch(toggleFavArticleSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
           // store.dispatch(error);
         });
       next(action);

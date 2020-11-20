@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   handleLoginUser: () => {
-    console.log('je passe l\'action loginInputSubmit');
+    // console.log('je passe l\'action loginInputSubmit');
     dispatch(loginInputSubmit());
   },
   changeField: (value, name) => {

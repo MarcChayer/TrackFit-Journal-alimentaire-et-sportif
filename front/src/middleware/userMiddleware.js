@@ -59,7 +59,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(logoutSuccess());
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     case CHECK_AUTH:
@@ -73,7 +73,7 @@ export default (store) => (next) => (action) => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     case PARAMS_INPUT_SUBMIT:
@@ -88,11 +88,11 @@ export default (store) => (next) => (action) => {
       },
       { withCredentials: true })
         .then((res) => {
-          console.log('PARAMS_INPUT_SUBMIT', res.data);
+          // console.log('PARAMS_INPUT_SUBMIT', res.data);
           store.dispatch(paramsSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     default:

@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
-import React, { useEffect, useState, useRef } from 'react';
-import Food from 'src/assets/images/trackers/icone-alimentation.svg';
 import PropTypes from 'prop-types';
-
+import React, { useEffect, useRef, useState } from 'react';
+import Food from 'src/assets/images/trackers/icone-alimentation.svg';
 import './modalfood.scss';
 
 const ModalFood = ({
@@ -15,7 +14,7 @@ const ModalFood = ({
   useEffect(() => {
     fetchFoodList();
   }, []);
-  console.log('foodTypeList', foodTypeList);
+
   const inputFoodType = useRef(null);
   const [foodType, setFoodType] = useState('');
 
@@ -29,7 +28,7 @@ const ModalFood = ({
     setTrackerFood(foodQuantity, foodType);
   };
 
-  const inputChange = (event) => {
+  const inputChange = () => {
     // console.log('event.target', event.target.value);
     setFoodQuantity(inputFoodQuantity.current.value);
     setFoodType(inputFoodType.current.value);
@@ -62,7 +61,7 @@ const ModalFood = ({
 ModalFood.propTypes = {
   onClick: PropTypes.func.isRequired,
   fetchFoodList: PropTypes.func.isRequired,
-  foodTypeList: PropTypes.func.isRequired,
+  foodTypeList: PropTypes.array.isRequired,
   setTrackerFood: PropTypes.func.isRequired,
 };
 export default ModalFood;

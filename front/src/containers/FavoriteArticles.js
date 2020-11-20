@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import FavoriteArticles from 'src/components/Dashboard/FavoriteArticles';
 import {
-  toggleFavArticle,
+  toggleFavArticle
 } from '../actions/article';
 
 const mapStateToProps = (state) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   toggleFavArticle: (articleId) => {
-    console.log('articleId', articleId);
+    // console.log('articleId', articleId);
     dispatch(toggleFavArticle(articleId));
   },
 });

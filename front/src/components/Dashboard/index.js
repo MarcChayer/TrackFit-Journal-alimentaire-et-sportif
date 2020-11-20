@@ -1,19 +1,17 @@
 // == Import npm
-import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-
 import PropTypes from 'prop-types';
-
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { NavLink } from 'react-router-dom';
 // == Import composants
 import connectionRequired from 'src/assets/images/illustrations/illustration-connexion-requise.svg';
-import Trackers from './Trackers';
 import FavoriteArticles from '../../containers/FavoriteArticles';
 import Todolist from '../../containers/Todolist';
-import UserDetails from './UserDetails';
-import Menu from './Menu';
-
 // == Import style
 import './dashboard.scss';
+import Menu from './Menu';
+import Trackers from './Trackers';
+import UserDetails from './UserDetails';
 
 // == Composant
 const Dashboard = ({
@@ -41,6 +39,13 @@ const Dashboard = ({
   }
   return (
     <div className="dashboard">
+      <Helmet defaultTitle="Tableau de bord">
+        <title>Tableau de bord</title>
+        <meta
+          name="description"
+          content="Tableau de bord"
+        />
+      </Helmet>
       <Menu />
       <div className="dashboard__content">
         <div className="dashboard__left">
@@ -64,6 +69,7 @@ const Dashboard = ({
 };
 
 Dashboard.propTypes = {
+  allData: PropTypes.object.isRequired,
   fetchDashboard: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
 };

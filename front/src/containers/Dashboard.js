@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchDashboard: () => {
-    console.log('je passe dans le container fetchDashboard');
+    // console.log('je passe dans le container fetchDashboard');
     dispatch(fetchDashboard());
   },
 });

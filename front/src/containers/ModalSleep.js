@@ -6,7 +6,7 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   setSleep: (payload) => {
-    console.log('je passe dans le container setSleep', payload);
+    // console.log('je passe dans le container setSleep', payload);
     dispatch(setSleep(payload));
   },
 });

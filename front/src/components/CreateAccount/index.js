@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { NavLink } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +26,13 @@ const CreateAccount = (
 
   return (
     <div className="createaccount">
+      <Helmet defaultTitle="Création de compte">
+        <title>Création de compte</title>
+        <meta
+          name="description"
+          content="Création de compte"
+        />
+      </Helmet>
       <div className="createaccount__content">
         <h1 className="create-title">Créer un compte</h1>
 

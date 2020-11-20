@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/button-has-type */
-import React, { useEffect, useState, useRef } from 'react';
-import Sport from 'src/assets/images/trackers/icone-sport.svg';
 import PropTypes from 'prop-types';
-
+import React, { useEffect, useRef, useState } from 'react';
+import Sport from 'src/assets/images/trackers/icone-sport.svg';
 import './modalsport.scss';
 
 const ModalSport = ({
@@ -30,7 +29,7 @@ const ModalSport = ({
     onClick();
     setTrackerSport(sportTime, sportIntensity, sportType);
   };
-  const inputChange = (event) => {
+  const inputChange = () => {
     // console.log('event.target', event.target.value);
     setSportTime(inputSportTime.current.value);
     setSportIntensity(inputSportIntensity.current.value);
@@ -72,7 +71,7 @@ const ModalSport = ({
 ModalSport.propTypes = {
   onClick: PropTypes.func.isRequired,
   fetchSportList: PropTypes.func.isRequired,
-  sportTypeList: PropTypes.func.isRequired,
+  sportTypeList: PropTypes.array.isRequired,
   setTrackerSport: PropTypes.func.isRequired,
 };
 

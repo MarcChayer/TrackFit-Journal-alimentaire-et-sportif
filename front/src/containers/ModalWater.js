@@ -6,7 +6,7 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   setWater: (payload) => {
-    console.log('je passe dans le container setWater', payload);
+    // console.log('je passe dans le container setWater', payload);
     dispatch(setWater(payload));
   },
 });
