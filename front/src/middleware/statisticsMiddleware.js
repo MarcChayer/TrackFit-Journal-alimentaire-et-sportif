@@ -1,8 +1,7 @@
 /* eslint-disable no-case-declarations */
 import axios from 'axios';
 import {
-  FETCH_STATISTICS,
-  fetchStatisticsSuccess,
+  fetchStatisticsSuccess, FETCH_STATISTICS
 } from '../actions/statistics';
 
 export default (store) => (next) => (action) => {
@@ -19,7 +18,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(fetchStatisticsSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     default:

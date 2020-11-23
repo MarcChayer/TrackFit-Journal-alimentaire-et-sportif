@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import PropTypes from 'prop-types';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { NavLink, Redirect } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -25,6 +26,13 @@ const Login = ({
   if (!isLogged) {
     return (
       <div className="login">
+        <Helmet defaultTitle="Connexion">
+          <title>Connexion</title>
+          <meta
+            name="description"
+            content="Connexion"
+          />
+        </Helmet>
         <div className="login__content">
           <h1 className="log-title">S'identifier</h1>
 

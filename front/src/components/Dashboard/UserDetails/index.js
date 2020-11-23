@@ -2,20 +2,16 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import './userDetails.scss';
-
 import profile from 'src/assets/images/trackers/user.svg';
+import './userDetails.scss';
 
 const UserDetails = ({ userData }) => {
   if (!userData || !userData.firstName) {
     return <div>Récupération de la ressource...</div>;
   }
-  console.log('++++++++++++++ userData ++++++++++++++', userData);
-
   const birthdate = new Date(userData.birthdate);
   const diff = Date.now() - birthdate.getTime();
   const age = new Date(diff);
@@ -40,7 +36,6 @@ const UserDetails = ({ userData }) => {
   const userActualWeight = userData.weights[userData.weights.length - 1];
   const userWeightGoal = userData.weightGoal;
   // const userWeightGoal = 60;
-
   const userDataImc = userData.imc > 0;
   const userDataAge = (userDataHeight + userDataWeight) > 0;
 
@@ -164,7 +159,7 @@ const UserDetails = ({ userData }) => {
 };
 
 UserDetails.propTypes = {
-  userData: PropTypes.objectOf().isRequired,
+  userData: PropTypes.object.isRequired,
 };
 
 // == Export

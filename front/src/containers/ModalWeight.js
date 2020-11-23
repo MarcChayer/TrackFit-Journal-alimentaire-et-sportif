@@ -6,7 +6,7 @@ const mapStateToProps = () => ({});
 
 const mapDispatchToProps = (dispatch) => ({
   setWeight: (payload) => {
-    console.log('je passe dans le container setWeight', payload);
+    // console.log('je passe dans le container setWeight', payload);
     dispatch(setWeight(payload));
   },
 });

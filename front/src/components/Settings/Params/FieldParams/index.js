@@ -1,6 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import './field.scss';
 
 const FieldParams = ({
@@ -29,14 +28,14 @@ const FieldParams = ({
 
 FieldParams.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string,
+  type: PropTypes.string.isRequired,
   placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.func,
   changeField: PropTypes.func.isRequired,
 };
 
-FieldParams.defaultProps = {
-  type: 'text',
-};
+// FieldParams.defaultProps = {
+//   type: 'text',
+// };
 
 export default FieldParams;

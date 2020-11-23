@@ -3,17 +3,24 @@
 /* eslint-disable import/no-unresolved */
 // == Import npm
 import React from 'react';
-
+import { Helmet } from 'react-helmet';
 // import developerMan from 'src/assets/images/illustrations/man.svg';
 // import developerWoman from 'src/assets/images/illustrations/woman.svg';
 // import logo from 'src/assets/images/logo.svg';
-
 // == Import styles
 import './legalnotice.scss';
+
 
 // == Composant
 const LegalNotice = () => (
   <div className="legalnotice">
+    <Helmet defaultTitle="Mention légales">
+      <title>Mention légales</title>
+      <meta
+        name="description"
+        content="Mention légales"
+      />
+    </Helmet>
     <h1>Mentions légales</h1>
     <h2>Projet "Trackfit" réalisé par des étudiants de l'école de formation <a href="https://oclock.io" target="_blank" rel="noreferrer"> O'Clock </a></h2>
     <strong>La seule contrepartie à l'utilisation de ces mentions légales, est l'engagement total à laisser le lien crédit subdelirium sur cette page de mentions légales.</strong><br />

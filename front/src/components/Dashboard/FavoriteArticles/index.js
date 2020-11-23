@@ -1,10 +1,9 @@
 // == Import npm
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 // == Import style
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
+import React from 'react';
 import './favoriteArticles.scss';
 
 const FavoriteArticles = ({
@@ -21,7 +20,7 @@ const FavoriteArticles = ({
         {
           articleFav.articles.map((article) => {
             const handleOnClick = () => {
-              console.log('articleFav.articles.id', article.id);
+              // console.log('articleFav.articles.id', article.id);
               toggleFavArticle(article.id);
             };
             return (
@@ -52,7 +51,7 @@ const FavoriteArticles = ({
 };
 
 FavoriteArticles.propTypes = {
-  articleFav: PropTypes.objectOf().isRequired,
+  articleFav: PropTypes.object.isRequired,
   toggleFavArticle: PropTypes.func.isRequired,
 };
 

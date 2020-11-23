@@ -2,10 +2,14 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  CHECK_AUTH, loginSuccess, LOGIN_INPUT_SUBMIT,
+  CHECK_AUTH,
+  loginSuccess,
+  LOGIN_INPUT_SUBMIT,
   logoutSuccess,
   LOGOUT_HANDLER,
-  paramsSuccess, PARAMS_INPUT_SUBMIT, REGISTER_INPUT_SUBMIT,
+  paramsSuccess,
+  PARAMS_INPUT_SUBMIT,
+  REGISTER_INPUT_SUBMIT,
   userIsSubscribed
 } from '../actions/user';
 
@@ -59,7 +63,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(logoutSuccess());
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     case CHECK_AUTH:
@@ -73,7 +77,7 @@ export default (store) => (next) => (action) => {
           }
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     case PARAMS_INPUT_SUBMIT:
@@ -88,11 +92,11 @@ export default (store) => (next) => (action) => {
       },
       { withCredentials: true })
         .then((res) => {
-          console.log('PARAMS_INPUT_SUBMIT', res.data);
+          // console.log('PARAMS_INPUT_SUBMIT', res.data);
           store.dispatch(paramsSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
       break;
     default:

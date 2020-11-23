@@ -1,24 +1,23 @@
 // == Import npm
-import React, { useEffect } from 'react';
-import {
-  Route,
-  Switch,
-  useLocation,
-  Redirect,
-} from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import Header from 'src/containers/Header';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import {
+  Redirect, Route,
+  Switch,
+  useLocation
+} from 'react-router-dom';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
-import CreateAccount from 'src/containers/CreateAccount';
-import Login from 'src/containers/Login';
-import Articles from 'src/containers/Articles';
-import Dashboard from 'src/containers/Dashboard';
-import Statistics from 'src/components/Statistics';
-import Settings from 'src/components/Settings';
-import NotFound from 'src/components/NotFound';
 import LegalNotice from 'src/components/LegalNotice';
+import NotFound from 'src/components/NotFound';
+import Settings from 'src/components/Settings';
+import Statistics from 'src/components/Statistics';
+import Articles from 'src/containers/Articles';
+import CreateAccount from 'src/containers/CreateAccount';
+import Dashboard from 'src/containers/Dashboard';
+import Header from 'src/containers/Header';
+import Login from 'src/containers/Login';
 
 // == Composant
 const App = ({
@@ -33,6 +32,16 @@ const App = ({
   const location = useLocation();
   return (
     <div className="app">
+      <Helmet defaultTitle="TrackFit">
+        <title>TrackFit - Journal alimentaire et sportif</title>
+        <meta
+          name="description"
+          content="TrackFit, votre journal alimentaire et sportif ! Simple et pratique, notez les aliments que vous consommez repas après repas, sans distraction.
+          Notez également vos activités sportives, la durée, l’intensité, obtenez des statistiques sur la semaine, le mois et l’année !
+          Compteur de calories, journal alimentaire, courbes de poids et bien plus...
+          Application React ⚛."
+        />
+      </Helmet>
       <Switch>
         <Route exact path="/">
           <Header />

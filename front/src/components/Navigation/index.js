@@ -1,13 +1,13 @@
 // == Import npm
+import PropTypes from 'prop-types';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
-
-import './navigation.scss';
-import profile from 'src/assets/images/icone-nav-profile.svg';
 import hamburger from 'src/assets/images/icone-nav-burger.svg';
+import profile from 'src/assets/images/icone-nav-profile.svg';
 import statistics from 'src/assets/images/icone-nav-stat.svg';
 import Burger from 'src/components/Burger';
+import './navigation.scss';
+
 
 const getModal = (name, closeHandler) => {
   let Modal;
@@ -17,7 +17,6 @@ const getModal = (name, closeHandler) => {
 // == Composant
 const Navigation = ({ isLogged }) => {
   const [modal, setModal] = React.useState(null);
-  console.log();
   return (
     <div className="navigation">
       <nav className="navigation--desktop">

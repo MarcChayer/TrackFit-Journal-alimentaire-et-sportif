@@ -1,5 +1,7 @@
 /* eslint-disable no-case-declarations */
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   FETCH_DASHBOARD,
   SET_WATER,
@@ -14,8 +16,7 @@ import {
 
 export default (store) => (next) => (action) => {
   const userId = store.getState().user.id;
-  // const userId = store.getState().dashboard.allData.id;
-
+  toast.configure();
   const {
     type,
     payload,
@@ -27,8 +28,8 @@ export default (store) => (next) => (action) => {
           store.dispatch(fetchDashboardSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
-          // store.dispatch(fetchArticlesError());
+          // console.log(error);
+          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_WATER:
@@ -37,7 +38,8 @@ export default (store) => (next) => (action) => {
           store.dispatch(setWaterSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
+          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_WEIGHT:
@@ -46,7 +48,8 @@ export default (store) => (next) => (action) => {
           store.dispatch(setWeightSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
+          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_SLEEP:
@@ -55,7 +58,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(setSleepSuccess(res.data));
         })
         .catch((error) => {
-          console.log(error);
+          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
         });
       break;
     default:

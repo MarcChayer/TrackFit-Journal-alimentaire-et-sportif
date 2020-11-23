@@ -1,7 +1,6 @@
 /* eslint-disable max-len */
 import { connect } from 'react-redux';
-import { paramsInputSubmit, inputChange } from '../actions/user';
-
+import { inputChange, paramsInputSubmit } from '../actions/user';
 import Params from '../components/Settings/Params';
 
 const mapStateToProps = (state) => {
@@ -31,7 +30,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   handleParams: () => {
-    console.log('je passe l\'action paramsInputSubmit');
+    // console.log('je passe l\'action paramsInputSubmit');
     dispatch(paramsInputSubmit());
   },
   changeField: (value, name) => {

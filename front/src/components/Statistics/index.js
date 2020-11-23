@@ -1,20 +1,17 @@
 /* eslint-disable max-len */
 // == Import npm
-import React from 'react';
 // import React, { useEffect } from 'react';
 // import { NavLink } from 'react-router-dom';
-
 // import PropTypes from 'prop-types';
-
-// == Import images
-// import connectionRequired from 'src/assets/images/illustrations/illustration-connexion-requise.svg';
-
-// == Import style
-import './statistics.scss';
-
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import Stats from '../../containers/Stats';
 // == Import composants
 import Menu from './Menu';
-import Stats from '../../containers/Stats';
+// == Import images
+// import connectionRequired from 'src/assets/images/illustrations/illustration-connexion-requise.svg';
+// == Import style
+import './statistics.scss';
 
 // == Composant
 const Statistics = ({
@@ -42,6 +39,13 @@ const Statistics = ({
   // }
   // return (
   <div className="stats">
+    <Helmet defaultTitle="Statistique">
+      <title>Statistique</title>
+      <meta
+        name="description"
+        content="Statistique"
+      />
+    </Helmet>
     <Menu />
     <div className="statistics">
       <Stats
@@ -53,8 +57,6 @@ const Statistics = ({
 // };
 
 // Statistics.propTypes = {
-//   fetchStatistics: PropTypes.func.isRequired,
-//   isLogged: PropTypes.bool.isRequired,
 // };
 
 // == Export

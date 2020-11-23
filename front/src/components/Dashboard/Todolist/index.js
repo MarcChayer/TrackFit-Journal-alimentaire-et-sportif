@@ -1,7 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-
 import modaltrash from 'src/assets/images/icone-poubelle.svg';
 import './todolist.scss';
 
@@ -27,7 +26,7 @@ const Todolist = ({
   };
 
   const handleOnClick = (event) => {
-    console.log(event.target.dataset);
+    // console.log(event.target.dataset);
     deleteOnClick(event.target.dataset.taskId);
   };
 
@@ -69,7 +68,7 @@ const Todolist = ({
 };
 
 Todolist.propTypes = {
-  toDoList: PropTypes.objectOf().isRequired,
+  toDoList: PropTypes.object.isRequired,
   labelNewTask: PropTypes.string.isRequired,
   submitAddTask: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,

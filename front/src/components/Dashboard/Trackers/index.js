@@ -1,7 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
 import './trackers.scss';
 
 import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
@@ -32,6 +32,7 @@ const Trackers = () => {
   const [modal, setModal] = React.useState(null);
   return (
     <ul className="trackers">
+      <ToastContainer />
       <TrackerFood setModal={setModal} />
       <TrackerWater setModal={setModal} />
       <TrackerSleep setModal={setModal} />

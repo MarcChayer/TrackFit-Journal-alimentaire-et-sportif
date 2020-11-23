@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Article from '../../containers/Article';
-
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { useParams } from 'react-router-dom';
 import logoAlimentation from 'src/assets/images/illustrations/illustration-alimentation.svg';
-import logoSport from 'src/assets/images/illustrations/illustration-sport.svg';
 import logoBienEtre from 'src/assets/images/illustrations/illustration-bien-etre.svg';
-
+import logoSport from 'src/assets/images/illustrations/illustration-sport.svg';
+import Article from '../../containers/Article';
 import './articles.scss';
 
 const Articles = ({ fetchArticles, list, errorMessage }) => {
@@ -34,6 +33,13 @@ const Articles = ({ fetchArticles, list, errorMessage }) => {
 
   return (
     <div className="articles">
+      <Helmet defaultTitle="Articles">
+        <title>Articles</title>
+        <meta
+          name="description"
+          content="Articles"
+        />
+      </Helmet>
       {errorMessage}
       <ul className="articles__list">
         <img className="logo-category" src={logoImage} alt="aliment" />

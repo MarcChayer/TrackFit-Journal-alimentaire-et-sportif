@@ -1,19 +1,25 @@
 // == Import npm
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { NavLink } from 'react-router-dom';
-
+import illustration2 from 'src/assets/images/illustrations/illustration-accueil-2.svg';
 // image
 import illustration1 from 'src/assets/images/illustrations/illustration-accueil.svg';
-import illustration2 from 'src/assets/images/illustrations/illustration-accueil-2.svg';
 import testDesktop from 'src/assets/images/illustrations/test-accueil-d.png';
 import testMobile from 'src/assets/images/illustrations/test-accueil-m.png';
-
 // == Import
 import './home.scss';
 
 // == Composant
 const Home = () => (
   <div className="home">
+    <Helmet defaultTitle="Accueil">
+      <title>Accueil</title>
+      <meta
+        name="description"
+        content="Accueil"
+      />
+    </Helmet>
     <div className="home-bloc-top">
       <div className="home-bloc-title">
         <span className="home-title-pc">TrackFit,</span> <span className="home-title-sc">votre journal alimentaire</span>

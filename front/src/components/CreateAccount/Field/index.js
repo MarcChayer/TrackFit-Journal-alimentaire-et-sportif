@@ -1,6 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
 import './field.scss';
 
 const Field = ({
@@ -11,8 +10,7 @@ const Field = ({
   changeField,
 }) => {
   const handleOnChange = (event) => {
-    console.log(event.target.value);
-    console.log('Je suis là');
+    // console.log(event.target.value);
     changeField(event.target.value, event.target.name);
   };
 
@@ -33,7 +31,7 @@ Field.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   placeholder: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   changeField: PropTypes.func.isRequired,
 };
 

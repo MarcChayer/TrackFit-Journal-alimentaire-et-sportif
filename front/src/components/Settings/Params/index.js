@@ -1,13 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable import/no-unresolved */
-import React from 'react';
 import PropTypes from 'prop-types';
-import FieldParams from 'src/containers/FieldParams';
-
-import './params.scss';
-
-import profile from 'src/assets/images/trackers/user.svg';
+import React from 'react';
 import settings from 'src/assets/images/illustrations/illustration-settings.svg';
+import profile from 'src/assets/images/trackers/user.svg';
+import FieldParams from 'src/containers/FieldParams';
+import './params.scss';
 
 const Params = (
   {
@@ -144,10 +142,10 @@ const Params = (
 Params.propTypes = {
   lastName: PropTypes.string.isRequired,
   firstName: PropTypes.string.isRequired,
-  birthdate: PropTypes.number.isRequired,
+  birthdate: PropTypes.string.isRequired,
   height: PropTypes.number.isRequired,
   estimatedSleepTime: PropTypes.number.isRequired,
-  weight: PropTypes.number.isRequired,
+  weight: PropTypes.string.isRequired,
   weightGoal: PropTypes.number.isRequired,
   handleParams: PropTypes.func.isRequired,
 };
