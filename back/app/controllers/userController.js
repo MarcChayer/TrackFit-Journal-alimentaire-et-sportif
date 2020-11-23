@@ -6,6 +6,7 @@ const userController = {
     signupAction: async (req, res) => {
         try {
             const { lastName, firstName, email, password, confirmedPassword } = req.body;
+            const pwdCheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
             // on créé une const contenant un array d'erreur
             const bodyError=[];
             // si l'utilisateur ne rempli les input, il reçoit une alert
@@ -20,6 +21,9 @@ const userController = {
 			}
 			if (password.trim() === '') {
 				bodyError.push('Merci de saisir un mot de passe');
+            }
+            if (!pwdCheck.exec(password)) {
+                bodyError.push('Votre mot de passe doit contenir 6 caractères minimum, une majuscule et un chiffre');
             }
 			if (password !== confirmedPassword) {
 				bodyError.push('Les 2 mots de passe sont différents');
