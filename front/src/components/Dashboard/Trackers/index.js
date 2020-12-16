@@ -1,11 +1,7 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './trackers.scss';
-
-import sleep from 'src/assets/images/trackers/icone-sommeil.svg';
-import modalsleep from 'src/assets/images/trackers/icone-open-modal-sommeil.svg';
 
 import TrackerWater from 'src/containers/TrackerWater';
 import TrackerWeight from 'src/containers/TrackerWeight';

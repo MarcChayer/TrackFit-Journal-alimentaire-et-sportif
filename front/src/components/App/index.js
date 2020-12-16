@@ -2,10 +2,13 @@
 import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import { ToastContainer } from 'react-toastify';
+
 import {
-  Redirect, Route,
+  Redirect,
+  Route,
   Switch,
-  useLocation
+  useLocation,
 } from 'react-router-dom';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
@@ -30,8 +33,10 @@ const App = ({
   }, []);
 
   const location = useLocation();
+  
   return (
-    <div className="app">
+    <div className="app">          
+      <ToastContainer />
       <Helmet defaultTitle="TrackFit">
         <title>TrackFit - Journal alimentaire et sportif</title>
         <meta
@@ -49,11 +54,10 @@ const App = ({
           <Footer />
         </Route>
         {!isLogged && justSubscribe && location.pathname === '/inscription'
-        && (
-        <Redirect to="/connexion" />
-        )}
-        {/* {!isLogged
-        && ( */}
+          && (
+            <Redirect to="/connexion" />
+          )
+        }
         <Route path="/inscription">
           <Header />
           <CreateAccount />

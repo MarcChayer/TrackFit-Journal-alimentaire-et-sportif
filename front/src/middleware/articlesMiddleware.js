@@ -38,7 +38,7 @@ export default (store) => (next) => (action) => {
         .catch((error) => {
           // console.log(error);
           // store.dispatch(error);
-          toast.error('Vous devez être inscrit pour ajouter des articles.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Vous devez être inscrit pour ajouter des articles.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       next(action);
       break;

@@ -146,3 +146,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.toast {
+  &__succes {
+    background-color: vars.$secondary-color;
+  }
+  &__error {
+    background-color: vars.$toast-error;
+    text-align: left;
+  }
+}

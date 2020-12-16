@@ -73,3 +73,14 @@
   color: vars.$primary-color;
   font-weight: bold;
 }
+
+.toast {
+  &__succes {
+    background-color: vars.$secondary-color;
+    text-align: left;
+  }
+  &__error {
+    background-color: vars.$toast-error;
+    text-align: left;
+  }
+}
