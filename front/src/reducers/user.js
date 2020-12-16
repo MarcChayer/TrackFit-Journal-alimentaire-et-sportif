@@ -73,7 +73,7 @@ const reducer = (state = initialState, action = {}) => {
         justSubscribe: true,
       };
     case PARAMS_SUCCESS:
-      console.log('PARAMS_SUCCESS', action.payload);
+      // console.log('PARAMS_SUCCESS', action.payload);
       return {
         ...state,
         ...action.payload,

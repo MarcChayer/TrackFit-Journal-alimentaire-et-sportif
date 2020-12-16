@@ -2,10 +2,7 @@
 import axios from 'axios';
 import {
   addTaskError, addTaskSuccess, ADD_TASK_SUBMIT,
-
-
-
-  deleteTaskSuccess, DELETE_TASK
+  deleteTaskSuccess, DELETE_TASK,
 } from '../actions/todolist';
 
 export default (store) => (next) => (action) => {

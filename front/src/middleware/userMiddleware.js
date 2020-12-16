@@ -30,14 +30,18 @@ export default (store) => (next) => (action) => {
         confirmedPassword: store.getState().user.confirmedPassword,
       })
         .then((res) => {
-          // console.log('res.data.userSave', res.data.userSave);
+          console.log('res.data', res.data);
+          toast.success('Votre inscription est un succès, vous pouvez maintenant vous connecter', { position: toast.POSITION.TOP_RIGHT });
           store.dispatch(userIsSubscribed(res.data.userSave));
+          // res.data.map((element) => {
+          //   toast.success(element, { position: toast.POSITION.TOP_RIGHT });
+          // })
         })
         .catch((error) => {
-          console.log(error.response.data);
           error.response.data.map((element) => {
             toast.error(element, { position: toast.POSITION.TOP_RIGHT });
           });
+          console.log(error.response.data);
         });
       break;
     case LOGIN_INPUT_SUBMIT:
@@ -96,7 +100,8 @@ export default (store) => (next) => (action) => {
           store.dispatch(paramsSuccess(res.data));
         })
         .catch((error) => {
-          // console.log(error);
+          console.log(error);
+          toast.error('une erreur est survenue', { position: toast.POSITION.TOP_RIGHT });
         });
       break;
     default:
