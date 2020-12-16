@@ -27,7 +27,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Une erreur est survenue.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_TRACKER_SPORT:
@@ -42,7 +42,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Vous devez renseigner tous les champs.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Vous devez renseigner tous les champs.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_TRACKER_FOOD:
@@ -57,7 +57,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Vous devez renseigner tous les champs.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Vous devez renseigner tous les champs.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case FETCH_FOOD_LIST:
@@ -71,7 +71,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Une erreur est survenue.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     default:

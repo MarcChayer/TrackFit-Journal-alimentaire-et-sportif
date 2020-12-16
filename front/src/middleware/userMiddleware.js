@@ -30,8 +30,8 @@ export default (store) => (next) => (action) => {
         confirmedPassword: store.getState().user.confirmedPassword,
       })
         .then((res) => {
-          console.log('res.data', res.data);
-          toast.success('Votre inscription est un succès, vous pouvez maintenant vous connecter', { position: toast.POSITION.TOP_RIGHT });
+          // console.log('res.data', res.data);
+          toast.success('Votre inscription est un succès, vous pouvez maintenant vous connecter.', { className:"toast__succes", position: toast.POSITION.TOP_RIGHT });
           store.dispatch(userIsSubscribed(res.data.userSave));
           // res.data.map((element) => {
           //   toast.success(element, { position: toast.POSITION.TOP_RIGHT });
@@ -39,7 +39,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           error.response.data.map((element) => {
-            toast.error(element, { position: toast.POSITION.TOP_RIGHT });
+            toast.error(element, { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
           });
           console.log(error.response.data);
         });
@@ -55,7 +55,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           error.response.data.map((element) => {
-            toast.error(element, { position: toast.POSITION.TOP_RIGHT });
+            toast.error(element, { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
           });
         });
       break;
@@ -97,11 +97,12 @@ export default (store) => (next) => (action) => {
       { withCredentials: true })
         .then((res) => {
           // console.log('PARAMS_INPUT_SUBMIT', res.data);
+          toast.success('Vos modifications ont bien été prises en compte.', { className:"toast__succes", position: toast.POSITION.TOP_RIGHT });
           store.dispatch(paramsSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);
-          toast.error('une erreur est survenue', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('une erreur est survenue', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     default:

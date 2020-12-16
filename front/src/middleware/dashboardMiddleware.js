@@ -11,7 +11,6 @@ import {
   setWaterSuccess,
   setWeightSuccess,
   setSleepSuccess,
-
 } from '../actions/dashboard';
 
 export default (store) => (next) => (action) => {
@@ -29,7 +28,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Une erreur est survenue.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_WATER:
@@ -39,7 +38,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Une erreur est survenue.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_WEIGHT:
@@ -49,7 +48,7 @@ export default (store) => (next) => (action) => {
         })
         .catch((error) => {
           // console.log(error);
-          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Une erreur est survenue.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     case SET_SLEEP:
@@ -58,7 +57,7 @@ export default (store) => (next) => (action) => {
           store.dispatch(setSleepSuccess(res.data));
         })
         .catch((error) => {
-          toast.error('Une erreur est survenue.', { position: toast.POSITION.TOP_RIGHT });
+          toast.error('Une erreur est survenue.', { className:"toast__error", position: toast.POSITION.TOP_RIGHT });
         });
       break;
     default:

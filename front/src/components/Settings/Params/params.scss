@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  border: 1px solid #ccc;
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
@@ -45,7 +44,6 @@
   flex-direction: row;
   align-items: flex-start;
   background-color: white;
-  border: 1px solid #ccc;
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
@@ -363,4 +361,15 @@ select {
   position: absolute;
   left: 66em;
   top: 19em;
+}
+
+.toast {
+  &__succes {
+    background-color: vars.$secondary-color;
+    text-align: left;
+  }
+  &__error {
+    background-color: vars.$toast-error;
+    text-align: left;
+  }
 }
