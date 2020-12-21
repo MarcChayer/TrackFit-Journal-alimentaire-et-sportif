@@ -2,18 +2,10 @@
 
 .logo-category {
   width: 24em;
-  // padding: .6em;
   margin: 25px;
   position: relative;
   overflow: hidden;
-  // padding-bottom: 1em; 
   border-radius: 1em;
-  @media (max-width: 1350px) {
-    width: 22em;
-  }
-  @media (max-width: 850px) {
-    width: 30em;
-  }
 }
 
 .article__img {
