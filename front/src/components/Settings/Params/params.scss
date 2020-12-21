@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  align-items:flex-start;
+  align-items: center;
+  // flex-direction: row-reverse;
 
   @media screen and (max-width:1300px) {
     // flex-direction: column;
@@ -23,8 +24,9 @@
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
-  height: 35em;
+  height: 38.5em;
   margin-left: 2em;
+  width: 21em;
 
   @media screen and (max-width:1100px) {
     margin: auto auto 2em;
@@ -46,7 +48,7 @@
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
-  height: 35em;
+  height: 38.5em;
   width: 45em;
   margin-left: 2em;
   
@@ -349,9 +351,6 @@ select {
 .user-params__illustration {
   width: 35em;
   margin-left: 2em;
-  position: absolute;
-  left: 66em;
-  top: 12em;
 }
 
 .toast {
