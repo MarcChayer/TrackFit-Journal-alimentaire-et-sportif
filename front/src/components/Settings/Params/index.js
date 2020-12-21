@@ -26,9 +26,8 @@ const Params = (
 
   return (
     <div className="params-content">
-
+      <img src={settings} alt="paramètres" className="user-params__illustration" />
       <div className="params-infos">
-
         <ul className="user-params__tags">
           <li className="user-params__tag-list">
             <img src={profile} alt="profile" className="user-params__picture" />
@@ -133,7 +132,7 @@ const Params = (
           <button className="settings-button" type="submit">Mettre à jour</button>
         </form>
       </div>
-      <img src={settings} alt="paramètres" className="user-params__illustration" />
+      {/* <img src={settings} alt="paramètres" className="user-params__illustration" /> */}
 
     </div>
   );

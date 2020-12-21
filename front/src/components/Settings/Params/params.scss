@@ -23,7 +23,6 @@
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
-  border-radius: 1em 1em 2em 2em;
   height: 35em;
   margin-left: 2em;
 
@@ -47,7 +46,6 @@
   border-radius: 2em;
   box-shadow: vars.$box-shadow;
   border-top: 2em solid vars.$primary-color;
-  border-radius: 1em 1em 2em 2em;
   height: 35em;
   width: 45em;
   margin-left: 2em;
@@ -125,7 +123,7 @@
   padding: .5em .7em;
   color: #fff;
   // width: 13vw;
-  border-radius: 5em;
+  border-radius: 5px;
   background-color: #adacac;
   text-align: left;
 
@@ -338,13 +336,6 @@
   display: none;
 }
 
-.illustration {
-  position: absolute;
-    width: 16vw;
-    top: 27em;
-    right: 5em;
-}
-
 select:focus {
   background-color: vars.$background-color;
   outline: none;
@@ -356,11 +347,11 @@ select {
 
 
 .user-params__illustration {
-  width: 45em;
+  width: 35em;
   margin-left: 2em;
   position: absolute;
   left: 66em;
-  top: 19em;
+  top: 12em;
 }
 
 .toast {
