@@ -22,7 +22,7 @@ export default (store) => (next) => (action) => {
   } = action;
   switch (type) {
     case FETCH_DASHBOARD:
-      axios.get(`http://52.91.105.182/dashboard/${userId}`, { withCredentials: true })
+      axios.get(`http://107.23.126.240/dashboard/${userId}`, { withCredentials: true })
         .then((res) => {
           store.dispatch(fetchDashboardSuccess(res.data));
         })
@@ -32,7 +32,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case SET_WATER:
-      axios.post(`http://52.91.105.182/dashboard/${userId}/water`, payload, { withCredentials: true })
+      axios.post(`http://107.23.126.240/dashboard/${userId}/water`, payload, { withCredentials: true })
         .then((res) => {
           store.dispatch(setWaterSuccess(res.data));
         })
@@ -42,7 +42,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case SET_WEIGHT:
-      axios.post(`http://52.91.105.182/dashboard/${userId}/weight`, payload, { withCredentials: true })
+      axios.post(`http://107.23.126.240/dashboard/${userId}/weight`, payload, { withCredentials: true })
         .then((res) => {
           store.dispatch(setWeightSuccess(res.data));
         })
@@ -52,7 +52,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case SET_SLEEP:
-      axios.post(`http://52.91.105.182/dashboard/${userId}/sleep`, payload)
+      axios.post(`http://107.23.126.240/dashboard/${userId}/sleep`, payload)
         .then((res) => {
           store.dispatch(setSleepSuccess(res.data));
         })

@@ -10,8 +10,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case ADD_TASK_SUBMIT:
       // console.log('middleware todolist');
-      // http://52.91.105.182/dashboard/
-      axios.post(`http://52.91.105.182/dashboard/${userId}/task`, {
+      axios.post(`http://107.23.126.240/dashboard/${userId}/task`, {
         title: store.getState().todolist.labelNewTask,
       }, { withCredentials: true })
         .then((res) => {
@@ -24,14 +23,12 @@ export default (store) => (next) => (action) => {
         });
       break;
     case DELETE_TASK:
-      // http://52.91.105.182/dashboard/
-      axios.delete(`http://52.91.105.182/dashboard/${userId}/task/${action.taskId}`, {
+      axios.delete(`http://107.23.126.240/dashboard/${userId}/task/${action.taskId}`, {
         title: store.getState().todolist.labelNewTask,
       }, { withCredentials: true })
         .then((res) => {
           // console.log(res.data);
-          // http://52.91.105.182/dashboard/
-          axios.get(`http://52.91.105.182/dashboard/${userId}/task`)
+          axios.get(`http://107.23.126.240/dashboard/${userId}/task`)
             .then((res2) => {
               // console.log(res2.data);
               store.dispatch(deleteTaskSuccess(res2.data));

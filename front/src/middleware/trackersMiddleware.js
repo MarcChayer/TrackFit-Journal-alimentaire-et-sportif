@@ -18,7 +18,7 @@ export default (store) => (next) => (action) => {
   toast.configure();
   switch (action.type) {
     case FETCH_SPORT_LIST:
-      axios.get('http://52.91.105.182/sportTypeList', { withCredentials: true })
+      axios.get('http://107.23.126.240/sportTypeList', { withCredentials: true })
         .then((res) => {
           // console.log(res.data);
           // A faire : envoyer les variables de la session utilisateur
@@ -32,7 +32,7 @@ export default (store) => (next) => (action) => {
       break;
     case SET_TRACKER_SPORT:
       // console.log('SET_TRACKER_SPORT', action.payload);
-      axios.post(`http://52.91.105.182/dashboard/${userId}/sport`, action.payload,
+      axios.post(`http://107.23.126.240/dashboard/${userId}/sport`, action.payload,
         { withCredentials: true })
         .then((res) => {
           // console.log('SET_TRACKER_SPORT', res.data);
@@ -47,7 +47,7 @@ export default (store) => (next) => (action) => {
       break;
     case SET_TRACKER_FOOD:
       // console.log('SET_TRACKER_FOOD', action.payload);
-      axios.post(`http://52.91.105.182/dashboard/${userId}/food`, action.payload,
+      axios.post(`http://107.23.126.240/dashboard/${userId}/food`, action.payload,
         { withCredentials: true })
         .then((res) => {
           // console.log('SET_TRACKER_FOOD', res.data);
@@ -62,7 +62,7 @@ export default (store) => (next) => (action) => {
       break;
     case FETCH_FOOD_LIST:
       // 52.91.105.182
-      axios.get('http://52.91.105.182/foodTypeList', { withCredentials: true })
+      axios.get('http://107.23.126.240/foodTypeList', { withCredentials: true })
         .then((res) => {
           // console.log('FETCH_FOOD_LIST', res.data);
           // A faire : envoyer les variables de la session utilisateur
