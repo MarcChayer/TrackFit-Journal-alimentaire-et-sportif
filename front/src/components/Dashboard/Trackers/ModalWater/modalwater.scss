@@ -32,6 +32,9 @@
     position: absolute;
     top: 18.34em;
   }  
+  @media screen and (max-width:500px) {
+    position: relative;
+ }
 }
 
 .modal-button-water {

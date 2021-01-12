@@ -32,6 +32,9 @@
     position: absolute;
     top: 54.7em;
   }  
+  @media screen and (max-width:500px) {
+    position: relative;
+ }
 }
 
 .modal-button-sport {

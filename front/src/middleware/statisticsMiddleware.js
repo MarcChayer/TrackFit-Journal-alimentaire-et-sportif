@@ -13,7 +13,7 @@ export default (store) => (next) => (action) => {
   } = action;
   switch (type) {
     case FETCH_STATISTICS:
-      axios.get(`http://107.23.126.240/statistics/${userId}`, { withCredentials: true })
+      axios.get(`http://107.23.126.240:8080/api/statistics/${userId}`, { withCredentials: true })
         .then((res) => {
           store.dispatch(fetchStatisticsSuccess(res.data));
         })
