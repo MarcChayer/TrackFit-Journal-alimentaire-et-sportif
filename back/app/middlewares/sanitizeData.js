@@ -1,24 +1,21 @@
-const sanitizer = require('sanitizer');
+const sanitizeHtml = require('sanitize-html');
 
-const sanitizeObject = (obj) => {
-    for (const property in obj) {
-        // on va remplacer la valeur par une version assainie
-        obj[property] = sanitizer.escape(obj[property]);
-    }
-};
-
-const sanitizeData = (req, res, next) => {
-    // on veut assainir toutes les données qui serait présente dans un éventuel req.body, et pareil pour req.params et req.query !
-
+const sanitizeData = (req, _, next) => {
+    if (req.params) {
+        for (const prop in req.params) {
+            req.params[prop] = sanitizeHtml(req.params[prop]);
+        }
+    } 
     if (req.body) {
-        // on va parcourir toutes les propriétés du body
-        sanitizeObject(req.body);
+        for (const prop in req.body) {
+            req.body[prop] = sanitizeHtml(req.body[prop]);
+        }
     }
-
-    // on fait la même pour req.params et req.query
-    sanitizeObject(req.params);
-    sanitizeObject(req.query);
-
+    if (req.query) {
+        for (const prop in req.query) {
+            req.query[prop] = sanitizeHtml(req.query[prop]);
+        }
+    }
     // c'est bon tout est propre => on passe à la suite !
     next();
 };
