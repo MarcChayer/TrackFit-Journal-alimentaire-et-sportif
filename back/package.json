@@ -12,6 +12,7 @@
     "helmet": "^4.2.0",
     "pg": "^8.4.1",
     "pg-hstore": "^2.3.3",
+    "sanitize-html": "^2.3.0",
     "sequelize": "^6.3.5"
   },
   "scripts": {

@@ -9,6 +9,7 @@ const app = express();
 // router
 const router = require('./app/router');
 const bodyParser = require('body-parser');
+const sanitizeData = require('./app/middlewares/sanitizeData');
 
 // Initialisation de la lecture de paramètre post ( création de req.body )
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -46,6 +47,11 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH, PUT, DELETE');
     next();
 });
+
+// middleware pour assianir les données
+// ce middleware doit être avant router, pour nettoyer les données avant traitement
+// mais après urlencoded, sinon req.body n'existe pas ;) 
+app.use( sanitizeData );
 
 app.use(router);
 
