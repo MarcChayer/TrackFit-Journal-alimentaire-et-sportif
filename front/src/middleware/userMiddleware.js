@@ -22,7 +22,7 @@ export default (store) => (next) => (action) => {
   switch (action.type) {
     case REGISTER_INPUT_SUBMIT:
       // 'http://52.91.105.182/signup'
-      axios.post('http://107.23.126.240:8080/api/signup', {
+      axios.post('http://3.90.247.93:8080/api/signup', {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         email: store.getState().user.email,
@@ -45,7 +45,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case LOGIN_INPUT_SUBMIT:
-      axios.post('http://107.23.126.240:8080/api/login', {
+      axios.post('http://3.90.247.93:8080/api/login', {
         email: store.getState().user.email,
         password: store.getState().user.password,
       },
@@ -60,7 +60,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case LOGOUT_HANDLER:
-      axios.post('http://107.23.126.240:8080/api/logout', {},
+      axios.post('http://3.90.247.93:8080/api/logout', {},
         { withCredentials: true })
         .then((res) => {
           // console.log(res.data);
@@ -72,7 +72,7 @@ export default (store) => (next) => (action) => {
       break;
     case CHECK_AUTH:
       // console.log('CHECK_AUTH MIDDLEWARE');
-      axios.post('http://107.23.126.240:8080/api/isLogged', {},
+      axios.post('http://3.90.247.93:8080/api/isLogged', {},
         { withCredentials: true })
         .then((res) => {
           // console.log('CHECK_AUTH', res.data);
@@ -85,7 +85,7 @@ export default (store) => (next) => (action) => {
         });
       break;
     case PARAMS_INPUT_SUBMIT:
-      axios.patch(`http://107.23.126.240:8080/api/profile/${userId}`, {
+      axios.patch(`http://3.90.247.93:8080/api/profile/${userId}`, {
         lastName: store.getState().user.lastName,
         firstName: store.getState().user.firstName,
         birthdate: store.getState().user.birthdate,

@@ -16,7 +16,7 @@ export default (store) => (next) => (action) => {
   toast.configure();
   switch (action.type) {
     case FETCH_ARTICLES:
-      axios.get('http://107.23.126.240:8080/api/articles', { withCredentials: true })
+      axios.get('http://3.90.247.93:8080/api/articles', { withCredentials: true })
         .then((res) => {
           // console.log(res.data);
           store.dispatch(fetchArticlesSuccess(res.data));
@@ -29,7 +29,7 @@ export default (store) => (next) => (action) => {
     case TOGGLE_FAV_ARTICLE:
       // console.log('action.articleId', action.articleId);
       // http://52.91.105.182/
-      axios.get(`http://107.23.126.240:8080/api/user/${userId}/article/${action.articleId}`, {},
+      axios.get(`http://3.90.247.93:8080/api/user/${userId}/article/${action.articleId}`, {},
         { withCredentials: true })
         .then((res) => {
           // console.log(res.data);
